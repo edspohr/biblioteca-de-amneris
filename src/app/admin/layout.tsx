@@ -53,6 +53,9 @@ export default async function AdminLayout({ children }: { children: ReactNode })
             <Link href="/admin/recetas">Recetas</Link>
           </li>
           <li>
+            <Link href="/admin/menus">Menús</Link>
+          </li>
+          <li>
             <Link href="/admin/ingredientes">Ingredientes</Link>
           </li>
           <li>
@@ -60,6 +63,9 @@ export default async function AdminLayout({ children }: { children: ReactNode })
           </li>
           <li>
             <Link href="/admin/tecnicas">Técnicas</Link>
+          </li>
+          <li>
+            <Link href="/admin/usuarios">Usuarios</Link>
           </li>
         </ul>
       </nav>

@@ -16,6 +16,7 @@ const PROTECTED_API_PREFIXES = [
   "/api/alergenos",
   "/api/tecnicas",
   "/api/menus",
+  "/api/usuarios",
 ];
 
 export function middleware(req: NextRequest) {
@@ -58,5 +59,6 @@ export const config = {
     "/api/alergenos/:path*",
     "/api/tecnicas/:path*",
     "/api/menus/:path*",
+    "/api/usuarios/:path*",
   ],
 };

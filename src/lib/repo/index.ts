@@ -58,11 +58,12 @@ export interface Repo {
 
   getPorcionesTexturas(): Promise<PorcionTextura[]>;
 
-  // Referential integrity helpers — return the recipes that reference the
-  // given catalog entity. Used to block or warn on deletes.
+  // Referential integrity helpers — return the recipes/menus that reference
+  // the given catalog entity. Used to block or warn on deletes.
   getRecetasUsingIngrediente(ingredienteId: string): Promise<Receta[]>;
   getRecetasUsingAlergeno(alergenoId: string): Promise<Receta[]>;
   getRecetasUsingTecnica(tecnicaId: string): Promise<Receta[]>;
+  getMenusUsingReceta(recetaId: string): Promise<Menu[]>;
 }
 
 export const repo: Repo = adapter;

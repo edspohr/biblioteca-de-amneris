@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { repo } from "@/lib/repo";
-import { recetaSchema } from "@/lib/schema";
-import { badRequest, conflict, handleZodError, notFound } from "@/lib/api-errors";
+import { menuSchema } from "@/lib/schema";
+import { badRequest, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
 
 export async function PUT(
@@ -15,10 +15,10 @@ export async function PUT(
     if (body.id && body.id !== id) {
       return badRequest("El identificador no se puede cambiar");
     }
-    const parsed = recetaSchema.parse({ ...body, id });
-    const existing = await repo.getReceta(id);
-    if (!existing) return notFound("La receta no existe");
-    await repo.saveReceta(parsed);
+    const parsed = menuSchema.parse({ ...body, id });
+    const existing = await repo.getMenu(id);
+    if (!existing) return notFound("El menú no existe");
+    await repo.saveMenu(parsed);
     return NextResponse.json(parsed);
   } catch (err) {
     return handleZodError(err);
@@ -32,16 +32,9 @@ export async function DELETE(
   try {
     await requireSuperadmin();
     const { id } = await params;
-    const existing = await repo.getReceta(id);
-    if (!existing) return notFound("La receta no existe");
-    const menus = await repo.getMenusUsingReceta(id);
-    if (menus.length > 0) {
-      return conflict(
-        `No se puede eliminar: esta receta se usa en ${menus.length} menú(s)`,
-        menus.map((m) => ({ id: m.id, nombre: m.nombre }))
-      );
-    }
-    await repo.deleteReceta(id);
+    const existing = await repo.getMenu(id);
+    if (!existing) return notFound("El menú no existe");
+    await repo.deleteMenu(id);
     return NextResponse.json({ ok: true });
   } catch (err) {
     return handleZodError(err);

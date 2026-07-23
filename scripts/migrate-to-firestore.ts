@@ -212,7 +212,12 @@ async function main() {
   await writeAll("ingredientes", ingredientes, (i) => i.id);
   await writeAll("alergenos", alergenos, (a) => a.id);
   await writeAll("tecnicas", tecnicas, (t) => t.id);
-  await writeAll("menus", menus, (m) => m.id);
+  // Menus get a denormalized `receta_ids` for array-contains queries.
+  const menusForDoc = menus.map((m) => ({
+    ...m,
+    receta_ids: uniq(m.menu_recetas.map((x) => x.receta_id)),
+  }));
+  await writeAll("menus", menusForDoc, (m) => m.id);
 
   // --- Write recipes (with photo URLs + denormalized _ids arrays) --------
 

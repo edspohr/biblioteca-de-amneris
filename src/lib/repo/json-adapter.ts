@@ -185,3 +185,8 @@ export async function getRecetasUsingTecnica(tecnicaId: string): Promise<Receta[
     r.receta_tecnicas.some((rt) => rt.tecnica_id === tecnicaId)
   );
 }
+
+export async function getMenusUsingReceta(recetaId: string): Promise<Menu[]> {
+  const all = await getMenus();
+  return all.filter((m) => m.menu_recetas.some((mr) => mr.receta_id === recetaId));
+}

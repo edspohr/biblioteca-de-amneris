@@ -79,6 +79,18 @@ function fromRecetaDoc(data: DocumentData): Receta {
   return recetaSchema.parse(rest);
 }
 
+// Menus get a denormalized `receta_ids` for the same reason as recipes —
+// so getMenusUsingReceta() is an array-contains query, not a full scan.
+export function toMenuDoc(m: Menu): Menu & { receta_ids: string[] } {
+  return { ...m, receta_ids: uniq(m.menu_recetas.map((x) => x.receta_id)) };
+}
+
+function fromMenuDoc(data: DocumentData): Menu {
+  const { receta_ids: _r, ...rest } = data;
+  void _r;
+  return menuSchema.parse(rest);
+}
+
 function uniq(xs: string[]): string[] {
   return [...new Set(xs)].sort();
 }
@@ -196,17 +208,17 @@ export async function deleteReceta(id: string): Promise<void> {
 export async function getMenus(): Promise<Menu[]> {
   const snap = await col(COLLECTIONS.menus).get();
   return snap.docs
-    .map((d) => menuSchema.parse(d.data()))
+    .map((d) => fromMenuDoc(d.data()))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
 export async function getMenu(id: string): Promise<Menu | null> {
   const doc = await col(COLLECTIONS.menus).doc(id).get();
-  return doc.exists ? menuSchema.parse(doc.data()) : null;
+  return doc.exists ? fromMenuDoc(doc.data() as DocumentData) : null;
 }
 export async function saveMenu(menu: Menu): Promise<void> {
   return wrapWrite(async () => {
     menuSchema.parse(menu);
-    await col(COLLECTIONS.menus).doc(menu.id).set(menu);
+    await col(COLLECTIONS.menus).doc(menu.id).set(toMenuDoc(menu));
   });
 }
 export async function deleteMenu(id: string): Promise<void> {
@@ -243,4 +255,10 @@ export async function getRecetasUsingTecnica(id: string): Promise<Receta[]> {
     .where("tecnica_ids", "array-contains", id)
     .get();
   return snap.docs.map((d) => fromRecetaDoc(d.data()));
+}
+export async function getMenusUsingReceta(id: string): Promise<Menu[]> {
+  const snap = await col(COLLECTIONS.menus)
+    .where("receta_ids", "array-contains", id)
+    .get();
+  return snap.docs.map((d) => fromMenuDoc(d.data()));
 }

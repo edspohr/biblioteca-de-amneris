@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { createSessionCookie, SESSION_COOKIE_NAME } from "@/lib/auth/session";
 import { getAdminAuth } from "@/lib/firebase/admin";
+import { getUser, mirrorUser } from "@/lib/users/service";
 
 export async function POST(req: Request) {
   let idToken: string;
@@ -33,6 +34,18 @@ export async function POST(req: Request) {
       path: "/",
       maxAge: maxAgeSeconds,
     });
+
+    // Mirror this user into usuarios/{uid} so the admin panel can list them
+    // without a Functions trigger. Non-fatal if it fails — the sign-in itself
+    // has already succeeded.
+    try {
+      const summary = await getUser(decoded.uid);
+      if (summary) await mirrorUser(summary);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.warn("[session] mirror failed:", err);
+    }
+
     return NextResponse.json({
       uid: decoded.uid,
       email: decoded.email ?? null,
