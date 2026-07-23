@@ -1,0 +1,15 @@
+# Firebase App Hosting configuration for Bocaditos del Corazón.
+# Docs: https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  # Minimum viable sizing: 120 recipes, static JSON reads, no DB.
+  # Bump memoryMiB to 1024 if we see OOM during build (Next 16 + Turbopack can spike).
+  cpu: 1
+  memoryMiB: 512
+  minInstances: 0
+  maxInstances: 1
+  concurrency: 80
+  timeoutSeconds: 60
+
+# env: intentionally empty for this cycle.
+# The next cycle (Firestore integration) will add NEXT_PUBLIC_FIREBASE_* here.

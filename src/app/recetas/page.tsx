@@ -10,8 +10,13 @@ export default async function RecetasPage() {
 
   return (
     <>
-      <h1>Recetas</h1>
-      <p className="muted">{recetas.length} recetas · filtra y busca</p>
+      <header className="page-header">
+        <p className="page-header__eyebrow">Recetas</p>
+        <h1 className="page-header__title">Todas las recetas</h1>
+        <p className="page-header__lede muted">
+          {recetas.length} recetas · cada una se adapta a las tres etapas.
+        </p>
+      </header>
       <RecetasBrowser
         recetas={recetas}
         ingredientes={ingredientes}

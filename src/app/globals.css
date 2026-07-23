@@ -1,17 +1,11 @@
-:root {
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #666666;
-  --border: #d4d4d4;
-  --accent: #7a3e3e;
-  --panel: #f7f4f0;
-  /* Etapa palette defaults (etapa-1). Overridden at runtime by
-     EtapaActivaProvider based on the user's selection. */
-  --etapa-primary: #B8E0C8;
-  --etapa-accent: #7FBFA0;
-  --etapa-soft: #EAF7EF;
-  --etapa-ink: #2F5D46;
-}
+/*
+ * globals.css — reset + base typography only.
+ * Design tokens live in ../styles/tokens.css.
+ * Component styles live in ../styles/components.css.
+ */
+
+@import "../styles/tokens.css";
+@import "../styles/components.css";
 
 * {
   box-sizing: border-box;
@@ -21,283 +15,70 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
-  color: var(--accent);
+  color: var(--color-brand-ink);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 a:hover {
   text-decoration: none;
 }
 
-header.nav {
-  border-bottom: 1px solid var(--border);
-  padding: 0.75rem 1.5rem;
-  background: var(--panel);
-}
-header.nav ul {
-  display: flex;
-  gap: 1.25rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-  align-items: center;
-}
-header.nav a {
-  text-decoration: none;
-  font-weight: 500;
-}
-header.nav .brand {
-  font-weight: 700;
-  margin-right: 1rem;
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
 }
 
 main {
-  max-width: 1100px;
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: var(--sp-5);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-title);
+  color: var(--color-ink);
+  line-height: var(--lh-tight);
+  margin: 0;
 }
 
 h1 {
-  font-size: 1.75rem;
-  margin: 0 0 0.5rem 0;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  margin: 0 0 var(--sp-3) 0;
+  letter-spacing: -0.01em;
 }
 h2 {
-  font-size: 1.25rem;
-  margin: 1.5rem 0 0.5rem 0;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  margin: var(--sp-6) 0 var(--sp-3) 0;
 }
 h3 {
-  font-size: 1rem;
-  margin: 1rem 0 0.5rem 0;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  margin: var(--sp-4) 0 var(--sp-2) 0;
 }
 
-.muted {
-  color: var(--muted);
+p {
+  margin: 0 0 var(--sp-3) 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.card {
-  border: 1px solid var(--border);
-  padding: 1rem;
-  border-radius: 6px;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-.card a {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-.card .meta {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 4px;
-  background: var(--panel);
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  padding: 1rem;
-  background: var(--panel);
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  align-items: flex-end;
-}
-.filters label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.85rem;
-  color: var(--muted);
-  gap: 0.25rem;
-}
-.filters input[type="text"],
-.filters input[type="number"],
-.filters select {
-  padding: 0.35rem 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  min-width: 140px;
-  font-size: 0.95rem;
-}
-.filters .allergen-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  font-size: 0.85rem;
-}
-.filters .allergen-group .row {
-  display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-}
-.filters button {
-  padding: 0.4rem 0.9rem;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.filters button.secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0.5rem 0 1rem 0;
-}
-th,
-td {
-  border: 1px solid var(--border);
-  padding: 0.4rem 0.6rem;
-  text-align: left;
-  vertical-align: top;
-}
-th {
-  background: var(--panel);
-}
-
-.chip {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 0.8rem;
-  margin: 0 0.25rem 0.25rem 0;
-  background: white;
-}
-
-.recipe-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 320px) 1fr;
-  gap: 1.5rem;
-  align-items: start;
-}
-.recipe-hero img {
-  width: 100%;
-  border-radius: 6px;
-  background: var(--panel);
-}
-@media (max-width: 700px) {
-  .recipe-hero {
-    grid-template-columns: 1fr;
-  }
-}
-
-ol.steps {
-  padding-left: 1.25rem;
-}
-ol.steps li {
-  margin-bottom: 0.5rem;
-}
-
-.results-count {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.empty {
-  padding: 1rem;
-  background: var(--panel);
-  border-radius: 6px;
-  color: var(--muted);
-}
-
-.etapa-panel {
-  background: var(--etapa-soft);
-  border-left: 4px solid var(--etapa-primary);
-  color: var(--etapa-ink);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  margin: 0.5rem 0 1rem 0;
-}
-.etapa-panel h3 {
-  margin: 0 0 0.35rem 0;
-  color: var(--etapa-ink);
-}
-.etapa-panel .etapa-panel__row {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-}
-.etapa-panel .etapa-panel__row strong {
-  color: var(--etapa-ink);
-}
-
-.etapa-tabs {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  margin: 0.5rem 0;
-}
-.etapa-tab {
-  border: 2px solid var(--border);
-  border-radius: 999px;
-  padding: 0.35rem 0.9rem;
-  background: white;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-family: inherit;
-}
-.etapa-tab[aria-selected="true"] {
-  border-color: currentColor;
-  font-weight: 600;
-}
-
-.card {
-  border-top: 3px solid var(--etapa-primary);
-}
-.recipe-hero {
-  border-top: 4px solid var(--etapa-primary);
-  padding-top: 1rem;
-}
-
-.etapa-selector-global {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-right: 0.75rem;
-}
-.etapa-selector-global__label {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-right: 0.2rem;
-}
-.etapa-selector-global__chip {
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-family: inherit;
-  line-height: 1;
+img {
+  max-width: 100%;
+  height: auto;
 }

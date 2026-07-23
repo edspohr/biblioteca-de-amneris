@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
@@ -31,122 +32,155 @@ export default async function RecetaPage({
   const tecById = new Map(tecnicas.map((t) => [t.id, t]));
 
   return (
-    <>
-      <p className="muted">
+    <article className="receta">
+      <p className="receta__back">
         <Link href="/recetas">← Todas las recetas</Link>
       </p>
-      <div className="recipe-hero">
-        {receta.foto ? <img src={receta.foto} alt={receta.titulo} /> : <div />}
-        <div>
-          <h1>{receta.titulo}</h1>
-          <p className="muted">
+
+      <header className="receta__hero">
+        {receta.foto ? (
+          <div className="receta__photo">
+            <Image
+              src={receta.foto}
+              alt={receta.titulo}
+              fill
+              sizes="(max-width: 640px) 100vw, 480px"
+              priority
+            />
+          </div>
+        ) : null}
+        <div className="receta__hero-body">
+          <p className="receta__eyebrow">
             {TIPOS_LABEL[receta.tipo_comida] ?? receta.tipo_comida}
             {receta.numero != null ? ` · Receta ${receta.numero}` : ""}
-            {receta.minutos_prep != null ? ` · ${receta.minutos_prep} min` : ""}
-            {receta.kcal_100g != null ? ` · ${receta.kcal_100g} kcal / 100 g` : ""}
           </p>
-
-          <RecetaVarianteTabs receta={receta} etapas={etapas} />
-
-          <p>
-            <strong>Congelable:</strong>{" "}
-            {receta.congelable === true ? "Sí" : receta.congelable === false ? "No" : "—"}
-          </p>
-          {receta.conservacion && (
-            <p>
-              <strong>Conservación:</strong> {receta.conservacion}
-            </p>
-          )}
-
-          {receta.receta_alergenos.length > 0 && (
-            <p>
-              <strong>Alérgenos:</strong>{" "}
-              {receta.receta_alergenos.map((ra) => {
-                const a = alergById.get(ra.alergeno_id);
-                return a ? (
-                  <span key={ra.alergeno_id} className="chip">
-                    {a.nombre}
-                  </span>
-                ) : null;
-              })}
-            </p>
-          )}
-
-          {receta.receta_tecnicas.length > 0 && (
-            <p>
-              <strong>Técnicas:</strong>{" "}
-              {receta.receta_tecnicas.map((rt, idx) => {
-                const t = tecById.get(rt.tecnica_id);
-                if (!t) return null;
-                return (
-                  <span key={rt.tecnica_id}>
-                    {idx > 0 && ", "}
-                    <Link href={`/tecnicas/${t.id}`}>{t.nombre}</Link>
-                  </span>
-                );
-              })}
-            </p>
-          )}
-
-          {receta.vitaminas.length > 0 && (
-            <p>
-              <strong>Vitaminas:</strong>{" "}
-              {receta.vitaminas.map((v) => (
-                <span key={v} className="chip">
-                  {v}
-                </span>
-              ))}
-            </p>
-          )}
-
-          {receta.notas && (
-            <p>
-              <strong>Notas:</strong> {receta.notas}
-            </p>
-          )}
+          <h1 className="receta__title">{receta.titulo}</h1>
+          <ul className="receta__meta">
+            {receta.minutos_prep != null && (
+              <li>
+                <span aria-hidden="true">⏱</span> {receta.minutos_prep} min
+              </li>
+            )}
+            {receta.kcal_100g != null && (
+              <li>
+                <span aria-hidden="true">🔥</span> {receta.kcal_100g} kcal / 100 g
+              </li>
+            )}
+            {receta.congelable === true && (
+              <li>
+                <span aria-hidden="true">🧊</span> Congelable
+              </li>
+            )}
+          </ul>
         </div>
-      </div>
+      </header>
 
-      <h2>Ingredientes</h2>
-      {receta.receta_ingredientes.length === 0 ? (
-        <p className="muted">Sin ingredientes registrados.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Ingrediente</th>
-              <th>Cantidad</th>
-              <th>Nota</th>
-            </tr>
-          </thead>
-          <tbody>
+      <RecetaVarianteTabs receta={receta} etapas={etapas} />
+
+      <section className="receta__section" aria-labelledby="sec-ing">
+        <h2 id="sec-ing" className="receta__section-title">Ingredientes</h2>
+        {receta.receta_ingredientes.length === 0 ? (
+          <p className="muted">Sin ingredientes registrados.</p>
+        ) : (
+          <ul className="ingredient-list">
             {receta.receta_ingredientes.map((ri, idx) => {
               const ing = ingById.get(ri.ingrediente_id);
               return (
-                <tr key={`${ri.ingrediente_id}-${idx}`}>
-                  <td>{ing?.nombre ?? ri.ingrediente_id}</td>
-                  <td>
+                <li key={`${ri.ingrediente_id}-${idx}`} className="ingredient-list__row">
+                  <span className="ingredient-list__name">
+                    {ing?.nombre ?? ri.ingrediente_id}
+                  </span>
+                  <span className="ingredient-list__qty">
                     {ri.cantidad != null ? ri.cantidad : ""}
                     {ri.unidad ? ` ${ri.unidad}` : ""}
-                  </td>
-                  <td>{ri.nota ?? ""}</td>
-                </tr>
+                  </span>
+                  {ri.nota && (
+                    <span className="ingredient-list__note">{ri.nota}</span>
+                  )}
+                </li>
               );
             })}
-          </tbody>
-        </table>
-      )}
+          </ul>
+        )}
+      </section>
 
-      <h2>Preparación</h2>
-      {receta.pasos.length === 0 ? (
-        <p className="muted">Sin pasos registrados.</p>
-      ) : (
-        <ol className="steps">
-          {receta.pasos.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ol>
-      )}
-    </>
+      <section className="receta__section" aria-labelledby="sec-prep">
+        <h2 id="sec-prep" className="receta__section-title">Preparación</h2>
+        {receta.pasos.length === 0 ? (
+          <p className="muted">Sin pasos registrados.</p>
+        ) : (
+          <ol className="steps">
+            {receta.pasos.map((p, i) => (
+              <li key={i} className="steps__item">
+                <span className="steps__num" aria-hidden="true">{i + 1}</span>
+                <span className="steps__text">{p}</span>
+              </li>
+            ))}
+          </ol>
+        )}
+      </section>
+
+      <section className="receta__section receta__section--info" aria-labelledby="sec-info">
+        <h2 id="sec-info" className="receta__section-title">Información</h2>
+        <dl className="info-grid">
+          {receta.conservacion && (
+            <div className="info-grid__item">
+              <dt>Conservación</dt>
+              <dd>{receta.conservacion}</dd>
+            </div>
+          )}
+          {receta.receta_alergenos.length > 0 && (
+            <div className="info-grid__item">
+              <dt>Alérgenos</dt>
+              <dd>
+                {receta.receta_alergenos.map((ra) => {
+                  const a = alergById.get(ra.alergeno_id);
+                  return a ? (
+                    <span key={ra.alergeno_id} className="chip chip--warn">
+                      {a.nombre}
+                    </span>
+                  ) : null;
+                })}
+              </dd>
+            </div>
+          )}
+          {receta.receta_tecnicas.length > 0 && (
+            <div className="info-grid__item">
+              <dt>Técnicas</dt>
+              <dd>
+                {receta.receta_tecnicas.map((rt, idx) => {
+                  const t = tecById.get(rt.tecnica_id);
+                  if (!t) return null;
+                  return (
+                    <span key={rt.tecnica_id}>
+                      {idx > 0 && ", "}
+                      <Link href={`/tecnicas/${t.id}`}>{t.nombre}</Link>
+                    </span>
+                  );
+                })}
+              </dd>
+            </div>
+          )}
+          {receta.vitaminas.length > 0 && (
+            <div className="info-grid__item">
+              <dt>Vitaminas</dt>
+              <dd>
+                {receta.vitaminas.map((v) => (
+                  <span key={v} className="chip">
+                    {v}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          )}
+          {receta.notas && (
+            <div className="info-grid__item info-grid__item--wide">
+              <dt>Notas</dt>
+              <dd>{receta.notas}</dd>
+            </div>
+          )}
+        </dl>
+      </section>
+    </article>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Alergeno, Ingrediente, Receta, TipoComida } from "@/lib/schema";
 
 interface Props {
@@ -24,6 +25,7 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos }: Props) {
   const [congelableOnly, setCongelableOnly] = useState(false);
   const [excludedAlergenos, setExcludedAlergenos] = useState<Set<string>>(new Set());
   const [query, setQuery] = useState("");
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   const ingByNorm = useMemo(() => {
     const m = new Map<string, string>();
@@ -70,70 +72,47 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos }: Props) {
     setQuery("");
   }
 
+  const activeCount =
+    (tipoComida ? 1 : 0) +
+    (maxMinutos ? 1 : 0) +
+    (congelableOnly ? 1 : 0) +
+    excludedAlergenos.size;
+
+  useEffect(() => {
+    if (!sheetOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSheetOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [sheetOpen]);
+
   return (
     <>
-      <div className="filters">
-        <label>
-          Buscar
+      <div className="filter-bar">
+        <label className="filter-bar__search">
+          <span className="visually-hidden">Buscar receta</span>
           <input
-            type="text"
+            type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="título o ingrediente"
+            placeholder="Buscar por título o ingrediente"
+            enterKeyHint="search"
           />
         </label>
-        <label>
-          Tipo de comida
-          <select
-            value={tipoComida}
-            onChange={(e) => setTipoComida(e.target.value as TipoComida | "")}
-          >
-            <option value="">Todas</option>
-            {TIPOS.map((t) => (
-              <option key={t.value} value={t.value}>
-                {t.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Máx. minutos
-          <input
-            type="number"
-            value={maxMinutos}
-            onChange={(e) => setMaxMinutos(e.target.value)}
-            min={0}
-            placeholder="sin límite"
-          />
-        </label>
-        <label style={{ flexDirection: "row", alignItems: "center", gap: "0.35rem" }}>
-          <input
-            type="checkbox"
-            checked={congelableOnly}
-            onChange={(e) => setCongelableOnly(e.target.checked)}
-          />
-          Solo congelables
-        </label>
-        <div className="allergen-group">
-          <span>Excluir alérgenos</span>
-          <div className="row">
-            {alergenos
-              .sort((a, b) => a.nombre.localeCompare(b.nombre))
-              .map((a) => (
-                <label key={a.id} className="chip" style={{ cursor: "pointer" }}>
-                  <input
-                    type="checkbox"
-                    checked={excludedAlergenos.has(a.id)}
-                    onChange={() => toggleAlergeno(a.id)}
-                    style={{ marginRight: "0.25rem" }}
-                  />
-                  {a.nombre}
-                </label>
-              ))}
-          </div>
-        </div>
-        <button type="button" className="secondary" onClick={reset}>
-          Limpiar filtros
+        <button
+          type="button"
+          className="filter-bar__open"
+          onClick={() => setSheetOpen(true)}
+          aria-haspopup="dialog"
+          aria-expanded={sheetOpen}
+        >
+          Filtros
+          {activeCount > 0 && <span className="filter-bar__badge">{activeCount}</span>}
         </button>
       </div>
 
@@ -144,20 +123,133 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos }: Props) {
       {filtered.length === 0 ? (
         <div className="empty">Ninguna receta coincide con los filtros.</div>
       ) : (
-        <div className="grid">
+        <ul className="grid recipe-grid">
           {filtered.map((r) => (
-            <div key={r.id} className="card">
-              {r.foto && <img src={r.foto} alt="" />}
-              <Link href={`/recetas/${r.id}`}>{r.titulo}</Link>
-              <div className="meta">
-                {TIPOS.find((t) => t.value === r.tipo_comida)?.label ?? r.tipo_comida}
-                {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
-                {r.congelable === true ? " · congelable" : ""}
-              </div>
-            </div>
+            <li key={r.id} className="card recipe-card">
+              <Link href={`/recetas/${r.id}`} className="recipe-card__link">
+                {r.foto ? (
+                  <div className="recipe-card__photo">
+                    <Image
+                      src={r.foto}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="recipe-card__photo recipe-card__photo--placeholder" aria-hidden="true" />
+                )}
+                <span className="recipe-card__title">{r.titulo}</span>
+                <span className="meta">
+                  {TIPOS.find((t) => t.value === r.tipo_comida)?.label ?? r.tipo_comida}
+                  {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
+                  {r.congelable === true ? " · congelable" : ""}
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
+
+      {sheetOpen && (
+        <div
+          className="sheet-backdrop"
+          onClick={() => setSheetOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+      <aside
+        className="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Filtros de recetas"
+        data-open={sheetOpen}
+      >
+        <div className="sheet__handle" aria-hidden="true" />
+        <div className="sheet__header">
+          <h2 id="filter-sheet-title">Filtros</h2>
+          <button
+            type="button"
+            className="sheet__close"
+            onClick={() => setSheetOpen(false)}
+            aria-label="Cerrar filtros"
+          >
+            ✕
+          </button>
+        </div>
+        <div className="sheet__body">
+          <label className="field">
+            <span>Tipo de comida</span>
+            <select
+              value={tipoComida}
+              onChange={(e) => setTipoComida(e.target.value as TipoComida | "")}
+            >
+              <option value="">Todas</option>
+              {TIPOS.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="field">
+            <span>Máximo de minutos</span>
+            <input
+              type="number"
+              value={maxMinutos}
+              onChange={(e) => setMaxMinutos(e.target.value)}
+              min={0}
+              placeholder="sin límite"
+              inputMode="numeric"
+            />
+          </label>
+          <label className="field field--inline">
+            <input
+              type="checkbox"
+              checked={congelableOnly}
+              onChange={(e) => setCongelableOnly(e.target.checked)}
+            />
+            <span>Solo recetas congelables</span>
+          </label>
+          <fieldset className="field">
+            <legend>Excluir alérgenos</legend>
+            <div className="chip-group">
+              {alergenos
+                .sort((a, b) => a.nombre.localeCompare(b.nombre))
+                .map((a) => {
+                  const on = excludedAlergenos.has(a.id);
+                  return (
+                    <label
+                      key={a.id}
+                      className="chip chip--toggle"
+                      data-active={on}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={on}
+                        onChange={() => toggleAlergeno(a.id)}
+                      />
+                      {a.nombre}
+                    </label>
+                  );
+                })}
+            </div>
+          </fieldset>
+        </div>
+        <div className="sheet__footer">
+          <button type="button" className="button button--ghost" onClick={reset}>
+            Limpiar
+          </button>
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={() => setSheetOpen(false)}
+          >
+            Ver {filtered.length} recetas
+          </button>
+        </div>
+      </aside>
     </>
   );
 }

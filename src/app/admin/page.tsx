@@ -11,29 +11,40 @@ export default async function AdminHome() {
 
   return (
     <>
-      <h1>Autoría</h1>
-      <p>
-        Desde aquí puedes crear, editar y eliminar recetas y los catálogos que
-        las alimentan.
-      </p>
-      <div className="grid">
-        <div className="card">
-          <Link href="/admin/recetas">Recetas</Link>
-          <div className="meta">{recetas.length} recetas</div>
-        </div>
-        <div className="card">
-          <Link href="/admin/ingredientes">Ingredientes</Link>
-          <div className="meta">{ingredientes.length} ingredientes</div>
-        </div>
-        <div className="card">
-          <Link href="/admin/alergenos">Alérgenos</Link>
-          <div className="meta">{alergenos.length} alérgenos</div>
-        </div>
-        <div className="card">
-          <Link href="/admin/tecnicas">Técnicas</Link>
-          <div className="meta">{tecnicas.length} técnicas</div>
-        </div>
-      </div>
+      <header className="page-header">
+        <p className="page-header__eyebrow">Autoría</p>
+        <h1 className="page-header__title">Panel de autoría</h1>
+        <p className="page-header__lede muted">
+          Desde aquí puedes crear, editar y eliminar recetas y los catálogos que
+          las alimentan.
+        </p>
+      </header>
+      <ul className="grid tile-grid">
+        <li className="tile">
+          <Link href="/admin/recetas" className="tile__link">
+            <span className="tile__title">Recetas</span>
+            <span className="tile__count">{recetas.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/ingredientes" className="tile__link">
+            <span className="tile__title">Ingredientes</span>
+            <span className="tile__count">{ingredientes.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/alergenos" className="tile__link">
+            <span className="tile__title">Alérgenos</span>
+            <span className="tile__count">{alergenos.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/tecnicas" className="tile__link">
+            <span className="tile__title">Técnicas</span>
+            <span className="tile__count">{tecnicas.length}</span>
+          </Link>
+        </li>
+      </ul>
     </>
   );
 }

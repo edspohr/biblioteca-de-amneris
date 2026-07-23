@@ -16,25 +16,41 @@ export default async function MenusPage() {
 
   return (
     <>
-      <h1>Menús semanales</h1>
-      <p className="muted">{menus.length} menús · agrupados por etapa</p>
+      <header className="page-header">
+        <p className="page-header__eyebrow">Menús</p>
+        <h1 className="page-header__title">Menús semanales</h1>
+        <p className="page-header__lede muted">
+          {menus.length} menús · agrupados por etapa. Cada uno incluye la lista
+          de compras derivada de sus recetas.
+        </p>
+      </header>
 
       {etapasOrdenadas.map((etapa) => {
         const list = grouped.get(etapa.id) ?? [];
         if (list.length === 0) return null;
         return (
-          <section key={etapa.id}>
-            <h2>{etapa.nombre}</h2>
-            <div className="grid">
+          <section
+            key={etapa.id}
+            className="menu-etapa-section"
+            style={{
+              ["--etapa-primary" as string]: etapa.paleta.primary,
+              ["--etapa-soft" as string]: etapa.paleta.soft,
+              ["--etapa-ink" as string]: etapa.paleta.ink,
+            }}
+          >
+            <h2 className="section-title">{etapa.nombre}</h2>
+            <ul className="grid tile-grid">
               {list.map((m) => (
-                <div key={m.id} className="card">
-                  <Link href={`/menus/${m.id}`}>{m.nombre}</Link>
-                  <div className="meta">
-                    {m.menu_recetas.length} recetas · {etapaById.get(m.etapa_id)?.rango_edad}
-                  </div>
-                </div>
+                <li key={m.id} className="tile tile--menu">
+                  <Link href={`/menus/${m.id}`} className="tile__link">
+                    <span className="tile__title">{m.nombre}</span>
+                    <span className="tile__meta">
+                      {m.menu_recetas.length} recetas · {etapaById.get(m.etapa_id)?.rango_edad}
+                    </span>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         );
       })}

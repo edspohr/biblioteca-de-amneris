@@ -41,8 +41,9 @@ export function RecetaVarianteTabs({ receta, etapas }: Props) {
               onClick={() => setTab(e.id)}
               className="etapa-tab"
               style={{
-                background: active ? e.paleta.primary : "white",
-                color: active ? e.paleta.ink : "var(--muted)",
+                background: active ? e.paleta.primary : "var(--color-surface)",
+                color: active ? e.paleta.ink : "var(--color-ink-muted)",
+                borderColor: active ? e.paleta.ink : "var(--color-border)",
               }}
             >
               {e.nombre} <span style={{ opacity: 0.7 }}>· {e.rango_edad}</span>

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
@@ -51,91 +52,106 @@ export default async function MenuPage({
   });
 
   return (
-    <>
-      <p className="muted">
+    <article
+      className="menu"
+      style={
+        etapa
+          ? ({
+              ["--etapa-primary" as string]: etapa.paleta.primary,
+              ["--etapa-soft" as string]: etapa.paleta.soft,
+              ["--etapa-ink" as string]: etapa.paleta.ink,
+            } as CSSProperties)
+          : undefined
+      }
+    >
+      <p className="receta__back">
         <Link href="/menus">← Todos los menús</Link>
       </p>
-      <h1>{menu.nombre}</h1>
-      {etapa && (
-        <p className="muted">
-          <Link href={`/etapas/${etapa.id}`}>{etapa.nombre}</Link> · {etapa.rango_edad}
-        </p>
-      )}
+      <header className="page-header">
+        <p className="page-header__eyebrow">Menú semanal</p>
+        <h1 className="page-header__title">{menu.nombre}</h1>
+        {etapa && (
+          <p className="page-header__lede muted">
+            <Link href={`/etapas/${etapa.id}`}>{etapa.nombre}</Link> ·{" "}
+            {etapa.rango_edad}
+          </p>
+        )}
+      </header>
 
-      <h2>Plan semanal</h2>
+      <h2 className="section-title">Plan semanal</h2>
       {diasOrdenados.length === 0 ? (
         <p className="empty">Este menú no tiene recetas asignadas.</p>
       ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Día</th>
-              <th>Momento</th>
-              <th>Receta</th>
-            </tr>
-          </thead>
-          <tbody>
-            {diasOrdenados.flatMap((dia) =>
-              (porDia.get(dia) ?? []).map((row, idx) => {
-                const r = recetaById.get(row.receta_id);
-                return (
-                  <tr key={`${dia}-${idx}`}>
-                    <td>{idx === 0 ? dia : ""}</td>
-                    <td>{TIPOS_LABEL[row.momento] ?? row.momento}</td>
-                    <td>
-                      {r ? (
-                        <Link href={`/recetas/${r.id}`}>{r.titulo}</Link>
-                      ) : (
-                        <span className="muted">Receta no encontrada</span>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })
-            )}
-          </tbody>
-        </table>
+        <ul className="day-list" role="list">
+          {diasOrdenados.map((dia) => {
+            const rows = porDia.get(dia) ?? [];
+            return (
+              <li key={dia} className="day-list__day">
+                <h3 className="day-list__title">{dia}</h3>
+                <ul className="day-list__meals">
+                  {rows.map((row, idx) => {
+                    const r = recetaById.get(row.receta_id);
+                    return (
+                      <li key={`${dia}-${idx}`} className="day-list__meal">
+                        <span className="day-list__momento">
+                          {TIPOS_LABEL[row.momento] ?? row.momento}
+                        </span>
+                        <span className="day-list__receta">
+                          {r ? (
+                            <Link href={`/recetas/${r.id}`}>{r.titulo}</Link>
+                          ) : (
+                            <span className="muted">Receta no encontrada</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
       )}
 
-      <h2>Lista de compras</h2>
+      <h2 className="section-title">Lista de compras</h2>
       <p className="muted">
         Calculada a partir de los ingredientes de las recetas del menú.
       </p>
       {Object.keys(lista.por_categoria).length === 0 ? (
         <p className="empty">No hay ingredientes para calcular.</p>
       ) : (
-        Object.entries(lista.por_categoria)
-          .sort(([a], [b]) => a.localeCompare(b))
-          .map(([cat, items]) => (
-            <div key={cat}>
-              <h3>{cat}</h3>
-              <ul>
-                {items.map((item) => (
-                  <li key={item.ingrediente.id}>
-                    <strong>{item.ingrediente.nombre}</strong>
-                    {item.total_numerico.length > 0 && (
-                      <>
-                        {" — "}
-                        {item.total_numerico
-                          .map((t) => `${round(t.cantidad)} ${t.unidad}`)
-                          .join(" + ")}
-                      </>
-                    )}
-                    {item.cantidades.length > 0 && (
-                      <span className="muted">
-                        {" "}
-                        (
-                        {item.cantidades.join(", ")}
-                        )
+        <div className="shopping-list">
+          {Object.entries(lista.por_categoria)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([cat, items]) => (
+              <section key={cat} className="shopping-list__cat">
+                <h3 className="shopping-list__cat-title">{cat}</h3>
+                <ul className="shopping-list__items">
+                  {items.map((item) => (
+                    <li key={item.ingrediente.id} className="shopping-list__item">
+                      <span className="shopping-list__name">
+                        {item.ingrediente.nombre}
                       </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
+                      {item.total_numerico.length > 0 && (
+                        <span className="shopping-list__qty">
+                          {item.total_numerico
+                            .map((t) => `${round(t.cantidad)} ${t.unidad}`)
+                            .join(" + ")}
+                        </span>
+                      )}
+                      {item.cantidades.length > 0 && (
+                        <span className="shopping-list__note muted">
+                          {item.cantidades.join(", ")}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+        </div>
       )}
-    </>
+    </article>
   );
 }
 

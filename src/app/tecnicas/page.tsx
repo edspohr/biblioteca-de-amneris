@@ -12,22 +12,32 @@ export default async function TecnicasPage() {
 
   return (
     <>
-      <h1>Técnicas de cocina</h1>
-      <p className="muted">{tecnicas.length} técnicas · {tecnicas.filter((t) => !t.descripcion).length} pendientes de describir</p>
-      <div className="grid">
+      <header className="page-header">
+        <p className="page-header__eyebrow">Técnicas</p>
+        <h1 className="page-header__title">Técnicas de cocina</h1>
+        <p className="page-header__lede muted">
+          {tecnicas.length} técnicas · {tecnicas.filter((t) => !t.descripcion).length} pendientes de describir.
+        </p>
+      </header>
+      <ul className="grid tile-grid">
         {tecnicas
           .sort((a, b) => a.nombre.localeCompare(b.nombre))
           .map((t) => (
-            <div key={t.id} className="card">
-              <Link href={`/tecnicas/${t.id}`}>{t.nombre}</Link>
-              <div className="meta">
-                Usada en {usoPorTecnica.get(t.id) ?? 0} recetas
-              </div>
-              {t.descripcion && <div>{t.descripcion}</div>}
-              {!t.descripcion && <div className="muted">Sin descripción aún</div>}
-            </div>
+            <li key={t.id} className="tile">
+              <Link href={`/tecnicas/${t.id}`} className="tile__link">
+                <span className="tile__title">{t.nombre}</span>
+                <span className="tile__meta">
+                  Usada en {usoPorTecnica.get(t.id) ?? 0} recetas
+                </span>
+                {t.descripcion ? (
+                  <span className="tile__desc">{t.descripcion}</span>
+                ) : (
+                  <span className="tile__desc muted">Sin descripción aún</span>
+                )}
+              </Link>
+            </li>
           ))}
-      </div>
+      </ul>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
@@ -33,38 +34,42 @@ export default async function EtapaPage({
 
   return (
     <div style={scoped}>
-      <p className="muted">
+      <p className="receta__back">
         <Link href="/">← Inicio</Link>
       </p>
-      <h1>{etapa.nombre}</h1>
-      <p className="muted">
-        {etapa.rango_edad} · {etapa.textura}
-      </p>
+      <header className="page-header">
+        <p className="page-header__eyebrow">Etapa {etapa.orden}</p>
+        <h1 className="page-header__title">{etapa.nombre}</h1>
+        <p className="page-header__lede muted">
+          {etapa.rango_edad} · {etapa.textura}
+        </p>
+      </header>
       {etapa.descripcion && <p>{etapa.descripcion}</p>}
 
       {porciones.length > 0 && (
         <>
           <h2>Porciones y texturas por etapa</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Etapa</th>
-                <th>Rango de edad</th>
-                <th>Porción</th>
-                <th>Textura</th>
-              </tr>
-            </thead>
-            <tbody>
-              {porciones.map((p, i) => (
-                <tr key={i}>
-                  <td>{p.etapa_id}</td>
-                  <td>{p.rango_edad}</td>
-                  <td>{p.porcion}</td>
-                  <td>{p.textura}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <ul className="data-list" role="list">
+            {porciones.map((p, i) => (
+              <li key={i} className="data-list__item">
+                <div className="data-list__title">{p.etapa_id}</div>
+                <dl>
+                  <div>
+                    <dt>Rango de edad</dt>
+                    <dd>{p.rango_edad}</dd>
+                  </div>
+                  <div>
+                    <dt>Porción</dt>
+                    <dd>{p.porcion}</dd>
+                  </div>
+                  <div>
+                    <dt>Textura</dt>
+                    <dd>{p.textura}</dd>
+                  </div>
+                </dl>
+              </li>
+            ))}
+          </ul>
         </>
       )}
 
@@ -76,28 +81,40 @@ export default async function EtapaPage({
       {recetas.length === 0 ? (
         <p className="empty">Sin recetas registradas.</p>
       ) : (
-        <div className="grid">
+        <ul className="grid recipe-grid">
           {recetas.map((r) => {
             const v = r.variantes[etapa.id];
             return (
-              <div key={r.id} className="card">
-                {r.foto && <img src={r.foto} alt="" />}
-                <Link href={`/recetas/${r.id}`}>{r.titulo}</Link>
-                <div className="meta">
-                  {TIPOS_LABEL[r.tipo_comida] ?? r.tipo_comida}
-                  {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
-                </div>
-                {v && (
-                  <div className="meta">
-                    <strong>Textura:</strong> {v.textura}
-                    <br />
-                    <strong>Porción:</strong> {v.porcion}
-                  </div>
-                )}
-              </div>
+              <li key={r.id} className="card recipe-card">
+                <Link href={`/recetas/${r.id}`} className="recipe-card__link">
+                  {r.foto ? (
+                    <div className="recipe-card__photo">
+                      <Image
+                        src={r.foto}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="recipe-card__photo recipe-card__photo--placeholder" aria-hidden="true" />
+                  )}
+                  <span className="recipe-card__title">{r.titulo}</span>
+                  <span className="meta">
+                    {TIPOS_LABEL[r.tipo_comida] ?? r.tipo_comida}
+                    {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
+                  </span>
+                  {v && (
+                    <span className="meta meta--variant">
+                      <strong>Textura:</strong> {v.textura} · <strong>Porción:</strong> {v.porcion}
+                    </span>
+                  )}
+                </Link>
+              </li>
             );
           })}
-        </div>
+        </ul>
       )}
     </div>
   );
