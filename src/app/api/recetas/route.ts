@@ -3,9 +3,11 @@ import { repo } from "@/lib/repo";
 import { recetaSchema } from "@/lib/schema";
 import { slugify } from "@/lib/slug";
 import { badRequest, conflict, handleZodError } from "@/lib/api-errors";
+import { requireSuperadmin } from "@/lib/auth/require";
 
 export async function POST(req: Request) {
   try {
+    await requireSuperadmin();
     const body = await req.json();
     // If no id provided, derive from titulo
     const withId = {

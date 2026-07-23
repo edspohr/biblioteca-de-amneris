@@ -11,5 +11,31 @@ runConfig:
   concurrency: 80
   timeoutSeconds: 60
 
-# env: intentionally empty for this cycle.
-# The next cycle (Firestore integration) will add NEXT_PUBLIC_FIREBASE_* here.
+# Environment variables for Firebase Auth (Phase 1).
+# NEXT_PUBLIC_* values are safe to inline; the admin service-account JSON
+# must be stored as a Secret Manager secret and referenced with `secret:`.
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: ""              # TODO: paste from Firebase Console → Web app config
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: "biblioteca-amneris.firebaseapp.com"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: "biblioteca-amneris"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: "biblioteca-amneris.appspot.com"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: ""              # TODO: paste from Firebase Console
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: ""              # TODO: paste from Firebase Console
+    availability: [BUILD, RUNTIME]
+  # Admin SDK: store the entire service-account JSON as a secret named
+  # `firebase-admin-sa` in Secret Manager, granted to the App Hosting SA.
+  # Create with: firebase apphosting:secrets:set firebase-admin-sa
+  - variable: FIREBASE_ADMIN_SA
+    secret: firebase-admin-sa
+    availability: [RUNTIME]

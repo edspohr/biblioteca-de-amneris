@@ -8,3 +8,10 @@ data/.backup-*/
 tsconfig.tsbuildinfo
 docs/
 .firebase/
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+serviceAccountKey.json
+serviceAccountKey*.json

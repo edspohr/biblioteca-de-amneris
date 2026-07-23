@@ -1,7 +1,17 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { verifySession } from "@/lib/auth/session";
+import { LogoutButton } from "./logout-button";
 
-export default function AdminLayout({ children }: { children: ReactNode }) {
+export default async function AdminLayout({ children }: { children: ReactNode }) {
+  const user = await verifySession();
+  if (!user) {
+    redirect("/login?next=/admin");
+  }
+  if (!user.superadmin) {
+    redirect("/sin-permiso");
+  }
   return (
     <>
       <div
@@ -12,10 +22,18 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           borderRadius: 6,
           marginBottom: "1rem",
           fontSize: "0.9rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "1rem",
+          flexWrap: "wrap",
         }}
       >
-        <strong>Modo autoría.</strong> Los cambios que hagas aquí se guardan en
-        los archivos del proyecto. <Link href="/">Volver al lector</Link>
+        <span>
+          <strong>Modo autoría.</strong> Sesión iniciada como{" "}
+          <strong>{user.email ?? user.uid}</strong>. <Link href="/">Volver al lector</Link>
+        </span>
+        <LogoutButton />
       </div>
       <nav style={{ marginBottom: "1rem" }}>
         <ul

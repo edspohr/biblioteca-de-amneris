@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
+import { AuthError } from "@/lib/auth/require";
 
 export function badRequest(message: string, details?: unknown) {
   return NextResponse.json({ error: message, details }, { status: 400 });
@@ -18,6 +19,9 @@ export function serverError(message = "Error interno del servidor") {
 }
 
 export function handleZodError(err: unknown) {
+  if (err instanceof AuthError) {
+    return NextResponse.json({ error: err.message }, { status: err.status });
+  }
   if (err instanceof ZodError) {
     const details = err.errors.map((e) => ({
       field: e.path.join("."),

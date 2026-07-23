@@ -8,7 +8,6 @@ const LINKS: { href: string; label: string }[] = [
   { href: "/recetas", label: "Recetas" },
   { href: "/menus", label: "Menús" },
   { href: "/tecnicas", label: "Técnicas" },
-  { href: "/admin", label: "Autoría" },
 ];
 
 export function NavBar() {

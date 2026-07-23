@@ -3,9 +3,11 @@ import { repo } from "@/lib/repo";
 import { tecnicaSchema } from "@/lib/schema";
 import { slugify } from "@/lib/slug";
 import { badRequest, conflict, handleZodError } from "@/lib/api-errors";
+import { requireSuperadmin } from "@/lib/auth/require";
 
 export async function POST(req: Request) {
   try {
+    await requireSuperadmin();
     const body = await req.json();
     const withId = {
       ...body,
