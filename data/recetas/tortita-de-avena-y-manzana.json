@@ -1,0 +1,62 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/tortita-de-avena-y-manzana.png",
+  "id": "tortita-de-avena-y-manzana",
+  "kcal_100g": 120,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 13,
+  "pasos": [
+    "Mezclar avena, puré de manzana y huevo hasta obtener masa homogénea.",
+    "Cocinar en sartén antiadherente en pequeñas tortitas a fuego bajo.",
+    "Dorar suavemente por ambos lados.",
+    "Enfriar y cortar en tiras muy pequeñas antes de servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 3,
+      "ingrediente_id": "avena-molida",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "manzana",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "huevo",
+      "nota": null,
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Tortita de Avena y Manzana",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

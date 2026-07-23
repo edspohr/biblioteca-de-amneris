@@ -1,0 +1,74 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-salmon-con-espinaca-y-quinua.png",
+  "id": "pure-de-salmon-con-espinaca-y-quinua",
+  "kcal_100g": null,
+  "minutos_prep": 30,
+  "notas": null,
+  "numero": 61,
+  "pasos": [
+    "Cocer el salmón al vapor; verificar espinas.",
+    "Blanquear la espinaca; tener la quinua cocida.",
+    "Triturar el salmón con la espinaca, la quinua y el aceite.",
+    "Ajustar textura. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "salmon-sin-espinas",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "espinaca",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "quinua",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "blanquear"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Salmón con Espinaca y Quinua",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

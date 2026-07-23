@@ -1,0 +1,66 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/papilla-de-avena-con-leche-materna-o-formula.png",
+  "id": "papilla-de-avena-con-leche-materna-o-formula",
+  "kcal_100g": 68,
+  "minutos_prep": 10,
+  "notas": null,
+  "numero": 4,
+  "pasos": [
+    "Cocinar la avena en la leche a fuego lento 5–7 min, removiendo constantemente.",
+    "Triturar o batir si quedan grumos para obtener textura completamente lisa.",
+    "Enfriar a temperatura adecuada antes de servir.",
+    "No añadir sal, azúcar ni miel bajo ninguna circunstancia."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 20,
+      "ingrediente_id": "copos-avena-finos",
+      "nota": "2 cucharadas",
+      "unidad": "g"
+    },
+    {
+      "cantidad": 120,
+      "ingrediente_id": "leche-materna-o",
+      "nota": null,
+      "unidad": "ml"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "remover"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "batir"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Papilla de Avena con Leche Materna o Fórmula",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Hierro",
+    "Magnesio",
+    "Vit. B1"
+  ]
+}

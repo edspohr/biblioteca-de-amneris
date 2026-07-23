@@ -1,0 +1,69 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-kiwi-con-platano.png",
+  "id": "pure-de-kiwi-con-platano",
+  "kcal_100g": 65,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 109,
+  "pasos": [
+    "Pelar el kiwi y el plátano.",
+    "Triturar el kiwi hasta puré fino.",
+    "Machacar el plátano y mezclar con el puré de kiwi.",
+    "Pasar por colador si se desea más liso. Servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "kiwi",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 0.25,
+      "ingrediente_id": "platano",
+      "nota": null,
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "machacar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Puré de Kiwi con Plátano",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. K",
+    "Potasio"
+  ]
+}

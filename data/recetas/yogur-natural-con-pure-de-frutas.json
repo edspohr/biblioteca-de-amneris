@@ -1,0 +1,60 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/yogur-natural-con-pure-de-frutas.png",
+  "id": "yogur-natural-con-pure-de-frutas",
+  "kcal_100g": 78,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 10,
+  "pasos": [
+    "Lavar, pelar y trocear la fruta.",
+    "Triturar la fruta hasta obtener puré fino.",
+    "Mezclar el puré de fruta con el yogur natural.",
+    "Servir de inmediato. Introducir una fruta nueva a la vez."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 3,
+      "ingrediente_id": "yogur-natural-entero",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "fruta",
+      "nota": "2 a 3 cucharadas",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Yogur Natural con Puré de Frutas",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Calcio",
+    "Vit. D",
+    "Probióticos"
+  ]
+}

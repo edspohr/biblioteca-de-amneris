@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-zanahoria-y-papa.png",
+  "id": "pure-de-zanahoria-y-papa",
+  "kcal_100g": null,
+  "minutos_prep": 20,
+  "notas": null,
+  "numero": 5,
+  "pasos": [
+    "Pelar y cortar en trozos la zanahoria y la papa.",
+    "Cocer al vapor 12–15 min hasta que estén muy tiernos.",
+    "Triturar con agua de cocción hasta obtener puré completamente liso.",
+    "Añadir aceite de oliva para aportar calorías. Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "zanahoria",
+      "nota": "80 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "papa",
+      "nota": "80 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua-coccion",
+      "nota": "c/n para ajustar textura",
+      "unidad": null
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-oliva-extra",
+      "nota": "opcional",
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Zanahoria y Papa",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

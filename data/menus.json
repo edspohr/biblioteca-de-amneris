@@ -1,0 +1,1926 @@
+[
+  {
+    "dia": null,
+    "etapa_id": "etapa-1",
+    "id": "etapa-1-semana-1-1",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-calabaza-y-avena"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-zanahoria-y-papa"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "crema-de-calabaza-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-platano-con-yogur"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-manzana-compota"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-lentejas-rojas-con-calabaza"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "pure-de-papa-con-caldo-de-verduras"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-manzana-y-pera"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "pure-de-pera-y-platano"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-batata"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "sopa-de-zanahoria-y-jengibre-suave"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-aguacate-con-lima"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-avena-con-leche-materna-o-formula"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-brocoli-con-queso-suave"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-guisantes-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-ciruela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-zanahoria-y-papa"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-garbanzos-con-zanahoria"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-de-brocoli-con-papa-y-aceite"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-mango-con-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-y-manzana"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-calabacin-y-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "crema-de-lentejas-rojas-con-curcuma"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "compota-de-melocoton"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "pure-de-guisantes-y-menta"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "risotto-de-calabaza-para-bebe"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "pure-de-coliflor-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "pure-de-papaya-con-lima"
+      }
+    ],
+    "nombre": "Semana 1"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-1",
+    "id": "etapa-1-semana-2-2",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-pollo-con-calabacin"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pescado-blanco-con-patata-y-puerro"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "sopa-de-pollo-con-arroz-y-verduras"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-sandia-sin-semillas"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-lentejas-rojas-y-zanahoria"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-espinaca-con-queso-ricotta"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "pure-de-batata-con-aceite-de-coco"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-manzana-y-canela"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-guisantes"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-esparragos-con-papa-2"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-kiwi-con-platano"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-avena-con-pera-y-canela"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-fideos-finos-con-pollo"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "pure-de-zanahoria-y-patata-con-aceite"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-pera-y-ciruela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-platano-con-yogur-y-linaza"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-tofu-con-brocoli-y-zanahoria"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-queso-crema"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-fresas-con-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-coliflor-con-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "pure-de-espinaca-con-papa-y-aceite"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "compota-de-albaricoque"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-quinua-con-platano"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-cordero-con-verduras-de-raiz"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "sopa-de-lentejas-con-verduras"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "pure-de-platano-con-chia-y-coco"
+      }
+    ],
+    "nombre": "Semana 2"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-1",
+    "id": "etapa-1-semana-3-3",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "polenta-cremosa-con-espinaca-y-queso"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-nabo-y-zanahoria-con-aceite"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-alubias-blancas-con-calabacin"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "crema-de-arroz-con-verduras"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-ciruela-con-canela-suave"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-verduras-con-arroz"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-guisantes-con-patata-y-aceite"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "pure-de-tofu-suave-con-platano"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-espinaca-y-patata"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-remolacha-con-papa"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-mango-con-coco"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-guisantes-con-menta-y-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-de-acelgas-con-papa-y-aceite"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-pera-con-avena-y-canela"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-bacalao-con-patata-y-aceite-de-oliva"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "sopa-de-arroz-con-pollo-y-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "curry-suave-de-lentejas-para-bebe"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-brocoli-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      }
+    ],
+    "nombre": "Semana 3"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-1",
+    "id": "etapa-1-semana-3-4",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "polenta-cremosa-con-espinaca-y-queso"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-nabo-y-zanahoria-con-aceite"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-alubias-blancas-con-calabacin"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "crema-de-arroz-con-verduras"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-ciruela-con-canela-suave"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-verduras-con-arroz"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-guisantes-con-patata-y-aceite"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "pure-de-tofu-suave-con-platano"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-espinaca-y-patata"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-remolacha-con-papa"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-mango-con-coco"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-guisantes-con-menta-y-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-de-acelgas-con-papa-y-aceite"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-pera-con-avena-y-canela"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-bacalao-con-patata-y-aceite-de-oliva"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "sopa-de-arroz-con-pollo-y-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "curry-suave-de-lentejas-para-bebe"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-brocoli-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      }
+    ],
+    "nombre": "Semana 3"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-1",
+    "id": "etapa-1-semana-4-5",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "crema-de-calabaza-con-pera"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-guisantes-y-arroz"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-alcachofas-con-papa"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-platano-con-yogur"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-arroz-manzana-y-banana"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-zanahoria-con-jengibre-suave"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-mixtas-con-fideos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-manzana-y-pera"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-maiz-y-calabaza"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-puerro-y-papa-con-aceite"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-aguacate-con-lima"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-calabaza-y-avena"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-guisantes-y-patata"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "pure-de-chirivia-y-manzana"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-melocoton"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-zanahoria-y-papa"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-remolacha-con-manzana"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "crema-de-maiz-con-papa"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-papaya-con-lima"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-y-manzana"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-batata-y-arandanos"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "pure-de-remolacha-con-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "compota-de-pera-y-ciruela"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-pollo-con-fideos-y-verduras"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-arroz"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      }
+    ],
+    "nombre": "Semana 4"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-2",
+    "id": "etapa-2-semana-1-6",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-espinaca-con-queso-ricotta"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-queso-crema"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-fresas-con-yogur"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "polenta-cremosa-con-espinaca-y-queso"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-con-garbanzos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-quinua-con-platano"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-guisantes"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-espinaca-con-lentejas"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "compota-de-albaricoque"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-fideos-finos-con-pollo"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-batata-con-curcuma-y-coco"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "pure-de-mango-con-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-guisantes-con-menta-y-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-papa"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-legumbres-mixtas"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "sopa-de-alubias-blancas-con-verduras"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-merluza-con-brocoli-y-patata"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "pure-completo-de-verduras-de-temporada"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-de-pera-y-ciruela"
+      }
+    ],
+    "nombre": "Semana 1"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-2",
+    "id": "etapa-2-semana-2-7",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "crema-de-calabaza-con-pera"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "curry-suave-de-lentejas-para-bebe"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-papa"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-platano-con-chia-y-coco"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-arroz-manzana-y-banana"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-guisantes-y-arroz"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-mixtas-con-fideos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-manzana-y-pera"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "pure-de-platano-con-yogur-y-linaza"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-zanahoria-con-jengibre-suave"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-puerro-y-papa-con-aceite"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-kiwi-con-platano"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-maiz-y-calabaza"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "pure-de-chirivia-y-manzana"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-ciruela-con-canela-suave"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-guisantes-y-patata"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "crema-de-maiz-con-papa"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-mango-con-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-remolacha-con-manzana"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "pure-de-remolacha-con-zanahoria"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-batata-y-arandanos"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-arroz"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-manzana-y-canela"
+      }
+    ],
+    "nombre": "Semana 2"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-2",
+    "id": "etapa-2-semana-3-8",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-pollo-con-fideos-y-verduras"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-espinaca-con-lentejas"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "compota-de-albaricoque"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-legumbres-mixtas"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-con-garbanzos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "pure-de-sandia-sin-semillas"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-merluza-con-brocoli-y-patata"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-batata-con-curcuma-y-coco"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-ciruela"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-esparragos-con-papa-2"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "sopa-de-alubias-blancas-con-verduras"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "pure-de-fresas-con-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-quinua-con-platano"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-pimiento-rojo-y-arroz"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-completo-de-verduras-de-temporada"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "compota-de-melocoton"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "crema-de-calabaza-con-pera"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-calabaza-con-coco-y-jengibre-suave"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "pure-de-aguacate-con-lima"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-remolacha-y-papa"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-brocoli-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      }
+    ],
+    "nombre": "Semana 3"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-2",
+    "id": "etapa-2-semana-4-9",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-avena-con-pera-y-canela"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-brocoli-con-batata-y-chia"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "sopa-de-arroz-con-pollo-y-zanahoria"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-aguacate-y-lima"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "crema-de-puerro-y-papa-con-aceite"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-pera-y-ciruela"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-espinaca-y-quinua"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-alcachofas-con-papa"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-kiwi-con-platano"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-curcuma"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-maiz-con-papa"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-calabaza-y-mijo"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-de-remolacha-con-zanahoria"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "pure-de-platano-con-yogur-y-linaza"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-coliflor-con-salmon-y-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-arroz"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "pure-de-papaya-con-lima"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-completo-de-pollo-con-verduras-de-temporada"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "pure-de-nabo-y-zanahoria-con-aceite"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-de-mango-con-coco"
+      }
+    ],
+    "nombre": "Semana 4"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-3",
+    "id": "etapa-3-semana-1-10",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "pure-completo-de-pollo-con-verduras-de-temporada"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-completo-de-verduras-de-temporada"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-fresas-con-yogur"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-coliflor-con-salmon-y-papa"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-con-garbanzos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-albaricoque"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-calabaza-y-mijo"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-batata-con-curcuma-y-coco"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-curcuma"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "pure-de-espinaca-con-lentejas"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "pure-de-mango-con-yogur"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-quinua-con-platano"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-espinaca-y-quinua"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "sopa-de-alubias-blancas-con-verduras"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "crema-de-calabaza-con-pera"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-aguacate-y-lima"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "crema-de-zanahoria-con-lentejas-y-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-arroz-manzana-y-banana"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-brocoli-con-batata-y-chia"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-arroz"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      }
+    ],
+    "nombre": "Semana 1"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-3",
+    "id": "etapa-3-semana-2-11",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-remolacha-y-papa"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-remolacha-con-zanahoria"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "compota-de-ciruela-con-canela-suave"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-calabaza-con-coco-y-jengibre-suave"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "crema-de-maiz-con-papa"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "pure-de-kiwi-con-platano"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "pure-de-platano-con-yogur-y-linaza"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-pimiento-rojo-y-arroz"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-chirivia-y-manzana"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "compota-de-mango-con-coco"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-esparragos-con-papa-2"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-puerro-y-papa-con-aceite"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "pure-de-pera-con-avena-y-canela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-merluza-con-brocoli-y-patata"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "sopa-de-verduras-mixtas-con-fideos"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-manzana-y-canela"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-legumbres-mixtas"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "pure-de-alcachofas-con-papa"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "pure-de-sandia-sin-semillas"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-avena-con-pera-y-canela"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-pollo-con-fideos-y-verduras"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "crema-de-brocoli-con-aceite-de-oliva"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-de-melocoton"
+      }
+    ],
+    "nombre": "Semana 2"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-3",
+    "id": "etapa-3-semana-3-12",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "huevos-revueltos-con-espinaca"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-pollo-con-fideos-y-verduras"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "sopa-de-arroz-con-pollo-y-zanahoria"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-aguacate-con-lima"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "mini-muffins-de-avena-y-zanahoria"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pavo-con-batata-y-arandanos"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "pure-de-acelgas-con-papa-y-aceite"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-manzana-y-pera"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "tortita-de-avena-y-manzana"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-remolacha-con-manzana"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "crema-de-remolacha-con-papa"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-platano-con-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-salmon-con-guisantes-y-patata"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "pure-de-guisantes-con-patata-y-aceite"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-ciruela"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "crema-de-calabaza-con-pera"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-maiz-y-calabaza"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "crema-de-arroz-con-verduras"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "pure-de-fresas-con-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-quinua-con-platano"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-zanahoria-con-jengibre-suave"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "pure-de-nabo-y-zanahoria-con-aceite"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "compota-de-albaricoque"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-arroz-manzana-y-banana"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-ternera-con-guisantes-y-arroz"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "sopa-de-lentejas-con-verduras"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "compota-especial-de-frutas-mixtas"
+      }
+    ],
+    "nombre": "Semana 3"
+  },
+  {
+    "dia": null,
+    "etapa_id": "etapa-3",
+    "id": "etapa-3-semana-4-13",
+    "menu_recetas": [
+      {
+        "dia": "Lunes",
+        "momento": "desayuno",
+        "receta_id": "pure-de-platano-con-chia-y-coco"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "almuerzo",
+        "receta_id": "curry-suave-de-lentejas-para-bebe"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "cena",
+        "receta_id": "pure-de-espinaca-con-papa-y-aceite"
+      },
+      {
+        "dia": "Lunes",
+        "momento": "merienda",
+        "receta_id": "pure-de-pera-con-avena-y-canela"
+      },
+      {
+        "dia": "Martes",
+        "momento": "desayuno",
+        "receta_id": "gachas-de-mijo-con-manzana-y-ciruela"
+      },
+      {
+        "dia": "Martes",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-bacalao-con-patata-y-aceite-de-oliva"
+      },
+      {
+        "dia": "Martes",
+        "momento": "cena",
+        "receta_id": "crema-de-calabacin-con-queso-crema"
+      },
+      {
+        "dia": "Martes",
+        "momento": "merienda",
+        "receta_id": "compota-de-mango-con-coco"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-chia-con-compota-de-fruta"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "almuerzo",
+        "receta_id": "crema-de-guisantes-con-menta-y-yogur"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "cena",
+        "receta_id": "pure-de-zanahoria-y-patata-con-aceite"
+      },
+      {
+        "dia": "Miércoles",
+        "momento": "merienda",
+        "receta_id": "pure-de-melon-con-yogur"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-semola-con-manzana"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-pollo-con-espinaca-y-patata"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "cena",
+        "receta_id": "crema-de-esparragos-con-papa-2"
+      },
+      {
+        "dia": "Jueves",
+        "momento": "merienda",
+        "receta_id": "compota-de-ciruela-con-canela-suave"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "desayuno",
+        "receta_id": "yogur-natural-con-pure-de-frutas"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "almuerzo",
+        "receta_id": "sopa-de-verduras-con-arroz"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "cena",
+        "receta_id": "pure-de-batata-con-aceite-de-coco"
+      },
+      {
+        "dia": "Viernes",
+        "momento": "merienda",
+        "receta_id": "yogur-con-pure-de-arandanos"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "desayuno",
+        "receta_id": "pure-de-batata-con-pera-y-yogur"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "almuerzo",
+        "receta_id": "pure-de-alubias-blancas-con-calabacin"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "cena",
+        "receta_id": "sopa-de-pollo-con-arroz-y-verduras"
+      },
+      {
+        "dia": "Sábado",
+        "momento": "merienda",
+        "receta_id": "pure-de-kiwi-con-platano"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "desayuno",
+        "receta_id": "papilla-de-avena-con-pera-y-canela"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "almuerzo",
+        "receta_id": "polenta-cremosa-con-espinaca-y-queso"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "cena",
+        "receta_id": "sopa-de-zanahoria-y-jengibre-suave"
+      },
+      {
+        "dia": "Domingo",
+        "momento": "merienda",
+        "receta_id": "yogur-con-compota-de-frambuesa"
+      }
+    ],
+    "nombre": "Semana 4"
+  }
+]

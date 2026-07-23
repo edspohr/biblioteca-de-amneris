@@ -1,0 +1,77 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-pescado-blanco-con-patata-y-puerro.png",
+  "id": "pure-de-pescado-blanco-con-patata-y-puerro",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 32,
+  "pasos": [
+    "Cocer el pescado al vapor 8 min; verificar espinas.",
+    "Cocer la patata y el puerro hasta muy tiernos.",
+    "Triturar todo junto con aceite de oliva.",
+    "Pasar por colador fino. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "merluza-o-lenguado",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 80,
+      "ingrediente_id": "patata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 30,
+      "ingrediente_id": "puerro",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Pescado Blanco con Patata y Puerro",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

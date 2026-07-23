@@ -1,0 +1,77 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-ternera-con-guisantes.jpg",
+  "id": "pure-de-ternera-con-guisantes",
+  "kcal_100g": null,
+  "minutos_prep": 35,
+  "notas": null,
+  "numero": 34,
+  "pasos": [
+    "Cocer la ternera en agua 25–30 min hasta muy tierna.",
+    "Cocer los guisantes y la zanahoria al vapor.",
+    "Triturar la carne con las verduras y el caldo.",
+    "Pasar por colador si quedan fibras. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "ternera-magra-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "guisantes",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "caldo-sin-sal",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Ternera con Guisantes",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

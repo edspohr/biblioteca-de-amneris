@@ -1,0 +1,62 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/gachas-de-mijo-con-manzana-y-ciruela.png",
+  "id": "gachas-de-mijo-con-manzana-y-ciruela",
+  "kcal_100g": 85,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 19,
+  "pasos": [
+    "Cocer el mijo hasta que esté muy blando.",
+    "Cocer la manzana y la ciruela por separado hasta ablandar.",
+    "Triturar el mijo con la manzana y la ciruela hasta papilla suave.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 2,
+      "ingrediente_id": "mijo",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "manzana",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "ciruela",
+      "nota": null,
+      "unidad": "cucharada"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Gachas de Mijo con Manzana y Ciruela",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

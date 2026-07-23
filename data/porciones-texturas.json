@@ -1,0 +1,20 @@
+[
+  {
+    "etapa_id": "etapa-1",
+    "porcion": "2 a 3 cucharadas",
+    "rango_edad": "6 a 9 meses",
+    "textura": "Puré muy liso sin grumos"
+  },
+  {
+    "etapa_id": "etapa-2",
+    "porcion": "3 a 5 cucharadas",
+    "rango_edad": "10 a 11 meses",
+    "textura": "Papilla espesa con algo de textura"
+  },
+  {
+    "etapa_id": "etapa-3",
+    "porcion": "½ taza",
+    "rango_edad": "12 a 24 meses",
+    "textura": "Trozos blandos y comidas familiares adaptadas"
+  }
+]

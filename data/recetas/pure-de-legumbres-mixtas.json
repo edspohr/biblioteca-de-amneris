@@ -1,0 +1,74 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-legumbres-mixtas.png",
+  "id": "pure-de-legumbres-mixtas",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 53,
+  "pasos": [
+    "Tener todas las legumbres cocidas y escurridas.",
+    "Triturar junto con la zanahoria cocida.",
+    "Añadir aceite de oliva y ajustar textura.",
+    "Pasar por colador. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 40,
+      "ingrediente_id": "lentejas",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 40,
+      "ingrediente_id": "garbanzos",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Legumbres Mixtas",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

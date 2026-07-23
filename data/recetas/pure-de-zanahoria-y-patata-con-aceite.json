@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-zanahoria-y-patata-con-aceite.png",
+  "id": "pure-de-zanahoria-y-patata-con-aceite",
+  "kcal_100g": null,
+  "minutos_prep": 20,
+  "notas": null,
+  "numero": 76,
+  "pasos": [
+    "Cocer zanahoria y patata al vapor.",
+    "Triturar con aceite y agua de cocción.",
+    "Ajustar textura.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "zanahoria",
+      "nota": "80 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 80,
+      "ingrediente_id": "patata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua-coccion",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "cena",
+  "titulo": "Puré de Zanahoria y Patata con Aceite",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

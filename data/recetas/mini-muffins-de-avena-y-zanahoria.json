@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "2–3 días en refrigerador / 2 meses congelado",
+  "foto": "/images/recetas/mini-muffins-de-avena-y-zanahoria.png",
+  "id": "mini-muffins-de-avena-y-zanahoria",
+  "kcal_100g": null,
+  "minutos_prep": 20,
+  "notas": null,
+  "numero": 20,
+  "pasos": [
+    "Precalentar horno a 180°C.",
+    "Mezclar todos los ingredientes hasta obtener masa homogénea.",
+    "Verter en moldes de muffin pequeños.",
+    "Hornear 15–18 min. Enfriar y ofrecer desmenuzados."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "avena-molida",
+      "nota": "60 g",
+      "unidad": "taza"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "zanahoria",
+      "nota": "80 g",
+      "unidad": "taza"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "huevo",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "platano-o-manzana",
+      "nota": "2 a 3 cucharadas",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    },
+    {
+      "tecnica_id": "hornear"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Mini Muffins de Avena y Zanahoria",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

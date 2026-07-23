@@ -1,0 +1,68 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/sopa-de-lentejas-con-verduras.png",
+  "id": "sopa-de-lentejas-con-verduras",
+  "kcal_100g": null,
+  "minutos_prep": 30,
+  "notas": null,
+  "numero": 79,
+  "pasos": [
+    "Cocer las lentejas con las verduras en el caldo 20 min.",
+    "Triturar hasta crema suave.",
+    "Ajustar textura.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 50,
+      "ingrediente_id": "lentejas-rojas",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "calabacin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 250,
+      "ingrediente_id": "caldo-sin-sal",
+      "nota": null,
+      "unidad": "ml"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "cena",
+  "titulo": "Sopa de Lentejas con Verduras",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

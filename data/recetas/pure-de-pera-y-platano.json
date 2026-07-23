@@ -1,0 +1,69 @@
+{
+  "congelable": true,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-pera-y-platano.png",
+  "id": "pure-de-pera-y-platano",
+  "kcal_100g": 72,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 3,
+  "pasos": [
+    "Cocer la pera al vapor 8 min si es firme; si está muy madura, usar cruda.",
+    "Machacar el plátano con tenedor hasta obtener puré suave.",
+    "Triturar la pera y mezclar con el plátano hasta textura homogénea.",
+    "Enfriar y servir a temperatura ambiente."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "pera",
+      "nota": "120 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "platano",
+      "nota": null,
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "machacar"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Pera y Plátano",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. B6",
+    "Potasio"
+  ]
+}

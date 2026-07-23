@@ -1,0 +1,74 @@
+[
+  {
+    "descripcion": null,
+    "id": "batir",
+    "nombre": "Batir",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "blanquear",
+    "nombre": "Blanquear",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "cocer-al-vapor",
+    "nombre": "Cocer al vapor",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "colar",
+    "nombre": "Colar",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "enfriar",
+    "nombre": "Enfriar",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "hornear",
+    "nombre": "Hornear",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "machacar",
+    "nombre": "Machacar",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "mezclar",
+    "nombre": "Mezclar",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "remover",
+    "nombre": "Remover",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "saltear",
+    "nombre": "Saltear",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "tamizar",
+    "nombre": "Tamizar",
+    "seccion_origen": "Sección 2"
+  },
+  {
+    "descripcion": null,
+    "id": "triturar",
+    "nombre": "Triturar",
+    "seccion_origen": "Sección 2"
+  }
+]

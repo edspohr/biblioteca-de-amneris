@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-pavo-con-batata-y-arandanos.png",
+  "id": "pure-de-pavo-con-batata-y-arandanos",
+  "kcal_100g": null,
+  "minutos_prep": 30,
+  "notas": null,
+  "numero": 51,
+  "pasos": [
+    "Cocer el pavo en agua sin sal.",
+    "Cocer la batata al vapor.",
+    "Cocer levemente los arándanos en poca agua.",
+    "Triturar todo con el caldo y enfriar antes de servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 80,
+      "ingrediente_id": "pechuga-pavo-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 100,
+      "ingrediente_id": "batata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "arandanos-o-congelados",
+      "nota": null,
+      "unidad": "cucharada"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "caldo-sin-sal",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Pavo con Batata y Arándanos",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

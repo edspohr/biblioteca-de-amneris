@@ -1,0 +1,68 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-batata-con-pera-y-yogur.png",
+  "id": "pure-de-batata-con-pera-y-yogur",
+  "kcal_100g": 90,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 15,
+  "pasos": [
+    "Cocer la batata y la pera al vapor hasta muy tiernas.",
+    "Triturar cada una por separado.",
+    "Mezclar los purés con el yogur hasta textura cremosa.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 3,
+      "ingrediente_id": "batata",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "pera",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "yogur-natural-sin",
+      "nota": "1 a 2 cucharadas",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Batata con Pera y Yogur",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

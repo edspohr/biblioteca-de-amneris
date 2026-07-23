@@ -1,0 +1,89 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/papilla-de-calabaza-y-avena.png",
+  "id": "papilla-de-calabaza-y-avena",
+  "kcal_100g": 68,
+  "minutos_prep": 20,
+  "notas": null,
+  "numero": 1,
+  "pasos": [
+    "Cocer la calabaza al vapor por 10–15 min hasta que esté muy blanda.",
+    "Calentar el líquido en cazo; agregar avena y cocinar 6–8 min removiendo constantemente.",
+    "Añadir el puré de calabaza cocida y triturada; mezclar bien.",
+    "Pasar por colador fino para obtener textura completamente lisa.",
+    "Retirar del fuego y enfriar a temperatura tibia antes de servir.",
+    "Agregar yogur y pizca de canela si se desea. No añadir sal ni azúcar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 60,
+      "ingrediente_id": "calabaza",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 10,
+      "ingrediente_id": "avena-integral-copos",
+      "nota": "1 cucharada sopera",
+      "unidad": "g"
+    },
+    {
+      "cantidad": 120,
+      "ingrediente_id": "agua-o-leche",
+      "nota": null,
+      "unidad": "ml"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "yogur-natural-sin",
+      "nota": "opcional",
+      "unidad": "cucharada"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "remover"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Papilla de Calabaza y Avena",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. A",
+    "Vit. C",
+    "Vit. B1"
+  ]
+}

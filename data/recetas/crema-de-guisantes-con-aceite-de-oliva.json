@@ -1,0 +1,68 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/crema-de-guisantes-con-aceite-de-oliva.png",
+  "id": "crema-de-guisantes-con-aceite-de-oliva",
+  "kcal_100g": 81,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 69,
+  "pasos": [
+    "Cocer los guisantes 5–7 min.",
+    "Triturar con el aceite y agua de cocción.",
+    "Pasar por colador fino.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 100,
+      "ingrediente_id": "guisantes",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua-coccion",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "cena",
+  "titulo": "Crema de Guisantes con Aceite de Oliva",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

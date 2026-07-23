@@ -1,0 +1,62 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-manzana-compota.png",
+  "id": "pure-de-manzana-compota",
+  "kcal_100g": 52,
+  "minutos_prep": 15,
+  "notas": "Favorece la digestión y el tránsito intestinal",
+  "numero": 2,
+  "pasos": [
+    "Pelar, descorazonar y cortar la manzana en trozos pequeños.",
+    "Cocer al vapor 5 min hasta que esté muy blanda.",
+    "Triturar hasta obtener puré completamente liso.",
+    "Pasar por colador fino. Enfriar y servir. No añadir azúcar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "manzana-roja",
+      "nota": "150 g",
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Manzana — Compota",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. B6"
+  ]
+}

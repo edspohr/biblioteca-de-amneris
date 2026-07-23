@@ -1,0 +1,44 @@
+[
+  {
+    "descripcion": "Introducción a la alimentación complementaria con purés lisos.",
+    "id": "etapa-1",
+    "nombre": "Etapa 1 · Primeros Sabores",
+    "orden": 1,
+    "paleta": {
+      "accent": "#7FBFA0",
+      "ink": "#2F5D46",
+      "primary": "#B8E0C8",
+      "soft": "#EAF7EF"
+    },
+    "rango_edad": "6 a 9 meses",
+    "textura": "Papilla lisa sin trozos"
+  },
+  {
+    "descripcion": "Introducción gradual de texturas y trozos blandos.",
+    "id": "etapa-2",
+    "nombre": "Etapa 2 · Explorando Texturas",
+    "orden": 2,
+    "paleta": {
+      "accent": "#F5A97A",
+      "ink": "#7A4321",
+      "primary": "#FDD0B1",
+      "soft": "#FFF1E6"
+    },
+    "rango_edad": "10 a 11 meses",
+    "textura": "Papilla con textura y pequeños trozos"
+  },
+  {
+    "descripcion": "El bebé come lo mismo que la familia, adaptado.",
+    "id": "etapa-3",
+    "nombre": "Etapa 3 · Compartiendo la Mesa",
+    "orden": 3,
+    "paleta": {
+      "accent": "#A98BD1",
+      "ink": "#4A3771",
+      "primary": "#D6C6EC",
+      "soft": "#F1EBFA"
+    },
+    "rango_edad": "12 a 24 meses",
+    "textura": "Trozos blandos, comidas de la familia adaptadas"
+  }
+]

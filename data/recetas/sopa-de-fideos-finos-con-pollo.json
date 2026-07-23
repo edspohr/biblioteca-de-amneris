@@ -1,0 +1,68 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/sopa-de-fideos-finos-con-pollo.png",
+  "id": "sopa-de-fideos-finos-con-pollo",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 35,
+  "pasos": [
+    "Calentar el caldo a fuego medio.",
+    "Agregar los fideos y cocer hasta muy blandos.",
+    "Añadir el pollo desmenuzado y la zanahoria.",
+    "Triturar o servir según la etapa del bebé. Enfriar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 20,
+      "ingrediente_id": "fideos-finos-o",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "pollo-desmenuzado",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 40,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 200,
+      "ingrediente_id": "caldo-pollo-sin",
+      "nota": null,
+      "unidad": "ml"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Sopa de Fideos Finos con Pollo",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

@@ -1,0 +1,71 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-bacalao-con-patata-y-aceite-de-oliva.png",
+  "id": "pure-de-bacalao-con-patata-y-aceite-de-oliva",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 44,
+  "pasos": [
+    "Cocer el bacalao al vapor 8 min; revisar espinas.",
+    "Cocer la patata hasta muy tierna.",
+    "Triturar todo con el aceite de oliva.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "bacalao-desalado-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 100,
+      "ingrediente_id": "patata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva-extra",
+      "nota": null,
+      "unidad": "cucharadita"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "perejil",
+      "nota": "Pizca",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Bacalao con Patata y Aceite de Oliva",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

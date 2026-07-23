@@ -1,0 +1,62 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-platano-con-yogur-y-linaza.png",
+  "id": "pure-de-platano-con-yogur-y-linaza",
+  "kcal_100g": 95,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 12,
+  "pasos": [
+    "Machacar el plátano con tenedor hasta obtener puré.",
+    "Mezclar con el yogur.",
+    "Agregar la linaza molida y mezclar bien.",
+    "Servir de inmediato."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "platano",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "yogur-natural-sin",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "linaza-molida",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "machacar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Plátano con Yogur y Linaza",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

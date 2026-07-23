@@ -1,0 +1,58 @@
+[
+  {
+    "id": "altramuces",
+    "nombre": "Altramuces"
+  },
+  {
+    "id": "apio",
+    "nombre": "Apio"
+  },
+  {
+    "id": "cacahuetes",
+    "nombre": "Cacahuetes"
+  },
+  {
+    "id": "crustaceos",
+    "nombre": "Crustáceos"
+  },
+  {
+    "id": "dioxido-de-azufre",
+    "nombre": "Dióxido de azufre"
+  },
+  {
+    "id": "frutos-secos",
+    "nombre": "Frutos secos"
+  },
+  {
+    "id": "gluten",
+    "nombre": "Gluten"
+  },
+  {
+    "id": "huevo",
+    "nombre": "Huevo"
+  },
+  {
+    "id": "lacteos",
+    "nombre": "Lácteos"
+  },
+  {
+    "id": "moluscos",
+    "nombre": "Moluscos"
+  },
+  {
+    "id": "mostaza",
+    "nombre": "Mostaza"
+  },
+  {
+    "id": "pescado",
+    "nombre": "Pescado"
+  },
+  {
+    "id": "sesamo",
+    "nombre": "Sésamo"
+  },
+  {
+    "id": "soja",
+    "nombre": "Soja"
+  }
+]

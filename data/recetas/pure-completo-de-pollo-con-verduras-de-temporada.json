@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-completo-de-pollo-con-verduras-de-temporada.png",
+  "id": "pure-completo-de-pollo-con-verduras-de-temporada",
+  "kcal_100g": null,
+  "minutos_prep": 35,
+  "notas": null,
+  "numero": 65,
+  "pasos": [
+    "Cocer el pollo en agua sin sal.",
+    "Cocer todas las verduras al vapor.",
+    "Triturar el pollo con las verduras, el arroz y el aceite.",
+    "Ajustar textura según la etapa. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 80,
+      "ingrediente_id": "pechuga-pollo-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 150,
+      "ingrediente_id": "verduras-temporada-mixtas",
+      "nota": null,
+      "unidad": "g total"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "arroz-blanco",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré Completo de Pollo con Verduras de Temporada",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

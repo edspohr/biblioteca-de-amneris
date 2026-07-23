@@ -1,0 +1,63 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-mango-con-yogur.png",
+  "id": "pure-de-mango-con-yogur",
+  "kcal_100g": 75,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 104,
+  "pasos": [
+    "Pelar y cortar el mango.",
+    "Triturar hasta puré fino.",
+    "Mezclar con el yogur.",
+    "Enfriar y servir de inmediato."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.25,
+      "ingrediente_id": "mango",
+      "nota": "60 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "yogur-natural-sin",
+      "nota": null,
+      "unidad": "cucharadas"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Puré de Mango con Yogur",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. A",
+    "Calcio"
+  ]
+}

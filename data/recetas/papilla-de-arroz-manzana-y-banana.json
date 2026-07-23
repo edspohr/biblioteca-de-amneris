@@ -1,0 +1,71 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/papilla-de-arroz-manzana-y-banana.png",
+  "id": "papilla-de-arroz-manzana-y-banana",
+  "kcal_100g": 82,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 23,
+  "pasos": [
+    "Cocer el arroz integral hasta muy blando y triturar.",
+    "Cocer la manzana al vapor y triturar.",
+    "Machacar la banana.",
+    "Mezclar los tres ingredientes hasta textura homogénea. Enfriar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 2,
+      "ingrediente_id": "arroz-integral",
+      "nota": "30 g",
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "manzana",
+      "nota": "1 a 2 cucharadas",
+      "unidad": null
+    },
+    {
+      "cantidad": 0.25,
+      "ingrediente_id": "banana",
+      "nota": null,
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "machacar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Papilla de Arroz, Manzana y Banana",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

@@ -1,0 +1,60 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-sandia-sin-semillas.png",
+  "id": "pure-de-sandia-sin-semillas",
+  "kcal_100g": 30,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 107,
+  "pasos": [
+    "Retirar la cáscara y las semillas.",
+    "Trocear la pulpa.",
+    "Triturar hasta puré liso.",
+    "Enfriar y servir. Verificar que no queden semillas."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 100,
+      "ingrediente_id": "sandia-sin-semillas",
+      "nota": "pulpa",
+      "unidad": "g"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "unas-gotas-limon",
+      "nota": "Pizca",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Puré de Sandía sin Semillas",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Licopeno",
+    "Agua"
+  ]
+}

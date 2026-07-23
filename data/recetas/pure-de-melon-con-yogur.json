@@ -1,0 +1,63 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-melon-con-yogur.png",
+  "id": "pure-de-melon-con-yogur",
+  "kcal_100g": 50,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 116,
+  "pasos": [
+    "Pelar el melón y retirar las semillas.",
+    "Triturar la pulpa hasta puré liso.",
+    "Mezclar con el yogur.",
+    "Enfriar y servir frío."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 100,
+      "ingrediente_id": "melon-sin-semillas",
+      "nota": "pulpa",
+      "unidad": "g"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "yogur-natural-sin",
+      "nota": null,
+      "unidad": "cucharadas"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Puré de Melón con Yogur",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. A",
+    "Calcio"
+  ]
+}

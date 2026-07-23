@@ -1,0 +1,63 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/compota-de-pera-y-ciruela.png",
+  "id": "compota-de-pera-y-ciruela",
+  "kcal_100g": 58,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 110,
+  "pasos": [
+    "Pelar y trocear la pera y la ciruela.",
+    "Cocer al vapor 8 min hasta muy blandas.",
+    "Triturar hasta compota suave.",
+    "Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "pera",
+      "nota": "120 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "ciruela-sin-hueso",
+      "nota": null,
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Compota de Pera y Ciruela",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Fibra",
+    "Sorbitol"
+  ]
+}

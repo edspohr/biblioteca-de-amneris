@@ -1,0 +1,77 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-pollo-con-zanahoria-y-papa.png",
+  "id": "pure-de-pollo-con-zanahoria-y-papa",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 25,
+  "pasos": [
+    "Cocer el pollo en agua sin sal 15–20 min.",
+    "Cocer zanahoria y papa al vapor hasta muy tiernas.",
+    "Triturar todo junto con el caldo de cocción.",
+    "Pasar por colador. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 80,
+      "ingrediente_id": "pechuga-pollo-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "zanahoria",
+      "nota": "80 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "papa",
+      "nota": "60 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua-o-caldo",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Pollo con Zanahoria y Papa",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

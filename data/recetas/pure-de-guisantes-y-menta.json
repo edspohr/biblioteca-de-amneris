@@ -1,0 +1,68 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-guisantes-y-menta.png",
+  "id": "pure-de-guisantes-y-menta",
+  "kcal_100g": 81,
+  "minutos_prep": 12,
+  "notas": null,
+  "numero": 7,
+  "pasos": [
+    "Cocer los guisantes 5–7 min hasta muy tiernos.",
+    "Triturar con la hoja de menta y poco líquido.",
+    "Pasar por colador fino para eliminar la piel.",
+    "Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 100,
+      "ingrediente_id": "guisantes",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "hoja-menta",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Puré de Guisantes y Menta",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

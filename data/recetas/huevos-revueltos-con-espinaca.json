@@ -1,0 +1,65 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/huevos-revueltos-con-espinaca.png",
+  "id": "huevos-revueltos-con-espinaca",
+  "kcal_100g": 105,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 16,
+  "pasos": [
+    "Batir el huevo.",
+    "Calentar el aceite en sartén a fuego bajo.",
+    "Agregar el huevo batido y la espinaca; remover constantemente.",
+    "Cocinar bien hasta que no quede crudo. Enfriar y cortar en trozos pequeños."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "huevo",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "espinaca",
+      "nota": "1 a 2 cucharadas",
+      "unidad": null
+    },
+    {
+      "cantidad": 1,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "batir"
+    },
+    {
+      "tecnica_id": "remover"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Huevos Revueltos con Espinaca",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

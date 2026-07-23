@@ -1,0 +1,27 @@
+{
+  "name": "bocaditos-del-corazon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "extract": "tsx scripts/extract.ts",
+    "migrate:variantes": "tsx scripts/migrate-variantes.ts"
+  },
+  "dependencies": {
+    "next": "16.2.11",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "@xmldom/xmldom": "0.9.10",
+    "jszip": "3.10.1",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3"
+  }
+}

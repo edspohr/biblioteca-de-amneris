@@ -1,0 +1,74 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-pollo-con-espinaca-y-patata.png",
+  "id": "pure-de-pollo-con-espinaca-y-patata",
+  "kcal_100g": null,
+  "minutos_prep": 30,
+  "notas": null,
+  "numero": 42,
+  "pasos": [
+    "Cocer el pollo en agua sin sal.",
+    "Cocer la patata al vapor; blanquear la espinaca.",
+    "Triturar todo junto con el aceite.",
+    "Enfriar y servir a temperatura adecuada."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 80,
+      "ingrediente_id": "pechuga-pollo-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "espinaca",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 80,
+      "ingrediente_id": "patata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "blanquear"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Pollo con Espinaca y Patata",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

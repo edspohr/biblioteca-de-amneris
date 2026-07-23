@@ -1,0 +1,65 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/papilla-de-quinua-con-platano.png",
+  "id": "papilla-de-quinua-con-platano",
+  "kcal_100g": 110,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 14,
+  "pasos": [
+    "Cocinar la quinua hasta que esté muy blanda.",
+    "Machacar el plátano y el aguacate hasta obtener puré.",
+    "Mezclar todos los ingredientes hasta textura deseada.",
+    "Enfriar y servir a temperatura ambiente."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 2,
+      "ingrediente_id": "quinua",
+      "nota": null,
+      "unidad": "cucharadas"
+    },
+    {
+      "cantidad": 0.25,
+      "ingrediente_id": "platano",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 2,
+      "ingrediente_id": "aguacate",
+      "nota": null,
+      "unidad": "cucharadas"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "machacar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Papilla de Quinua con Plátano",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

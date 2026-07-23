@@ -1,0 +1,63 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/compota-de-manzana-y-pera.png",
+  "id": "compota-de-manzana-y-pera",
+  "kcal_100g": 55,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 101,
+  "pasos": [
+    "Pelar y cortar ambas frutas en trozos.",
+    "Cocer al vapor 5–8 min hasta muy blandas.",
+    "Triturar hasta compota suave.",
+    "Enfriar y servir. No añadir azúcar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "manzana-roja",
+      "nota": "80 g",
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "pera",
+      "nota": "70 g",
+      "unidad": "unidad"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Compota de Manzana y Pera",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. B6",
+    "Fibra"
+  ]
+}

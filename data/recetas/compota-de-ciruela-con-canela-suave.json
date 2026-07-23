@@ -1,0 +1,66 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/compota-de-ciruela-con-canela-suave.png",
+  "id": "compota-de-ciruela-con-canela-suave",
+  "kcal_100g": 46,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 115,
+  "pasos": [
+    "Pelar las ciruelas y retirar los huesos.",
+    "Cocer al vapor 8–10 min.",
+    "Triturar hasta compota.",
+    "Añadir la pizca de canela y mezclar. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 3,
+      "ingrediente_id": "ciruelas-sin-hueso",
+      "nota": "150 g",
+      "unidad": "unidades"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "canela-polvo",
+      "nota": "Pizca mínima",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Compota de Ciruela con Canela Suave",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Vit. C",
+    "Vit. K",
+    "Sorbitol"
+  ]
+}

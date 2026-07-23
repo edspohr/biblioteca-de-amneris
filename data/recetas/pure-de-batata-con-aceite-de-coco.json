@@ -1,0 +1,65 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-batata-con-aceite-de-coco.png",
+  "id": "pure-de-batata-con-aceite-de-coco",
+  "kcal_100g": 86,
+  "minutos_prep": 20,
+  "notas": null,
+  "numero": 74,
+  "pasos": [
+    "Pelar y cocer la batata al vapor.",
+    "Triturar con el aceite de coco.",
+    "Ajustar textura con agua.",
+    "Enfriar y servir tibio."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 150,
+      "ingrediente_id": "batata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-coco",
+      "nota": null,
+      "unidad": "cucharadita"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "agua",
+      "nota": "c/n",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "cena",
+  "titulo": "Puré de Batata con Aceite de Coco",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

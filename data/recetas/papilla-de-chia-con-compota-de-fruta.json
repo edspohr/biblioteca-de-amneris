@@ -1,0 +1,68 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/papilla-de-chia-con-compota-de-fruta.png",
+  "id": "papilla-de-chia-con-compota-de-fruta",
+  "kcal_100g": 65,
+  "minutos_prep": 15,
+  "notas": null,
+  "numero": 17,
+  "pasos": [
+    "Hidratar la chía en leche o agua durante al menos 10 min hasta formar gel.",
+    "Cocer la fruta al vapor y triturar.",
+    "Mezclar la chía hidratada con la compota.",
+    "Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 1,
+      "ingrediente_id": "semillas-chia-hidratadas",
+      "nota": null,
+      "unidad": "cucharadita"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "leche-o-agua",
+      "nota": "3 a 4 cucharadas",
+      "unidad": null
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "compota-fruta",
+      "nota": "2 a 3 cucharadas",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "mezclar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "desayuno",
+  "titulo": "Papilla de Chía con Compota de Fruta",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

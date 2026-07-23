@@ -1,0 +1,57 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas con film sobre la superficie",
+  "foto": "/images/recetas/pure-de-aguacate-con-lima.png",
+  "id": "pure-de-aguacate-con-lima",
+  "kcal_100g": 160,
+  "minutos_prep": 5,
+  "notas": null,
+  "numero": 102,
+  "pasos": [
+    "Abrir el aguacate y extraer la pulpa.",
+    "Machacar con tenedor hasta obtener puré liso.",
+    "Añadir unas gotas de lima si se desea.",
+    "Servir de inmediato; se oxida rápidamente."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 0.25,
+      "ingrediente_id": "aguacate",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": null,
+      "ingrediente_id": "unas-gotas-lima",
+      "nota": "Pizca",
+      "unidad": null
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "machacar"
+    }
+  ],
+  "tipo_comida": "merienda",
+  "titulo": "Puré de Aguacate con Lima",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": [
+    "Grasas saludables",
+    "Vit. E",
+    "Folato"
+  ]
+}

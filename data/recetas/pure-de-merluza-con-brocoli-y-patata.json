@@ -1,0 +1,71 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-merluza-con-brocoli-y-patata.png",
+  "id": "pure-de-merluza-con-brocoli-y-patata",
+  "kcal_100g": null,
+  "minutos_prep": 25,
+  "notas": null,
+  "numero": 54,
+  "pasos": [
+    "Cocer la merluza al vapor; verificar espinas.",
+    "Cocer el brócoli y la patata al vapor.",
+    "Triturar todo con el aceite de oliva.",
+    "Ajustar textura. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "merluza-sin-espinas",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 60,
+      "ingrediente_id": "brocoli",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 80,
+      "ingrediente_id": "patata",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "aceite-oliva",
+      "nota": null,
+      "unidad": "cucharadita"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Merluza con Brócoli y Patata",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

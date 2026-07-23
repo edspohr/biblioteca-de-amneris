@@ -1,0 +1,77 @@
+{
+  "congelable": true,
+  "conservacion": "48 horas en refrigerador",
+  "foto": "/images/recetas/pure-de-cordero-con-verduras-de-raiz.png",
+  "id": "pure-de-cordero-con-verduras-de-raiz",
+  "kcal_100g": null,
+  "minutos_prep": 40,
+  "notas": null,
+  "numero": 38,
+  "pasos": [
+    "Cocer el cordero en agua 30 min hasta muy tierno.",
+    "Cocer las verduras al vapor.",
+    "Triturar la carne con las verduras y caldo de cocción.",
+    "Pasar por colador. Enfriar y servir."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 70,
+      "ingrediente_id": "cordero-magro-sin",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 60,
+      "ingrediente_id": "chirivia-o-nabo",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 0.5,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "unidad"
+    },
+    {
+      "cantidad": 50,
+      "ingrediente_id": "papa",
+      "nota": null,
+      "unidad": "g"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "cocer-al-vapor"
+    },
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "colar"
+    },
+    {
+      "tecnica_id": "tamizar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Puré de Cordero con Verduras de Raíz",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}

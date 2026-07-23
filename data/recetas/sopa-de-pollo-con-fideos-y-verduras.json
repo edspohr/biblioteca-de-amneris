@@ -1,0 +1,68 @@
+{
+  "congelable": false,
+  "conservacion": "24 horas en refrigerador",
+  "foto": "/images/recetas/sopa-de-pollo-con-fideos-y-verduras.png",
+  "id": "sopa-de-pollo-con-fideos-y-verduras",
+  "kcal_100g": null,
+  "minutos_prep": 30,
+  "notas": null,
+  "numero": 52,
+  "pasos": [
+    "Calentar el caldo y agregar la zanahoria.",
+    "Añadir los fideos y cocer hasta muy blandos.",
+    "Agregar el pollo desmenuzado.",
+    "Triturar o servir según la etapa. Enfriar."
+  ],
+  "receta_alergenos": [],
+  "receta_ingredientes": [
+    {
+      "cantidad": 60,
+      "ingrediente_id": "pollo-desmenuzado",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 20,
+      "ingrediente_id": "fideos-finos",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 40,
+      "ingrediente_id": "zanahoria",
+      "nota": null,
+      "unidad": "g"
+    },
+    {
+      "cantidad": 250,
+      "ingrediente_id": "caldo-pollo-sin",
+      "nota": null,
+      "unidad": "ml"
+    }
+  ],
+  "receta_tecnicas": [
+    {
+      "tecnica_id": "triturar"
+    },
+    {
+      "tecnica_id": "enfriar"
+    }
+  ],
+  "tipo_comida": "almuerzo",
+  "titulo": "Sopa de Pollo con Fideos y Verduras",
+  "variantes": {
+    "etapa-1": {
+      "porcion": "2 a 3 cucharadas",
+      "textura": "Puré muy liso sin grumos"
+    },
+    "etapa-2": {
+      "porcion": "3 a 5 cucharadas",
+      "textura": "Papilla espesa con algo de textura"
+    },
+    "etapa-3": {
+      "porcion": "½ taza",
+      "textura": "Trozos blandos y comidas familiares adaptadas"
+    }
+  },
+  "vitaminas": []
+}
