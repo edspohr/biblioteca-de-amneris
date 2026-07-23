@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/gachas-de-mijo-con-manzana-y-ciruela.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/gachas-de-mijo-con-manzana-y-ciruela/main.webp",
   "id": "gachas-de-mijo-con-manzana-y-ciruela",
   "kcal_100g": 85,
   "minutos_prep": 15,

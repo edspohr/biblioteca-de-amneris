@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-espinaca-con-papa-y-aceite.jpg",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-espinaca-con-papa-y-aceite/main.webp",
   "id": "pure-de-espinaca-con-papa-y-aceite",
   "kcal_100g": null,
   "minutos_prep": 20,

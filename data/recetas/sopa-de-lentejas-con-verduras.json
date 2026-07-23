@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/sopa-de-lentejas-con-verduras.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/sopa-de-lentejas-con-verduras/main.webp",
   "id": "sopa-de-lentejas-con-verduras",
   "kcal_100g": null,
   "minutos_prep": 30,

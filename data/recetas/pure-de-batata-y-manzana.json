@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-batata-y-manzana.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-batata-y-manzana/main.webp",
   "id": "pure-de-batata-y-manzana",
   "kcal_100g": 88,
   "minutos_prep": 25,

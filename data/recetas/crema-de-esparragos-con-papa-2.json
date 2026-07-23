@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/crema-de-esparragos-con-papa-2.jpg",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-esparragos-con-papa-2/main.webp",
   "id": "crema-de-esparragos-con-papa-2",
   "kcal_100g": null,
   "minutos_prep": 20,

@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/crema-de-espinaca-con-queso-ricotta.jpg",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-espinaca-con-queso-ricotta/main.webp",
   "id": "crema-de-espinaca-con-queso-ricotta",
   "kcal_100g": null,
   "minutos_prep": 15,

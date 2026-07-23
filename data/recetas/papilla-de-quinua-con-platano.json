@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/papilla-de-quinua-con-platano.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/papilla-de-quinua-con-platano/main.webp",
   "id": "papilla-de-quinua-con-platano",
   "kcal_100g": 110,
   "minutos_prep": 15,

@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/crema-de-brocoli-con-batata-y-chia.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-brocoli-con-batata-y-chia/main.webp",
   "id": "crema-de-brocoli-con-batata-y-chia",
   "kcal_100g": null,
   "minutos_prep": 20,

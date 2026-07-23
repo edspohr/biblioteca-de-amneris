@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas con film sobre la superficie",
-  "foto": "/images/recetas/pure-de-aguacate-con-lima.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-aguacate-con-lima/main.webp",
   "id": "pure-de-aguacate-con-lima",
   "kcal_100g": 160,
   "minutos_prep": 5,

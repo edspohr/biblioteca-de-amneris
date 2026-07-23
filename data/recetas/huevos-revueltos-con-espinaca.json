@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/huevos-revueltos-con-espinaca.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/huevos-revueltos-con-espinaca/main.webp",
   "id": "huevos-revueltos-con-espinaca",
   "kcal_100g": 105,
   "minutos_prep": 15,

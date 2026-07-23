@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-pera-y-platano.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-pera-y-platano/main.webp",
   "id": "pure-de-pera-y-platano",
   "kcal_100g": 72,
   "minutos_prep": 15,

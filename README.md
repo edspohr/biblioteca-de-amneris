@@ -101,11 +101,70 @@ Desde el panel de autoría en `/admin` puedes crear recetas nuevas, editar las e
 
 ---
 
-## Próximo ciclo: despliegue en Firebase
+## Firebase (Fases 1 y 2)
 
-Este ciclo no incluye despliegue. El proyecto Firebase (`biblioteca-amneris`) ya está creado con App Hosting y Firestore, pero **todavía no está conectado a la app** — hoy la app usa los archivos JSON de la carpeta `data/` como base de datos.
+El proyecto Firebase `biblioteca-amneris` está conectado a la app. Auth,
+Firestore y Storage viven aquí:
 
-El detalle de qué hay que hacer para desplegar de forma segura (sin perder tus cambios del admin) está en [REPORTE_DESPLIEGUE.md](REPORTE_DESPLIEGUE.md). En resumen: hay que reemplazar el adaptador de datos por uno que hable con Firestore, subir las fotos a Firebase Storage, y luego sí desplegar. Se hará en el próximo ciclo.
+- **Autenticación** por Firebase Auth (Google + correo/contraseña). Sólo
+  las dos cuentas con la custom claim `superadmin` acceden a `/admin`.
+  Se otorgan corriendo `npm run seed:superadmins`.
+- **Datos** en Firestore. Un solo módulo (`src/lib/repo/`) sabe si usar
+  Firestore o los JSON locales: si hay credenciales de admin configuradas
+  usa Firestore, si no, JSON. Se puede forzar con `REPO_ADAPTER=json|firestore`.
+- **Fotos** en Firebase Storage (`recetas/{id}/main.webp`), subidas
+  vía el panel de autoría; se redimensionan a 1200 px y se guardan como WebP.
+
+### Configuración local
+
+1. Copia `.env.local.example` a `.env.local` y completa las variables
+   `NEXT_PUBLIC_FIREBASE_*` desde Firebase Console → Configuración del
+   proyecto → Tus apps.
+2. Descarga una clave de cuenta de servicio (Configuración → Cuentas de
+   servicio → Generar nueva clave) y guárdala como `serviceAccountKey.json`
+   en la raíz. Está en `.gitignore`.
+3. Pega también el site key de reCAPTCHA v3 en
+   `NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY` (App Check). En local, si App Check
+   te bloquea, define `NEXT_PUBLIC_APPCHECK_DEBUG_TOKEN` con el token que
+   imprime la consola del navegador la primera vez.
+
+### Migración inicial (una sola vez)
+
+Sube todos los JSON + fotos al proyecto Firebase:
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json npm run migrate:firestore
+```
+
+El script rechaza correr si alguna colección ya tiene documentos; pasa
+`--force` para sobreescribir por id.
+
+### Sincronizar Firestore → git (periódico)
+
+Firestore es la fuente de verdad en producción, pero `data/*.json`
+sigue siendo la historia legible del libro. Corre este comando cada
+tanto para volcar Firestore a JSON y luego commitea el diff:
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json npm run export:firestore
+git diff data/          # revisa
+git add data/ && git commit -m "Sincronizar dataset con Firestore"
+```
+
+### Reglas de seguridad
+
+- `firestore.rules`: lectura pública en catálogos y recetas; **toda
+  escritura desde el cliente está denegada**. Las mutaciones sólo pasan
+  por la API de Next.js, que usa el Admin SDK y bypassea reglas después
+  de verificar la sesión de superadmin.
+- `storage.rules`: lectura pública en `recetas/`; escritura denegada. Las
+  subidas de fotos sólo entran por `POST /api/recetas/[id]/foto`.
+
+Deploy de las reglas cuando cambien:
+
+```
+firebase deploy --only firestore:rules,storage
+```
 
 ---
 

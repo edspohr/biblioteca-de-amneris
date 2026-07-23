@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-salmon-con-batata.jpg",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-salmon-con-batata/main.webp",
   "id": "pure-de-salmon-con-batata",
   "kcal_100g": null,
   "minutos_prep": 25,

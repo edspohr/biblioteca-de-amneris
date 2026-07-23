@@ -1,0 +1,22 @@
+rules_version = '2';
+
+// Recipe photos live at `recetas/{recipeId}/main.webp`, uploaded server-side
+// via the admin SDK (which bypasses these rules). Reads are public: the same
+// URLs are embedded in the reader pages and shared over WhatsApp.
+//
+// Client writes are denied everywhere — all uploads go through
+// POST /api/recetas/[id]/foto, gated by `requireSuperadmin()`.
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    match /recetas/{recipeId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

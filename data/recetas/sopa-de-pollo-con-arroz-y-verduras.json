@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/sopa-de-pollo-con-arroz-y-verduras.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/sopa-de-pollo-con-arroz-y-verduras/main.webp",
   "id": "sopa-de-pollo-con-arroz-y-verduras",
   "kcal_100g": null,
   "minutos_prep": 30,

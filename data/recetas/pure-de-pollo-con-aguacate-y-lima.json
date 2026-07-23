@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-pollo-con-aguacate-y-lima.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-pollo-con-aguacate-y-lima/main.webp",
   "id": "pure-de-pollo-con-aguacate-y-lima",
   "kcal_100g": null,
   "minutos_prep": 25,

@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-manzana-compota.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-manzana-compota/main.webp",
   "id": "pure-de-manzana-compota",
   "kcal_100g": 52,
   "minutos_prep": 15,

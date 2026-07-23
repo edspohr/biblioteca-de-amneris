@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/sopa-de-verduras-mixtas-con-fideos.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/sopa-de-verduras-mixtas-con-fideos/main.webp",
   "id": "sopa-de-verduras-mixtas-con-fideos",
   "kcal_100g": null,
   "minutos_prep": 25,

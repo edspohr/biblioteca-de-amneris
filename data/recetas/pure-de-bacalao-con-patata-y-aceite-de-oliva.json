@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-bacalao-con-patata-y-aceite-de-oliva.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-bacalao-con-patata-y-aceite-de-oliva/main.webp",
   "id": "pure-de-bacalao-con-patata-y-aceite-de-oliva",
   "kcal_100g": null,
   "minutos_prep": 25,

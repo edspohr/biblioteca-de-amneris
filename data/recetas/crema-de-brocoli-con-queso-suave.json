@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/crema-de-brocoli-con-queso-suave.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-brocoli-con-queso-suave/main.webp",
   "id": "crema-de-brocoli-con-queso-suave",
   "kcal_100g": 45,
   "minutos_prep": 20,

@@ -8,7 +8,25 @@ import type {
   Tecnica,
   VarianteEtapa,
 } from "@/lib/schema";
-import * as adapter from "./json-adapter";
+import * as jsonAdapter from "./json-adapter";
+import * as firestoreAdapter from "./firestore-adapter";
+import { isAdminConfigured } from "@/lib/firebase/admin";
+
+// Adapter selection:
+//   - explicit override: REPO_ADAPTER=json|firestore
+//   - otherwise auto-detect: Firestore whenever the admin SDK is configured
+//     (FIREBASE_ADMIN_SA or GOOGLE_APPLICATION_CREDENTIALS set), else JSON.
+//
+// firestore-adapter is server-only and never bundled into the client anyway,
+// so importing it at the top level here has no browser cost.
+function pickAdapter(): Repo {
+  const override = process.env.REPO_ADAPTER;
+  if (override === "json") return jsonAdapter;
+  if (override === "firestore") return firestoreAdapter;
+  return isAdminConfigured() ? firestoreAdapter : jsonAdapter;
+}
+
+const adapter = pickAdapter();
 
 export interface Repo {
   getEtapas(): Promise<Etapa[]>;

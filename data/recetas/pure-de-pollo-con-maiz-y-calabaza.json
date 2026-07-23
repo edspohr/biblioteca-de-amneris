@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-pollo-con-maiz-y-calabaza.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-pollo-con-maiz-y-calabaza/main.webp",
   "id": "pure-de-pollo-con-maiz-y-calabaza",
   "kcal_100g": null,
   "minutos_prep": 30,

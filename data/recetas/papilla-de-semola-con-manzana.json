@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/papilla-de-semola-con-manzana.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/papilla-de-semola-con-manzana/main.webp",
   "id": "papilla-de-semola-con-manzana",
   "kcal_100g": null,
   "minutos_prep": 15,

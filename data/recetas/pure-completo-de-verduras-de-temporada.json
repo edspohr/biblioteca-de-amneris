@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-completo-de-verduras-de-temporada.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-completo-de-verduras-de-temporada/main.webp",
   "id": "pure-completo-de-verduras-de-temporada",
   "kcal_100g": null,
   "minutos_prep": 25,

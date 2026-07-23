@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-pavo-con-calabacin-y-papa.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-pavo-con-calabacin-y-papa/main.webp",
   "id": "pure-de-pavo-con-calabacin-y-papa",
   "kcal_100g": null,
   "minutos_prep": 30,

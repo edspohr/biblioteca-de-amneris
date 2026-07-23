@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-fresas-con-yogur.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-fresas-con-yogur/main.webp",
   "id": "pure-de-fresas-con-yogur",
   "kcal_100g": 45,
   "minutos_prep": 5,

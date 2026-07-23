@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// All writes are denied from clients. Mutations pass exclusively through the
+// Next.js server API, which uses the Firebase Admin SDK — the admin SDK
+// bypasses these rules and enforces its own `requireSuperadmin()` gate.
+//
+// Reads are public on the catalog and content collections (the app is a free
+// public library). The `usuarios` collection is per-user private and lands in
+// Phase 3; the stub below reserves the shape.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /etapas/{id}              { allow read: if true;  allow write: if false; }
+    match /porciones_texturas/{id}  { allow read: if true;  allow write: if false; }
+    match /ingredientes/{id}        { allow read: if true;  allow write: if false; }
+    match /alergenos/{id}           { allow read: if true;  allow write: if false; }
+    match /tecnicas/{id}            { allow read: if true;  allow write: if false; }
+    match /menus/{id}               { allow read: if true;  allow write: if false; }
+    match /recetas/{id}             { allow read: if true;  allow write: if false; }
+
+    // Reserved for Phase 3. Each user document is owned by its uid.
+    match /usuarios/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Default deny for anything else.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

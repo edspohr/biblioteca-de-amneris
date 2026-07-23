@@ -28,7 +28,7 @@ function loadServiceAccount(): ServiceAccount | null {
   return null;
 }
 
-function getAdminApp(): App {
+export function getAdminApp(): App {
   const existing = getApps().find((a) => a.name === APP_NAME);
   if (existing) return existing;
 

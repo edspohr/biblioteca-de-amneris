@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-alcachofas-con-papa.jpg",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-alcachofas-con-papa/main.webp",
   "id": "pure-de-alcachofas-con-papa",
   "kcal_100g": null,
   "minutos_prep": 30,

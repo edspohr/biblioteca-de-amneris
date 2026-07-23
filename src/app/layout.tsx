@@ -35,6 +35,12 @@ export const viewport: Viewport = {
   themeColor: "#fdf6ee",
 };
 
+// Serve every page fresh from the repo so admin edits show up immediately
+// once Firestore is the live source. The trade-off is a per-request Firestore
+// read for the reader pages; at 120 recipes and current traffic it's cheap.
+// Revisit with ISR + on-demand revalidation if reads become a cost concern.
+export const dynamic = "force-dynamic";
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const etapas = await repo.getEtapas();
 

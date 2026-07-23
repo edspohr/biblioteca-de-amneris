@@ -1,7 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
-  "foto": "/images/recetas/yogur-natural-con-pure-de-frutas.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/yogur-natural-con-pure-de-frutas/main.webp",
   "id": "yogur-natural-con-pure-de-frutas",
   "kcal_100g": 78,
   "minutos_prep": 5,

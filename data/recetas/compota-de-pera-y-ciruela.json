@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/compota-de-pera-y-ciruela.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/compota-de-pera-y-ciruela/main.webp",
   "id": "compota-de-pera-y-ciruela",
   "kcal_100g": 58,
   "minutos_prep": 15,

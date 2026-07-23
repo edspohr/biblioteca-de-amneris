@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
 import { RecetaForm } from "../../receta-form";
+import { PhotoUploader } from "./photo-uploader";
 
 export default async function EditarRecetaPage({
   params,
@@ -20,6 +21,7 @@ export default async function EditarRecetaPage({
   return (
     <>
       <h1>Editar: {receta.titulo}</h1>
+      <PhotoUploader recetaId={receta.id} currentFoto={receta.foto} />
       <RecetaForm
         mode="edit"
         initial={receta}

@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/pure-de-guisantes-y-menta.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-guisantes-y-menta/main.webp",
   "id": "pure-de-guisantes-y-menta",
   "kcal_100g": 81,
   "minutos_prep": 12,

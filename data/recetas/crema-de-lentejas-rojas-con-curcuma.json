@@ -1,7 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
-  "foto": "/images/recetas/crema-de-lentejas-rojas-con-curcuma.png",
+  "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-lentejas-rojas-con-curcuma/main.webp",
   "id": "crema-de-lentejas-rojas-con-curcuma",
   "kcal_100g": null,
   "minutos_prep": 25,
