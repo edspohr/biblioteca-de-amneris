@@ -25,6 +25,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Smooth page transition when navigating between routes. */
+main {
+  animation: fade-page var(--dur-slow) var(--ease-out) both;
+}
+
+@keyframes fade-page {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 a {
   color: var(--color-brand-ink);
   text-decoration: underline;

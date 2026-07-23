@@ -97,4 +97,40 @@
   /* ---------- Layout ---------- */
   --content-max: 1100px;
   --reader-max: 720px;
+  --nav-h: 60px;         /* mobile nav height (approx) */
+  --etapa-bar-h: 68px;   /* mobile etapa bar height (approx) */
+
+  /* ---------- Motion ----------
+   * Timings kept short: 150-260ms. Uses ease-out cubic curves that feel calm.
+   * Any component that animates must also honor prefers-reduced-motion below.
+   */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 260ms;
+  --color-transition: color var(--dur-slow) var(--ease-in-out),
+                      background-color var(--dur-slow) var(--ease-in-out),
+                      border-color var(--dur-slow) var(--ease-in-out);
+}
+
+@media (min-width: 900px) {
+  :root {
+    --nav-h: 72px;      /* desktop nav is a bit taller (larger brand) */
+    --etapa-bar-h: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

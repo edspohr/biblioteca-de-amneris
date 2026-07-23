@@ -43,8 +43,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <EtapaActivaProvider etapas={etapas}>
           <NavBar />
-          <main>{children}</main>
           <EtapaSelectorGlobal />
+          <main>{children}</main>
         </EtapaActivaProvider>
       </body>
     </html>
