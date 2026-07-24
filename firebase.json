@@ -21,7 +21,7 @@
         "run": {
           "serviceId": "bocaditos",
           "region": "us-central1",
-          "pinTag": true
+          "pinTag": false
         }
       }
     ]
