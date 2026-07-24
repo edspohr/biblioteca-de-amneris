@@ -13,9 +13,15 @@ import { getFirebaseAuth } from "@/lib/firebase/client";
 
 type Mode = "signin" | "signup";
 
-export function LoginForm({ next }: { next?: string }) {
+export function LoginForm({
+  next,
+  initialMode = "signin",
+}: {
+  next?: string;
+  initialMode?: Mode;
+}) {
   const router = useRouter();
-  const [mode, setMode] = useState<Mode>("signin");
+  const [mode, setMode] = useState<Mode>(initialMode);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -36,7 +42,7 @@ export function LoginForm({ next }: { next?: string }) {
   }
 
   function afterLogin(superadmin: boolean) {
-    const target = next || (superadmin ? "/admin" : "/");
+    const target = next || (superadmin ? "/admin" : "/libro");
     router.push(target);
     router.refresh();
   }

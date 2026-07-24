@@ -1,0 +1,564 @@
+/*
+ * Landing styles — Bocaditos del Corazón
+ * Scoped to the marketing surface. Everything lives under `.landing`.
+ */
+
+.landing {
+  --lp-max: 1120px;
+  --lp-cream: #fff8f2;
+  background: var(--lp-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+.landing__container {
+  max-width: var(--lp-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================================
+ * Sticky landing header
+ * ============================================================ */
+.landing__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--lp-cream) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.landing__header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  max-width: var(--lp-max);
+  margin: 0 auto;
+  gap: 1rem;
+}
+.landing__brand {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-brand-ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.landing__brand small {
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+.landing__nav {
+  display: none;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+.landing__nav a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.landing__nav a:hover {
+  color: var(--color-brand);
+}
+@media (min-width: 720px) {
+  .landing__nav {
+    display: flex;
+  }
+}
+.landing__header-cta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* ============================================================
+ * Hero — polaroid collage
+ * ============================================================ */
+.landing__hero {
+  padding: 3rem 0 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.landing__hero-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .landing__hero {
+    padding: 5rem 0 4rem;
+  }
+  .landing__hero-inner {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 3rem;
+  }
+}
+.landing__eyebrow {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--color-peach-dark);
+  margin: 0 0 0.5rem;
+}
+.landing__h1 {
+  font-family: var(--font-title);
+  font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: var(--color-brand-ink);
+  letter-spacing: -0.015em;
+}
+.landing__h1 em {
+  font-style: italic;
+  color: var(--color-peach-dark);
+}
+.landing__lede {
+  font-size: 1.125rem;
+  color: var(--color-ink);
+  max-width: 34ch;
+  margin: 0 0 1.5rem;
+}
+.landing__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.landing__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}
+
+.landing__collage {
+  position: relative;
+  height: 480px;
+  perspective: 1200px;
+}
+@media (max-width: 899px) {
+  .landing__collage {
+    height: 380px;
+    margin: 1rem -0.5rem 0;
+  }
+}
+.landing__polaroid {
+  position: absolute;
+  background: white;
+  padding: 12px 12px 44px;
+  border-radius: 4px;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+}
+.landing__polaroid img {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.landing__polaroid-caption {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin-top: 8px;
+}
+.landing__polaroid--1 {
+  top: 20px;
+  left: 8%;
+  transform: rotate(-6deg);
+}
+.landing__polaroid--2 {
+  top: 60px;
+  right: 8%;
+  transform: rotate(5deg);
+}
+.landing__polaroid--3 {
+  bottom: 20px;
+  left: 30%;
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+.landing__polaroid:hover {
+  transform: rotate(0) scale(1.03);
+  z-index: 3;
+}
+
+/* Tape decoration */
+.landing__polaroid::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 60px;
+  height: 18px;
+  background: rgba(255, 221, 154, 0.7);
+  border-radius: 2px;
+}
+
+/* ============================================================
+ * Marquee of promises
+ * ============================================================ */
+.landing__marquee {
+  background: var(--color-peach-light);
+  padding: 1rem 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.landing__marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: landing-marquee 32s linear infinite;
+  white-space: nowrap;
+}
+.landing__marquee span {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  color: var(--color-brand-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.landing__marquee span::before {
+  content: "✽";
+  color: var(--color-peach-dark);
+}
+@keyframes landing-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing__marquee-track { animation: none; }
+}
+
+/* ============================================================
+ * Author manifesto
+ * ============================================================ */
+.landing__manifesto {
+  padding: 4rem 0;
+}
+.landing__manifesto-inner {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .landing__manifesto-inner {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+  }
+}
+.landing__portrait {
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-butter-light), var(--color-peach-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-hand);
+  font-size: 2rem;
+  color: var(--color-brand-ink);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.landing__section-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: var(--color-brand-ink);
+}
+.landing__section-title em {
+  font-style: italic;
+  color: var(--color-peach-dark);
+}
+
+/* ============================================================
+ * Method — filters
+ * ============================================================ */
+.landing__method {
+  padding: 4rem 0;
+  background: var(--color-surface);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.landing__filters {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  padding: 0;
+  margin: 2rem 0 0;
+  list-style: none;
+}
+@media (min-width: 720px) {
+  .landing__filters { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .landing__filters { grid-template-columns: repeat(3, 1fr); }
+}
+.landing__filter {
+  padding: 1.25rem;
+  background: var(--color-surface-2);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.landing__filter-num {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--color-peach-dark);
+  font-size: 1.5rem;
+}
+.landing__filter h3 {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
+  color: var(--color-brand-ink);
+}
+.landing__filter p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+ * "Adentro del libro" — device mockup
+ * ============================================================ */
+.landing__adentro {
+  padding: 4rem 0;
+}
+.landing__adentro-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .landing__adentro-inner { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+}
+.landing__device {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 8px solid #1a1a1a;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+  background: var(--color-surface);
+}
+.landing__device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+ * Scrapbook gallery
+ * ============================================================ */
+.landing__gallery {
+  padding: 4rem 0;
+  background: var(--color-mint);
+}
+.landing__scraps {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0;
+  list-style: none;
+  margin: 2rem 0 0;
+}
+@media (min-width: 720px) {
+  .landing__scraps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+}
+.landing__scrap {
+  background: white;
+  padding: 12px 12px 32px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.15);
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.3s ease;
+}
+.landing__scrap:hover {
+  transform: rotate(0) scale(1.02);
+}
+.landing__scrap img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.landing__scrap-caption {
+  font-family: var(--font-hand);
+  color: var(--color-brand-ink);
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+ * FAQ
+ * ============================================================ */
+.landing__faq {
+  padding: 4rem 0;
+}
+.landing__faq-list {
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.landing__faq details {
+  background: var(--color-surface);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.landing__faq summary {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--color-brand-ink);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.landing__faq summary::-webkit-details-marker { display: none; }
+.landing__faq summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: var(--color-peach-dark);
+  transition: transform 0.2s ease;
+}
+.landing__faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.landing__faq p {
+  margin: 0.75rem 0 0;
+  color: var(--color-ink);
+}
+
+/* ============================================================
+ * Final CTA
+ * ============================================================ */
+.landing__cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--color-peach), var(--color-peach-dark));
+  color: white;
+  text-align: center;
+}
+.landing__cta h2 {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+  margin: 0 0 1rem;
+  color: white;
+}
+.landing__cta p {
+  max-width: 40ch;
+  margin: 0 auto 2rem;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.landing__cta-buttons {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.landing__button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.landing__button--primary {
+  background: white;
+  color: var(--color-brand-ink);
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.25);
+}
+.landing__button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.3);
+}
+.landing__button--ghost {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+}
+.landing__button--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.landing__button--dark {
+  background: var(--color-brand-ink);
+  color: white;
+}
+.landing__button--dark:hover {
+  background: var(--color-brand);
+  color: white;
+}
+
+/* ============================================================
+ * Footer
+ * ============================================================ */
+.landing__footer {
+  padding: 3rem 0 4rem;
+  background: var(--color-brand-ink);
+  color: rgba(255, 255, 255, 0.85);
+}
+.landing__footer-inner {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  max-width: var(--lp-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+@media (min-width: 720px) {
+  .landing__footer-inner { grid-template-columns: 2fr 1fr 1fr; }
+}
+.landing__footer h4 {
+  font-family: var(--font-title);
+  color: white;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+.landing__footer a {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+}
+.landing__footer p, .landing__footer li {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+.landing__footer ul { list-style: none; padding: 0; margin: 0; }
+.landing__disclaimer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+}

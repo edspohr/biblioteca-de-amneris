@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEtapaActiva } from "./context";
 
 /**
@@ -10,9 +11,21 @@ import { useEtapaActiva } from "./context";
  * padding; on wider viewports it becomes a compact pill floating in the
  * top-right corner. All positioning lives in CSS — this component only
  * knows about the radio group.
+ *
+ * Hidden on the landing page (/) and inside /admin — those surfaces don't
+ * carry per-recipe content, so the selector would be a decoration.
  */
 export function EtapaSelectorGlobal() {
+  const pathname = usePathname();
   const { etapaId, setEtapaId, etapas } = useEtapaActiva();
+  if (
+    pathname === "/" ||
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/login") ||
+    pathname === "/sin-permiso"
+  ) {
+    return null;
+  }
   const ordenadas = [...etapas].sort((a, b) => a.orden - b.orden);
   const activa = ordenadas.find((e) => e.id === etapaId) ?? ordenadas[0];
 

@@ -31,7 +31,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
       >
         <span>
           <strong>Modo autoría.</strong> Sesión iniciada como{" "}
-          <strong>{user.email ?? user.uid}</strong>. <Link href="/">Volver al lector</Link>
+          <strong>{user.email ?? user.uid}</strong>. <Link href="/libro">Volver al lector</Link>
         </span>
         <LogoutButton />
       </div>

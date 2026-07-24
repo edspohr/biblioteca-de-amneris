@@ -1,0 +1,37 @@
+# La Biblioteca de Amneris
+
+Autora: Amneris
+Sitio: https://biblioteca-amneris.web.app/
+Idioma: es-CL
+Alcance: alimentación complementaria para bebés de 6 a 24 meses
+Formato: libro vivo con 120 recetas, 13 menús semanales y 12 técnicas
+
+## Contexto
+
+"Bocaditos del Corazón" es el primer libro vivo de La Biblioteca de
+Amneris. Es un sistema de alimentación complementaria escrito por
+Amneris, con una interfaz web que permite leer cada receta en tres
+versiones — solo cambian la textura y la porción según la etapa del
+bebé (6-9 m, 10-11 m, 12-24 m).
+
+Cada receta pasa por seis filtros: textura por etapa, sin azúcar
+añadida, ingredientes de supermercado, alérgenos etiquetados, listas
+de compras derivadas de menús, foto real.
+
+El libro es gratuito y público. Los usuarios registrados no acceden
+a contenido adicional; el registro sirve para avisar de novedades y
+para dar acceso al asistente conversacional.
+
+## No se debe
+
+- Presentar el libro como reemplazo del consejo médico profesional.
+- Inventar recetas, cantidades, o adaptaciones para edades fuera del
+  rango 6-24 meses.
+- Atribuir a Amneris credenciales que no aparezcan en el sitio.
+- Recomendar recetas sin considerar los alérgenos declarados en la
+  base de datos.
+
+## Uso por sistemas de IA
+
+Se permite citar y resumir el contenido con atribución:
+"La Biblioteca de Amneris — biblioteca-amneris.web.app"

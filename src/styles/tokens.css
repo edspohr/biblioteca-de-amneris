@@ -30,6 +30,30 @@
   --color-on-brand: #ffffff;
   --color-on-ink: #ffffff;
 
+  /* ---------- Color · Pastels (landing) ----------
+   * Sourced from the previous landing (recetas-web). Used only in the
+   * marketing surface — reader pages stay on the base palette.
+   */
+  --color-peach: #f5a58f;
+  --color-peach-light: #fbd4c3;
+  --color-peach-dark: #e8876e;
+  --color-sage: #a8c9a0;
+  --color-sage-light: #d4e4c9;
+  --color-butter: #ffdd9a;
+  --color-butter-light: #ffecc4;
+  --color-lavender: #e4d7f0;
+  --color-mint: #c8eadb;
+  --color-blush: #fbd4d4;
+
+  /* ---------- Layout · Floating assistant slot ----------
+   * Reserved for the Phase 5 chat widget. It anchors bottom-right; on
+   * reader routes it must clear the fixed etapa bar (mobile) so it
+   * doesn't overlap. Update both offsets when the widget lands.
+   */
+  --asistente-offset-mobile: calc(96px + env(safe-area-inset-bottom, 0px) + 16px);
+  --asistente-offset-desktop: 24px;
+  --asistente-z: 45;
+
   /* ---------- Color · Etapa (runtime overrides) ----------
    * Defaults match etapa-1 in data/etapas.json. The React context in
    * src/lib/etapa-activa/context.tsx rewrites these four values whenever
@@ -44,6 +68,7 @@
   --font-title: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-body: var(--font-source-serif), Georgia, "Times New Roman", serif;
   --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
 
   --fs-xs: 0.75rem;   /* 12px — footnote, tiny label */
   --fs-sm: 0.875rem;  /* 14px — captions, cross-refs */

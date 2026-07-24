@@ -24,7 +24,7 @@ export default async function SinPermisoPage() {
         escríbele a Amneris.
       </p>
       <div style={{ display: "flex", gap: "0.75rem", marginTop: "1rem" }}>
-        <Link href="/" className="button button--primary">
+        <Link href="/libro" className="button button--primary">
           Volver al lector
         </Link>
         <LogoutButton />

@@ -35,7 +35,7 @@ export default async function EtapaPage({
   return (
     <div style={scoped}>
       <p className="receta__back">
-        <Link href="/">← Inicio</Link>
+        <Link href="/libro">← Inicio</Link>
       </p>
       <header className="page-header">
         <p className="page-header__eyebrow">Etapa {etapa.orden}</p>

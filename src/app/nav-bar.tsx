@@ -18,6 +18,9 @@ export function NavBar() {
     setOpen(false);
   }, [pathname]);
 
+  // The landing has its own header — hide the reader nav on it.
+  if (pathname === "/") return null;
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -30,7 +33,7 @@ export function NavBar() {
   return (
     <header className="nav" role="banner">
       <div className="nav__bar">
-        <Link href="/" className="brand" aria-label="Bocaditos del Corazón — inicio">
+        <Link href="/libro" className="brand" aria-label="Bocaditos del Corazón — inicio">
           Bocaditos del Corazón
         </Link>
         <button
