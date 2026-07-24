@@ -1,0 +1,205 @@
+/*
+ * Floating assistant widget — Phase 5
+ * All positioning uses --asistente-* tokens from tokens.css so the widget
+ * clears the fixed etapa bar on mobile without any per-page code.
+ */
+
+.asistente__bubble {
+  position: fixed;
+  right: var(--asistente-offset-desktop);
+  bottom: var(--asistente-offset-desktop);
+  z-index: var(--asistente-z);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  border: none;
+  box-shadow: 0 8px 20px -6px rgba(196, 94, 50, 0.5);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.asistente__bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(196, 94, 50, 0.55);
+}
+.asistente__bubble > span[aria-hidden] {
+  font-size: 1.25rem;
+}
+@media (max-width: 899px) {
+  .asistente__bubble {
+    bottom: var(--asistente-offset-mobile);
+    right: 1rem;
+  }
+  .asistente__bubble-label {
+    display: none; /* Icon-only on mobile to save space near etapa bar */
+  }
+  .asistente__bubble {
+    padding: 0.85rem 0.95rem;
+  }
+  .asistente__bubble > span[aria-hidden] {
+    font-size: 1.4rem;
+  }
+}
+
+.asistente__panel {
+  position: fixed;
+  right: var(--asistente-offset-desktop);
+  bottom: var(--asistente-offset-desktop);
+  z-index: var(--asistente-z);
+  width: min(400px, calc(100vw - 2rem));
+  height: min(600px, calc(100vh - 4rem));
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-body);
+}
+@media (max-width: 599px) {
+  .asistente__panel {
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    border: none;
+  }
+}
+
+.asistente__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+.asistente__sub {
+  font-size: 0.8rem;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+}
+.asistente__close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-ink);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+.asistente__close:hover {
+  background: var(--color-border);
+}
+
+.asistente__scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.asistente__welcome {
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+}
+.asistente__welcome p { margin: 0 0 0.5rem; }
+.asistente__welcome ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.asistente__msg {
+  max-width: 88%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.asistente__msg p { margin: 0 0 0.5rem; }
+.asistente__msg p:last-child { margin-bottom: 0; }
+.asistente__msg--user {
+  background: var(--color-peach-light);
+  color: var(--color-brand-ink);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.asistente__msg--model {
+  background: var(--color-surface-2);
+  color: var(--color-ink);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.asistente__msg-tools {
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+  margin-top: 0.4rem;
+  font-family: var(--font-ui);
+}
+.asistente__typing {
+  color: var(--color-ink-muted);
+  letter-spacing: 0.15em;
+  animation: asistente-blink 1.2s infinite;
+}
+@keyframes asistente-blink {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+.asistente__link {
+  color: var(--color-brand-ink);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.asistente__error {
+  padding: 0.6rem 0.75rem;
+  background: color-mix(in srgb, var(--color-danger) 10%, transparent);
+  color: var(--color-danger);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.asistente__form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  align-items: flex-end;
+}
+.asistente__form textarea {
+  flex: 1;
+  resize: none;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+.asistente__form textarea:focus {
+  outline: 2px solid var(--color-brand);
+  outline-offset: -1px;
+}
+.asistente__form .button {
+  min-height: 44px;
+}
+.asistente__disclaimer {
+  font-size: 0.7rem;
+  color: var(--color-ink-muted);
+  padding: 0 0.75rem 0.75rem;
+  margin: 0;
+  text-align: center;
+}

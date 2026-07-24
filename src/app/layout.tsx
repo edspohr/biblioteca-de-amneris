@@ -5,6 +5,7 @@ import { repo } from "@/lib/repo";
 import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
 import { NavBar } from "./nav-bar";
+import { AsistenteWidget } from "./asistente/widget";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -61,6 +62,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <NavBar />
           <EtapaSelectorGlobal />
           <main>{children}</main>
+          <AsistenteWidget />
         </EtapaActivaProvider>
       </body>
     </html>
