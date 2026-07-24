@@ -18,9 +18,6 @@ export function NavBar() {
     setOpen(false);
   }, [pathname]);
 
-  // The landing has its own header — hide the reader nav on it.
-  if (pathname === "/") return null;
-
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -29,6 +26,11 @@ export function NavBar() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
+
+  // The landing has its own header — hide the reader nav on it.
+  // Early-return goes AFTER all hooks so the hook count stays constant
+  // across renders (React error #310).
+  if (pathname === "/") return null;
 
   return (
     <header className="nav" role="banner">
