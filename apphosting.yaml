@@ -11,40 +11,52 @@ runConfig:
   concurrency: 80
   timeoutSeconds: 60
 
-# Environment variables for Firebase Auth (Phase 1).
-# NEXT_PUBLIC_* values are safe to inline; the admin service-account JSON
-# must be stored as a Secret Manager secret and referenced with `secret:`.
+# Environment variables.
+#
+# NEXT_PUBLIC_* values are safe to inline — they ship to the browser bundle
+# anyway. The admin SDK authenticates via Application Default Credentials on
+# Cloud Run (no service-account JSON needed on this side); FIREBASE_ADMIN_SA
+# is only for local dev where you set GOOGLE_APPLICATION_CREDENTIALS.
 env:
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: ""              # TODO: paste from Firebase Console → Web app config
-    availability: [BUILD, RUNTIME]
+    value: AIzaSyDOX3AFVm6bwS806AiGChbA1mPY0Zgioa8
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: "biblioteca-amneris.firebaseapp.com"
-    availability: [BUILD, RUNTIME]
+    value: biblioteca-amneris.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-    value: "biblioteca-amneris"
-    availability: [BUILD, RUNTIME]
+    value: biblioteca-amneris
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-    value: "biblioteca-amneris.firebasestorage.app"
-    availability: [BUILD, RUNTIME]
+    value: biblioteca-amneris.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-    value: ""              # TODO: paste from Firebase Console
-    availability: [BUILD, RUNTIME]
+    value: "552708898843"
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    value: ""              # TODO: paste from Firebase Console
-    availability: [BUILD, RUNTIME]
+    value: 1:552708898843:web:9998652c716fe8926278be
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY
-    value: ""              # TODO: reCAPTCHA v3 site key for App Check
-    availability: [BUILD, RUNTIME]
+    value: 6LfKSWItAAAAAGZyQsXuI6c4tDogYe0YaGH9R8q_
+    availability:
+      - BUILD
+      - RUNTIME
   # Force the JSON adapter at build time so prerendering never depends on
-  # Firestore state. At runtime the admin SDK creds are present, so the repo
-  # auto-detects Firestore and uses it for all live requests.
+  # Firestore state. At runtime the admin SDK creds are present via ADC, so
+  # the repo auto-detects Firestore and uses it for all live requests.
   - variable: REPO_ADAPTER
-    value: "json"
-    availability: [BUILD]
-  # Admin SDK: store the entire service-account JSON as a secret named
-  # `firebase-admin-sa` in Secret Manager, granted to the App Hosting SA.
-  # Create with: firebase apphosting:secrets:set firebase-admin-sa
-  - variable: FIREBASE_ADMIN_SA
-    secret: firebase-admin-sa
-    availability: [RUNTIME]
+    value: json
+    availability:
+      - BUILD
