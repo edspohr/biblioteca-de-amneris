@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { getAppCheckToken } from "@/lib/firebase/client";
 
 const SESSION_STORAGE_KEY = "bocaditos_asistente_session_v1";
 
@@ -75,9 +76,14 @@ export function AsistenteWidget() {
     setSending(true);
 
     try {
+      const appCheckToken = await getAppCheckToken();
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+      if (appCheckToken) headers["X-Firebase-AppCheck"] = appCheckToken;
       const res = await fetch("/api/asistente", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({
           sessionId: sessionIdRef.current,
           question: q,

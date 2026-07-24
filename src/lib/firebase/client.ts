@@ -1,6 +1,7 @@
 import { getApp, getApps, initializeApp, type FirebaseApp } from "firebase/app";
 import { getAuth, type Auth } from "firebase/auth";
 import {
+  getToken,
   initializeAppCheck,
   ReCaptchaV3Provider,
   type AppCheck,
@@ -59,4 +60,21 @@ function getFirebaseApp(): FirebaseApp {
 
 export function getFirebaseAuth(): Auth {
   return getAuth(getFirebaseApp());
+}
+
+/**
+ * Best-effort App Check token for outbound calls to our own API. Returns
+ * null when App Check is not configured (either no site key or init failed);
+ * the server will still accept the request unless APP_CHECK_ENFORCE=true.
+ */
+export async function getAppCheckToken(): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+  getFirebaseApp(); // ensure init side effect
+  if (!appCheck) return null;
+  try {
+    const { token } = await getToken(appCheck, /* forceRefresh */ false);
+    return token || null;
+  } catch {
+    return null;
+  }
 }

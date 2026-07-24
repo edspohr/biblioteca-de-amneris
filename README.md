@@ -99,9 +99,23 @@ Desde el panel de autoría en `/admin` puedes crear recetas nuevas, editar las e
 
 **Importante:** este flujo funciona en tu computadora local. Cuando lleguemos al ciclo de despliegue en Firebase (ver siguiente sección), el guardado se hará contra Firestore y podrás editar recetas también desde el teléfono con conexión a internet.
 
+Para uso diario, mejor mira [MANUAL_AMNERIS.md](MANUAL_AMNERIS.md) — ahí está la guía paso a paso en lenguaje sencillo. Este README es más técnico.
+
 ---
 
-## Firebase (Fases 1 y 2)
+## Estructura general de la app
+
+Tres superficies:
+
+1. **Landing** (`/`) — página pública para presentar el libro y captar cuentas nuevas.
+2. **Lector** (`/libro`, `/recetas`, `/menus`, `/tecnicas`, `/etapas/*`) — el libro mismo. Público, gratuito.
+3. **Panel de autoría** (`/admin`) — sólo para superadmins. Aquí Amneris gestiona recetas, menús, ingredientes, alérgenos, técnicas, usuarios, y ve las preguntas frecuentes del asistente.
+
+Además hay un **asistente flotante** en toda página pública, powered by Gemini 2.5 Flash — responde sólo con contenido real del libro vía function calling.
+
+---
+
+## Firebase (Fases 1 a 5)
 
 El proyecto Firebase `biblioteca-amneris` está conectado a la app. Auth,
 Firestore y Storage viven aquí:
@@ -165,6 +179,33 @@ Deploy de las reglas cuando cambien:
 ```
 firebase deploy --only firestore:rules,storage
 ```
+
+### Tests de reglas
+
+```
+npm run test:rules
+```
+
+Corre 34 tests con el emulador local: cada colección × cada rol × read/write. Requiere Java (Firestore emulator). `brew install openjdk@21` en macOS si no lo tienes.
+
+### Asistente conversacional (Fase 5)
+
+- Vive en el botón flotante bottom-right de toda página pública.
+- Llama a Gemini 2.5 Flash desde el servidor (`/api/asistente`) — nunca desde el cliente.
+- Cinco herramientas deterministas (`src/lib/asistente/tools.ts`): `buscarRecetas`, `obtenerReceta`, `buscarMenus`, `sugerirMenu`, `listaDeCompras`.
+- Reglas duras aplicadas en código, no sólo en prompt: redirect médico (regex de síntomas), inyección de alérgenos detectados, sanitización de URLs inventadas.
+- Rate limit por sesión: 20/hora, 100/día.
+- Logs en `conversaciones/{sessionId}/mensajes/{id}` — sólo pregunta + resumen (150 chars), 30 días.
+- Ver preguntas frecuentes en `/admin/asistente`.
+- Limpieza mensual: `npm run cleanup:asistente`.
+
+Setup de Google Cloud (una vez): [GCP_SETUP.md](GCP_SETUP.md).
+
+### App Check
+
+- Init del cliente en `src/lib/firebase/client.ts` con reCAPTCHA v3.
+- El asistente API verifica el token si `APP_CHECK_ENFORCE=true` (opt-in).
+- Enforcement de Auth/Firestore/Storage se activa en Firebase Console (ver [GCP_SETUP.md](GCP_SETUP.md)).
 
 ---
 

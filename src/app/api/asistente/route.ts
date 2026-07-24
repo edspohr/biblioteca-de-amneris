@@ -3,6 +3,7 @@ import { z } from "zod";
 import { runConversation, type ConversationTurn } from "@/lib/asistente/gemini";
 import { checkAndConsume } from "@/lib/asistente/rate-limit";
 import { logMessage } from "@/lib/asistente/log";
+import { verifyAppCheck } from "@/lib/asistente/app-check";
 import {
   MEDICAL_REDIRECT_TEXT,
   detectAllergens,
@@ -33,6 +34,12 @@ function sseEvent(event: string, data: unknown): string {
 }
 
 export async function POST(req: Request) {
+  // 0) App Check — no-op unless APP_CHECK_ENFORCE=true
+  const appCheck = await verifyAppCheck(req);
+  if (!appCheck.ok) {
+    return NextResponse.json({ error: appCheck.error }, { status: appCheck.status });
+  }
+
   let body: z.infer<typeof bodySchema>;
   try {
     body = bodySchema.parse(await req.json());

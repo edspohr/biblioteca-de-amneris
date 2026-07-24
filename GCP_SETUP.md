@@ -56,3 +56,70 @@ Si aparece un error de la API, revisa:
 - La cuenta de servicio en `serviceAccountKey.json` tiene el rol.
 - La región de `VERTEX_LOCATION` soporta Gemini 2.5 Flash
   (todas las regiones estándar lo hacen a fecha 2026-07).
+
+---
+
+## 4. App Check enforcement (Fase 6)
+
+App Check ya está inicializado en el cliente (reCAPTCHA v3). Falta encender el
+enforcement en la consola para que los servicios de Firebase rechacen las
+llamadas sin token. Con el enforcement encendido, un scraper que use tu API
+key expuesta en el bundle no puede robar cuota de Firestore/Storage/Auth.
+
+### Paso previo: registrar la app en App Check
+
+Solo si no está registrada aún.
+
+1. Abre: <https://console.firebase.google.com/project/biblioteca-amneris/appcheck>
+2. Pestaña **Apps** → busca `biblioteca-amneris-web` → **Registrar**.
+3. Proveedor **reCAPTCHA v3**. Pega la **secret key** de reCAPTCHA (la de
+   <https://www.google.com/recaptcha/admin>, distinta del site key que ya
+   está en `.env.local`).
+4. TTL del token: deja el default (1 hora).
+5. **Guardar**.
+
+### Encender enforcement — uno por uno
+
+En la misma pantalla App Check, pestaña **APIs**. Verás una lista de servicios
+(Authentication, Cloud Firestore, Cloud Storage, Vertex AI, etc.), cada uno con
+tres modos: **Unenforced**, **Monitor**, **Enforced**.
+
+Recomendado, en este orden:
+
+1. **Cloud Firestore** → Enforced. Si algo del reader deja de cargar, pasa a
+   Monitor y avisa.
+2. **Cloud Storage** → Enforced. Igual: si las fotos dejan de cargar, Monitor.
+3. **Authentication** → Enforced. Prueba iniciar sesión y crear cuenta ANTES
+   de dejarlo. Si sign-up rompe, Monitor.
+
+**No es necesario habilitarlo en Vertex AI** — el asistente llama a Vertex desde
+el servidor, no desde el cliente. La verificación de token en `/api/asistente`
+la hace nuestro código (ver `APP_CHECK_ENFORCE` abajo).
+
+### Debug token para desarrollo local
+
+Con enforcement encendido, tu dev local se bloquea porque `localhost` no puede
+resolver el desafío de reCAPTCHA. Solución:
+
+1. Levanta `npm run dev` y abre la app en el navegador.
+2. Abre la consola (F12) → busca una línea tipo
+   `[App Check] Debug token: 12345678-ABCD-...`. Cópiala.
+3. Pega en `.env.local`:
+   ```
+   NEXT_PUBLIC_APPCHECK_DEBUG_TOKEN=12345678-ABCD-...
+   ```
+4. En Firebase Console → App Check → pestaña **Apps** →
+   `biblioteca-amneris-web` → menú de tres puntos → **Manage debug tokens** →
+   **Add debug token**. Pega el mismo string.
+5. Reinicia `npm run dev`. Ya no te bloquea.
+
+### Encender la verificación en /api/asistente
+
+En `.env.local` (y luego en `apphosting.yaml` para producción):
+
+```
+APP_CHECK_ENFORCE=true
+```
+
+Con `false` (o sin definir), el endpoint acepta llamadas sin token pero
+verifica los que sí llegan. Útil durante la migración.
