@@ -1,42 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bocaditos del Corazón">
   <title>Bocaditos del Corazón</title>
-  <!--
-    B glyph with a heart carved out of the lower counter.
-    Outer shape = a chunky B (two stacked lobes on a left stem).
-    Inner cutouts = one rounded rectangle (upper counter) + one heart (lower counter).
-    fillRule="evenodd" makes the cutouts show through as the cream background.
-  -->
-  <path fill="#7a2f0f" fill-rule="evenodd" d="
-    M 40 24
-    L 118 24
-    C 142 24 158 40 158 62
-    C 158 76 150 87 138 92
-    C 154 97 166 110 166 128
-    C 166 152 148 176 118 176
-    L 40 176
-    Z
-
-    M 66 46
-    L 66 88
-    L 110 88
-    C 122 88 132 79 132 68
-    C 132 56 122 46 110 46
-    Z
-
-    M 66 112
-    L 66 156
-    L 116 156
-    C 132 156 140 145 140 132
-    C 140 120 130 112 118 112
-    Z
-
-    M 103 152
-    C 92 145 76 138 76 126
-    C 76 118 82 114 88 114
-    C 94 114 100 118 103 124
-    C 106 118 112 114 118 114
-    C 124 114 130 118 130 126
-    C 130 138 114 145 103 152
-    Z
-  "/>
+  <mask id="knockout-b">
+    <rect width="200" height="200" fill="white"/>
+    <text
+      x="100"
+      y="128"
+      text-anchor="middle"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-weight="700"
+      font-style="italic"
+      font-size="118"
+      fill="black">B</text>
+  </mask>
+  <path
+    fill="#7a2f0f"
+    mask="url(#knockout-b)"
+    d="M 100 178
+       C 60 152 20 122 20 82
+       C 20 56 40 36 66 36
+       C 82 36 94 44 100 56
+       C 106 44 118 36 134 36
+       C 160 36 180 56 180 82
+       C 180 122 140 152 100 178 Z"/>
 </svg>
