@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { createSessionCookie, SESSION_COOKIE_NAME } from "@/lib/auth/session";
+import { isSuperadminEmail } from "@/lib/auth/superadmins";
 import { getAdminAuth } from "@/lib/firebase/admin";
 import { getUser, mirrorUser } from "@/lib/users/service";
 
@@ -24,7 +25,29 @@ export async function POST(req: Request) {
 
   try {
     // Verify token before minting the cookie so we can echo user info.
-    const decoded = await getAdminAuth().verifyIdToken(idToken);
+    const auth = getAdminAuth();
+    const decoded = await auth.verifyIdToken(idToken);
+
+    // Auto-grant the `superadmin` custom claim to hard-coded owner emails on
+    // their first sign-in. The claim only lives inside a fresh ID token, so
+    // if we set it here we must ask the client to refresh and retry — the
+    // current idToken (and any session cookie minted from it) still carries
+    // the old claims.
+    if (
+      isSuperadminEmail(decoded.email) &&
+      decoded.superadmin !== true
+    ) {
+      const userRecord = await auth.getUser(decoded.uid);
+      await auth.setCustomUserClaims(decoded.uid, {
+        ...(userRecord.customClaims ?? {}),
+        superadmin: true,
+      });
+      return NextResponse.json(
+        { refreshRequired: true },
+        { status: 200 }
+      );
+    }
+
     const { cookie, maxAgeSeconds } = await createSessionCookie(idToken);
     const store = await cookies();
     store.set(SESSION_COOKIE_NAME, cookie, {

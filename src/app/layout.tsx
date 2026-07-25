@@ -4,7 +4,7 @@ import { Caveat, Fraunces, Source_Serif_4 } from "next/font/google";
 import { repo } from "@/lib/repo";
 import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
-import { NavBar } from "./nav-bar";
+import { NavBarServer } from "./nav-bar-server";
 import { AsistenteWidget } from "./asistente/widget";
 import "./globals.css";
 
@@ -59,7 +59,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     >
       <body>
         <EtapaActivaProvider etapas={etapas}>
-          <NavBar />
+          <NavBarServer />
           <EtapaSelectorGlobal />
           <main>{children}</main>
           <AsistenteWidget />

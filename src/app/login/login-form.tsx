@@ -28,7 +28,7 @@ export function LoginForm({
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  async function postSession(idToken: string) {
+  async function callSession(idToken: string) {
     const res = await fetch("/api/session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -38,7 +38,25 @@ export function LoginForm({
       const data = (await res.json().catch(() => ({}))) as { error?: string };
       throw new Error(data.error || "No se pudo iniciar la sesión.");
     }
-    return (await res.json()) as { superadmin: boolean };
+    return (await res.json()) as
+      | { superadmin: boolean; refreshRequired?: false }
+      | { refreshRequired: true; superadmin?: undefined };
+  }
+
+  async function postSession(
+    getIdToken: (force: boolean) => Promise<string>
+  ): Promise<{ superadmin: boolean }> {
+    const first = await callSession(await getIdToken(true));
+    if (!("refreshRequired" in first) || !first.refreshRequired) {
+      return { superadmin: first.superadmin };
+    }
+    // Server granted a fresh custom claim; refresh the ID token so the new
+    // claim is embedded, then create the session cookie.
+    const second = await callSession(await getIdToken(true));
+    if ("refreshRequired" in second && second.refreshRequired) {
+      throw new Error("No se pudo aplicar el rol de editor. Intenta de nuevo.");
+    }
+    return { superadmin: second.superadmin };
   }
 
   function afterLogin(superadmin: boolean) {
@@ -60,8 +78,9 @@ export function LoginForm({
       if (mode === "signup" && displayName.trim()) {
         await updateProfile(cred.user, { displayName: displayName.trim() });
       }
-      const idToken = await cred.user.getIdToken(true);
-      const { superadmin } = await postSession(idToken);
+      const { superadmin } = await postSession((force) =>
+        cred.user.getIdToken(force)
+      );
       afterLogin(superadmin);
     } catch (err: unknown) {
       setError(translateAuthError(err));
@@ -75,8 +94,9 @@ export function LoginForm({
     try {
       const auth = getFirebaseAuth();
       const cred = await signInWithPopup(auth, new GoogleAuthProvider());
-      const idToken = await cred.user.getIdToken(true);
-      const { superadmin } = await postSession(idToken);
+      const { superadmin } = await postSession((force) =>
+        cred.user.getIdToken(force)
+      );
       afterLogin(superadmin);
     } catch (err: unknown) {
       setError(translateAuthError(err));

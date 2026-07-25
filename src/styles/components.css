@@ -173,6 +173,44 @@ header.nav {
   }
 }
 
+.nav__account {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.nav__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+  font-weight: var(--fw-bold);
+  font-size: 0.85rem;
+  line-height: 1;
+  user-select: none;
+}
+.nav__logout {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.nav__logout:hover {
+  color: var(--color-brand-ink);
+  border-color: var(--color-brand);
+}
+.nav__logout:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 /* ============================================================
  * Etapa bar (bottom-fixed on mobile, sticky sub-header on desktop)
  * — src/lib/etapa-activa/selector-global.tsx

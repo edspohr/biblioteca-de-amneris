@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string; mode?: string }>;
+  searchParams: Promise<{ next?: string; mode?: string; reason?: string }>;
 }) {
-  const { next, mode } = await searchParams;
+  const { next, mode, reason } = await searchParams;
   const user = await verifySession();
   if (user) {
     // Already logged in: send them where they were going, or to /admin if
@@ -21,10 +21,24 @@ export default async function LoginPage({
     if (next && next.startsWith("/")) redirect(next);
     redirect(user.superadmin ? "/admin" : "/libro");
   }
-  const initialMode = mode === "signup" ? "signup" : "signin";
-  const title = initialMode === "signup" ? "Crea tu cuenta" : "Iniciar sesión";
+  const forcedMode =
+    reason === "preview" || reason === "asistente" ? "signup" : null;
+  const initialMode =
+    forcedMode ?? (mode === "signup" ? "signup" : "signin");
+  const title =
+    reason === "preview"
+      ? "Ya viste 3 recetas gratis"
+      : reason === "asistente"
+      ? "Sigue preguntándole al libro"
+      : initialMode === "signup"
+      ? "Crea tu cuenta"
+      : "Iniciar sesión";
   const lede =
-    initialMode === "signup"
+    reason === "preview"
+      ? "Crea tu cuenta gratis para seguir cocinando con Amneris. No pedimos tarjeta ni datos innecesarios."
+      : reason === "asistente"
+      ? "Crea tu cuenta gratis para seguir consultando al asistente todas las veces que quieras."
+      : initialMode === "signup"
       ? "Es gratis. Con tu cuenta podremos avisarte de novedades más adelante."
       : "Accede a tu cuenta o crea una nueva para acompañarte en la aventura de alimentar a tu bebé.";
   return (

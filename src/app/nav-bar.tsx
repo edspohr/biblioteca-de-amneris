@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { SessionUser } from "@/lib/auth/session";
+import { getFirebaseAuth } from "@/lib/firebase/client";
 
 const LINKS: { href: string; label: string }[] = [
   { href: "/recetas", label: "Recetas" },
@@ -10,9 +12,10 @@ const LINKS: { href: string; label: string }[] = [
   { href: "/tecnicas", label: "Técnicas" },
 ];
 
-export function NavBar() {
+export function NavBar({ user }: { user: SessionUser | null }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
 
   useEffect(() => {
     setOpen(false);
@@ -27,10 +30,28 @@ export function NavBar() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // The landing has its own header — hide the reader nav on it.
-  // Early-return goes AFTER all hooks so the hook count stays constant
-  // across renders (React error #310).
+  async function handleLogout() {
+    if (signingOut) return;
+    setSigningOut(true);
+    try {
+      await fetch("/api/session", { method: "DELETE" });
+      try {
+        await getFirebaseAuth().signOut();
+      } catch {
+        // Client SDK may not be initialized; server cookie is already gone.
+      }
+      window.location.assign("/");
+    } catch {
+      setSigningOut(false);
+    }
+  }
+
   if (pathname === "/") return null;
+
+  const initial = (user?.name || user?.email || "")
+    .trim()
+    .charAt(0)
+    .toUpperCase();
 
   return (
     <header className="nav" role="banner">
@@ -61,6 +82,39 @@ export function NavBar() {
               </li>
             );
           })}
+          {user?.superadmin && (
+            <li>
+              <Link
+                href="/admin/recetas"
+                aria-current={pathname.startsWith("/admin") ? "page" : undefined}
+              >
+                Editor
+              </Link>
+            </li>
+          )}
+          {user ? (
+            <li className="nav__account">
+              <span
+                className="nav__avatar"
+                aria-hidden="true"
+                title={user.email ?? undefined}
+              >
+                {initial || "·"}
+              </span>
+              <button
+                type="button"
+                className="nav__logout"
+                onClick={handleLogout}
+                disabled={signingOut}
+              >
+                {signingOut ? "Saliendo…" : "Cerrar sesión"}
+              </button>
+            </li>
+          ) : (
+            <li>
+              <Link href="/login">Entrar</Link>
+            </li>
+          )}
         </ul>
       </div>
     </header>

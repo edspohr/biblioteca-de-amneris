@@ -11,6 +11,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
+import { AskTheBookSection } from "./asistente/landing-demo";
 import "../styles/landing.css";
 
 // -- SEO ---------------------------------------------------------------------
@@ -118,6 +119,10 @@ const FAQ = [
     a: "Sí, totalmente. El libro está disponible en línea sin costo. Si más adelante ofrecemos algo pagado, quedará muy claro qué es y qué no.",
   },
   {
+    q: "¿Cómo funciona el asistente “Pregúntale al libro”?",
+    a: "Es un asistente con IA que solo responde con recetas y menús de este libro. Pídele menús personalizados, sustitutos por alergias o ideas rápidas por edad. Prueba gratis en la landing con 3 preguntas; con tu cuenta puedes preguntarle sin límite. No reemplaza al pediatra.",
+  },
+  {
     q: "¿Para qué edades sirve?",
     a: "Está pensado para bebés de 6 a 24 meses, cubriendo las tres etapas de la alimentación complementaria: purés lisos, texturas graduadas y comidas familiares adaptadas.",
   },
@@ -146,6 +151,7 @@ export default function LandingPage() {
       <Marquee />
       <Manifesto />
       <Method />
+      <AskTheBookSection />
       <Adentro />
       <Gallery />
       <FAQSection />
@@ -166,6 +172,7 @@ function Header() {
         <nav className="landing__nav" aria-label="Secciones">
           <a href="#autora">Autora</a>
           <a href="#metodo">Método</a>
+          <a href="#asistente">Pregúntale al libro</a>
           <a href="#galeria">Galería</a>
           <a href="#faq">Preguntas</a>
         </nav>
@@ -195,12 +202,12 @@ function Hero() {
             y la porción según la etapa.
           </p>
           <div className="landing__cta-buttons">
-            <Link
-              href="/login?mode=signup"
+            <a
+              href="#asistente"
               className="landing__button landing__button--dark"
             >
-              Crea tu cuenta gratis
-            </Link>
+              Pregúntale al libro
+            </a>
             <Link
               href="/libro"
               className="landing__button landing__button--ghost"
@@ -212,7 +219,7 @@ function Hero() {
           <ul className="landing__pills" aria-label="Características">
             <li className="landing__pill">6 a 24 meses</li>
             <li className="landing__pill">120 recetas con foto</li>
-            <li className="landing__pill">Sistema editorial</li>
+            <li className="landing__pill">Asistente con IA</li>
             <li className="landing__pill">Gratis</li>
           </ul>
         </div>

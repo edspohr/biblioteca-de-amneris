@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { runConversation, type ConversationTurn } from "@/lib/asistente/gemini";
-import { checkAndConsume } from "@/lib/asistente/rate-limit";
+import {
+  checkAndConsume,
+  checkAndConsumeLanding,
+} from "@/lib/asistente/rate-limit";
 import { logMessage } from "@/lib/asistente/log";
 import { verifyAppCheck } from "@/lib/asistente/app-check";
 import {
@@ -34,10 +37,16 @@ function sseEvent(event: string, data: unknown): string {
 }
 
 export async function POST(req: Request) {
-  // 0) App Check — no-op unless APP_CHECK_ENFORCE=true
-  const appCheck = await verifyAppCheck(req);
-  if (!appCheck.ok) {
-    return NextResponse.json({ error: appCheck.error }, { status: appCheck.status });
+  const isLandingDemo =
+    req.headers.get("x-asistente-mode") === "landing-demo";
+
+  // 0) App Check — skipped for the anonymous landing demo (no App Check token
+  // is available before login). Landing demo relies on strict IP rate limiting.
+  if (!isLandingDemo) {
+    const appCheck = await verifyAppCheck(req);
+    if (!appCheck.ok) {
+      return NextResponse.json({ error: appCheck.error }, { status: appCheck.status });
+    }
   }
 
   let body: z.infer<typeof bodySchema>;
@@ -50,13 +59,38 @@ export async function POST(req: Request) {
     );
   }
 
-  // 1) Rate limit
-  const rl = await checkAndConsume(body.sessionId);
-  if (!rl.allowed) {
-    return NextResponse.json(
-      { error: rl.reason ?? "Demasiadas preguntas seguidas." },
-      { status: 429, headers: rl.retryAfterSec ? { "Retry-After": String(rl.retryAfterSec) } : {} }
-    );
+  // 1) Rate limit — landing demo caps at 3/day per IP; everyone else uses
+  // the per-session sliding-window limiter.
+  let remainingDemo: number | undefined;
+  if (isLandingDemo) {
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+    const rl = await checkAndConsumeLanding(ip);
+    if (!rl.allowed) {
+      return NextResponse.json(
+        {
+          error: rl.reason ?? "Ya usaste tus preguntas gratis.",
+          gate: "signup",
+        },
+        {
+          status: 429,
+          headers: rl.retryAfterSec
+            ? { "Retry-After": String(rl.retryAfterSec) }
+            : {},
+        }
+      );
+    }
+    remainingDemo = rl.remaining;
+  } else {
+    const rl = await checkAndConsume(body.sessionId);
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { error: rl.reason ?? "Demasiadas preguntas seguidas." },
+        { status: 429, headers: rl.retryAfterSec ? { "Retry-After": String(rl.retryAfterSec) } : {} }
+      );
+    }
   }
 
   // 2) Medical short-circuit — never even call the model
@@ -72,6 +106,7 @@ export async function POST(req: Request) {
               toolsInvoked: [],
               citedSlugs: [],
               redirect: "medical",
+              remainingDemo,
             })
           )
         );
@@ -133,6 +168,7 @@ export async function POST(req: Request) {
                   toolsInvoked: chunk.toolsInvoked ?? toolsInvoked,
                   citedSlugs: [...citedSlugs],
                   onTopic,
+                  remainingDemo,
                 })
               )
             );
