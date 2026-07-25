@@ -7,7 +7,7 @@ import { getAppCheckToken } from "@/lib/firebase/client";
 
 const SESSION_STORAGE_KEY = "bocaditos_asistente_session_v1";
 
-// Paths where the widget should NOT render.
+// Paths where the widget should NOT render even if the user is logged in.
 const HIDDEN_PREFIXES = ["/admin", "/login", "/sin-permiso"];
 
 interface Message {
@@ -30,7 +30,7 @@ function makeSessionId(): string {
   return s;
 }
 
-export function AsistenteWidget() {
+export function AsistenteWidget({ enabled = true }: { enabled?: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -55,6 +55,7 @@ export function AsistenteWidget() {
     }
   }, [open, messages.length]);
 
+  if (!enabled) return null;
   if (HIDDEN_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
     return null;
   }
