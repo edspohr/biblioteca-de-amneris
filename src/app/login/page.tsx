@@ -22,22 +22,22 @@ export default async function LoginPage({
     redirect(user.superadmin ? "/admin" : "/libro");
   }
   const forcedMode =
-    reason === "preview" || reason === "asistente" ? "signup" : null;
+    reason === "reader" || reason === "asistente" ? "signup" : null;
   const initialMode =
     forcedMode ?? (mode === "signup" ? "signup" : "signin");
   const title =
-    reason === "preview"
-      ? "Ya viste 3 recetas gratis"
+    reason === "reader"
+      ? "Regístrate gratis para leer el libro"
       : reason === "asistente"
-      ? "Sigue preguntándole al libro"
+      ? "Regístrate para preguntarle al libro"
       : initialMode === "signup"
       ? "Crea tu cuenta"
       : "Iniciar sesión";
   const lede =
-    reason === "preview"
-      ? "Crea tu cuenta gratis para seguir cocinando con Amneris. No pedimos tarjeta ni datos innecesarios."
+    reason === "reader"
+      ? "El libro es gratis, pero necesitamos que crees una cuenta para acceder. No pedimos tarjeta ni datos innecesarios."
       : reason === "asistente"
-      ? "Crea tu cuenta gratis para seguir consultando al asistente todas las veces que quieras."
+      ? "Crea tu cuenta gratis para consultar al asistente todas las veces que quieras."
       : initialMode === "signup"
       ? "Es gratis. Con tu cuenta podremos avisarte de novedades más adelante."
       : "Accede a tu cuenta o crea una nueva para acompañarte en la aventura de alimentar a tu bebé.";

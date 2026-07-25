@@ -88,6 +88,9 @@ export async function buscarRecetas(raw: unknown): Promise<ToolResult | ToolErro
     );
 
     const texto = args.texto ? normalize(args.texto) : null;
+    const ingNombreById = new Map(
+      ingredientes.map((i) => [i.id, normalize(i.nombre)])
+    );
     const filtered = all.filter((r) => {
       if (args.tipo_comida && r.tipo_comida !== args.tipo_comida) return false;
       if (args.minutos_max != null && (r.minutos_prep ?? Infinity) > args.minutos_max)
@@ -95,7 +98,15 @@ export async function buscarRecetas(raw: unknown): Promise<ToolResult | ToolErro
       if (args.congelable != null && r.congelable !== args.congelable) return false;
       if (excludeIds.size > 0 && r.receta_alergenos.some((ra) => excludeIds.has(ra.alergeno_id)))
         return false;
-      if (texto && !normalize(r.titulo).includes(texto)) return false;
+      if (texto) {
+        const inTitle = normalize(r.titulo).includes(texto);
+        if (inTitle) return true;
+        const inIngredients = r.receta_ingredientes.some((ri) => {
+          const nombre = ingNombreById.get(ri.ingrediente_id);
+          return nombre ? nombre.includes(texto) : false;
+        });
+        if (!inIngredients) return false;
+      }
       return true;
     });
 

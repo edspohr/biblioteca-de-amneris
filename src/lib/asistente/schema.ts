@@ -8,7 +8,13 @@ import { ETAPA_IDS, tipoComida } from "@/lib/schema/receta";
  */
 
 export const buscarRecetasSchema = z.object({
-  texto: z.string().max(120).optional().describe("Búsqueda por palabra del título"),
+  texto: z
+    .string()
+    .max(120)
+    .optional()
+    .describe(
+      "Palabra libre — coincide contra el título de la receta O contra el nombre de cualquiera de sus ingredientes. Ej. 'pollo' encuentra tanto recetas con 'pollo' en el título como recetas donde el pollo es ingrediente."
+    ),
   tipo_comida: tipoComida.optional(),
   minutos_max: z.number().int().positive().max(240).optional(),
   congelable: z.boolean().optional(),

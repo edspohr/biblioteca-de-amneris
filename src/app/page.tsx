@@ -11,7 +11,8 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
-import { AskTheBookSection } from "./asistente/landing-demo";
+import { verifySession } from "@/lib/auth/session";
+import { AskTheBookSection } from "./asistente/landing-showcase";
 import "../styles/landing.css";
 
 // -- SEO ---------------------------------------------------------------------
@@ -142,12 +143,14 @@ const FAQ = [
 
 // -- Landing page ------------------------------------------------------------
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const user = await verifySession();
+  const isLogged = Boolean(user);
   return (
     <div className="landing">
       <SchemaOrgLD />
-      <Header />
-      <Hero />
+      <Header isLogged={isLogged} />
+      <Hero isLogged={isLogged} />
       <Marquee />
       <Manifesto />
       <Method />
@@ -161,7 +164,7 @@ export default function LandingPage() {
   );
 }
 
-function Header() {
+function Header({ isLogged }: { isLogged: boolean }) {
   return (
     <header className="landing__header">
       <div className="landing__header-inner">
@@ -177,16 +180,37 @@ function Header() {
           <a href="#faq">Preguntas</a>
         </nav>
         <div className="landing__header-cta">
-          <Link href="/libro" className="landing__button landing__button--dark">
-            Entrar al recetario
-          </Link>
+          {isLogged ? (
+            <Link href="/libro" className="landing__button landing__button--dark">
+              Entrar al recetario
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="landing__button landing__button--ghost"
+                style={{
+                  color: "var(--color-brand-ink)",
+                  borderColor: "var(--color-brand-ink)",
+                }}
+              >
+                Entrar
+              </Link>
+              <Link
+                href="/login?mode=signup"
+                className="landing__button landing__button--dark"
+              >
+                Crear cuenta gratis
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>
   );
 }
 
-function Hero() {
+function Hero({ isLogged }: { isLogged: boolean }) {
   return (
     <section className="landing__hero">
       <div className="landing__container landing__hero-inner">
@@ -202,19 +226,28 @@ function Hero() {
             y la porción según la etapa.
           </p>
           <div className="landing__cta-buttons">
+            {isLogged ? (
+              <Link
+                href="/libro"
+                className="landing__button landing__button--dark"
+              >
+                Entrar al recetario
+              </Link>
+            ) : (
+              <Link
+                href="/login?mode=signup"
+                className="landing__button landing__button--dark"
+              >
+                Crea tu cuenta gratis
+              </Link>
+            )}
             <a
               href="#asistente"
-              className="landing__button landing__button--dark"
-            >
-              Pregúntale al libro
-            </a>
-            <Link
-              href="/libro"
               className="landing__button landing__button--ghost"
               style={{ color: "var(--color-brand-ink)", borderColor: "var(--color-brand-ink)" }}
             >
-              Entrar al recetario
-            </Link>
+              Ver cómo funciona
+            </a>
           </div>
           <ul className="landing__pills" aria-label="Características">
             <li className="landing__pill">6 a 24 meses</li>

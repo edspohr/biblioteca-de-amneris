@@ -1,12 +1,8 @@
 import { repo } from "@/lib/repo";
 
-// Words that signal a medical or health question. Short-circuits BEFORE any
-// model call — we don't want the model even trying to answer these.
-// Kept broad on purpose; false positives (someone asks "¿la papa da alergia?")
-// still get a caring "consulta con tu pediatra" reply, which is the right
-// answer.
-const MEDICAL_PATTERNS = [
-  /alergi[ao]/i,
+// Symptoms, reactions, diagnoses, dosing — these ALWAYS short-circuit to a
+// pediatrician redirect. The model shouldn't try to answer them.
+const MEDICAL_CONSULT_PATTERNS = [
   /reacci[óo]n/i,
   /reacciona/i,
   /atragant/i,
@@ -18,11 +14,10 @@ const MEDICAL_PATTERNS = [
   /diarrea/i,
   /sangre/i,
   /erupci[óo]n/i,
+  /sarpullid/i,
   /rash/i,
-  /peso/i,
   /crecimiento/i,
   /crece\s+(poco|mal|bien|normal)/i,
-  /talla/i,
   /desarrollo/i,
   /enferm/i,
   /dolor(?!\s+de\s+(cabeza\s+m[íi]a|panza\s+m[íi]a))/i,
@@ -30,14 +25,36 @@ const MEDICAL_PATTERNS = [
   /c[óo]lico/i,
   /estre[ñn]imiento/i,
   /diagn[óo]stico/i,
+  /medicamento/i,
+  /remedio/i,
+  /cu[áa]nt[oa]s?\s+\w+\s+(le\s+doy|dar|puedo\s+dar)/i,
+  /es normal que/i,
 ];
 
-export const MEDICAL_REDIRECT_TEXT = `Eso ya entra en terreno de tu pediatra — el libro no puede dar consejo médico. Cualquier duda sobre reacciones, alergias, o cómo está creciendo tu bebé, mejor consultarlo con quien lo conoce y puede verlo. 💛
+// Mentions of allergy/intolerance used as a FILTER for recipes. These should
+// NOT short-circuit — the model handles them normally and `detectAllergens`
+// enriches the question with `alergenos_excluidos` when appropriate.
+const ALLERGY_FILTER_PATTERNS = [
+  /al[eé]rgic[ao]\s+a/i,
+  /alergia\s+a/i,
+  /intolera(?:nte|ncia)\s+a/i,
+  /sin\s+(gluten|lact[eé]os?|huevo|frutos\s+secos|soja|pescado|maris|mostaza|s[eé]samo|apio)/i,
+  /no\s+(puede|come|le\s+doy|le\s+da|tolera)/i,
+  /libre\s+de/i,
+  /evitar/i,
+];
+
+export const MEDICAL_REDIRECT_TEXT = `Eso ya entra en terreno de tu pediatra — el libro no puede dar consejo médico. Cualquier duda sobre reacciones, síntomas, o cómo está creciendo tu bebé, mejor consultarlo con quien lo conoce y puede verlo. 💛
 
 Si quieres, te puedo ayudar a buscar recetas del libro que se adapten a lo que tu pediatra te indique.`;
 
 export function needsMedicalRedirect(question: string): boolean {
-  return MEDICAL_PATTERNS.some((rx) => rx.test(question));
+  const consult = MEDICAL_CONSULT_PATTERNS.some((rx) => rx.test(question));
+  if (consult) return true;
+  // If the only "medical" signal is an allergy-as-filter, pass through.
+  const filterOnly = ALLERGY_FILTER_PATTERNS.some((rx) => rx.test(question));
+  if (filterOnly) return false;
+  return false;
 }
 
 /**
@@ -89,13 +106,53 @@ async function loadAllergens() {
   }));
   return cachedAllergenSlugs;
 }
+// Markers that precede an allergen when the user wants it EXCLUDED. If the
+// allergen name appears in the question but none of these markers appears
+// close before it, we do NOT treat it as an exclusion — otherwise "recetas
+// con pescado" gets silently rewritten to "recetas SIN pescado".
+const NEG_MARKERS = [
+  "sin",
+  "no puede",
+  "no come",
+  "no le doy",
+  "no le da",
+  "no tolera",
+  "alergic[ao] a",
+  "alergia a",
+  "intolera(?:nte|ncia) a",
+  "intolerante al",
+  "evitar",
+  "libre de",
+  "nada de",
+  "excluir",
+  "excepto",
+];
+function normalize(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+}
+
 export async function detectAllergens(question: string): Promise<string[]> {
   const list = await loadAllergens();
-  const t = question.toLowerCase();
+  const normalized = normalize(question);
   const hit = new Set<string>();
   for (const a of list) {
-    if (t.includes(a.name)) hit.add(a.slug);
-    if (t.includes(a.slug.replace(/-/g, " "))) hit.add(a.slug);
+    const targets = [normalize(a.name), a.slug.replace(/-/g, " ")];
+    for (const target of targets) {
+      // Only count as exclusion if a negation/allergy marker sits within a
+      // short window BEFORE the allergen mention.
+      const rx = new RegExp(
+        `(?:${NEG_MARKERS.join("|")})\\s+(?:\\w+\\s+){0,3}${target}\\b`,
+        "i"
+      );
+      if (rx.test(normalized)) {
+        hit.add(a.slug);
+        break;
+      }
+    }
   }
   return [...hit];
 }
+

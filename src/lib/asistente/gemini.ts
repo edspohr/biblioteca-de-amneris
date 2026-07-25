@@ -34,7 +34,7 @@ function getModel(): GenerativeModel {
     },
     tools: [{ functionDeclarations: TOOL_DECLARATIONS }],
     generationConfig: {
-      temperature: 0.4,
+      temperature: 0.2,
       maxOutputTokens: 1024,
     },
   });

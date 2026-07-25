@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { runConversation, type ConversationTurn } from "@/lib/asistente/gemini";
-import {
-  checkAndConsume,
-  checkAndConsumeLanding,
-} from "@/lib/asistente/rate-limit";
+import { checkAndConsume } from "@/lib/asistente/rate-limit";
 import { logMessage } from "@/lib/asistente/log";
 import { verifyAppCheck } from "@/lib/asistente/app-check";
+import { verifySession } from "@/lib/auth/session";
 import {
   MEDICAL_REDIRECT_TEXT,
   detectAllergens,
@@ -37,16 +35,19 @@ function sseEvent(event: string, data: unknown): string {
 }
 
 export async function POST(req: Request) {
-  const isLandingDemo =
-    req.headers.get("x-asistente-mode") === "landing-demo";
+  // 0) Auth — the assistant is a logged-in-only feature.
+  const user = await verifySession();
+  if (!user) {
+    return NextResponse.json(
+      { error: "Debes iniciar sesión para usar el asistente." },
+      { status: 401 }
+    );
+  }
 
-  // 0) App Check — skipped for the anonymous landing demo (no App Check token
-  // is available before login). Landing demo relies on strict IP rate limiting.
-  if (!isLandingDemo) {
-    const appCheck = await verifyAppCheck(req);
-    if (!appCheck.ok) {
-      return NextResponse.json({ error: appCheck.error }, { status: appCheck.status });
-    }
+  // 1) App Check
+  const appCheck = await verifyAppCheck(req);
+  if (!appCheck.ok) {
+    return NextResponse.json({ error: appCheck.error }, { status: appCheck.status });
   }
 
   let body: z.infer<typeof bodySchema>;
@@ -59,41 +60,16 @@ export async function POST(req: Request) {
     );
   }
 
-  // 1) Rate limit — landing demo caps at 3/day per IP; everyone else uses
-  // the per-session sliding-window limiter.
-  let remainingDemo: number | undefined;
-  if (isLandingDemo) {
-    const ip =
-      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      req.headers.get("x-real-ip") ||
-      "unknown";
-    const rl = await checkAndConsumeLanding(ip);
-    if (!rl.allowed) {
-      return NextResponse.json(
-        {
-          error: rl.reason ?? "Ya usaste tus preguntas gratis.",
-          gate: "signup",
-        },
-        {
-          status: 429,
-          headers: rl.retryAfterSec
-            ? { "Retry-After": String(rl.retryAfterSec) }
-            : {},
-        }
-      );
-    }
-    remainingDemo = rl.remaining;
-  } else {
-    const rl = await checkAndConsume(body.sessionId);
-    if (!rl.allowed) {
-      return NextResponse.json(
-        { error: rl.reason ?? "Demasiadas preguntas seguidas." },
-        { status: 429, headers: rl.retryAfterSec ? { "Retry-After": String(rl.retryAfterSec) } : {} }
-      );
-    }
+  // 2) Rate limit
+  const rl = await checkAndConsume(body.sessionId);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: rl.reason ?? "Demasiadas preguntas seguidas." },
+      { status: 429, headers: rl.retryAfterSec ? { "Retry-After": String(rl.retryAfterSec) } : {} }
+    );
   }
 
-  // 2) Medical short-circuit — never even call the model
+  // 3) Medical short-circuit — never even call the model
   if (needsMedicalRedirect(body.question)) {
     const stream = new ReadableStream<Uint8Array>({
       start(controller) {
@@ -106,7 +82,6 @@ export async function POST(req: Request) {
               toolsInvoked: [],
               citedSlugs: [],
               redirect: "medical",
-              remainingDemo,
             })
           )
         );
@@ -130,7 +105,7 @@ export async function POST(req: Request) {
     });
   }
 
-  // 3) Enrich question with detected allergens so the model can't forget
+  // 4) Enrich question with detected allergens so the model can't forget
   const detected = await detectAllergens(body.question);
   const enrichedQuestion = detected.length
     ? `${body.question}\n\n[Sistema: se detectaron alergias/intolerancias — excluye estos alérgenos en toda búsqueda: ${detected.join(", ")}]`
@@ -139,7 +114,7 @@ export async function POST(req: Request) {
   const history: ConversationTurn[] = body.history ?? [];
   const onTopic = looksOnTopic(body.question);
 
-  // 4) Stream the model turn
+  // 5) Stream the model turn
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       const enc = new TextEncoder();
@@ -168,7 +143,6 @@ export async function POST(req: Request) {
                   toolsInvoked: chunk.toolsInvoked ?? toolsInvoked,
                   citedSlugs: [...citedSlugs],
                   onTopic,
-                  remainingDemo,
                 })
               )
             );

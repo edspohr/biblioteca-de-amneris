@@ -1,9 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server";
-import {
-  decidePreview,
-  PREVIEW_COOKIE_NAME,
-  PREVIEW_TTL_SECONDS,
-} from "@/lib/auth/preview-gate";
 
 // This middleware runs on the Edge runtime, where firebase-admin cannot run.
 // It only checks for the *presence* of the session cookie and short-circuits
@@ -24,6 +19,22 @@ const PROTECTED_API_PREFIXES = [
   "/api/usuarios",
 ];
 
+// Reader routes that require login. Landing (/), /login, /sin-permiso and
+// public assets stay open.
+const READER_PREFIXES = [
+  "/libro",
+  "/recetas",
+  "/menus",
+  "/tecnicas",
+  "/etapas",
+];
+
+function isReaderPath(pathname: string): boolean {
+  return READER_PREFIXES.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`)
+  );
+}
+
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const hasSession = Boolean(req.cookies.get(SESSION_COOKIE_NAME)?.value);
@@ -39,32 +50,12 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Soft gate: anonymous visitors can open 3 recipe detail pages before we
-  // ask them to create an account. Logged-in users (session cookie present)
-  // bypass the gate entirely.
-  const recipeMatch = pathname.match(/^\/recetas\/([^/]+)\/?$/);
-  if (recipeMatch && req.method === "GET" && !hasSession) {
-    const slug = decodeURIComponent(recipeMatch[1]);
-    const cookieValue = req.cookies.get(PREVIEW_COOKIE_NAME)?.value;
-    const decision = decidePreview(cookieValue, slug);
-    if (decision.action === "gate") {
-      const url = req.nextUrl.clone();
-      url.pathname = "/login";
-      url.search = `?next=${encodeURIComponent(pathname)}&reason=preview`;
-      return NextResponse.redirect(url);
-    }
-    if (decision.action === "allow-and-record") {
-      const res = NextResponse.next();
-      res.cookies.set(PREVIEW_COOKIE_NAME, decision.nextValue, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "lax",
-        path: "/",
-        maxAge: PREVIEW_TTL_SECONDS,
-      });
-      return res;
-    }
-    // decision.action === "allow" — fall through
+  // Hard gate: the whole reader lives behind login. Landing stays public.
+  if (req.method === "GET" && isReaderPath(pathname) && !hasSession) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
+    url.search = `?next=${encodeURIComponent(pathname)}&reason=reader`;
+    return NextResponse.redirect(url);
   }
 
   // Guard mutating API routes.
@@ -87,7 +78,15 @@ export const config = {
   matcher: [
     "/admin",
     "/admin/:path*",
-    "/recetas/:slug",
+    "/libro",
+    "/libro/:path*",
+    "/recetas",
+    "/recetas/:path*",
+    "/menus",
+    "/menus/:path*",
+    "/tecnicas",
+    "/tecnicas/:path*",
+    "/etapas/:path*",
     "/api/recetas/:path*",
     "/api/ingredientes/:path*",
     "/api/alergenos/:path*",
