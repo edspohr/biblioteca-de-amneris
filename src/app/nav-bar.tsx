@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { SessionUser } from "@/lib/auth/session";
@@ -56,8 +57,20 @@ export function NavBar({ user }: { user: SessionUser | null }) {
   return (
     <header className="nav" role="banner">
       <div className="nav__bar">
-        <Link href="/libro" className="brand" aria-label="Bocaditos del Corazón — inicio">
-          Bocaditos del Corazón
+        <Link
+          href={user ? "/libro" : "/"}
+          className="brand"
+          aria-label="Bocaditos del Corazón — inicio"
+        >
+          <Image
+            src="/logo-192.png"
+            alt=""
+            width={32}
+            height={32}
+            className="brand__mark"
+            priority
+          />
+          <span>Bocaditos del Corazón</span>
         </Link>
         <button
           type="button"

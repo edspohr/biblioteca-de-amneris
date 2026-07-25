@@ -67,12 +67,22 @@ header.nav {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
   font-family: var(--font-title);
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
   color: var(--color-brand-ink);
   text-decoration: none;
   line-height: var(--lh-tight);
+}
+.brand__mark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav__toggle {

@@ -12,7 +12,6 @@ import {
   SITE_URL,
 } from "@/lib/site";
 import { verifySession } from "@/lib/auth/session";
-import { AskTheBookSection } from "./asistente/landing-showcase";
 import "../styles/landing.css";
 
 // -- SEO ---------------------------------------------------------------------
@@ -121,7 +120,7 @@ const FAQ = [
   },
   {
     q: "¿Cómo funciona el asistente “Pregúntale al libro”?",
-    a: "Es un asistente con IA que solo responde con recetas y menús de este libro. Pídele menús personalizados, sustitutos por alergias o ideas rápidas por edad. Prueba gratis en la landing con 3 preguntas; con tu cuenta puedes preguntarle sin límite. No reemplaza al pediatra.",
+    a: "Dentro del libro tienes un asistente con IA que solo responde con recetas y menús de esta obra. Pídele menús personalizados, sustitutos por alergias o ideas rápidas por edad. Con tu cuenta gratis puedes preguntarle sin límite. No reemplaza al pediatra.",
   },
   {
     q: "¿Para qué edades sirve?",
@@ -154,7 +153,6 @@ export default async function LandingPage() {
       <Marquee />
       <Manifesto />
       <Method />
-      <AskTheBookSection />
       <Adentro />
       <Gallery />
       <FAQSection />
@@ -168,14 +166,24 @@ function Header({ isLogged }: { isLogged: boolean }) {
   return (
     <header className="landing__header">
       <div className="landing__header-inner">
-        <Link href="/" className="landing__brand">
-          {BOOK_TITLE}
-          <small>por {AUTHOR_NAME}</small>
+        <Link href="/" className="landing__brand" aria-label={`${BOOK_TITLE} — inicio`}>
+          <Image
+            src="/logo-192.png"
+            alt=""
+            width={40}
+            height={40}
+            className="landing__brand-mark"
+            priority
+          />
+          <span className="landing__brand-text">
+            {BOOK_TITLE}
+            <small>por {AUTHOR_NAME}</small>
+          </span>
         </Link>
         <nav className="landing__nav" aria-label="Secciones">
           <a href="#autora">Autora</a>
           <a href="#metodo">Método</a>
-          <a href="#asistente">Pregúntale al libro</a>
+          <a href="#adentro">Adentro</a>
           <a href="#galeria">Galería</a>
           <a href="#faq">Preguntas</a>
         </nav>
@@ -189,10 +197,6 @@ function Header({ isLogged }: { isLogged: boolean }) {
               <Link
                 href="/login"
                 className="landing__button landing__button--ghost"
-                style={{
-                  color: "var(--color-brand-ink)",
-                  borderColor: "var(--color-brand-ink)",
-                }}
               >
                 Entrar
               </Link>
@@ -225,6 +229,12 @@ function Hero({ isLogged }: { isLogged: boolean }) {
             meses. Cada receta viene en tres versiones — solo cambia la textura
             y la porción según la etapa.
           </p>
+          <ul className="landing__pills" aria-label="Características">
+            <li className="landing__pill">6 a 24 meses</li>
+            <li className="landing__pill">120 recetas con foto</li>
+            <li className="landing__pill">Asistente con IA</li>
+            <li className="landing__pill">Gratis</li>
+          </ul>
           <div className="landing__cta-buttons">
             {isLogged ? (
               <Link
@@ -242,19 +252,12 @@ function Hero({ isLogged }: { isLogged: boolean }) {
               </Link>
             )}
             <a
-              href="#asistente"
+              href="#metodo"
               className="landing__button landing__button--ghost"
-              style={{ color: "var(--color-brand-ink)", borderColor: "var(--color-brand-ink)" }}
             >
               Ver cómo funciona
             </a>
           </div>
-          <ul className="landing__pills" aria-label="Características">
-            <li className="landing__pill">6 a 24 meses</li>
-            <li className="landing__pill">120 recetas con foto</li>
-            <li className="landing__pill">Asistente con IA</li>
-            <li className="landing__pill">Gratis</li>
-          </ul>
         </div>
         <div className="landing__collage" aria-hidden="true">
           {HERO_POLAROIDS.map((p) => (
@@ -320,7 +323,7 @@ function Manifesto() {
             y con la alérgeno declarada. Nada llega al libro sin cumplir la
             lista.
           </p>
-          <p style={{ color: "var(--color-ink-muted)", fontSize: "0.9rem" }}>
+          <p className="landing__note">
             El libro no reemplaza a tu pediatra. Cualquier duda sobre
             alimentación específica, alergia, o reacción del bebé — consultar
             siempre con un profesional.
@@ -339,7 +342,7 @@ function Method() {
         <h2 className="landing__section-title">
           Seis filtros que <em>toda</em> receta cumple.
         </h2>
-        <p style={{ color: "var(--color-ink-muted)", maxWidth: "48ch" }}>
+        <p className="landing__section-lede">
           Esto no es un blog de recetas. Es un sistema editorial: cada plato
           pasa por seis filtros antes de entrar al libro, y ninguno se salta.
         </p>
@@ -359,7 +362,7 @@ function Method() {
 
 function Adentro() {
   return (
-    <section className="landing__adentro">
+    <section className="landing__adentro" id="adentro">
       <div className="landing__container landing__adentro-inner">
         <div>
           <p className="landing__eyebrow">Adentro del libro</p>
@@ -376,7 +379,7 @@ function Adentro() {
             Los menús semanales generan una lista de compras derivada,
             agrupada por categoría del supermercado.
           </p>
-          <div style={{ marginTop: "1.25rem" }}>
+          <div className="landing__cta-buttons">
             <Link href="/libro" className="landing__button landing__button--dark">
               Abrir el recetario
             </Link>
@@ -427,6 +430,12 @@ function FAQSection() {
       <div className="landing__container">
         <p className="landing__eyebrow">Preguntas frecuentes</p>
         <h2 className="landing__section-title">Lo que suelen preguntar.</h2>
+        {CONTACT_EMAIL ? (
+          <p className="landing__section-lede">
+            ¿Falta algo?{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`}>Escríbenos</a>.
+          </p>
+        ) : null}
         <div className="landing__faq-list">
           {FAQ.map((f) => (
             <details key={f.q}>
@@ -475,8 +484,10 @@ function Footer() {
         <div>
           <h4>{SITE_NAME}</h4>
           <p>Un libro vivo de alimentación complementaria, escrito por Amneris.</p>
-          <p style={{ marginTop: "0.75rem" }}>
-            <Link href="/libro">Entrar al recetario →</Link>
+          <p className="landing__footer-cta">
+            <Link href="/libro" className="landing__footer-link">
+              Entrar al recetario →
+            </Link>
           </p>
         </div>
         <div>
@@ -502,7 +513,7 @@ function Footer() {
               </li>
             )}
             {!waUrl && !igUrl && !CONTACT_EMAIL && (
-              <li style={{ color: "rgba(255,255,255,0.55)" }}>Próximamente</li>
+              <li className="landing__footer-soon">Próximamente</li>
             )}
           </ul>
         </div>
@@ -521,10 +532,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <p
-        className="landing__disclaimer landing__container"
-        style={{ maxWidth: "var(--lp-max)" }}
-      >
+      <p className="landing__disclaimer landing__container">
         Este libro es una guía general, no un reemplazo del consejo médico
         profesional. Cualquier duda o inquietud sobre la alimentación de tu
         bebé — reacciones, alergias, crecimiento — consulta siempre con un
