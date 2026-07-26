@@ -1,29 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  getRedirectResult,
   signInWithEmailAndPassword,
-  signInWithPopup,
+  signInWithRedirect,
   updateProfile,
 } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase/client";
 import { CONTACT_EMAIL, CONTACT_WHATSAPP } from "@/lib/site";
 
-const GOOGLE_POPUP_TIMEOUT_MS = 45_000;
 const CUSTOM_CLAIM_REFRESH_DELAY_MS = 1_500;
-
-function withTimeout<T>(promise: Promise<T>, ms: number, message: string): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
-    const t = setTimeout(() => reject(new Error(message)), ms);
-    promise.then(
-      (v) => { clearTimeout(t); resolve(v); },
-      (e) => { clearTimeout(t); reject(e); },
-    );
-  });
-}
 
 type Mode = "signin" | "signup";
 
@@ -41,6 +31,29 @@ export function LoginForm({
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  // On mount, check whether we just came back from a Google redirect.
+  // If yes, finish the session mint here — same postSession() path as email.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const auth = getFirebaseAuth();
+        const result = await getRedirectResult(auth);
+        if (!result || cancelled) return;
+        setLoading(true);
+        const { superadmin } = await postSession((force) =>
+          result.user.getIdToken(force)
+        );
+        afterLogin(superadmin);
+      } catch (err: unknown) {
+        if (cancelled) return;
+        setError(translateAuthError(err));
+        setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function callSession(idToken: string) {
     const res = await fetch("/api/session", {
@@ -112,15 +125,12 @@ export function LoginForm({
     setLoading(true);
     try {
       const auth = getFirebaseAuth();
-      const cred = await withTimeout(
-        signInWithPopup(auth, new GoogleAuthProvider()),
-        GOOGLE_POPUP_TIMEOUT_MS,
-        "google-popup-timeout"
-      );
-      const { superadmin } = await postSession((force) =>
-        cred.user.getIdToken(force)
-      );
-      afterLogin(superadmin);
+      // Redirect flow (not popup) — the popup path relies on window.closed,
+      // which modern browsers block under Cross-Origin-Opener-Policy and hangs
+      // the SDK forever. The redirect result is picked up by the useEffect
+      // above when the browser returns to /login.
+      await signInWithRedirect(auth, new GoogleAuthProvider());
+      // Execution stops here; the page navigates away.
     } catch (err: unknown) {
       setError(translateAuthError(err));
       setLoading(false);
@@ -277,18 +287,12 @@ function translateAuthError(err: unknown): string {
     return "La contraseña debe tener al menos 6 caracteres.";
   if (code.includes("auth/invalid-email"))
     return "El correo no tiene un formato válido.";
-  if (code.includes("auth/popup-closed-by-user") || code.includes("auth/cancelled-popup-request"))
-    return "Cerraste la ventana de Google antes de terminar. Vuelve a intentarlo.";
-  if (code.includes("auth/popup-blocked"))
-    return "Tu navegador bloqueó la ventana de Google. Permite ventanas emergentes para este sitio y reintenta.";
   if (code.includes("auth/unauthorized-domain"))
     return "Este dominio no está autorizado en Firebase. Escríbenos para arreglarlo.";
   if (code.includes("auth/account-exists-with-different-credential"))
-    return "Ya existe una cuenta con ese correo usando otro método. Entra con correo y contraseña.";
+    return "Ya existe una cuenta con ese correo usando Google. Entra con «Continuar con Google» arriba.";
   if (code.includes("auth/network-request-failed"))
     return "Hubo un problema de conexión. Intenta de nuevo.";
-  if (code === "google-popup-timeout")
-    return "La ventana de Google no respondió. Asegúrate de que no esté bloqueada, prueba en otra pestaña, o entra con tu correo abajo.";
   return typeof code === "string" && code
     ? code
     : "No se pudo iniciar la sesión.";
