@@ -74,7 +74,9 @@ export async function POST(req: Request) {
       email: decoded.email ?? null,
       superadmin: decoded.superadmin === true,
     });
-  } catch {
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error("[session] verify/mint failed:", err);
     return NextResponse.json(
       { error: "No se pudo iniciar la sesión." },
       { status: 401 }
