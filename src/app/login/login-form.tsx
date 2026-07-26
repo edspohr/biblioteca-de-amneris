@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -15,6 +14,11 @@ import { CONTACT_EMAIL, CONTACT_WHATSAPP } from "@/lib/site";
 
 const CUSTOM_CLAIM_REFRESH_DELAY_MS = 1_500;
 
+// Guards against React strict-mode double-mount consuming the redirect
+// result twice. getRedirectResult() only returns the pending result on the
+// first call per page load; a second call returns null.
+let redirectHandled = false;
+
 type Mode = "signin" | "signup";
 
 export function LoginForm({
@@ -24,7 +28,6 @@ export function LoginForm({
   next?: string;
   initialMode?: Mode;
 }) {
-  const router = useRouter();
   const [mode, setMode] = useState<Mode>(initialMode);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,25 +36,39 @@ export function LoginForm({
   const [loading, setLoading] = useState(false);
   // On mount, check whether we just came back from a Google redirect.
   // If yes, finish the session mint here — same postSession() path as email.
+  // The module-level flag guards against React strict mode double-mount
+  // (getRedirectResult only returns the pending result on the *first* call
+  // per page load; the second call returns null and would silently no-op).
   useEffect(() => {
-    let cancelled = false;
+    if (redirectHandled) return;
+    redirectHandled = true;
     (async () => {
+      // eslint-disable-next-line no-console
+      console.log("[login] checking redirect result…");
       try {
         const auth = getFirebaseAuth();
         const result = await getRedirectResult(auth);
-        if (!result || cancelled) return;
+        if (!result) {
+          // eslint-disable-next-line no-console
+          console.log("[login] no pending redirect");
+          return;
+        }
+        // eslint-disable-next-line no-console
+        console.log("[login] redirect result ok, uid:", result.user.uid);
         setLoading(true);
         const { superadmin } = await postSession((force) =>
           result.user.getIdToken(force)
         );
+        // eslint-disable-next-line no-console
+        console.log("[login] session minted, superadmin:", superadmin);
         afterLogin(superadmin);
       } catch (err: unknown) {
-        if (cancelled) return;
+        // eslint-disable-next-line no-console
+        console.error("[login] redirect finish failed:", err);
         setError(translateAuthError(err));
         setLoading(false);
       }
     })();
-    return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -93,8 +110,10 @@ export function LoginForm({
 
   function afterLogin(superadmin: boolean) {
     const target = next || (superadmin ? "/admin" : "/libro");
-    router.push(target);
-    router.refresh();
+    // Hard navigation, not router.push. The freshly-set session cookie needs
+    // to travel with a real HTTP request so the middleware and RSC can see
+    // it; a client-side navigation can race with cookie propagation.
+    window.location.assign(target);
   }
 
   async function handleEmailSubmit(e: React.FormEvent) {

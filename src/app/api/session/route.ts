@@ -27,6 +27,13 @@ export async function POST(req: Request) {
     // Verify token before minting the cookie so we can echo user info.
     const auth = getAdminAuth();
     const decoded = await auth.verifyIdToken(idToken);
+    // eslint-disable-next-line no-console
+    console.log(
+      "[session] verifyIdToken ok",
+      "uid=", decoded.uid,
+      "email=", decoded.email,
+      "claim.superadmin=", decoded.superadmin === true,
+    );
 
     // Auto-grant the `superadmin` custom claim to hard-coded owner emails on
     // their first sign-in. The claim only lives inside a fresh ID token, so
@@ -37,6 +44,8 @@ export async function POST(req: Request) {
       isSuperadminEmail(decoded.email) &&
       decoded.superadmin !== true
     ) {
+      // eslint-disable-next-line no-console
+      console.log("[session] granting superadmin claim to", decoded.email);
       const userRecord = await auth.getUser(decoded.uid);
       await auth.setCustomUserClaims(decoded.uid, {
         ...(userRecord.customClaims ?? {}),
@@ -57,6 +66,13 @@ export async function POST(req: Request) {
       path: "/",
       maxAge: maxAgeSeconds,
     });
+    // eslint-disable-next-line no-console
+    console.log(
+      "[session] cookie set",
+      "uid=", decoded.uid,
+      "cookie.length=", cookie.length,
+      "maxAgeSeconds=", maxAgeSeconds,
+    );
 
     // Mirror this user into usuarios/{uid} so the admin panel can list them
     // without a Functions trigger. Non-fatal if it fails — the sign-in itself
