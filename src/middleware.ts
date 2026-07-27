@@ -20,11 +20,13 @@ const PROTECTED_API_PREFIXES = [
 ];
 
 // Reader hard-gate is TEMPORARILY DISABLED so Amneris can walk through the
-// whole app without fighting the login flow. /admin still requires session,
-// and mutating API routes still require session — only READ access to the
-// reader (/libro, /recetas, /menus, /tecnicas, /etapas) is open.
+// whole app without fighting the login flow. Mutating API routes still
+// require a real session cookie — no one can persist changes.
 // Re-enable once auth flow is validated end-to-end.
 const READER_GATE_ENABLED = false;
+// When true, /admin also opens up (verifySession returns a mock superadmin;
+// see src/lib/auth/session.ts AUTH_BYPASS_ENABLED). Keep both flags in sync.
+const ADMIN_GATE_ENABLED = false;
 
 const READER_PREFIXES = [
   "/libro",
@@ -46,7 +48,7 @@ export function middleware(req: NextRequest) {
 
   // Guard /admin/**
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
-    if (!hasSession) {
+    if (ADMIN_GATE_ENABLED && !hasSession) {
       const url = req.nextUrl.clone();
       url.pathname = "/login";
       url.search = `?next=${encodeURIComponent(pathname)}`;

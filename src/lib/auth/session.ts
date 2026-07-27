@@ -15,6 +15,20 @@ export interface SessionUser {
   superadmin: boolean;
 }
 
+// TEMPORARY: while the login flow is being polished, verifySession() returns
+// a mock superadmin so Amneris can walk the entire app (including /admin)
+// without seeing a login screen. Middleware still guards mutating API routes
+// by checking the real cookie, so no one can persist changes without a real
+// session. Flip to false once auth is re-enabled end-to-end.
+export const AUTH_BYPASS_ENABLED = true;
+
+const MOCK_SUPERADMIN: SessionUser = {
+  uid: "mock-superadmin",
+  email: "amnerispinto@gmail.com",
+  name: "Amneris (modo demo)",
+  superadmin: true,
+};
+
 export async function createSessionCookie(idToken: string): Promise<{
   cookie: string;
   maxAgeSeconds: number;
@@ -27,6 +41,7 @@ export async function createSessionCookie(idToken: string): Promise<{
 }
 
 export async function verifySession(): Promise<SessionUser | null> {
+  if (AUTH_BYPASS_ENABLED) return MOCK_SUPERADMIN;
   const store = await cookies();
   const cookie = store.get(SESSION_COOKIE_NAME)?.value;
   if (!cookie) return null;
