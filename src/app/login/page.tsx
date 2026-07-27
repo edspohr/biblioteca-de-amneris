@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string; mode?: string; reason?: string }>;
+  searchParams: Promise<{ next?: string; reason?: string }>;
 }) {
-  const { next, mode, reason } = await searchParams;
+  const { next, reason } = await searchParams;
   const user = await verifySession();
   if (user) {
     // Already logged in: send them where they were going, or to /admin if
@@ -21,36 +21,25 @@ export default async function LoginPage({
     if (next && next.startsWith("/")) redirect(next);
     redirect(user.superadmin ? "/admin" : "/libro");
   }
-  const forcedMode =
-    reason === "reader" || reason === "asistente" ? "signup" : null;
-  const initialMode =
-    forcedMode ?? (mode === "signup" ? "signup" : "signin");
   const title =
     reason === "reader"
-      ? "Regístrate gratis para leer el libro"
+      ? "Entra para leer el libro"
       : reason === "asistente"
-      ? "Regístrate para preguntarle al libro"
-      : initialMode === "signup"
-      ? "Crea tu cuenta"
-      : "Iniciar sesión";
+      ? "Entra para preguntarle al libro"
+      : "Entra al libro";
   const lede =
     reason === "reader"
-      ? "El libro es gratis, pero necesitamos que crees una cuenta para acceder. No pedimos tarjeta ni datos innecesarios."
+      ? "El libro es gratis, pero necesitamos que entres para acceder. Usamos tu cuenta de Google — sin contraseñas nuevas."
       : reason === "asistente"
-      ? "Crea tu cuenta gratis para consultar al asistente todas las veces que quieras."
-      : initialMode === "signup"
-      ? "Es gratis. Con tu cuenta podremos avisarte de novedades más adelante."
-      : "Accede a tu cuenta o crea una nueva para acompañarte en la aventura de alimentar a tu bebé.";
+      ? "Entra con tu cuenta de Google para consultar al asistente todas las veces que quieras."
+      : "Accede con tu cuenta de Google para acompañarte en la aventura de alimentar a tu bebé.";
   return (
     <div style={{ maxWidth: 460, margin: "0 auto" }}>
       <header style={{ marginBottom: "1.5rem" }}>
         <h1 style={{ marginBottom: "0.5rem" }}>{title}</h1>
         <p style={{ color: "var(--color-ink-muted)" }}>{lede}</p>
       </header>
-      <LoginForm
-        next={next && next.startsWith("/") ? next : undefined}
-        initialMode={initialMode}
-      />
+      <LoginForm next={next && next.startsWith("/") ? next : undefined} />
     </div>
   );
 }

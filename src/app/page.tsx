@@ -201,7 +201,7 @@ function Header({ isLogged }: { isLogged: boolean }) {
                 Entrar
               </Link>
               <Link
-                href="/login?mode=signup"
+                href="/login"
                 className="landing__button landing__button--dark"
               >
                 Crear cuenta gratis
@@ -245,7 +245,7 @@ function Hero({ isLogged }: { isLogged: boolean }) {
               </Link>
             ) : (
               <Link
-                href="/login?mode=signup"
+                href="/login"
                 className="landing__button landing__button--dark"
               >
                 Crea tu cuenta gratis
@@ -459,7 +459,7 @@ function FinalCTA() {
           teléfono o computadora.
         </p>
         <div className="landing__cta-buttons">
-          <Link href="/login?mode=signup" className="landing__button landing__button--primary">
+          <Link href="/login" className="landing__button landing__button--primary">
             Crea tu cuenta gratis
           </Link>
           <Link href="/libro" className="landing__button landing__button--ghost">

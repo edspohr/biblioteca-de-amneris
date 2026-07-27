@@ -1,9 +1,20 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { createSessionCookie, SESSION_COOKIE_NAME } from "@/lib/auth/session";
+import { createSessionCookie, SESSION_COOKIE_NAME, verifySession } from "@/lib/auth/session";
 import { isSuperadminEmail } from "@/lib/auth/superadmins";
 import { getAdminAuth } from "@/lib/firebase/admin";
 import { getUser, mirrorUser } from "@/lib/users/service";
+
+/**
+ * Client uses this to confirm the session cookie is actually visible +
+ * verifiable server-side before hard-navigating away from /login. Prevents
+ * the "logged in but bounced back to /login" race where the browser
+ * navigates before the Set-Cookie has been applied.
+ */
+export async function GET() {
+  const user = await verifySession();
+  return NextResponse.json({ authenticated: Boolean(user), superadmin: user?.superadmin === true });
+}
 
 export async function POST(req: Request) {
   let idToken: string;
