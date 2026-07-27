@@ -19,8 +19,13 @@ const PROTECTED_API_PREFIXES = [
   "/api/usuarios",
 ];
 
-// Reader routes that require login. Landing (/), /login, /sin-permiso and
-// public assets stay open.
+// Reader hard-gate is TEMPORARILY DISABLED so Amneris can walk through the
+// whole app without fighting the login flow. /admin still requires session,
+// and mutating API routes still require session — only READ access to the
+// reader (/libro, /recetas, /menus, /tecnicas, /etapas) is open.
+// Re-enable once auth flow is validated end-to-end.
+const READER_GATE_ENABLED = false;
+
 const READER_PREFIXES = [
   "/libro",
   "/recetas",
@@ -50,8 +55,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Hard gate: the whole reader lives behind login. Landing stays public.
-  if (req.method === "GET" && isReaderPath(pathname) && !hasSession) {
+  // Reader hard gate. Currently disabled — see READER_GATE_ENABLED above.
+  if (
+    READER_GATE_ENABLED &&
+    req.method === "GET" &&
+    isReaderPath(pathname) &&
+    !hasSession
+  ) {
     const url = req.nextUrl.clone();
     url.pathname = "/login";
     url.search = `?next=${encodeURIComponent(pathname)}&reason=reader`;

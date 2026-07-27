@@ -4,7 +4,6 @@ import { Caveat, Fraunces, Source_Serif_4 } from "next/font/google";
 import { repo } from "@/lib/repo";
 import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
-import { verifySession } from "@/lib/auth/session";
 import { NavBarServer } from "./nav-bar-server";
 import { AsistenteWidget } from "./asistente/widget";
 import "./globals.css";
@@ -58,7 +57,11 @@ export const viewport: Viewport = {
 export const dynamic = "force-dynamic";
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const [etapas, user] = await Promise.all([repo.getEtapas(), verifySession()]);
+  // Reader gate is disabled (see middleware.ts READER_GATE_ENABLED). The
+  // assistant widget is temporarily forced on so anyone testing can try it.
+  // When re-enabling auth, restore: `const [etapas, user] = await Promise.all(
+  // [repo.getEtapas(), verifySession()])` and `enabled={Boolean(user)}`.
+  const etapas = await repo.getEtapas();
 
   return (
     <html
@@ -70,7 +73,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <NavBarServer />
           <EtapaSelectorGlobal />
           <main>{children}</main>
-          <AsistenteWidget enabled={Boolean(user)} />
+          <AsistenteWidget enabled />
         </EtapaActivaProvider>
       </body>
     </html>
