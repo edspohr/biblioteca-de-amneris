@@ -24,7 +24,11 @@ env:
       - BUILD
       - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: biblioteca-amneris.firebaseapp.com
+    # Use the Firebase Hosting domain (same origin as the app) so
+    # signInWithRedirect's sessionStorage state persists across the OAuth
+    # bounce. Using firebaseapp.com here would make getRedirectResult()
+    # silently return null (result stored on a different origin).
+    value: biblioteca-amneris.web.app
     availability:
       - BUILD
       - RUNTIME
