@@ -10,8 +10,6 @@ import { getFirebaseAuth } from "@/lib/firebase/client";
 import { CONTACT_EMAIL, CONTACT_WHATSAPP } from "@/lib/site";
 
 const CUSTOM_CLAIM_REFRESH_DELAY_MS = 1_500;
-const SESSION_CONFIRM_MAX_ATTEMPTS = 10;
-const SESSION_CONFIRM_DELAY_MS = 250;
 
 // Guards against React strict-mode double-mount consuming the redirect
 // result twice. getRedirectResult() only returns the pending result on the
@@ -45,7 +43,12 @@ export function LoginForm({ next }: { next?: string }) {
         );
         // eslint-disable-next-line no-console
         console.log("[login] session minted, superadmin:", superadmin);
-        await confirmSessionOrThrow();
+        // Give the browser a tick to apply Set-Cookie before hard-navigating.
+        // We used to poll GET /api/session here but the Hosting rewrite proxy
+        // sometimes rejects the immediate follow-up read while the same
+        // Set-Cookie has already been applied to the browser — leading to
+        // false negatives that bounced valid logins.
+        await new Promise((r) => setTimeout(r, 200));
         afterLogin(superadmin, next);
       } catch (err: unknown) {
         // eslint-disable-next-line no-console
@@ -142,34 +145,6 @@ async function postSession(
     );
   }
   return { superadmin: second.superadmin };
-}
-
-/**
- * Poll GET /api/session until the server confirms the cookie is visible +
- * verifiable. Without this, the hard-navigation after POST can race the
- * browser's Set-Cookie application and land on /libro without a cookie,
- * getting bounced by middleware back to /login (visible as an empty /login).
- */
-async function confirmSessionOrThrow(): Promise<void> {
-  for (let i = 0; i < SESSION_CONFIRM_MAX_ATTEMPTS; i++) {
-    const res = await fetch("/api/session", {
-      method: "GET",
-      credentials: "same-origin",
-      cache: "no-store",
-    });
-    if (res.ok) {
-      const data = (await res.json().catch(() => ({}))) as { authenticated?: boolean };
-      if (data.authenticated) {
-        // eslint-disable-next-line no-console
-        console.log("[login] session confirmed after", i + 1, "attempt(s)");
-        return;
-      }
-    }
-    await new Promise((r) => setTimeout(r, SESSION_CONFIRM_DELAY_MS));
-  }
-  throw new Error(
-    "No pudimos confirmar la sesión. Recarga la página e intenta de nuevo."
-  );
 }
 
 function afterLogin(superadmin: boolean, next: string | undefined) {
