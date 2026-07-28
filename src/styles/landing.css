@@ -307,16 +307,18 @@
 .landing__portrait {
   aspect-ratio: 4 / 5;
   border-radius: var(--lp-r-lg);
-  background: linear-gradient(135deg, var(--color-butter-light), var(--color-peach-light));
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1.5rem;
-  font-family: var(--font-hand);
-  font-size: 2rem;
-  color: var(--color-brand-ink);
+  overflow: hidden;
   border: 1px solid var(--lp-ink-line);
   box-shadow: var(--lp-shadow-soft);
+  margin: 0;
+  background: var(--color-butter-light);
+}
+.landing__portrait-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 .landing__section-title {
   font-family: var(--font-title);
@@ -351,6 +353,56 @@
   border-left: 3px solid var(--color-peach-light);
   padding-left: 0.85rem;
   margin: 1.25rem 0 0;
+}
+
+/* ============================================================
+ * "Cómo se hizo" — obra + planos
+ * ============================================================ */
+.landing__obra {
+  padding: var(--lp-section-y) 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--lp-ink-line);
+}
+.landing__obra-inner {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .landing__obra-inner {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3.5rem;
+  }
+}
+.landing__obra-photo {
+  margin: 0;
+  max-width: 360px;
+  width: 100%;
+  justify-self: center;
+}
+.landing__obra-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--lp-r-lg);
+  border: 1px solid var(--lp-ink-line);
+  box-shadow: var(--lp-shadow-soft);
+  transform: rotate(-1.5deg);
+}
+.landing__obra-caption {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin: 1rem 0 0;
+  padding: 0 0.5rem;
+}
+.landing__obra p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
 }
 
 /* ============================================================

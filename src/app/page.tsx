@@ -152,6 +152,7 @@ export default async function LandingPage() {
       <Hero isLogged={isLogged} />
       <Marquee />
       <Manifesto />
+      <Obra />
       <Method />
       <Adentro />
       <Gallery />
@@ -182,6 +183,7 @@ function Header({ isLogged }: { isLogged: boolean }) {
         </Link>
         <nav className="landing__nav" aria-label="Secciones">
           <a href="#autora">Autora</a>
+          <a href="#obra">La obra</a>
           <a href="#metodo">Método</a>
           <a href="#adentro">Adentro</a>
           <a href="#galeria">Galería</a>
@@ -303,9 +305,15 @@ function Manifesto() {
   return (
     <section className="landing__manifesto" id="autora">
       <div className="landing__container landing__manifesto-inner">
-        <div className="landing__portrait" aria-hidden="true">
-          Amneris
-        </div>
+        <figure className="landing__portrait">
+          <Image
+            src="/amneris.jpeg"
+            alt="Amneris, autora del libro"
+            width={800}
+            height={1000}
+            className="landing__portrait-img"
+          />
+        </figure>
         <div>
           <p className="landing__eyebrow">La autora</p>
           <h2 className="landing__section-title">
@@ -327,6 +335,43 @@ function Manifesto() {
             El libro no reemplaza a tu pediatra. Cualquier duda sobre
             alimentación específica, alergia, o reacción del bebé — consultar
             siempre con un profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Obra() {
+  return (
+    <section className="landing__obra" id="obra">
+      <div className="landing__container landing__obra-inner">
+        <figure className="landing__obra-photo">
+          <Image
+            src="/amneris-obra.jpeg"
+            alt="Amneris con casco en una obra en construcción"
+            width={600}
+            height={800}
+            className="landing__obra-img"
+          />
+          <figcaption className="landing__obra-caption">
+            En obra. La misma cabeza que planifica un edificio ordenó este libro.
+          </figcaption>
+        </figure>
+        <div>
+          <p className="landing__eyebrow">Cómo se hizo</p>
+          <h2 className="landing__section-title">
+            Construido con <em>planos</em>, no con inspiración.
+          </h2>
+          <p>
+            Amneris es ingeniera. Coordina obras que no admiten improvisación:
+            si una viga no calza, no calza. Ese mismo hábito — pensar la
+            estructura antes de decorarla — es el que da forma a este libro.
+          </p>
+          <p>
+            Cada receta tiene planos: ingredientes medidos, textura por etapa,
+            filtro de alérgenos, foto real. Nada se agregó “porque quedó rico”.
+            Todo pasó por la lista, o quedó fuera.
           </p>
         </div>
       </div>
