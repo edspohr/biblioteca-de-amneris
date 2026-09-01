@@ -727,7 +727,7 @@
 @media (min-width: 640px) {
   .landing__plans { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 }
-.landing__plan {
+.landing__cta .landing__plan {
   position: relative;
   background: white;
   color: var(--color-brand-ink);
@@ -735,10 +735,19 @@
   padding: 1.5rem 1.25rem;
   box-shadow: var(--lp-shadow-lift);
 }
-.landing__plan--featured {
+.landing__cta .landing__plan--featured {
   outline: 2px solid rgba(255, 255, 255, 0.6);
 }
-.landing__plan-badge {
+/* Reset .landing__cta p defaults (white text, centered, max-width) for the
+   text inside plan cards — those live on dark bg, need brand colors. */
+.landing__cta .landing__plan p {
+  margin: 0;
+  max-width: none;
+  color: var(--color-ink);
+  font-size: inherit;
+  line-height: inherit;
+}
+.landing__cta .landing__plan-badge {
   position: absolute;
   top: -12px;
   right: 12px;
@@ -751,7 +760,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-.landing__plan-name {
+.landing__cta .landing__plan-name {
   font-family: var(--font-title);
   font-size: 0.9rem;
   font-weight: 600;
@@ -760,7 +769,7 @@
   color: var(--color-brand);
   margin: 0 0 0.35rem;
 }
-.landing__plan-price {
+.landing__cta .landing__plan-price {
   font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
@@ -773,14 +782,14 @@
   gap: 0.4rem;
   flex-wrap: wrap;
 }
-.landing__plan-price small {
+.landing__cta .landing__plan-price small {
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--color-ink-muted);
   letter-spacing: 0;
 }
-.landing__plan-desc {
+.landing__cta .landing__plan-desc {
   color: var(--color-ink);
   font-size: 0.92rem;
   line-height: 1.5;
