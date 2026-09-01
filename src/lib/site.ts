@@ -1,11 +1,11 @@
 /**
- * Site-wide constants. When a custom domain replaces the App Hosting URL,
- * change SITE_URL here and every meta tag, JSON-LD @id, sitemap and llms.txt
- * follows automatically.
+ * Constantes globales del sitio. Al cambiar SITE_URL para un dominio propio,
+ * todas las meta tags, JSON-LD @id, sitemap y llms.txt siguen automáticamente.
+ *
+ * Los nombres y bajadas de secciones viven en `src/lib/marca.ts`.
  */
 export const SITE_URL = "https://biblioteca-amneris.web.app";
 export const SITE_NAME = "La Biblioteca de Amneris";
-export const BOOK_TITLE = "Bocaditos del Corazón";
 export const AUTHOR_NAME = "Amneris";
 export const LOCALE = "es-CL";
 

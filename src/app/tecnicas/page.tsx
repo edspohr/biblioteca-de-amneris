@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { repo } from "@/lib/repo";
+import { SECCION_ACTIVA } from "@/lib/marca";
 
 export default async function TecnicasPage() {
   const [tecnicas, recetas] = await Promise.all([repo.getTecnicas(), repo.getRecetas()]);
@@ -13,7 +14,7 @@ export default async function TecnicasPage() {
   return (
     <>
       <header className="page-header">
-        <p className="page-header__eyebrow">Técnicas</p>
+        <p className="page-header__eyebrow">Sección · {SECCION_ACTIVA.nombre}</p>
         <h1 className="page-header__title">Técnicas de cocina</h1>
         <p className="page-header__lede muted">
           {tecnicas.length} técnicas · {tecnicas.filter((t) => !t.descripcion).length} pendientes de describir.

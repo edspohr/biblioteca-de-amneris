@@ -1,11 +1,14 @@
-# Bocaditos del Corazón
+# La Biblioteca de Amneris
 
-Guía digital de alimentación complementaria para bebés de 6 a 24 meses, por Amneris.
+Suscripción única con recetas, menús y planes de alimentación para papás y mamás de bebés de 0 a 2 años. La primera sección disponible es **Bocaditos del Corazón** (recetas rápidas y nutritivas); las próximas (**Batch Cooking Pollo** en octubre, **Batch Cooking Pescado** en noviembre 2026) entran en el mismo plan.
 
-Este proyecto convierte el manuscrito original (`docs/Bocaditos_TODOS_menus_COMPLETO.docx`) en una app local con:
+Este proyecto convierte el manuscrito original de Bocaditos (`docs/Bocaditos_TODOS_menus_COMPLETO.docx`) en una app con:
 
 1. Un **lector** para navegar, filtrar y buscar recetas, ver menús con sus listas de compras, y consultar técnicas de cocina.
 2. Una **interfaz de autoría** (`/admin`) para agregar y editar recetas, ingredientes, alérgenos y técnicas sin tocar código.
+3. Un **modelo de acceso** con prueba gratis de 30 días, suscripción mensual/anual y estados de cortesía.
+
+> Los nombres de secciones, bajadas y fechas de lanzamiento viven en `src/lib/marca.ts` — al cambiarlos ahí se propagan a landing, portada del lector y CTAs.
 
 ---
 
@@ -215,10 +218,14 @@ Este ciclo cerró el modelo de acceso: cualquier persona puede registrarse grati
 
 ### Cómo se registra alguien
 
-- `/registro` — email + contraseña, o cuenta de Google. Casilla obligatoria de política de datos ([/privacidad](https://biblioteca-amneris.web.app/privacidad)).
-- Después del registro, el usuario pasa por un onboarding corto de 3 pasos (fecha de nacimiento del bebé + datos opcionales) y llega a la biblioteca con la etapa que corresponde a la edad de su bebé preseleccionada.
-- `/ingresar` — para usuarios que ya se registraron. Incluye "olvidé mi contraseña".
+- `/registro` — **solo Google en la UI** (un botón "Continuar con Google" + casilla obligatoria de política de datos [/privacidad](https://biblioteca-amneris.web.app/privacidad)).
+- Después del registro, el usuario pasa por un onboarding corto de 3 pasos (fecha de nacimiento del bebé + datos opcionales) y llega a la biblioteca con la etapa que corresponde a la edad de su bebé preseleccionada. El nombre viene precargado desde Google, editable.
+- `/ingresar` — para usuarios que ya se registraron. Solo Google.
 - El trial arranca en el momento en que el usuario **acepta la política de privacidad** (paso 1 del onboarding). Sin consent, la cuenta existe pero no tiene acceso — así cumplimos la Ley 21.719.
+
+**Sobre email/contraseña:** el proveedor sigue habilitado en Firebase y toda la lógica del servidor (creación de cuentas, sesiones) lo soporta. Está oculto en la UI para simplificar la experiencia. Sirve para: cuentas creadas por bulk import desde `/admin/usuarios`, invitaciones futuras por link, y cualquier reactivación de la vía email/contraseña sin tocar backend.
+
+**Firebase "una cuenta por email":** el proyecto está configurado con la opción *"Link accounts that use the same email"* activada. Las cuentas creadas por bulk import quedan huérfanas hasta que la persona entra con Google usando el mismo correo — en ese momento Firebase las vincula automáticamente y el `usuarios/{uid}` mirror queda intacto. Contactos que solo tengan teléfono (sin email) necesitan invitación explícita.
 
 ### Qué ve cada tipo de usuario
 
@@ -250,7 +257,9 @@ Para dar cortesía: click en "Dar cortesía" en la fila del usuario → elige fe
 ### Constantes de negocio
 
 - Trial: **30 días** (`TRIAL_DAYS` en `src/lib/schema/usuario.ts`).
-- Precio mensual público: **$1.990 CLP** (`MONTHLY_PRICE_CLP` en `src/lib/pricing.ts`). Se usa en el banner de trial vencido y como default sugerido al dar cortesía.
+- Precio mensual público: **$1.990 CLP** (`MONTHLY_PRICE_CLP` en `src/lib/pricing.ts`).
+- Precio anual público: **$19.990 CLP** (`ANNUAL_PRICE_CLP`) — equivale a 10 meses; ahorra 2 (`ANNUAL_SAVINGS_MONTHS`).
+- Nombres, bajadas y fechas de secciones (activa, próxima, futura) viven en **`src/lib/marca.ts`**. `SECCION_PROXIMA.nombre` es provisional (`"Batch Cooking Pollo"`): al cambiarlo ahí se propaga a todas las superficies.
 - Contador de leads: `metrics/registrations` en Firestore. Incrementa automáticamente en cada primer signin y por fuente cuando el usuario responde "cómo nos conociste".
 
 ### Recetas destacadas (preview gratuito)

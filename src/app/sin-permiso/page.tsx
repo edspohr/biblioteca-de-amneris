@@ -4,7 +4,7 @@ import { verifySession } from "@/lib/auth/session";
 import { LogoutButton } from "../admin/logout-button";
 
 export const metadata: Metadata = {
-  title: "Sin permisos — Bocaditos del Corazón",
+  title: "Sin permisos",
   robots: { index: false, follow: false },
 };
 

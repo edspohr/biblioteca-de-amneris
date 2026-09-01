@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { repo } from "@/lib/repo";
+import { SECCION_ACTIVA } from "@/lib/marca";
 
 export default async function HomePage() {
   const [etapas, recetas, menus, tecnicas] = await Promise.all([
@@ -13,12 +14,12 @@ export default async function HomePage() {
   return (
     <>
       <section className="home-hero">
-        <p className="home-hero__eyebrow">Por Amneris</p>
-        <h1 className="home-hero__title">Bocaditos del Corazón</h1>
+        <p className="home-hero__eyebrow">Sección · {SECCION_ACTIVA.nombre}</p>
+        <h1 className="home-hero__title">{SECCION_ACTIVA.nombre}</h1>
         <p className="home-hero__lede">
-          Guía de alimentación complementaria para bebés de 6 a 24 meses. Cada
-          receta se adapta a las tres etapas — solo cambia la textura y la
-          porción.
+          {SECCION_ACTIVA.bajada}. Cada receta se adapta a las tres etapas —
+          solo cambia la textura y la porción. Parte de La Biblioteca de
+          Amneris.
         </p>
       </section>
 

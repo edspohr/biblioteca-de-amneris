@@ -128,14 +128,18 @@ export function OnboardingWizard({
           </p>
 
           <label style={{ display: "grid", gap: "0.25rem" }}>
-            <span>Tu nombre (opcional)</span>
+            <span>Tu nombre</span>
             <input
               type="text"
               autoComplete="name"
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
+              placeholder="Como quieres que te llamemos"
               style={{ padding: "0.6rem 0.75rem" }}
             />
+            <small style={{ color: "var(--color-ink-muted)" }}>
+              Lo trajimos de tu cuenta de Google — puedes editarlo si quieres.
+            </small>
           </label>
 
           <label style={{ display: "grid", gap: "0.25rem" }}>
@@ -254,7 +258,7 @@ export function OnboardingWizard({
 
       {step === 3 && (
         <div className="card" style={{ padding: "1.5rem", display: "grid", gap: "0.75rem" }}>
-          <h1 style={{ margin: 0 }}>¡Bienvenida! 🎉</h1>
+          <h1 style={{ margin: 0 }}>Bienvenida a la biblioteca</h1>
           <p>
             {babyName ? `${babyName} está en la ` : "Tu bebé está en la "}
             <strong>{etapaSugerida?.nombre ?? "primera etapa"}</strong>. Voy a
@@ -262,8 +266,9 @@ export function OnboardingWizard({
             contigo mes a mes.
           </p>
           <p>
-            Tienes <strong>{TRIAL_DAYS} días de prueba gratis</strong>, hasta{" "}
-            <strong>{trialEndText}</strong>. Sin tarjeta, sin compromiso.
+            Tienes <strong>{TRIAL_DAYS} días de acceso completo</strong>, hasta{" "}
+            <strong>{trialEndText}</strong>. Sin tarjeta, sin compromiso, con
+            todo lo que hay hoy en la biblioteca.
           </p>
           {error && <p role="alert" style={{ color: "var(--color-danger, #b3261e)" }}>{error}</p>}
           <button

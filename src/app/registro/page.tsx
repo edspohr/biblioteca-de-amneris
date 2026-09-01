@@ -24,17 +24,23 @@ export default async function RegistroPage({
   }
   return (
     <div style={{ maxWidth: 480, margin: "0 auto", padding: "1rem 0" }}>
-      <header style={{ marginBottom: "1.25rem" }}>
-        <h1 style={{ marginBottom: "0.5rem" }}>Crea tu cuenta</h1>
+      <header style={{ marginBottom: "1.25rem", textAlign: "center" }}>
+        <img
+          src="/biblioteca-logo.png"
+          alt=""
+          width={64}
+          height={64}
+          style={{ margin: "0 auto 0.75rem", display: "block" }}
+        />
+        <h1 style={{ marginBottom: "0.5rem" }}>Entra a la biblioteca</h1>
         <p style={{ color: "var(--color-ink-muted)" }}>
-          30 días de prueba gratis, sin tarjeta. Encuentra la receta adecuada
-          para tu bebé en 15 a 20 segundos, con menú semanal y lista de
-          compras.
+          Continúa con tu cuenta de Google y tendrás <strong>30 días
+          gratis</strong>, sin tarjeta, con acceso a toda la biblioteca.
         </p>
       </header>
       <RegistroForm next={next && next.startsWith("/") ? next : undefined} />
       <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.9rem" }}>
-        ¿Ya tienes cuenta? <Link href="/ingresar">Ingresa aquí</Link>
+        ¿Ya tienes cuenta? <Link href="/ingresar">Ingresa con Google</Link>
       </p>
     </div>
   );

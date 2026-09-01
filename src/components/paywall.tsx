@@ -48,15 +48,17 @@ export function Paywall({ titulo, eyebrow, foto, returnTo, isExpired }: Props) {
         }}
       >
         <p style={{ fontSize: "1.05rem", margin: 0 }}>
-          {isExpired
-            ? "Tu período de prueba terminó. Esta receta está guardada esperándote."
-            : "Esta receta está disponible con tu cuenta."}
+          {isExpired ? (
+            <>«{titulo}» está guardada esperándote en la biblioteca.</>
+          ) : (
+            <>«{titulo}» te espera dentro de la biblioteca.</>
+          )}
         </p>
         <p style={{ margin: 0, color: "var(--color-ink-muted)" }}>
           {isExpired ? (
-            <>Muy pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes.</>
+            <>Muy pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes y volver a tenerlo todo, incluidas las próximas secciones.</>
           ) : (
-            <>Crea tu cuenta y prueba 30 días gratis, sin tarjeta.</>
+            <>Pruébala gratis por 30 días — sin tarjeta, sin compromiso.</>
           )}
         </p>
         <Link
@@ -64,7 +66,7 @@ export function Paywall({ titulo, eyebrow, foto, returnTo, isExpired }: Props) {
           className="button button--primary"
           style={{ minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
-          {isExpired ? "Ver mi cuenta" : "Regístrate gratis"}
+          {isExpired ? "Ver mi cuenta" : "Pruébala gratis 30 días"}
         </Link>
         {!isExpired && (
           <Link href={ingresar} style={{ fontSize: "0.9rem" }}>

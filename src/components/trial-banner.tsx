@@ -19,8 +19,8 @@ export async function TrialBanner() {
     return (
       <BannerShell tone="warm">
         Te quedan <strong>{access.daysLeft} día{access.daysLeft === 1 ? "" : "s"}</strong> de prueba.
-        Muy pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes y seguir sin
-        interrupciones.{" "}
+        Muy pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes y
+        recibir cada nueva sección de la biblioteca sin pagar extra.{" "}
         <Link href="/cuenta">Ver mi cuenta</Link>
       </BannerShell>
     );
@@ -29,8 +29,9 @@ export async function TrialBanner() {
   if (access.tier === "vencida") {
     return (
       <BannerShell tone="soft">
-        Tu período de prueba terminó. Puedes seguir explorando las recetas
-        gratuitas y muy pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes.{" "}
+        Tu prueba terminó. Sigues teniendo acceso a las recetas gratis, y muy
+        pronto podrás suscribirte por {formatCLP(MONTHLY_PRICE_CLP)} al mes para
+        recuperar toda la biblioteca (incluidas las próximas secciones).{" "}
         <Link href="/cuenta">Ver mi cuenta</Link>
       </BannerShell>
     );

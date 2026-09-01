@@ -34,15 +34,12 @@ const caveat = Caveat({
 });
 
 export const metadata = {
-  title: "Bocaditos del Corazón",
-  description: "Guía de alimentación complementaria para bebés de 6 a 24 meses",
-  icons: {
-    icon: [
-      { url: "/logo-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/logo-192.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: "/logo-192.png",
+  title: {
+    default: "La Biblioteca de Amneris — recetas y planes para bebés de 0 a 2 años",
+    template: "%s · La Biblioteca de Amneris",
   },
+  description:
+    "Una suscripción, toda la biblioteca. Recetas rápidas, menús y planes de alimentación pensados para papás y mamás de bebés de 0 a 2 años.",
 };
 
 export const viewport: Viewport = {

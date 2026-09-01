@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   AUTHOR_NAME,
-  BOOK_TITLE,
   CONTACT_EMAIL,
   CONTACT_WHATSAPP,
   INSTAGRAM_HANDLE,
@@ -11,16 +10,28 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
+import {
+  BRAND_TAGLINE,
+  NICHO_LABEL,
+  SECCION_ACTIVA,
+  SECCION_FUTURA,
+  SECCION_PROXIMA,
+} from "@/lib/marca";
+import {
+  ANNUAL_PRICE_CLP,
+  ANNUAL_SAVINGS_MONTHS,
+  MONTHLY_PRICE_CLP,
+  formatCLP,
+} from "@/lib/pricing";
 import { verifySession } from "@/lib/auth/session";
 import "../styles/landing.css";
 
 // -- SEO ---------------------------------------------------------------------
 
-const DESCRIPTION =
-  "Un libro vivo de alimentación complementaria para bebés de 6 a 24 meses. Recetas escritas por Amneris, con textura y porción por etapa, listas de compras derivadas y fotos de cada preparación. Gratis y en español.";
+const DESCRIPTION = BRAND_TAGLINE;
 
 export const metadata: Metadata = {
-  title: `${BOOK_TITLE} — ${SITE_NAME}`,
+  title: `${SITE_NAME} — recetas y planes para bebés de 0 a 2 años`,
   description: DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   alternates: {
@@ -31,19 +42,21 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${BOOK_TITLE} — ${SITE_NAME}`,
+    title: SITE_NAME,
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: LOCALE,
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: BOOK_TITLE }],
+    images: [
+      { url: "/biblioteca-logo.png", width: 1000, height: 1000, alt: SITE_NAME },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${BOOK_TITLE} — ${SITE_NAME}`,
+    title: SITE_NAME,
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/biblioteca-logo.png"],
   },
 };
 
@@ -71,72 +84,26 @@ const HERO_POLAROIDS: { slug: string; caption: string; className: string }[] = [
   },
 ];
 
-const GALLERY: { slug: string; caption: string; rot: string }[] = [
-  { slug: "compota-de-mango-con-coco", caption: "dulce de temporada", rot: "-3deg" },
-  { slug: "pure-de-aguacate-con-lima", caption: "verde de aguacate", rot: "2deg" },
-  { slug: "crema-de-brocoli-con-aceite-de-oliva", caption: "brócoli suave", rot: "-1deg" },
-  { slug: "yogur-con-compota-de-frambuesa", caption: "yogur con fruta", rot: "3deg" },
-  { slug: "pure-de-salmon-con-batata", caption: "salmón + batata", rot: "-2deg" },
-  { slug: "mini-muffins-de-avena-y-zanahoria", caption: "muffins de avena", rot: "1deg" },
-];
-
-const FILTERS = [
-  {
-    n: "01",
-    title: "Textura por etapa",
-    body: "Cada receta tiene tres versiones. Cambian la textura y la porción según la edad del bebé — nunca los ingredientes.",
-  },
-  {
-    n: "02",
-    title: "Sin azúcar añadida",
-    body: "El sabor viene de fruta madura, especias suaves y hortalizas dulces. Nada de azúcar refinada.",
-  },
-  {
-    n: "03",
-    title: "Ingredientes de supermercado",
-    body: "Todo se compra en un almacén común. Sin superalimentos importados ni tiendas especializadas.",
-  },
-  {
-    n: "04",
-    title: "Alérgenos etiquetados",
-    body: "Cada receta declara sus alérgenos y puedes filtrar el catálogo para excluir los que te preocupan.",
-  },
-  {
-    n: "05",
-    title: "Listas de compras derivadas",
-    body: "Elige un menú y la lista de compras se calcula sola, agrupada por categoría del supermercado.",
-  },
-  {
-    n: "06",
-    title: "Foto de cada receta",
-    body: "Todas las 120 recetas tienen foto, para saber a qué aspira el plato antes de empezar.",
-  },
-];
-
 const FAQ = [
   {
-    q: "¿Es gratis?",
-    a: "Sí, totalmente. El libro está disponible en línea sin costo. Si más adelante ofrecemos algo pagado, quedará muy claro qué es y qué no.",
+    q: "¿Qué es La Biblioteca de Amneris?",
+    a: `Es un espacio con recursos de alimentación ${NICHO_LABEL}. Con una sola suscripción tienes acceso a todo lo que Amneris publica hoy y a cada nueva sección que se sume.`,
   },
   {
-    q: "¿Cómo funciona el asistente “Pregúntale al libro”?",
-    a: "Dentro del libro tienes un asistente con IA que solo responde con recetas y menús de esta obra. Pídele menús personalizados, sustitutos por alergias o ideas rápidas por edad. Con tu cuenta gratis puedes preguntarle sin límite. No reemplaza al pediatra.",
+    q: "¿Cómo funciona la prueba gratis?",
+    a: "Creas tu cuenta con Google, entras al recetario y tienes 30 días de acceso completo. No pedimos tarjeta ni datos de pago. Si al mes decides seguir, activas la suscripción; si no, tu cuenta queda como visitante y no se te cobra nada.",
   },
   {
-    q: "¿Para qué edades sirve?",
-    a: "Está pensado para bebés de 6 a 24 meses, cubriendo las tres etapas de la alimentación complementaria: purés lisos, texturas graduadas y comidas familiares adaptadas.",
+    q: "¿Qué gano suscribiéndome?",
+    a: `Acceso completo a toda la biblioteca: hoy la sección ${SECCION_ACTIVA.nombre}, y muy pronto ${SECCION_PROXIMA.nombre} y ${SECCION_FUTURA.nombre} sin pagar extra. Un mismo plan lo incluye todo.`,
+  },
+  {
+    q: "¿Reemplaza al pediatra?",
+    a: "No. Es una guía práctica hecha con cariño y método. Cualquier duda sobre alergias, síntomas o crecimiento — consulta siempre con un profesional de la salud.",
   },
   {
     q: "¿Cómo lo uso en el teléfono?",
-    a: "El sitio funciona en el navegador de tu celular como si fuera una app. Puedes agregarlo a la pantalla de inicio para abrirlo con un toque. Las recetas están pensadas para leerse con una mano mientras cocinas.",
-  },
-  {
-    q: "¿Puedo compartirlo con otras mamás?",
-    a: "Sí, por favor. El objetivo es que llegue lejos. Comparte el enlace por WhatsApp o donde te acomode.",
-  },
-  {
-    q: "¿Va a haber más libros?",
-    a: "Hoy es un libro. Si en el futuro hay otros títulos, los anunciaremos aquí — no prometemos calendario ni volumen.",
+    a: "Se abre en el navegador de tu celular. Puedes agregarlo a la pantalla de inicio para abrirlo con un toque. Las recetas están pensadas para leerse con una mano mientras cocinas.",
   },
 ];
 
@@ -150,14 +117,12 @@ export default async function LandingPage() {
       <SchemaOrgLD />
       <Header isLogged={isLogged} />
       <Hero isLogged={isLogged} />
-      <Marquee />
-      <Manifesto />
-      <Obra />
-      <Method />
-      <Adentro />
-      <Gallery />
+      <SeccionActiva />
+      <Proximamente />
+      <Precios />
+      <SobreAmneris />
       <FAQSection />
-      <FinalCTA />
+      <FinalCTA isLogged={isLogged} />
       <Footer />
     </div>
   );
@@ -167,48 +132,39 @@ function Header({ isLogged }: { isLogged: boolean }) {
   return (
     <header className="landing__header">
       <div className="landing__header-inner">
-        <Link href="/" className="landing__brand" aria-label={`${BOOK_TITLE} — inicio`}>
+        <Link href="/" className="landing__brand" aria-label={`${SITE_NAME} — inicio`}>
           <Image
-            src="/logo-192.png"
+            src="/biblioteca-logo.png"
             alt=""
-            width={40}
-            height={40}
+            width={44}
+            height={44}
             className="landing__brand-mark"
             priority
           />
           <span className="landing__brand-text">
-            {BOOK_TITLE}
-            <small>por {AUTHOR_NAME}</small>
+            {SITE_NAME}
+            <small>{NICHO_LABEL}</small>
           </span>
         </Link>
         <nav className="landing__nav" aria-label="Secciones">
-          <a href="#autora">Autora</a>
-          <a href="#obra">La obra</a>
-          <a href="#metodo">Método</a>
-          <a href="#adentro">Adentro</a>
-          <a href="#galeria">Galería</a>
+          <a href="#activa">{SECCION_ACTIVA.nombre}</a>
+          <a href="#proximamente">Próximamente</a>
+          <a href="#precios">Precios</a>
+          <a href="#autora">La autora</a>
           <a href="#faq">Preguntas</a>
         </nav>
         <div className="landing__header-cta">
           {isLogged ? (
             <Link href="/libro" className="landing__button landing__button--dark">
-              Entrar al recetario
+              Entrar a la biblioteca
             </Link>
           ) : (
-            <>
-              <Link
-                href="/login"
-                className="landing__button landing__button--ghost"
-              >
-                Entrar
-              </Link>
-              <Link
-                href="/login"
-                className="landing__button landing__button--dark"
-              >
-                Crear cuenta gratis
-              </Link>
-            </>
+            <Link
+              href="/registro"
+              className="landing__button landing__button--dark"
+            >
+              Pruébala gratis 30 días
+            </Link>
           )}
         </div>
       </div>
@@ -221,21 +177,21 @@ function Hero({ isLogged }: { isLogged: boolean }) {
     <section className="landing__hero">
       <div className="landing__container landing__hero-inner">
         <div>
-          <p className="landing__eyebrow">Hecho a mano, con paciencia</p>
+          <p className="landing__eyebrow">Nueva biblioteca de Amneris</p>
           <h1 className="landing__h1">
-            Alimenta a tu hijo con bases tan <em>sólidas</em> como cocinó
-            Amneris para las suyas.
+            Alimentar a tu bebé, <em>resuelto</em>. Desde los 0 hasta los 2
+            años.
           </h1>
           <p className="landing__lede">
-            Un libro vivo de alimentación complementaria para bebés de 6 a 24
-            meses. Cada receta viene en tres versiones — solo cambia la textura
-            y la porción según la etapa.
+            La Biblioteca de Amneris reúne recetas, menús y planes que resuelven
+            el día a día {NICHO_LABEL}. Una sola suscripción, todo incluido —
+            hoy y cuando se sumen nuevas secciones.
           </p>
           <ul className="landing__pills" aria-label="Características">
-            <li className="landing__pill">6 a 24 meses</li>
-            <li className="landing__pill">120 recetas con foto</li>
-            <li className="landing__pill">Asistente con IA</li>
-            <li className="landing__pill">Gratis</li>
+            <li className="landing__pill">Sin azúcar añadida</li>
+            <li className="landing__pill">Textura y porción por edad</li>
+            <li className="landing__pill">Menús con lista de compras</li>
+            <li className="landing__pill">30 días gratis, sin tarjeta</li>
           </ul>
           <div className="landing__cta-buttons">
             {isLogged ? (
@@ -243,22 +199,24 @@ function Hero({ isLogged }: { isLogged: boolean }) {
                 href="/libro"
                 className="landing__button landing__button--dark"
               >
-                Entrar al recetario
+                Entrar a la biblioteca
               </Link>
             ) : (
-              <Link
-                href="/login"
-                className="landing__button landing__button--dark"
-              >
-                Crea tu cuenta gratis
-              </Link>
+              <>
+                <Link
+                  href="/registro"
+                  className="landing__button landing__button--dark"
+                >
+                  Pruébala gratis 30 días
+                </Link>
+                <Link
+                  href="/ingresar"
+                  className="landing__button landing__button--ghost"
+                >
+                  Ya tengo cuenta
+                </Link>
+              </>
             )}
-            <a
-              href="#metodo"
-              className="landing__button landing__button--ghost"
-            >
-              Ver cómo funciona
-            </a>
           </div>
         </div>
         <div className="landing__collage" aria-hidden="true">
@@ -280,35 +238,96 @@ function Hero({ isLogged }: { isLogged: boolean }) {
   );
 }
 
-function Marquee() {
-  const items = [
-    "Sin azúcar añadida",
-    "Ingredientes de supermercado",
-    "Variantes por etapa",
-    "Listas de compras derivadas",
-    "Fotos de cada receta",
-    "Alérgenos etiquetados",
-  ];
-  const doubled = [...items, ...items];
+function SeccionActiva() {
   return (
-    <div className="landing__marquee" aria-hidden="true">
-      <div className="landing__marquee-track">
-        {doubled.map((t, i) => (
-          <span key={i}>{t}</span>
-        ))}
+    <section className="landing__method" id="activa">
+      <div className="landing__container">
+        <p className="landing__eyebrow">Sección disponible hoy</p>
+        <h2 className="landing__section-title">
+          <em>{SECCION_ACTIVA.nombre}</em> — {SECCION_ACTIVA.bajada}.
+        </h2>
+        <p className="landing__section-lede">{SECCION_ACTIVA.problema}</p>
+        <div className="landing__cta-buttons">
+          <Link href="/recetas" className="landing__button landing__button--dark">
+            Explorar recetas
+          </Link>
+          <Link href="/menus" className="landing__button landing__button--ghost">
+            Ver menús semanales
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Manifesto() {
+function Proximamente() {
+  const items = [SECCION_PROXIMA, SECCION_FUTURA];
+  return (
+    <section className="landing__adentro" id="proximamente">
+      <div className="landing__container">
+        <p className="landing__eyebrow">Próximamente en tu biblioteca</p>
+        <h2 className="landing__section-title">
+          Cada lanzamiento entra en la <em>misma</em> suscripción.
+        </h2>
+        <p className="landing__section-lede">
+          Suscribirte hoy es suscribirte a todo lo que venga. No hay compras
+          por sección ni upgrades: si eres parte de la biblioteca, es tuyo.
+        </p>
+        <ul className="landing__filters">
+          {items.map((s) => (
+            <li key={s.id} className="landing__filter">
+              <div className="landing__filter-num">{s.lanzamientoLabel}</div>
+              <h3>{s.nombre}</h3>
+              <p>{s.problema}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function Precios() {
+  const mensualLabel = formatCLP(MONTHLY_PRICE_CLP);
+  const anualLabel = formatCLP(ANNUAL_PRICE_CLP);
+  return (
+    <section className="landing__cta" id="precios">
+      <div className="landing__container">
+        <p className="landing__eyebrow" style={{ color: "inherit", opacity: 0.75 }}>
+          Precios
+        </p>
+        <h2>Un plan, toda la biblioteca.</h2>
+        <p>
+          Empieza con <strong>30 días gratis, sin tarjeta</strong>. Al cabo del
+          mes eliges cómo seguir.
+        </p>
+        <ul className="landing__pills" aria-label="Planes">
+          <li className="landing__pill">{mensualLabel} al mes</li>
+          <li className="landing__pill">
+            {anualLabel} al año · ahorra {ANNUAL_SAVINGS_MONTHS} meses
+          </li>
+        </ul>
+        <div className="landing__cta-buttons">
+          <Link href="/registro" className="landing__button landing__button--primary">
+            Comenzar prueba gratis
+          </Link>
+          <Link href="/ingresar" className="landing__button landing__button--ghost">
+            Ya tengo cuenta
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SobreAmneris() {
   return (
     <section className="landing__manifesto" id="autora">
       <div className="landing__container landing__manifesto-inner">
         <figure className="landing__portrait">
           <Image
             src="/amneris.jpeg"
-            alt="Amneris, autora del libro"
+            alt="Amneris, autora de la biblioteca"
             width={800}
             height={1000}
             className="landing__portrait-img"
@@ -319,151 +338,25 @@ function Manifesto() {
           <h2 className="landing__section-title">
             Soy <em>Amneris</em>.
           </h2>
+          {/* TODO(Amneris): revisar y ajustar bio con tus palabras. */}
           <p>
-            Soy ingeniera, madre, y creadora de este sistema. Este libro nació
-            en mi cocina, alimentando a mi propia hija, y creció con la disciplina
-            de quien está acostumbrada a que las estructuras se sostengan por
-            razones, no por intuición.
+            Soy mamá antes que nada, y la cocina de mi casa fue el primer lugar
+            donde este proyecto tomó forma. Cociné cada receta para mis propias
+            hijas — probando texturas, midiendo porciones, anotando lo que
+            funcionaba y lo que no.
           </p>
           <p>
-            Cada receta pasó por los mismos filtros: ingredientes accesibles,
-            textura correcta para la etapa, sin azúcar añadida, con foto real,
-            y con la alérgeno declarada. Nada llega al libro sin cumplir la
-            lista.
+            Vengo de una familia donde la comida era el modo natural de
+            cuidarnos. Esta biblioteca es esa misma tradición, ordenada para
+            que cualquier mamá o papá pueda apoyarse en ella cuando el día
+            aprieta.
           </p>
           <p className="landing__note">
-            El libro no reemplaza a tu pediatra. Cualquier duda sobre
-            alimentación específica, alergia, o reacción del bebé — consultar
-            siempre con un profesional.
+            Esta guía no reemplaza a tu pediatra. Ante cualquier duda sobre
+            alergias, síntomas o crecimiento, consulta siempre con un
+            profesional.
           </p>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Obra() {
-  return (
-    <section className="landing__obra" id="obra">
-      <div className="landing__container landing__obra-inner">
-        <figure className="landing__obra-photo">
-          <Image
-            src="/amneris-obra.jpeg"
-            alt="Amneris con casco en una obra en construcción"
-            width={600}
-            height={800}
-            className="landing__obra-img"
-          />
-          <figcaption className="landing__obra-caption">
-            En obra. La misma cabeza que planifica un edificio ordenó este libro.
-          </figcaption>
-        </figure>
-        <div>
-          <p className="landing__eyebrow">Cómo se hizo</p>
-          <h2 className="landing__section-title">
-            Construido con <em>planos</em>, no con inspiración.
-          </h2>
-          <p>
-            Amneris es ingeniera. Coordina obras que no admiten improvisación:
-            si una viga no calza, no calza. Ese mismo hábito — pensar la
-            estructura antes de decorarla — es el que da forma a este libro.
-          </p>
-          <p>
-            Cada receta tiene planos: ingredientes medidos, textura por etapa,
-            filtro de alérgenos, foto real. Nada se agregó “porque quedó rico”.
-            Todo pasó por la lista, o quedó fuera.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Method() {
-  return (
-    <section className="landing__method" id="metodo">
-      <div className="landing__container">
-        <p className="landing__eyebrow">El método</p>
-        <h2 className="landing__section-title">
-          Seis filtros que <em>toda</em> receta cumple.
-        </h2>
-        <p className="landing__section-lede">
-          Esto no es un blog de recetas. Es un sistema editorial: cada plato
-          pasa por seis filtros antes de entrar al libro, y ninguno se salta.
-        </p>
-        <ol className="landing__filters">
-          {FILTERS.map((f) => (
-            <li key={f.n} className="landing__filter">
-              <div className="landing__filter-num">{f.n}</div>
-              <h3>{f.title}</h3>
-              <p>{f.body}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  );
-}
-
-function Adentro() {
-  return (
-    <section className="landing__adentro" id="adentro">
-      <div className="landing__container landing__adentro-inner">
-        <div>
-          <p className="landing__eyebrow">Adentro del libro</p>
-          <h2 className="landing__section-title">
-            Diseñado para leer con <em>una mano</em>, mientras cocinas.
-          </h2>
-          <p>
-            El recetario se abre en el navegador de tu celular. Cada receta
-            muestra: ingredientes escaneables, pasos grandes numerados, el
-            tiempo, si es congelable, sus alérgenos, y la variante que
-            corresponde a la etapa que hayas elegido.
-          </p>
-          <p>
-            Los menús semanales generan una lista de compras derivada,
-            agrupada por categoría del supermercado.
-          </p>
-          <div className="landing__cta-buttons">
-            <Link href="/libro" className="landing__button landing__button--dark">
-              Abrir el recetario
-            </Link>
-          </div>
-        </div>
-        <div className="landing__device" aria-hidden="true">
-          <Image
-            src={photo("crema-de-calabaza-con-coco-y-jengibre-suave")}
-            alt=""
-            width={320}
-            height={568}
-            style={{ objectPosition: "center" }}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Gallery() {
-  return (
-    <section className="landing__gallery" id="galeria">
-      <div className="landing__container">
-        <p className="landing__eyebrow">Un vistazo</p>
-        <h2 className="landing__section-title">
-          Cada receta tiene su <em>foto</em>.
-        </h2>
-        <ul className="landing__scraps">
-          {GALLERY.map((g) => (
-            <li
-              key={g.slug}
-              className="landing__scrap"
-              style={{ ["--rot" as string]: g.rot }}
-            >
-              <Image src={photo(g.slug)} alt="" width={320} height={320} />
-              <div className="landing__scrap-caption">{g.caption}</div>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
@@ -494,22 +387,30 @@ function FAQSection() {
   );
 }
 
-function FinalCTA() {
+function FinalCTA({ isLogged }: { isLogged: boolean }) {
   return (
     <section className="landing__cta">
       <div className="landing__container">
         <h2>Empieza esta semana.</h2>
         <p>
-          Crea tu cuenta gratis y accede al recetario completo desde tu
-          teléfono o computadora.
+          Crea tu cuenta con Google, entra a la biblioteca y prueba 30 días sin
+          pagar. Si te sirve, sigues con {formatCLP(MONTHLY_PRICE_CLP)} al mes.
         </p>
         <div className="landing__cta-buttons">
-          <Link href="/login" className="landing__button landing__button--primary">
-            Crea tu cuenta gratis
-          </Link>
-          <Link href="/libro" className="landing__button landing__button--ghost">
-            Solo dar un vistazo
-          </Link>
+          {isLogged ? (
+            <Link href="/libro" className="landing__button landing__button--primary">
+              Entrar a la biblioteca
+            </Link>
+          ) : (
+            <>
+              <Link href="/registro" className="landing__button landing__button--primary">
+                Pruébala gratis 30 días
+              </Link>
+              <Link href="/ingresar" className="landing__button landing__button--ghost">
+                Ya tengo cuenta
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -528,10 +429,10 @@ function Footer() {
       <div className="landing__footer-inner">
         <div>
           <h4>{SITE_NAME}</h4>
-          <p>Un libro vivo de alimentación complementaria, escrito por Amneris.</p>
+          <p>{BRAND_TAGLINE}</p>
           <p className="landing__footer-cta">
             <Link href="/libro" className="landing__footer-link">
-              Entrar al recetario →
+              Entrar a la biblioteca →
             </Link>
           </p>
         </div>
@@ -563,7 +464,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4>El libro</h4>
+          <h4>La biblioteca</h4>
           <ul>
             <li>
               <Link href="/recetas">Recetas</Link>
@@ -574,12 +475,15 @@ function Footer() {
             <li>
               <Link href="/tecnicas">Técnicas</Link>
             </li>
+            <li>
+              <Link href="/privacidad">Privacidad</Link>
+            </li>
           </ul>
         </div>
       </div>
       <p className="landing__disclaimer landing__container">
-        Este libro es una guía general, no un reemplazo del consejo médico
-        profesional. Cualquier duda o inquietud sobre la alimentación de tu
+        La Biblioteca de Amneris es una guía general y no reemplaza el consejo
+        médico profesional. Ante cualquier duda sobre la alimentación de tu
         bebé — reacciones, alergias, crecimiento — consulta siempre con un
         pediatra.
       </p>
@@ -597,20 +501,12 @@ function SchemaOrgLD() {
       inLanguage: LOCALE,
     },
     {
-      "@type": "Book",
-      "@id": `${SITE_URL}/#book`,
-      name: BOOK_TITLE,
-      inLanguage: LOCALE,
-      author: { "@type": "Person", name: AUTHOR_NAME },
-      publisher: { "@type": "Organization", name: SITE_NAME },
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#org`,
+      name: SITE_NAME,
+      founder: { "@type": "Person", name: AUTHOR_NAME },
       description: DESCRIPTION,
-      audience: {
-        "@type": "PeopleAudience",
-        suggestedMinAge: 0.5,
-        suggestedMaxAge: 2,
-      },
-      isAccessibleForFree: true,
-      url: `${SITE_URL}/libro`,
+      url: SITE_URL,
     },
   ];
   const payload = { "@context": "https://schema.org", "@graph": graph };

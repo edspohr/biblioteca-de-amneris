@@ -1,5 +1,6 @@
 import { repo } from "@/lib/repo";
 import { getSessionWithProfile } from "@/lib/auth/session";
+import { SECCION_ACTIVA } from "@/lib/marca";
 import { MenuTiles } from "./menu-tiles";
 
 export default async function MenusPage() {
@@ -23,7 +24,7 @@ export default async function MenusPage() {
   return (
     <>
       <header className="page-header">
-        <p className="page-header__eyebrow">Menús</p>
+        <p className="page-header__eyebrow">Sección · {SECCION_ACTIVA.nombre}</p>
         <h1 className="page-header__title">Menús semanales</h1>
         <p className="page-header__lede muted">
           {menus.length} menús · agrupados por etapa. Cada uno incluye la lista
@@ -31,32 +32,38 @@ export default async function MenusPage() {
         </p>
       </header>
 
-      {etapasOrdenadas.map((etapa) => {
-        const list = grouped.get(etapa.id) ?? [];
-        if (list.length === 0) return null;
-        return (
-          <section
-            key={etapa.id}
-            className="menu-etapa-section"
-            style={{
-              ["--etapa-primary" as string]: etapa.paleta.primary,
-              ["--etapa-soft" as string]: etapa.paleta.soft,
-              ["--etapa-ink" as string]: etapa.paleta.ink,
-            }}
-          >
-            <h2 className="section-title">{etapa.nombre}</h2>
-            <MenuTiles
-              hasFullAccess={hasFullAccess}
-              tiles={list.map((m) => ({
-                id: m.id,
-                nombre: m.nombre,
-                recetas: m.menu_recetas.length,
-                rangoEdad: etapaById.get(m.etapa_id)?.rango_edad,
-              }))}
-            />
-          </section>
-        );
-      })}
+      {(() => {
+        let inviteShown = false;
+        return etapasOrdenadas.map((etapa) => {
+          const list = grouped.get(etapa.id) ?? [];
+          if (list.length === 0) return null;
+          const showInvite = !hasFullAccess && !inviteShown;
+          if (showInvite) inviteShown = true;
+          return (
+            <section
+              key={etapa.id}
+              className="menu-etapa-section"
+              style={{
+                ["--etapa-primary" as string]: etapa.paleta.primary,
+                ["--etapa-soft" as string]: etapa.paleta.soft,
+                ["--etapa-ink" as string]: etapa.paleta.ink,
+              }}
+            >
+              <h2 className="section-title">{etapa.nombre}</h2>
+              <MenuTiles
+                hasFullAccess={hasFullAccess}
+                showInlineInvite={showInvite}
+                tiles={list.map((m) => ({
+                  id: m.id,
+                  nombre: m.nombre,
+                  recetas: m.menu_recetas.length,
+                  rangoEdad: etapaById.get(m.etapa_id)?.rango_edad,
+                }))}
+              />
+            </section>
+          );
+        });
+      })()}
     </>
   );
 }

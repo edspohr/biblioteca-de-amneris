@@ -42,10 +42,15 @@ export function RegisterInvite({ open, onClose, returnTo, message }: Props) {
       }}
     >
       <form method="dialog" style={{ padding: "1.5rem", display: "grid", gap: "0.75rem" }}>
-        <h2 style={{ margin: 0, fontFamily: "var(--font-title)" }}>Regístrate gratis</h2>
-        <p style={{ margin: 0, color: "var(--color-ink-muted)" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img src="/biblioteca-logo.png" alt="" width={48} height={48} />
+        </div>
+        <h2 style={{ margin: 0, fontFamily: "var(--font-title)", textAlign: "center" }}>
+          Pruébala gratis 30 días
+        </h2>
+        <p style={{ margin: 0, color: "var(--color-ink-muted)", textAlign: "center" }}>
           {message ??
-            "Prueba 30 días gratis, sin tarjeta. Encuentra la receta adecuada para tu bebé en 15 a 20 segundos, con menú semanal y lista de compras."}
+            "Entra a la biblioteca completa con tu cuenta de Google. Sin tarjeta, sin compromiso."}
         </p>
 
         <Link
@@ -53,7 +58,7 @@ export function RegisterInvite({ open, onClose, returnTo, message }: Props) {
           className="button button--primary"
           style={{ textAlign: "center", minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
-          Crear cuenta gratis
+          Continuar con Google
         </Link>
         <Link
           href={ingresar}

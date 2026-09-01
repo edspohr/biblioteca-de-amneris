@@ -3,7 +3,12 @@ import { redirect } from "next/navigation";
 import { getSessionWithProfile } from "@/lib/auth/session";
 import { CuentaForm } from "./cuenta-form";
 import { LogoutButton } from "./logout-button";
-import { MONTHLY_PRICE_CLP, formatCLP } from "@/lib/pricing";
+import {
+  ANNUAL_PRICE_CLP,
+  ANNUAL_SAVINGS_MONTHS,
+  MONTHLY_PRICE_CLP,
+  formatCLP,
+} from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Mi cuenta — La Biblioteca de Amneris",
@@ -40,8 +45,19 @@ export default async function CuentaPage() {
         )}
         {access.tier === "vencida" && (
           <p style={{ color: "var(--color-ink-muted)" }}>
-            Tu período de prueba terminó. Muy pronto podrás suscribirte por{" "}
-            {formatCLP(MONTHLY_PRICE_CLP)} al mes.
+            Tu prueba terminó. Muy pronto podrás suscribirte a la biblioteca por{" "}
+            <strong>{formatCLP(MONTHLY_PRICE_CLP)} al mes</strong> o{" "}
+            <strong>{formatCLP(ANNUAL_PRICE_CLP)} al año</strong> (ahorra{" "}
+            {ANNUAL_SAVINGS_MONTHS} meses) — incluye todas las próximas
+            secciones sin pagar extra.
+          </p>
+        )}
+        {access.tier === "trial" && (
+          <p style={{ color: "var(--color-ink-muted)" }}>
+            Cuando activemos los pagos, la suscripción será{" "}
+            {formatCLP(MONTHLY_PRICE_CLP)} al mes o {formatCLP(ANNUAL_PRICE_CLP)}{" "}
+            al año (ahorra {ANNUAL_SAVINGS_MONTHS} meses). Cada nueva sección de la
+            biblioteca queda incluida.
           </p>
         )}
       </section>
