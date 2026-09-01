@@ -164,7 +164,7 @@ export function NavBar({ user }: { user: SessionUser | null }) {
             </li>
           ) : (
             <li className="nav__cta">
-              <Link href="/registro" className="button button--primary nav__cta-btn">
+              <Link href="/ingresar" className="button button--primary nav__cta-btn">
                 Entrar gratis
               </Link>
             </li>

@@ -20,9 +20,6 @@ export function RegisterInvite({ open, onClose, returnTo, message }: Props) {
     if (!open && el.open) el.close();
   }, [open]);
 
-  const registro = returnTo
-    ? `/registro?next=${encodeURIComponent(returnTo)}`
-    : "/registro";
   const ingresar = returnTo
     ? `/ingresar?next=${encodeURIComponent(returnTo)}`
     : "/ingresar";
@@ -54,18 +51,11 @@ export function RegisterInvite({ open, onClose, returnTo, message }: Props) {
         </p>
 
         <Link
-          href={registro}
+          href={ingresar}
           className="button button--primary"
           style={{ textAlign: "center", minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
           Continuar con Google
-        </Link>
-        <Link
-          href={ingresar}
-          className="button button--ghost"
-          style={{ textAlign: "center", minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
-        >
-          Ya tengo cuenta
         </Link>
 
         <button

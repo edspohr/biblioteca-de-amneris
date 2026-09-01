@@ -36,7 +36,7 @@ export function LandingHeader({ isLogged }: { isLogged: boolean }) {
     };
   }, [open]);
 
-  const ctaHref = isLogged ? "/libro" : "/registro";
+  const ctaHref = isLogged ? "/libro" : "/ingresar";
   const ctaLabel = isLogged ? "Entrar" : "Prueba gratis";
 
   return (

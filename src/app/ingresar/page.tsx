@@ -5,7 +5,7 @@ import { getSessionWithProfile } from "@/lib/auth/session";
 import { IngresarForm } from "./ingresar-form";
 
 export const metadata: Metadata = {
-  title: "Ingresar — La Biblioteca de Amneris",
+  title: "Entra a la biblioteca — La Biblioteca de Amneris",
   robots: { index: false, follow: false },
 };
 
@@ -23,7 +23,8 @@ export default async function IngresarPage({
     if (next && next.startsWith("/")) redirect(next);
     redirect(ctx.session.superadmin ? "/admin" : "/libro");
   }
-  const title = reason === "reader" ? "Entra para seguir leyendo" : "Ingresa a tu cuenta";
+  const title =
+    reason === "reader" ? "Entra para seguir leyendo" : "Entra a la biblioteca";
   return (
     <div style={{ maxWidth: 460, margin: "0 auto", padding: "1rem 0" }}>
       <header style={{ marginBottom: "1.25rem", textAlign: "center" }}>
@@ -36,12 +37,24 @@ export default async function IngresarPage({
         />
         <h1 style={{ marginBottom: "0.5rem" }}>{title}</h1>
         <p style={{ color: "var(--color-ink-muted)" }}>
-          Continúa con la misma cuenta de Google que usaste para registrarte.
+          Continúa con Google. Si es tu primera vez, empiezas con{" "}
+          <strong>30 días gratis sin tarjeta</strong>.
         </p>
       </header>
       <IngresarForm next={next && next.startsWith("/") ? next : undefined} />
-      <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.9rem" }}>
-        ¿Aún no tienes cuenta? <Link href="/registro">Regístrate gratis</Link>
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "1rem",
+          fontSize: "0.85rem",
+          color: "var(--color-ink-muted)",
+        }}
+      >
+        Al continuar aceptas nuestra{" "}
+        <Link href="/privacidad" target="_blank">
+          política de privacidad
+        </Link>
+        .
       </p>
     </div>
   );

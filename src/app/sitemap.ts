@@ -17,8 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/recetas`, lastModified: now, priority: 0.8 },
     { url: `${SITE_URL}/menus`, lastModified: now, priority: 0.7 },
     { url: `${SITE_URL}/tecnicas`, lastModified: now, priority: 0.6 },
-    { url: `${SITE_URL}/registro`, lastModified: now, priority: 0.5 },
-    { url: `${SITE_URL}/ingresar`, lastModified: now, priority: 0.3 },
+    { url: `${SITE_URL}/ingresar`, lastModified: now, priority: 0.5 },
   ];
 
   const recetaRoutes = recetas.map((r) => ({

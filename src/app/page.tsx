@@ -159,20 +159,12 @@ function Hero({ isLogged }: { isLogged: boolean }) {
                 Entrar a la biblioteca
               </Link>
             ) : (
-              <>
-                <Link
-                  href="/registro"
-                  className="landing__button landing__button--dark"
-                >
-                  Pruébala gratis 30 días
-                </Link>
-                <Link
-                  href="/ingresar"
-                  className="landing__button landing__button--ghost"
-                >
-                  Ya tengo cuenta
-                </Link>
-              </>
+              <Link
+                href="/ingresar"
+                className="landing__button landing__button--dark"
+              >
+                Pruébala gratis 30 días
+              </Link>
             )}
           </div>
         </div>
@@ -280,11 +272,8 @@ function Precios() {
           </li>
         </ul>
         <div className="landing__cta-buttons">
-          <Link href="/registro" className="landing__button landing__button--primary">
+          <Link href="/ingresar" className="landing__button landing__button--primary">
             Comenzar prueba gratis
-          </Link>
-          <Link href="/ingresar" className="landing__button landing__button--ghost">
-            Ya tengo cuenta
           </Link>
         </div>
       </div>
@@ -374,14 +363,9 @@ function FinalCTA({ isLogged }: { isLogged: boolean }) {
               Entrar a la biblioteca
             </Link>
           ) : (
-            <>
-              <Link href="/registro" className="landing__button landing__button--primary">
-                Pruébala gratis 30 días
-              </Link>
-              <Link href="/ingresar" className="landing__button landing__button--ghost">
-                Ya tengo cuenta
-              </Link>
-            </>
+            <Link href="/ingresar" className="landing__button landing__button--primary">
+              Pruébala gratis 30 días
+            </Link>
           )}
         </div>
       </div>

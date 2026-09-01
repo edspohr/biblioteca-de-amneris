@@ -1,8 +1,6 @@
 import { redirect } from "next/navigation";
 
-// The old /login (Google-only) got renamed to /ingresar to make room for
-// email/password + the pair /registro + /ingresar. This shim keeps any
-// previously shared link working.
+// /login redirects to /ingresar (the single auth entry point).
 export default async function LoginPage({
   searchParams,
 }: {

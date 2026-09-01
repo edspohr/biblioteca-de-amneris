@@ -15,7 +15,7 @@ export function InlineInvite({
   headline,
   body = "Prueba 30 días gratis, sin tarjeta.",
   cta = "Pruébala gratis",
-  href = "/registro",
+  href = "/ingresar",
 }: Props) {
   return (
     <li

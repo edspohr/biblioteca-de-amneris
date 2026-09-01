@@ -17,7 +17,6 @@ interface Props {
  * primary CTA.
  */
 export function Paywall({ titulo, eyebrow, foto, returnTo, isExpired }: Props) {
-  const registro = `/registro?next=${encodeURIComponent(returnTo)}`;
   const ingresar = `/ingresar?next=${encodeURIComponent(returnTo)}`;
   return (
     <article className="paywall" style={{ maxWidth: 620, margin: "0 auto" }}>
@@ -62,17 +61,12 @@ export function Paywall({ titulo, eyebrow, foto, returnTo, isExpired }: Props) {
           )}
         </p>
         <Link
-          href={isExpired ? "/cuenta" : registro}
+          href={isExpired ? "/cuenta" : ingresar}
           className="button button--primary"
           style={{ minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
           {isExpired ? "Ver mi cuenta" : "Pruébala gratis 30 días"}
         </Link>
-        {!isExpired && (
-          <Link href={ingresar} style={{ fontSize: "0.9rem" }}>
-            Ya tengo cuenta
-          </Link>
-        )}
       </section>
     </article>
   );
