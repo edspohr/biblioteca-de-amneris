@@ -76,6 +76,10 @@ export function translateAuthError(err: unknown): string {
   if (typeof code !== "string") return "No se pudo iniciar la sesión.";
   if (code.includes("auth/unauthorized-domain"))
     return "Este dominio no está autorizado en Firebase. Escríbenos para arreglarlo.";
+  if (code.includes("auth/popup-blocked"))
+    return "Tu navegador bloqueó la ventana de Google. Habilita los popups para este sitio e intenta de nuevo.";
+  if (code.includes("auth/popup-closed-by-user") || code.includes("auth/cancelled-popup-request"))
+    return "Cerraste la ventana antes de terminar. Vuelve a intentar cuando quieras.";
   if (code.includes("auth/network-request-failed"))
     return "Hubo un problema de conexión. Intenta de nuevo.";
   if (code.includes("auth/invalid-credential") || code.includes("auth/wrong-password"))
