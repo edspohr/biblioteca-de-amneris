@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import type { SessionUser } from "@/lib/auth/session";
 import { getFirebaseAuth } from "@/lib/firebase/client";
 import { SITE_NAME } from "@/lib/site";
+import { NICHO_LABEL } from "@/lib/marca";
 
 const LINKS: { href: string; label: string }[] = [
   { href: "/recetas", label: "Recetas" },
@@ -83,12 +84,15 @@ export function NavBar({ user }: { user: SessionUser | null }) {
           <Image
             src="/biblioteca-logo.png"
             alt=""
-            width={36}
-            height={36}
+            width={40}
+            height={40}
             className="brand__mark"
             priority
           />
-          <span className="brand__text">{SITE_NAME}</span>
+          <span className="brand__lockup">
+            <span className="brand__name">{SITE_NAME}</span>
+            <span className="brand__tagline">{NICHO_LABEL}</span>
+          </span>
         </Link>
 
         <button

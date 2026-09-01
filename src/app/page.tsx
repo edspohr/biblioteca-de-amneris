@@ -24,6 +24,7 @@ import {
   formatCLP,
 } from "@/lib/pricing";
 import { verifySession } from "@/lib/auth/session";
+import { LandingHeader } from "./landing-header";
 import "../styles/landing.css";
 
 // -- SEO ---------------------------------------------------------------------
@@ -115,7 +116,7 @@ export default async function LandingPage() {
   return (
     <div className="landing">
       <SchemaOrgLD />
-      <Header isLogged={isLogged} />
+      <LandingHeader isLogged={isLogged} />
       <Hero isLogged={isLogged} />
       <SeccionActiva />
       <Proximamente />
@@ -128,56 +129,12 @@ export default async function LandingPage() {
   );
 }
 
-function Header({ isLogged }: { isLogged: boolean }) {
-  return (
-    <header className="landing__header">
-      <div className="landing__header-inner">
-        <Link href="/" className="landing__brand" aria-label={`${SITE_NAME} — inicio`}>
-          <Image
-            src="/biblioteca-logo.png"
-            alt=""
-            width={44}
-            height={44}
-            className="landing__brand-mark"
-            priority
-          />
-          <span className="landing__brand-text">
-            {SITE_NAME}
-            <small>{NICHO_LABEL}</small>
-          </span>
-        </Link>
-        <nav className="landing__nav" aria-label="Secciones">
-          <a href="#activa">{SECCION_ACTIVA.nombre}</a>
-          <a href="#proximamente">Próximamente</a>
-          <a href="#precios">Precios</a>
-          <a href="#autora">La autora</a>
-          <a href="#faq">Preguntas</a>
-        </nav>
-        <div className="landing__header-cta">
-          {isLogged ? (
-            <Link href="/libro" className="landing__button landing__button--dark">
-              Entrar a la biblioteca
-            </Link>
-          ) : (
-            <Link
-              href="/registro"
-              className="landing__button landing__button--dark"
-            >
-              Pruébala gratis 30 días
-            </Link>
-          )}
-        </div>
-      </div>
-    </header>
-  );
-}
-
 function Hero({ isLogged }: { isLogged: boolean }) {
   return (
     <section className="landing__hero">
       <div className="landing__container landing__hero-inner">
         <div>
-          <p className="landing__eyebrow">Nueva biblioteca de Amneris</p>
+          <p className="landing__eyebrow">Alimentación 0 a 2 años</p>
           <h1 className="landing__h1">
             Alimentar a tu bebé, <em>resuelto</em>. Desde los 0 hasta los 2
             años.

@@ -44,32 +44,39 @@
 }
 
 /* ============================================================
- * Sticky landing header
+ * Sticky landing header — opaque, full-bleed, brand lockup
  * ============================================================ */
 .landing__header {
   position: sticky;
   top: 0;
-  z-index: 40;
-  background: color-mix(in srgb, var(--lp-cream) 90%, transparent);
-  backdrop-filter: saturate(140%) blur(10px);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  z-index: 50;
+  background: var(--lp-cream);
   border-bottom: 1px solid var(--lp-ink-line);
 }
 .landing__header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.85rem var(--lp-gutter);
+  padding: 0.5rem var(--lp-gutter);
   max-width: var(--lp-max);
   margin: 0 auto;
-  gap: 1rem;
+  gap: 0.75rem;
+  min-height: 56px;
+}
+@media (min-width: 1024px) {
+  .landing__header-inner {
+    min-height: 64px;
+    padding: 0.65rem var(--lp-gutter);
+    gap: 1.25rem;
+  }
 }
 .landing__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   color: var(--color-brand-ink);
   text-decoration: none;
+  margin-right: auto;
+  min-width: 0;
 }
 .landing__brand-mark {
   display: block;
@@ -78,50 +85,129 @@
   object-fit: contain;
   flex-shrink: 0;
 }
-.landing__brand-text {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.4rem;
+.landing__brand-lockup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.1;
+}
+.landing__brand-name {
   font-family: var(--font-title);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   letter-spacing: -0.01em;
-  line-height: 1.2;
+  color: var(--color-brand-ink);
+  white-space: nowrap;
 }
-.landing__brand-text small {
-  font-family: var(--font-hand);
-  font-size: 0.95rem;
-  color: var(--color-brand);
-  font-weight: 600;
+.landing__brand-tagline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  margin-top: 2px;
+  letter-spacing: 0;
 }
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .landing__brand-mark { width: 34px; height: 34px; }
-  .landing__brand-text { font-size: 1rem; }
-  .landing__brand-text small { display: none; }
+  .landing__brand-name { font-size: 1rem; }
+  .landing__brand-tagline { display: none; }
 }
 .landing__nav {
   display: none;
-  gap: 1.5rem;
+  gap: 1.25rem;
   font-size: 0.95rem;
+  align-items: center;
 }
 .landing__nav a {
   color: var(--color-ink);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 .landing__nav a:hover {
   color: var(--color-brand-ink);
 }
-@media (min-width: 780px) {
-  .landing__nav { display: flex; }
-}
 .landing__header-cta {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  flex-shrink: 0;
 }
 .landing__header-cta .landing__button {
   white-space: nowrap;
+}
+.landing__cta-short {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+}
+.landing__nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--lp-ink-line-strong);
+  border-radius: 8px;
+  color: var(--color-brand-ink);
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.landing__nav-toggle:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.landing__nav-sheet {
+  background: var(--lp-cream);
+  border-bottom: 1px solid var(--lp-ink-line);
+  padding: 0.25rem var(--lp-gutter) 0.75rem;
+  box-shadow: var(--lp-shadow-soft);
+}
+.landing__nav-sheet nav {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--lp-max);
+  margin: 0 auto;
+}
+.landing__nav-sheet a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.75rem 0.25rem;
+  color: var(--color-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lp-ink-line);
+  font-size: 1rem;
+}
+.landing__nav-sheet a:last-child {
+  border-bottom: none;
+}
+@media (min-width: 1024px) {
+  .landing__nav { display: flex; }
+  .landing__nav-toggle { display: none; }
+  .landing__nav-sheet { display: none; }
+  .landing__cta-short { padding: 0.6rem 1.25rem; }
+}
+
+/* Anchor offsets so the sticky header never covers a target heading */
+.landing #activa,
+.landing #proximamente,
+.landing #precios,
+.landing #autora,
+.landing #faq {
+  scroll-margin-top: 72px;
+}
+@media (min-width: 1024px) {
+  .landing #activa,
+  .landing #proximamente,
+  .landing #precios,
+  .landing #autora,
+  .landing #faq {
+    scroll-margin-top: 80px;
+  }
 }
 
 /* ============================================================

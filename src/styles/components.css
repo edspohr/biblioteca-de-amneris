@@ -45,13 +45,11 @@ main {
 
 header.nav {
   border-bottom: var(--border-hairline);
-  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-  backdrop-filter: saturate(140%) blur(10px);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  background: var(--color-surface);
   font-family: var(--font-ui);
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
   transition: box-shadow var(--dur-base) var(--ease-out);
 }
@@ -63,26 +61,58 @@ header.nav {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--sp-3);
-  padding: var(--sp-3) var(--sp-4);
+  padding: var(--sp-2) var(--sp-4);
+  min-height: 56px;
+}
+@media (min-width: 720px) {
+  .nav__bar { min-height: 64px; }
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: var(--font-title);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-md);
   color: var(--color-brand-ink);
   text-decoration: none;
   line-height: var(--lh-tight);
+  min-width: 0;
 }
 .brand__mark {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   flex-shrink: 0;
+}
+.brand__lockup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.1;
+}
+.brand__name {
+  font-family: var(--font-title);
+  font-weight: var(--fw-bold);
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--color-brand-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand__tagline {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: 0.72rem;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  margin-top: 2px;
+  letter-spacing: 0;
+}
+@media (max-width: 640px) {
+  .brand__mark { width: 34px; height: 34px; }
+  .brand__name { font-size: 1rem; }
+  .brand__tagline { display: none; }
 }
 
 .nav__toggle {
@@ -163,8 +193,8 @@ header.nav {
   .nav__bar {
     grid-template-columns: auto 1fr;
   }
-  .brand {
-    font-size: var(--fs-lg);
+  .brand__name {
+    font-size: 1.2rem;
   }
   .nav__toggle {
     display: none;
@@ -180,19 +210,8 @@ header.nav {
   }
   .nav__links li a {
     padding: var(--sp-2) var(--sp-3);
+    white-space: nowrap;
   }
-}
-
-.brand__mark {
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
-  padding: 2px;
-}
-.brand__text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: min(60vw, 22ch);
 }
 
 .nav__account {
