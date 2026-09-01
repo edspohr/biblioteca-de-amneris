@@ -32,6 +32,7 @@ export const recetaSchema = z.object({
   id: slug,
   numero: z.number().int().nullable(),
   titulo: z.string().min(1, "El título es obligatorio"),
+  destacadaPreview: z.boolean().default(false),
   variantes: z
     .record(slug, varianteEtapaSchema)
     .refine((v) => ETAPA_IDS.every((id) => id in v), {

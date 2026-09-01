@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Alergeno, Ingrediente, Receta, TipoComida } from "@/lib/schema";
+import { RegisterInvite } from "@/components/register-invite";
 
 interface Props {
   recetas: Receta[];
   ingredientes: Ingrediente[];
   alergenos: Alergeno[];
+  hasFullAccess: boolean;
 }
 
 const TIPOS: { value: TipoComida; label: string }[] = [
@@ -19,13 +21,15 @@ const TIPOS: { value: TipoComida; label: string }[] = [
   { value: "colacion", label: "Colación" },
 ];
 
-export function RecetasBrowser({ recetas, ingredientes, alergenos }: Props) {
+export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess }: Props) {
   const [tipoComida, setTipoComida] = useState<TipoComida | "">("");
   const [maxMinutos, setMaxMinutos] = useState("");
   const [congelableOnly, setCongelableOnly] = useState(false);
   const [excludedAlergenos, setExcludedAlergenos] = useState<Set<string>>(new Set());
   const [query, setQuery] = useState("");
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [inviteOpen, setInviteOpen] = useState(false);
+  const [lockedTarget, setLockedTarget] = useState<string | undefined>(undefined);
 
   const ingByNorm = useMemo(() => {
     const m = new Map<string, string>();
@@ -124,32 +128,102 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos }: Props) {
         <div className="empty">Ninguna receta coincide con los filtros.</div>
       ) : (
         <ul className="grid recipe-grid">
-          {filtered.map((r) => (
-            <li key={r.id} className="card recipe-card">
-              <Link href={`/recetas/${r.id}`} className="recipe-card__link">
-                {r.foto ? (
-                  <div className="recipe-card__photo">
-                    <Image
-                      src={r.foto}
-                      alt=""
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className="recipe-card__photo recipe-card__photo--placeholder" aria-hidden="true" />
-                )}
-                <span className="recipe-card__title">{r.titulo}</span>
-                <span className="meta">
-                  {TIPOS.find((t) => t.value === r.tipo_comida)?.label ?? r.tipo_comida}
-                  {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
-                  {r.congelable === true ? " · congelable" : ""}
-                </span>
-              </Link>
-            </li>
-          ))}
+          {filtered.map((r) => {
+            const locked = !hasFullAccess && !r.destacadaPreview;
+            const meta = (
+              <>
+                {TIPOS.find((t) => t.value === r.tipo_comida)?.label ?? r.tipo_comida}
+                {r.minutos_prep != null ? ` · ${r.minutos_prep} min` : ""}
+                {r.congelable === true ? " · congelable" : ""}
+              </>
+            );
+            const photo = r.foto ? (
+              <div className="recipe-card__photo" style={locked ? { filter: "blur(10px)" } : undefined}>
+                <Image
+                  src={r.foto}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div
+                className="recipe-card__photo recipe-card__photo--placeholder"
+                style={locked ? { filter: "blur(10px)" } : undefined}
+                aria-hidden="true"
+              />
+            );
+
+            if (locked) {
+              return (
+                <li key={r.id} className="card recipe-card" data-locked="true">
+                  <button
+                    type="button"
+                    className="recipe-card__link"
+                    onClick={() => {
+                      setLockedTarget(`/recetas/${r.id}`);
+                      setInviteOpen(true);
+                    }}
+                    style={{
+                      background: "none",
+                      border: 0,
+                      padding: 0,
+                      textAlign: "left",
+                      cursor: "pointer",
+                      width: "100%",
+                      position: "relative",
+                    }}
+                    aria-label={`Receta bloqueada: ${r.titulo}. Regístrate gratis para verla.`}
+                  >
+                    {photo}
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        top: 8,
+                        right: 8,
+                        background: "rgba(255,255,255,0.95)",
+                        color: "var(--color-ink)",
+                        borderRadius: 999,
+                        padding: "0.2rem 0.6rem",
+                        fontSize: "0.75rem",
+                        fontWeight: 600,
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+                      }}
+                    >
+                      🔒 Regístrate
+                    </span>
+                    <span className="recipe-card__title">{r.titulo}</span>
+                    <span className="meta">{meta}</span>
+                  </button>
+                </li>
+              );
+            }
+
+            return (
+              <li key={r.id} className="card recipe-card">
+                <Link href={`/recetas/${r.id}`} className="recipe-card__link">
+                  {photo}
+                  <span className="recipe-card__title">{r.titulo}</span>
+                  <span className="meta">{meta}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
+      )}
+
+      <RegisterInvite
+        open={inviteOpen}
+        onClose={() => setInviteOpen(false)}
+        returnTo={lockedTarget}
+      />
+      {!hasFullAccess && (
+        <p className="muted" style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.9rem" }}>
+          Estás viendo las recetas gratis.{" "}
+          <Link href="/registro">Regístrate</Link> para ver las {recetas.length - recetas.filter((r) => r.destacadaPreview).length} recetas restantes.
+        </p>
       )}
 
       {sheetOpen && (

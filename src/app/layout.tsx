@@ -6,6 +6,8 @@ import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
 import { NavBarServer } from "./nav-bar-server";
 import { AsistenteWidget } from "./asistente/widget";
+import { TrialBanner } from "@/components/trial-banner";
+import { getSessionWithProfile } from "@/lib/auth/session";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -57,11 +59,10 @@ export const viewport: Viewport = {
 export const dynamic = "force-dynamic";
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  // Reader gate is disabled (see middleware.ts READER_GATE_ENABLED). The
-  // assistant widget is temporarily forced on so anyone testing can try it.
-  // When re-enabling auth, restore: `const [etapas, user] = await Promise.all(
-  // [repo.getEtapas(), verifySession()])` and `enabled={Boolean(user)}`.
-  const etapas = await repo.getEtapas();
+  const [etapas, ctx] = await Promise.all([
+    repo.getEtapas(),
+    getSessionWithProfile(),
+  ]);
 
   return (
     <html
@@ -69,11 +70,16 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       className={`${fraunces.variable} ${sourceSerif.variable} ${caveat.variable}`}
     >
       <body>
-        <EtapaActivaProvider etapas={etapas}>
+        <EtapaActivaProvider
+          etapas={etapas}
+          initialBirthdate={ctx?.usuario?.babyBirthdate ?? null}
+          initialManualOverride={ctx?.usuario?.manualEtapaOverride ?? null}
+        >
+          <TrialBanner />
           <NavBarServer />
           <EtapaSelectorGlobal />
           <main>{children}</main>
-          <AsistenteWidget enabled />
+          <AsistenteWidget enabled={Boolean(ctx)} />
         </EtapaActivaProvider>
       </body>
     </html>

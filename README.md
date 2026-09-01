@@ -209,6 +209,87 @@ Setup de Google Cloud (una vez): [GCP_SETUP.md](GCP_SETUP.md).
 
 ---
 
+## Cuentas y período de prueba
+
+Este ciclo cerró el modelo de acceso: cualquier persona puede registrarse gratis, y se activa un **período de prueba de 30 días** con acceso completo. Al terminar, la cuenta degrada a "modo lectura pública" (mismo que un visitante anónimo) sin perder datos. Cuando exista pasarela de pago, el mismo modelo de estados aguanta suscripciones reales.
+
+### Cómo se registra alguien
+
+- `/registro` — email + contraseña, o cuenta de Google. Casilla obligatoria de política de datos ([/privacidad](https://biblioteca-amneris.web.app/privacidad)).
+- Después del registro, el usuario pasa por un onboarding corto de 3 pasos (fecha de nacimiento del bebé + datos opcionales) y llega a la biblioteca con la etapa que corresponde a la edad de su bebé preseleccionada.
+- `/ingresar` — para usuarios que ya se registraron. Incluye "olvidé mi contraseña".
+- El trial arranca en el momento en que el usuario **acepta la política de privacidad** (paso 1 del onboarding). Sin consent, la cuenta existe pero no tiene acceso — así cumplimos la Ley 21.719.
+
+### Qué ve cada tipo de usuario
+
+| Superficie | Anónimo | En prueba / Activa / Cortesía | Prueba vencida |
+| --- | --- | --- | --- |
+| Portada, etapas, técnicas, privacidad | ✅ | ✅ | ✅ |
+| Recetas destacadas (`destacadaPreview: true`) | ✅ | ✅ | ✅ |
+| Recetas normales | Se ven con foto borrosa + chip 🔒 | ✅ | Vuelven a modo bloqueado |
+| Menús semanales | Bloqueados con CTA de registro | ✅ | Bloqueados |
+| `/cuenta`, `/admin` | Redirige a `/ingresar` | ✅ (según rol) | ✅ |
+
+**Nunca hay un dead-end**: al hacer click en un contenido bloqueado se abre un panel cálido con "Regístrate gratis" y "Ya tengo cuenta".
+
+### Estados de suscripción
+
+Cada usuario tiene un doc `usuarios/{uid}` con un bloque `subscription` que puede estar en uno de estos cuatro estados:
+
+- `trial` — período de 30 días, arranca al aceptar consent
+- `activa` — suscripción de pago activa (aún sin implementar, campos listos para provider/plan/renewsAt)
+- `cortesia` — regalo con fecha de expiración y valor CLP anclado ("acceso valorado en $1.990")
+- `vencida` — sin acceso; el usuario ve la app en modo lectura pública
+
+### Panel de administración
+
+`/admin/usuarios` (solo superadmin) muestra la lista completa de leads y suscriptores con filtros por estado y fuente, acciones por fila (dar cortesía, extender trial, dar/quitar autoría, eliminar cuenta), y un botón **Descargar CSV** que exporta todo para trabajar la lista de leads fuera de la app.
+
+Para dar cortesía: click en "Dar cortesía" en la fila del usuario → elige fecha de expiración + monto CLP + nota interna. El usuario ve automáticamente su nuevo estado en `/cuenta` con el mensaje "acceso de regalo valorado en $X".
+
+### Constantes de negocio
+
+- Trial: **30 días** (`TRIAL_DAYS` en `src/lib/schema/usuario.ts`).
+- Precio mensual público: **$1.990 CLP** (`MONTHLY_PRICE_CLP` en `src/lib/pricing.ts`). Se usa en el banner de trial vencido y como default sugerido al dar cortesía.
+- Contador de leads: `metrics/registrations` en Firestore. Incrementa automáticamente en cada primer signin y por fuente cuando el usuario responde "cómo nos conociste".
+
+### Recetas destacadas (preview gratuito)
+
+Cinco recetas están marcadas con `destacadaPreview: true` y son visibles sin cuenta — sirven como muestra del contenido para convertir visitantes en cuentas registradas.
+
+**Seed inicial** (una sola vez, después de tener recetas en Firestore):
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json npm run seed:featured
+```
+
+Marca automáticamente una receta por tipo de comida (desayuno, almuerzo, merienda, cena, colación), eligiendo la de menor `numero`. Para forzar un set específico:
+
+```
+FEATURED_IDS=slug-1,slug-2,slug-3 npm run seed:featured
+```
+
+Para cambiar qué recetas son destacadas después: entra a `/admin/recetas/[slug]/editar` y marca/desmarca **"Mostrar como receta gratis"**. El script `seed:featured` es aditivo — nunca desmarca — así que se puede correr sin miedo.
+
+### Rangos de edad de las etapas
+
+La auto-selección de etapa según la edad del bebé usa dos campos numéricos en cada doc de `etapa`: `edad_min_meses` y `edad_max_meses`. Backfill inicial:
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json npm run backfill:etapa-edad
+```
+
+Aplica: etapa-1: 6-9m · etapa-2: 10-11m · etapa-3: 12-24m. Todo cálculo de edad usa `America/Santiago` para no perder días por husos horarios.
+
+### Pendientes explícitos
+
+- **Emails transaccionales**: hay `// TODO` markers en `startTrial` (bienvenida) y donde debería ir el aviso "3 días antes de vencer". No hay integración con proveedor de correo aún.
+- **Verificación de email**: no se exige. El trial arranca sin verificar. Firebase igual guarda `emailVerified: false` — se puede activar un banner "verifica tu correo" en un ciclo futuro.
+- **Eliminación de cuenta**: el botón en `/cuenta` abre un `mailto:` a Amneris. Un endpoint dedicado que gatille el workflow legal queda pendiente.
+- **Política de privacidad**: `/privacidad` tiene el borrador base cubriendo Ley 21.719. Requiere revisión de un abogado antes del lanzamiento público.
+
+---
+
 ## Estructura del proyecto (para referencia técnica)
 
 - `docs/` — el manuscrito original en Word.

@@ -22,6 +22,7 @@ export default async function NuevaRecetaPage() {
     id: "",
     numero: null,
     titulo: "",
+    destacadaPreview: false,
     variantes,
     tipo_comida: "desayuno",
     minutos_prep: null,

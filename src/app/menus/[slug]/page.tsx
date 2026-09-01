@@ -2,6 +2,8 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
+import { getSessionWithProfile } from "@/lib/auth/session";
+import { Paywall } from "@/components/paywall";
 import { computeListaCompras } from "@/lib/derived/lista-compras";
 
 const TIPOS_LABEL: Record<string, string> = {
@@ -20,7 +22,7 @@ export default async function MenuPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [menu, recetas, ingredientes, etapa] = await Promise.all([
+  const [menu, recetas, ingredientes, etapa, ctx] = await Promise.all([
     repo.getMenu(slug),
     repo.getRecetas(),
     repo.getIngredientes(),
@@ -28,8 +30,23 @@ export default async function MenuPage({
       const m = await repo.getMenu(slug);
       return m ? repo.getEtapa(m.etapa_id) : null;
     })(),
+    getSessionWithProfile(),
   ]);
   if (!menu) notFound();
+
+  const hasFullAccess = ctx?.access.hasFullAccess ?? false;
+  const isExpired = ctx?.access.tier === "vencida";
+  if (!hasFullAccess) {
+    return (
+      <Paywall
+        titulo={menu.nombre}
+        eyebrow="Menú semanal"
+        foto={null}
+        returnTo={`/menus/${slug}`}
+        isExpired={isExpired}
+      />
+    );
+  }
 
   const recetaById = new Map(recetas.map((r) => [r.id, r]));
   const lista = computeListaCompras(menu, recetas, ingredientes);

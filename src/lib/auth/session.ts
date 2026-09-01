@@ -1,6 +1,10 @@
 import "server-only";
+import { cache } from "react";
 import { cookies } from "next/headers";
-import { getAdminAuth } from "@/lib/firebase/admin";
+import { getFirestore } from "firebase-admin/firestore";
+import { getAdminApp, getAdminAuth } from "@/lib/firebase/admin";
+import { usuarioSchema, type Usuario } from "@/lib/schema";
+import { computeAccess, type Access } from "./access";
 
 export const SESSION_COOKIE_NAME =
   process.env.SESSION_COOKIE_NAME || "__biblioteca_session";
@@ -15,12 +19,16 @@ export interface SessionUser {
   superadmin: boolean;
 }
 
-// TEMPORARY: while the login flow is being polished, verifySession() returns
-// a mock superadmin so Amneris can walk the entire app (including /admin)
-// without seeing a login screen. Middleware still guards mutating API routes
-// by checking the real cookie, so no one can persist changes without a real
-// session. Flip to false once auth is re-enabled end-to-end.
-export const AUTH_BYPASS_ENABLED = true;
+export interface SessionWithProfile {
+  session: SessionUser;
+  usuario: Usuario | null;
+  access: Access;
+}
+
+// End-to-end auth is on. To temporarily walk the app as a superadmin without
+// logging in (only useful during isolated local debugging), flip to true —
+// but keep it false in every branch that gets deployed.
+export const AUTH_BYPASS_ENABLED = false;
 
 const MOCK_SUPERADMIN: SessionUser = {
   uid: "mock-superadmin",
@@ -40,7 +48,7 @@ export async function createSessionCookie(idToken: string): Promise<{
   return { cookie, maxAgeSeconds: SESSION_MAX_AGE_MS / 1000 };
 }
 
-export async function verifySession(): Promise<SessionUser | null> {
+export const verifySession = cache(async (): Promise<SessionUser | null> => {
   if (AUTH_BYPASS_ENABLED) return MOCK_SUPERADMIN;
   const store = await cookies();
   const cookie = store.get(SESSION_COOKIE_NAME)?.value;
@@ -57,7 +65,7 @@ export async function verifySession(): Promise<SessionUser | null> {
   } catch {
     return null;
   }
-}
+});
 
 export async function verifySessionCookieValue(
   cookie: string
@@ -71,6 +79,61 @@ export async function verifySessionCookieValue(
       name: (decoded.name as string | undefined) ?? null,
       superadmin: decoded.superadmin === true,
     };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Reads the profile doc for the current session (usuarios/{uid}) and returns
+ * it together with the computed access tier. Cached per-request via React
+ * `cache()` so multiple server components can call it without hitting
+ * Firestore repeatedly. Returns null if there is no session.
+ *
+ * When AUTH_BYPASS_ENABLED is on, returns the mock superadmin with a
+ * synthetic "activa" access so admin surfaces stay open.
+ */
+export const getSessionWithProfile = cache(
+  async (): Promise<SessionWithProfile | null> => {
+    const session = await verifySession();
+    if (!session) return null;
+    if (AUTH_BYPASS_ENABLED && session.uid === MOCK_SUPERADMIN.uid) {
+      return {
+        session,
+        usuario: null,
+        access: {
+          tier: "activa",
+          daysLeft: null,
+          hasFullAccess: true,
+          endsAt: null,
+        },
+      };
+    }
+    const usuario = await readUsuario(session.uid);
+    return {
+      session,
+      usuario,
+      access: computeAccess(
+        usuario ?? { subscription: { state: "vencida" } as never, superadmin: session.superadmin }
+      ),
+    };
+  }
+);
+
+async function readUsuario(uid: string): Promise<Usuario | null> {
+  try {
+    const snap = await getFirestore(getAdminApp())
+      .collection("usuarios")
+      .doc(uid)
+      .get();
+    if (!snap.exists) return null;
+    const data = snap.data();
+    if (!data) return null;
+    // The mirror doc may be missing fields during the first-signin transient;
+    // Zod would throw. Parse loosely and return null if invalid — callers
+    // treat that as "profile not ready yet".
+    const parsed = usuarioSchema.safeParse({ uid, ...data });
+    return parsed.success ? parsed.data : null;
   } catch {
     return null;
   }

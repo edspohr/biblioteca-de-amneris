@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { repo } from "@/lib/repo";
+import { getSessionWithProfile } from "@/lib/auth/session";
+import { Paywall } from "@/components/paywall";
 import { RecetaVarianteTabs } from "./variante-tabs";
 
 const TIPOS_LABEL: Record<string, string> = {
@@ -18,14 +20,29 @@ export default async function RecetaPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [receta, ingredientes, alergenos, tecnicas, etapas] = await Promise.all([
+  const [receta, ingredientes, alergenos, tecnicas, etapas, ctx] = await Promise.all([
     repo.getReceta(slug),
     repo.getIngredientes(),
     repo.getAlergenos(),
     repo.getTecnicas(),
     repo.getEtapas(),
+    getSessionWithProfile(),
   ]);
   if (!receta) notFound();
+
+  const hasFullAccess = ctx?.access.hasFullAccess ?? false;
+  const isExpired = ctx?.access.tier === "vencida";
+  if (!hasFullAccess && !receta.destacadaPreview) {
+    return (
+      <Paywall
+        titulo={receta.titulo}
+        eyebrow={TIPOS_LABEL[receta.tipo_comida] ?? receta.tipo_comida}
+        foto={receta.foto}
+        returnTo={`/recetas/${slug}`}
+        isExpired={isExpired}
+      />
+    );
+  }
 
   const ingById = new Map(ingredientes.map((i) => [i.id, i]));
   const alergById = new Map(alergenos.map((a) => [a.id, a]));

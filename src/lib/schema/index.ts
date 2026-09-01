@@ -6,3 +6,4 @@ export * from "./tecnica";
 export * from "./receta";
 export * from "./menu";
 export * from "./porcion-textura";
+export * from "./usuario";

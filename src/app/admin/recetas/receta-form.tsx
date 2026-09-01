@@ -264,6 +264,20 @@ export function RecetaForm({
         </Field>
       </div>
 
+      <Field label="Acceso público">
+        <label style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={state.destacadaPreview}
+            onChange={(e) => set("destacadaPreview", e.target.checked)}
+          />
+          <span>
+            Mostrar como receta gratis (visible sin cuenta, para atraer
+            registros).
+          </span>
+        </label>
+      </Field>
+
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
         <Field label="Minutos de preparación" error={errors.minutos_prep}>
           <input

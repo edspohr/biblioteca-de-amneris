@@ -119,7 +119,7 @@ for (const col of PUBLIC_COLLECTIONS) {
   });
 }
 
-// -- usuarios: owner-only -----------------------------------------------------
+// -- usuarios: owner-read + superadmin-read; ALL writes server-only ----------
 
 test("user can read their own usuarios doc", async () => {
   await seedAsAdmin(async (db) => {
@@ -128,8 +128,8 @@ test("user can read their own usuarios doc", async () => {
   await assertSucceeds(getDoc(doc(user("mama-uid"), "usuarios", "mama-uid")));
 });
 
-test("user can write their own usuarios doc", async () => {
-  await assertSucceeds(
+test("user CANNOT write their own usuarios doc (server-only)", async () => {
+  await assertFails(
     setDoc(doc(user("mama-uid"), "usuarios", "mama-uid"), { pref: "x" })
   );
 });
@@ -152,6 +152,42 @@ test("anon CANNOT read any usuarios doc", async () => {
     await setDoc(doc(db, "usuarios", "someone"), { email: "s@x" });
   });
   await assertFails(getDoc(doc(anon(), "usuarios", "someone")));
+});
+
+test("superadmin CAN read any usuarios doc", async () => {
+  await seedAsAdmin(async (db) => {
+    await setDoc(doc(db, "usuarios", "otra-mama"), { email: "otra@x" });
+  });
+  const su = env.authenticatedContext("su-uid", { superadmin: true }).firestore();
+  await assertSucceeds(getDoc(doc(su, "usuarios", "otra-mama")));
+});
+
+test("superadmin CANNOT write usuarios doc (server-only)", async () => {
+  const su = env.authenticatedContext("su-uid", { superadmin: true }).firestore();
+  await assertFails(setDoc(doc(su, "usuarios", "otra-mama"), { plan: "x" }));
+});
+
+// -- metrics: server-only -----------------------------------------------------
+
+test("anon CANNOT read metrics", async () => {
+  await seedAsAdmin(async (db) => {
+    await setDoc(doc(db, "metrics", "registrations"), { total: 1 });
+  });
+  await assertFails(getDoc(doc(anon(), "metrics", "registrations")));
+});
+
+test("anon CANNOT write metrics", async () => {
+  await assertFails(
+    setDoc(doc(anon(), "metrics", "registrations"), { total: 1 })
+  );
+});
+
+test("superadmin CANNOT read metrics from client", async () => {
+  await seedAsAdmin(async (db) => {
+    await setDoc(doc(db, "metrics", "registrations"), { total: 1 });
+  });
+  const su = env.authenticatedContext("su-uid", { superadmin: true }).firestore();
+  await assertFails(getDoc(doc(su, "metrics", "registrations")));
 });
 
 // -- conversaciones + asistente_ratelimit: fully server-only -----------------

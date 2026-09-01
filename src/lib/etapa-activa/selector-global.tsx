@@ -17,17 +17,28 @@ import { useEtapaActiva } from "./context";
  */
 export function EtapaSelectorGlobal() {
   const pathname = usePathname();
-  const { etapaId, setEtapaId, etapas } = useEtapaActiva();
+  const {
+    etapaId,
+    setEtapaId,
+    etapas,
+    autoEtapaId,
+    manualOverride,
+    resetToAuto,
+  } = useEtapaActiva();
   if (
     pathname === "/" ||
     pathname.startsWith("/admin") ||
     pathname.startsWith("/login") ||
+    pathname.startsWith("/ingresar") ||
+    pathname.startsWith("/registro") ||
     pathname === "/sin-permiso"
   ) {
     return null;
   }
   const ordenadas = [...etapas].sort((a, b) => a.orden - b.orden);
   const activa = ordenadas.find((e) => e.id === etapaId) ?? ordenadas[0];
+  const showResetChip =
+    manualOverride && autoEtapaId !== null && autoEtapaId !== etapaId;
 
   return (
     <div className="etapa-bar" role="region" aria-label="Etapa activa">
@@ -61,6 +72,26 @@ export function EtapaSelectorGlobal() {
             );
           })}
         </div>
+        {showResetChip && (
+          <button
+            type="button"
+            onClick={resetToAuto}
+            className="etapa-bar__reset"
+            style={{
+              background: "transparent",
+              border: "1px dashed var(--color-ink-muted)",
+              borderRadius: 999,
+              padding: "0.25rem 0.75rem",
+              fontSize: "0.85rem",
+              color: "var(--color-ink-muted)",
+              cursor: "pointer",
+              marginLeft: "0.5rem",
+            }}
+            title="Volver a la etapa que corresponde a la edad de mi bebé"
+          >
+            ↺ Volver a la etapa de mi bebé
+          </button>
+        )}
       </div>
     </div>
   );

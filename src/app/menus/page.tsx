@@ -1,9 +1,15 @@
-import Link from "next/link";
 import { repo } from "@/lib/repo";
+import { getSessionWithProfile } from "@/lib/auth/session";
+import { MenuTiles } from "./menu-tiles";
 
 export default async function MenusPage() {
-  const [menus, etapas] = await Promise.all([repo.getMenus(), repo.getEtapas()]);
+  const [menus, etapas, ctx] = await Promise.all([
+    repo.getMenus(),
+    repo.getEtapas(),
+    getSessionWithProfile(),
+  ]);
   const etapaById = new Map(etapas.map((e) => [e.id, e]));
+  const hasFullAccess = ctx?.access.hasFullAccess ?? false;
 
   const grouped = new Map<string, typeof menus>();
   for (const m of menus) {
@@ -39,18 +45,15 @@ export default async function MenusPage() {
             }}
           >
             <h2 className="section-title">{etapa.nombre}</h2>
-            <ul className="grid tile-grid">
-              {list.map((m) => (
-                <li key={m.id} className="tile tile--menu">
-                  <Link href={`/menus/${m.id}`} className="tile__link">
-                    <span className="tile__title">{m.nombre}</span>
-                    <span className="tile__meta">
-                      {m.menu_recetas.length} recetas · {etapaById.get(m.etapa_id)?.rango_edad}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <MenuTiles
+              hasFullAccess={hasFullAccess}
+              tiles={list.map((m) => ({
+                id: m.id,
+                nombre: m.nombre,
+                recetas: m.menu_recetas.length,
+                rangoEdad: etapaById.get(m.etapa_id)?.rango_edad,
+              }))}
+            />
           </section>
         );
       })}

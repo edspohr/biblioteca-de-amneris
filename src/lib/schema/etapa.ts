@@ -16,6 +16,8 @@ export const etapaSchema = z.object({
   nombre: z.string().min(1, "El nombre de la etapa es obligatorio"),
   textura: z.string().min(1, "La textura es obligatoria"),
   rango_edad: z.string().min(1, "El rango de edad es obligatorio"),
+  edad_min_meses: z.number().int().nonnegative().default(0),
+  edad_max_meses: z.number().int().nonnegative().default(999),
   orden: z.number().int().min(1, "El orden debe ser un entero positivo"),
   paleta: paletaSchema,
   descripcion: z.string().nullable().optional(),

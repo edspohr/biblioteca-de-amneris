@@ -2,8 +2,10 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { createSessionCookie, SESSION_COOKIE_NAME } from "@/lib/auth/session";
 import { isSuperadminEmail } from "@/lib/auth/superadmins";
-import { getAdminAuth } from "@/lib/firebase/admin";
-import { getUser, mirrorUser } from "@/lib/users/service";
+import { getFirestore } from "firebase-admin/firestore";
+import { getAdminApp, getAdminAuth } from "@/lib/firebase/admin";
+import { ensureUsuarioDoc, getUser } from "@/lib/users/service";
+import { incrementRegistrationsCounter } from "@/lib/users/subscriptions";
 
 export async function POST(req: Request) {
   let idToken: string;
@@ -75,20 +77,40 @@ export async function POST(req: Request) {
     );
 
     // Mirror this user into usuarios/{uid} so the admin panel can list them
-    // without a Functions trigger. Non-fatal if it fails — the sign-in itself
-    // has already succeeded.
+    // without a Functions trigger. If the profile doc doesn't exist yet (first
+    // sign-in ever), ensureUsuarioDoc seeds a full doc with empty consent +
+    // state='vencida'; the trial starts explicitly when the user accepts
+    // consent in the onboarding wizard.
+    // Non-fatal if it fails — the sign-in itself has already succeeded.
+    let needsOnboarding = false;
     try {
       const summary = await getUser(decoded.uid);
-      if (summary) await mirrorUser(summary);
+      if (summary) {
+        const db = getFirestore(getAdminApp());
+        const ref = db.collection("usuarios").doc(summary.uid);
+        const before = await ref.get();
+        const existed = before.exists;
+        const seeded = await ensureUsuarioDoc(summary);
+        if (!existed) {
+          await incrementRegistrationsCounter();
+        }
+        // Onboarding required until the user completes it. Superadmins get a
+        // free pass so they land straight in /admin.
+        needsOnboarding =
+          !decoded.superadmin &&
+          !(seeded?.onboardingCompletedAt ??
+            (before.data()?.onboardingCompletedAt as string | undefined));
+      }
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.warn("[session] mirror failed:", err);
+      console.warn("[session] mirror/seed failed:", err);
     }
 
     return NextResponse.json({
       uid: decoded.uid,
       email: decoded.email ?? null,
       superadmin: decoded.superadmin === true,
+      needsOnboarding,
     });
   } catch (err) {
     // eslint-disable-next-line no-console

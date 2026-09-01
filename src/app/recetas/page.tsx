@@ -1,12 +1,15 @@
 import { repo } from "@/lib/repo";
+import { getSessionWithProfile } from "@/lib/auth/session";
 import { RecetasBrowser } from "./browser";
 
 export default async function RecetasPage() {
-  const [recetas, ingredientes, alergenos] = await Promise.all([
+  const [recetas, ingredientes, alergenos, ctx] = await Promise.all([
     repo.getRecetas(),
     repo.getIngredientes(),
     repo.getAlergenos(),
+    getSessionWithProfile(),
   ]);
+  const hasFullAccess = ctx?.access.hasFullAccess ?? false;
 
   return (
     <>
@@ -21,6 +24,7 @@ export default async function RecetasPage() {
         recetas={recetas}
         ingredientes={ingredientes}
         alergenos={alergenos}
+        hasFullAccess={hasFullAccess}
       />
     </>
   );

@@ -19,58 +19,29 @@ const PROTECTED_API_PREFIXES = [
   "/api/usuarios",
 ];
 
-// Reader hard-gate is TEMPORARILY DISABLED so Amneris can walk through the
-// whole app without fighting the login flow. Mutating API routes still
-// require a real session cookie — no one can persist changes.
-// Re-enable once auth flow is validated end-to-end.
-const READER_GATE_ENABLED = false;
-// When true, /admin also opens up (verifySession returns a mock superadmin;
-// see src/lib/auth/session.ts AUTH_BYPASS_ENABLED). Keep both flags in sync.
-const ADMIN_GATE_ENABLED = false;
-
-const READER_PREFIXES = [
-  "/libro",
-  "/recetas",
-  "/menus",
-  "/tecnicas",
-  "/etapas",
-];
-
-function isReaderPath(pathname: string): boolean {
-  return READER_PREFIXES.some(
-    (p) => pathname === p || pathname.startsWith(`${p}/`)
-  );
-}
-
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const hasSession = Boolean(req.cookies.get(SESSION_COOKIE_NAME)?.value);
 
-  // Guard /admin/**
+  // Guard /admin/** — no cookie, no admin. Per-page code additionally verifies
+  // the superadmin claim server-side.
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
-    if (ADMIN_GATE_ENABLED && !hasSession) {
+    if (!hasSession) {
       const url = req.nextUrl.clone();
-      url.pathname = "/login";
+      url.pathname = "/ingresar";
       url.search = `?next=${encodeURIComponent(pathname)}`;
       return NextResponse.redirect(url);
     }
     return NextResponse.next();
   }
 
-  // Reader hard gate. Currently disabled — see READER_GATE_ENABLED above.
-  if (
-    READER_GATE_ENABLED &&
-    req.method === "GET" &&
-    isReaderPath(pathname) &&
-    !hasSession
-  ) {
-    const url = req.nextUrl.clone();
-    url.pathname = "/login";
-    url.search = `?next=${encodeURIComponent(pathname)}&reason=reader`;
-    return NextResponse.redirect(url);
-  }
+  // Reader is always public at the middleware level. Per-recipe/menu gating
+  // (blur + register CTA) happens server-side inside each page based on the
+  // `destacadaPreview` flag and the trial/subscription tier.
 
-  // Guard mutating API routes.
+  // Guard mutating API routes: any client-side writer must carry a session
+  // cookie. Server-side `requireSuperadmin()` / `requireUser()` then enforce
+  // the actual role check.
   if (MUTATING_METHODS.has(req.method)) {
     const isProtected = PROTECTED_API_PREFIXES.some(
       (p) => pathname === p || pathname.startsWith(`${p}/`)
@@ -90,15 +61,6 @@ export const config = {
   matcher: [
     "/admin",
     "/admin/:path*",
-    "/libro",
-    "/libro/:path*",
-    "/recetas",
-    "/recetas/:path*",
-    "/menus",
-    "/menus/:path*",
-    "/tecnicas",
-    "/tecnicas/:path*",
-    "/etapas/:path*",
     "/api/recetas/:path*",
     "/api/ingredientes/:path*",
     "/api/alergenos/:path*",
