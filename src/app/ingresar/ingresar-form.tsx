@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   getRedirectResult,
   GoogleAuthProvider,
+  onAuthStateChanged,
   signInWithRedirect,
 } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase/client";
@@ -13,32 +14,55 @@ import {
   translateAuthError,
 } from "@/lib/auth/after-login";
 
-let redirectHandled = false;
-
 export function IngresarForm({ next }: { next?: string }) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const handled = useRef(false);
 
-  // Al volver de Google, recupera el resultado guardado en sessionStorage,
-  // pide la cookie de sesión al servidor y redirige según needsOnboarding.
-  // signInWithPopup no funciona con este backend (COOP + postMessage entre
-  // popup y opener queda bloqueado), por eso vamos por redirect.
+  // Al volver de Google, Firebase restaura el usuario desde IndexedDB y
+  // dispara onAuthStateChanged. Usamos ese hook (en vez de getRedirectResult,
+  // que a veces devuelve null en Chrome por storage partitioning) para
+  // agarrar la sesión, pedir cookie al servidor y redirigir.
   useEffect(() => {
-    if (redirectHandled) return;
-    redirectHandled = true;
-    (async () => {
+    const auth = getFirebaseAuth();
+
+    // Diagnosis auxiliar: getRedirectResult loguea si el resultado llegó
+    // o si Firebase falló durante el bounce. No es la fuente de verdad.
+    getRedirectResult(auth)
+      .then((r) => {
+        // eslint-disable-next-line no-console
+        console.log(
+          "[login] getRedirectResult:",
+          r ? `user=${r.user.email}` : "null"
+        );
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error("[login] getRedirectResult error:", err);
+      });
+
+    const unsub = onAuthStateChanged(auth, async (user) => {
+      // eslint-disable-next-line no-console
+      console.log(
+        "[login] onAuthStateChanged:",
+        user ? `user=${user.email}` : "null"
+      );
+      if (!user || handled.current) return;
+      handled.current = true;
+      setLoading(true);
       try {
-        const auth = getFirebaseAuth();
-        const result = await getRedirectResult(auth);
-        if (!result) return;
-        setLoading(true);
-        const r = await postSession((force) => result.user.getIdToken(force));
+        const r = await postSession((force) => user.getIdToken(force));
         afterLoginRedirect(r, next);
       } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error("[login] postSession failed:", err);
         setError(translateAuthError(err));
         setLoading(false);
+        handled.current = false;
       }
-    })();
+    });
+
+    return () => unsub();
   }, [next]);
 
   async function handleGoogle() {
@@ -48,6 +72,8 @@ export function IngresarForm({ next }: { next?: string }) {
       const auth = getFirebaseAuth();
       await signInWithRedirect(auth, new GoogleAuthProvider());
     } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("[login] signInWithRedirect error:", err);
       setError(translateAuthError(err));
       setLoading(false);
     }
