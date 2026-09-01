@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": true,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-remolacha-con-manzana/main.webp",
   "id": "crema-de-remolacha-con-manzana",
   "kcal_100g": null,

@@ -10,6 +10,6 @@ export const AUTHOR_NAME = "Amneris";
 export const LOCALE = "es-CL";
 
 // Contact — placeholders. Update from PENDIENTES_VERIFICAR.md once confirmed.
-export const CONTACT_EMAIL: string | null = "edmundo@spohr.cl";
+export const CONTACT_EMAIL: string | null = "amnerispinto@gmail.com";
 export const CONTACT_WHATSAPP: string | null = null; // e.g. "+56900000000"
 export const INSTAGRAM_HANDLE: string | null = null; // e.g. "bibliotecadeamneris"

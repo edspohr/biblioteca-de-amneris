@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": true,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/parfait-suave-de-yogur-con-mango-y-galleta-de-avena/main.webp",
   "id": "parfait-suave-de-yogur-con-mango-y-galleta-de-avena",
   "kcal_100g": 95,

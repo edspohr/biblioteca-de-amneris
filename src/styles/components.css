@@ -311,6 +311,17 @@ header.nav {
   padding: 0.4rem 1rem;
   text-decoration: none;
 }
+/* CTA button lives inside `.nav__links li a` which sets a dark ink color.
+   Force the primary treatment (white text on dark bg) and disable the
+   hover underline sweep that decorates plain anchor items. */
+.nav__links li a.nav__cta-btn,
+.nav__links li a.nav__cta-btn:hover {
+  color: var(--color-on-ink);
+  background: var(--color-ink);
+}
+.nav__links li a.nav__cta-btn::after {
+  display: none;
+}
 
 /* ============================================================
  * Etapa bar (bottom-fixed on mobile, sticky sub-header on desktop)

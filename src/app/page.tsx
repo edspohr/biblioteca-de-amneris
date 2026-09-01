@@ -250,18 +250,33 @@ function Precios() {
   return (
     <section className="landing__cta" id="precios">
       <div className="landing__container">
-        <p className="landing__eyebrow" style={{ color: "inherit", opacity: 0.75 }}>
-          Precios
-        </p>
+        <p className="landing__eyebrow">Precios</p>
         <h2>Un plan, toda la biblioteca.</h2>
         <p>
           Empieza con <strong>30 días gratis, sin tarjeta</strong>. Al cabo del
           mes eliges cómo seguir.
         </p>
-        <ul className="landing__pills" aria-label="Planes">
-          <li className="landing__pill">{mensualLabel} al mes</li>
-          <li className="landing__pill">
-            {anualLabel} al año · ahorra {ANNUAL_SAVINGS_MONTHS} meses
+        <ul className="landing__plans" aria-label="Planes">
+          <li className="landing__plan">
+            <p className="landing__plan-name">Mensual</p>
+            <p className="landing__plan-price">
+              {mensualLabel} <small>al mes</small>
+            </p>
+            <p className="landing__plan-desc">
+              Empieza cuando quieras, pausa cuando quieras.
+            </p>
+          </li>
+          <li className="landing__plan landing__plan--featured">
+            <span className="landing__plan-badge">
+              Ahorra {ANNUAL_SAVINGS_MONTHS} meses
+            </span>
+            <p className="landing__plan-name">Anual</p>
+            <p className="landing__plan-price">
+              {anualLabel} <small>al año</small>
+            </p>
+            <p className="landing__plan-desc">
+              Un solo cargo, toda la biblioteca por 12 meses.
+            </p>
           </li>
         </ul>
         <div className="landing__cta-buttons">

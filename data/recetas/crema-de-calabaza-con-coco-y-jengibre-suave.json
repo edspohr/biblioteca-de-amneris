@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": true,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-calabaza-con-coco-y-jengibre-suave/main.webp",
   "id": "crema-de-calabaza-con-coco-y-jengibre-suave",
   "kcal_100g": null,

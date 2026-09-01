@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": true,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/papilla-de-calabaza-y-avena/main.webp",
   "id": "papilla-de-calabaza-y-avena",
   "kcal_100g": 68,

@@ -701,7 +701,7 @@
  * Final CTA
  * ============================================================ */
 .landing__cta {
-  padding: var(--lp-section-y) 0;
+  padding: calc(var(--lp-section-y) * 0.7) 0;
   background:
     radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.18), transparent 55%),
     linear-gradient(135deg, var(--color-peach), var(--color-peach-dark));
@@ -709,6 +709,82 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+.landing__cta .landing__eyebrow {
+  color: white;
+  opacity: 0.92;
+}
+.landing__plans {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 2rem auto 2.25rem;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+@media (min-width: 640px) {
+  .landing__plans { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+.landing__plan {
+  position: relative;
+  background: white;
+  color: var(--color-brand-ink);
+  border-radius: var(--lp-r-md);
+  padding: 1.5rem 1.25rem;
+  box-shadow: var(--lp-shadow-lift);
+}
+.landing__plan--featured {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+}
+.landing__plan-badge {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: var(--color-brand-ink);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.landing__plan-name {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brand);
+  margin: 0 0 0.35rem;
+}
+.landing__plan-price {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-brand-ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.landing__plan-price small {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-ink-muted);
+  letter-spacing: 0;
+}
+.landing__plan-desc {
+  color: var(--color-ink);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0.75rem 0 0;
 }
 .landing__cta::before {
   content: "✽";
