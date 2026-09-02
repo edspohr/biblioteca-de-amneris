@@ -5,9 +5,9 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getAdminApp, getAdminAuth } from "@/lib/firebase/admin";
 import { usuarioSchema, type Usuario } from "@/lib/schema";
 import { computeAccess, type Access } from "./access";
+import { SESSION_COOKIE_NAME } from "./cookie";
 
-export const SESSION_COOKIE_NAME =
-  process.env.SESSION_COOKIE_NAME || "__biblioteca_session";
+export { SESSION_COOKIE_NAME };
 
 // 5 days, in milliseconds. Firebase caps session cookies at 14 days.
 const SESSION_MAX_AGE_MS = 5 * 24 * 60 * 60 * 1000;

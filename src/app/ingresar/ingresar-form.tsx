@@ -14,6 +14,17 @@ import {
   translateAuthError,
 } from "@/lib/auth/after-login";
 
+const DEBUG = process.env.NODE_ENV !== "production";
+const LOOP_GUARD_KEY = "biblioteca:login-attempts";
+const LOOP_GUARD_MAX = 3;
+
+function debug(...args: unknown[]) {
+  if (DEBUG) {
+    // eslint-disable-next-line no-console
+    console.log(...args);
+  }
+}
+
 export function IngresarForm({ next }: { next?: string }) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -26,32 +37,49 @@ export function IngresarForm({ next }: { next?: string }) {
   useEffect(() => {
     const auth = getFirebaseAuth();
 
-    // Diagnosis auxiliar: getRedirectResult loguea si el resultado llegó
-    // o si Firebase falló durante el bounce. No es la fuente de verdad.
-    getRedirectResult(auth)
-      .then((r) => {
-        // eslint-disable-next-line no-console
-        console.log(
-          "[login] getRedirectResult:",
-          r ? `user=${r.user.email}` : "null"
-        );
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error("[login] getRedirectResult error:", err);
-      });
+    // Diagnosis auxiliar (solo en dev): getRedirectResult loguea si el
+    // resultado llegó o si Firebase falló durante el bounce. No es la
+    // fuente de verdad.
+    if (DEBUG) {
+      getRedirectResult(auth)
+        .then((r) => {
+          debug(
+            "[login] getRedirectResult:",
+            r ? `user=${r.user.email}` : "null"
+          );
+        })
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.error("[login] getRedirectResult error:", err);
+        });
+    }
 
     const unsub = onAuthStateChanged(auth, async (user) => {
-      // eslint-disable-next-line no-console
-      console.log(
+      debug(
         "[login] onAuthStateChanged:",
         user ? `user=${user.email}` : "null"
       );
       if (!user || handled.current) return;
+
+      // Loop guard: si ya intentamos crear sesión N veces en esta pestaña sin
+      // éxito, dejamos de reintentar y mostramos error. Evita que un cookie
+      // stripped o un endpoint roto entren en bucle infinito entre /ingresar
+      // y la ruta destino.
+      const attempts = readAttempts();
+      if (attempts >= LOOP_GUARD_MAX) {
+        setError(
+          "No pudimos crear tu sesión después de varios intentos. " +
+            "Recarga la página o escríbenos si el problema persiste."
+        );
+        return;
+      }
+      writeAttempts(attempts + 1);
+
       handled.current = true;
       setLoading(true);
       try {
         const r = await postSession((force) => user.getIdToken(force));
+        clearAttempts();
         afterLoginRedirect(r, next);
       } catch (err) {
         // eslint-disable-next-line no-console
@@ -67,6 +95,7 @@ export function IngresarForm({ next }: { next?: string }) {
 
   async function handleGoogle() {
     setError(null);
+    clearAttempts();
     setLoading(true);
     try {
       const auth = getFirebaseAuth();
@@ -98,4 +127,20 @@ export function IngresarForm({ next }: { next?: string }) {
       )}
     </div>
   );
+}
+
+function readAttempts(): number {
+  if (typeof sessionStorage === "undefined") return 0;
+  const raw = sessionStorage.getItem(LOOP_GUARD_KEY);
+  return raw ? parseInt(raw, 10) || 0 : 0;
+}
+
+function writeAttempts(n: number): void {
+  if (typeof sessionStorage === "undefined") return;
+  sessionStorage.setItem(LOOP_GUARD_KEY, String(n));
+}
+
+function clearAttempts(): void {
+  if (typeof sessionStorage === "undefined") return;
+  sessionStorage.removeItem(LOOP_GUARD_KEY);
 }
