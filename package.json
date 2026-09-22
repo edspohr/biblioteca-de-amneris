@@ -13,6 +13,8 @@
     "migrate:variantes": "tsx scripts/migrate-variantes.ts",
     "seed:superadmins": "tsx scripts/seed-superadmins.ts",
     "migrate:firestore": "tsx scripts/migrate-to-firestore.ts",
+    "sync:catalogs": "tsx scripts/sync-catalogs.ts",
+    "apply:alergenos": "tsx scripts/apply-alergenos.ts",
     "export:firestore": "tsx scripts/export-firestore.ts",
     "cleanup:asistente": "tsx scripts/cleanup-asistente.ts",
     "backfill:etapa-edad": "tsx scripts/backfill-etapa-edad.ts",

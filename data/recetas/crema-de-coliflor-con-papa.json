@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-coliflor-con-papa/main.webp",
   "id": "crema-de-coliflor-con-papa",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Ajustar textura con agua de cocción.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 100,

@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/huevos-revueltos-con-espinaca/main.webp",
   "id": "huevos-revueltos-con-espinaca",
   "kcal_100g": 105,
@@ -13,7 +14,11 @@
     "Agregar el huevo batido y la espinaca; remover constantemente.",
     "Cocinar bien hasta que no quede crudo. Enfriar y cortar en trozos pequeños."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "huevo"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 1,

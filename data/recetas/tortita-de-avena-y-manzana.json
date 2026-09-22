@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/tortita-de-avena-y-manzana/main.webp",
   "id": "tortita-de-avena-y-manzana",
   "kcal_100g": 120,
@@ -13,7 +14,14 @@
     "Dorar suavemente por ambos lados.",
     "Enfriar y cortar en tiras muy pequeñas antes de servir."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    },
+    {
+      "alergeno_id": "huevo"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

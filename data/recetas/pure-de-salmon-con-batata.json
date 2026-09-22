@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-salmon-con-batata/main.webp",
   "id": "pure-de-salmon-con-batata",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Triturar el salmón con la batata y el aceite.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "pescado"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 70,

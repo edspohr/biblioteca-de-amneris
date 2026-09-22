@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-guisantes-con-menta-y-yogur/main.webp",
   "id": "crema-de-guisantes-con-menta-y-yogur",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Pasar por colador fino.",
     "Incorporar el yogur, mezclar. Enfriar y servir."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 100,

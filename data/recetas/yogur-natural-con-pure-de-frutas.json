@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/yogur-natural-con-pure-de-frutas/main.webp",
   "id": "yogur-natural-con-pure-de-frutas",
   "kcal_100g": 78,
@@ -13,7 +14,11 @@
     "Mezclar el puré de fruta con el yogur natural.",
     "Servir de inmediato. Introducir una fruta nueva a la vez."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

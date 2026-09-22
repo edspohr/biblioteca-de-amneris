@@ -1,72 +1,72 @@
 [
   {
-    "descripcion": null,
+    "descripcion": "Mover con energía una mezcla para incorporar aire y darle volumen.",
     "id": "batir",
     "nombre": "Batir",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Sumergir brevemente en agua hirviendo y cortar la cocción en agua fría para fijar color y textura.",
     "id": "blanquear",
     "nombre": "Blanquear",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Cocer los alimentos con el vapor del agua, sin sumergirlos, para preservar sabor, color y nutrientes.",
     "id": "cocer-al-vapor",
     "nombre": "Cocer al vapor",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Separar líquidos de sólidos pasando la preparación por un tamiz o colador.",
     "id": "colar",
     "nombre": "Colar",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Bajar rápidamente la temperatura de una preparación antes de servir o refrigerar.",
     "id": "enfriar",
     "nombre": "Enfriar",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Cocinar en el horno mediante calor seco y envolvente.",
     "id": "hornear",
     "nombre": "Hornear",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Aplastar un alimento con mortero o utensilio pesado hasta lograr una pasta gruesa e irregular.",
     "id": "machacar",
     "nombre": "Machacar",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Combinar dos o más ingredientes hasta lograr una preparación homogénea.",
     "id": "mezclar",
     "nombre": "Mezclar",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Integrar ingredientes con movimientos suaves y envolventes para no perder aire ni volumen.",
     "id": "remover",
     "nombre": "Remover",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Cocinar a fuego alto en un poco de grasa, moviendo constantemente y por poco tiempo.",
     "id": "saltear",
     "nombre": "Saltear",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Pasar un ingrediente seco (harina, azúcar) por un cedazo para airearlo y eliminar grumos.",
     "id": "tamizar",
     "nombre": "Tamizar",
     "seccion_origen": "Sección 2"
   },
   {
-    "descripcion": null,
+    "descripcion": "Reducir un alimento a partículas muy finas con procesadora, licuadora o mortero.",
     "id": "triturar",
     "nombre": "Triturar",
     "seccion_origen": "Sección 2"

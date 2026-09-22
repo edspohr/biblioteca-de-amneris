@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-batata-y-manzana/main.webp",
   "id": "pure-de-batata-y-manzana",
   "kcal_100g": 88,
@@ -13,7 +14,11 @@
     "Triturar juntos y ajustar consistencia con leche materna o fórmula.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 150,

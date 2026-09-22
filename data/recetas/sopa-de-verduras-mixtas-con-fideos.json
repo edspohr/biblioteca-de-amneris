@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/sopa-de-verduras-mixtas-con-fideos/main.webp",
   "id": "sopa-de-verduras-mixtas-con-fideos",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Triturar o servir según la etapa.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 20,

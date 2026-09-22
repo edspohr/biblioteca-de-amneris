@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-espinaca-con-queso-ricotta/main.webp",
   "id": "crema-de-espinaca-con-queso-ricotta",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Mezclar con la ricotta y el aceite.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 80,

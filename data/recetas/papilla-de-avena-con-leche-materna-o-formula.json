@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/papilla-de-avena-con-leche-materna-o-formula/main.webp",
   "id": "papilla-de-avena-con-leche-materna-o-formula",
   "kcal_100g": 68,
@@ -13,7 +14,14 @@
     "Enfriar a temperatura adecuada antes de servir.",
     "No añadir sal, azúcar ni miel bajo ninguna circunstancia."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    },
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 20,

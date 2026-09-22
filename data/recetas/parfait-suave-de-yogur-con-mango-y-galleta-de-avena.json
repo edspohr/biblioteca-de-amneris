@@ -14,7 +14,14 @@
     "Desmigar la galleta de avena en trozos muy pequeños.",
     "Incorporar las migas y mezclar bien. Servir frío."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    },
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

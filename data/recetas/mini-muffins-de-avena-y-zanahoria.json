@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "2–3 días en refrigerador / 2 meses congelado",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/mini-muffins-de-avena-y-zanahoria/main.webp",
   "id": "mini-muffins-de-avena-y-zanahoria",
   "kcal_100g": null,
@@ -13,7 +14,14 @@
     "Verter en moldes de muffin pequeños.",
     "Hornear 15–18 min. Enfriar y ofrecer desmenuzados."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    },
+    {
+      "alergeno_id": "huevo"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 0.5,

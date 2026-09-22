@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-calabacin-con-queso-crema/main.webp",
   "id": "crema-de-calabacin-con-queso-crema",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Ajustar textura con agua de cocción.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 1,

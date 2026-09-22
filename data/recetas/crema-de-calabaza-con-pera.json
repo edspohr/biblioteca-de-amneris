@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-calabaza-con-pera/main.webp",
   "id": "crema-de-calabaza-con-pera",
   "kcal_100g": 68,
@@ -13,7 +14,11 @@
     "Agregar la avena bien cocida y mezclar hasta cremoso.",
     "Enfriar antes de servir."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

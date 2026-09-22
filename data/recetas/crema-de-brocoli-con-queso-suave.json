@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/crema-de-brocoli-con-queso-suave/main.webp",
   "id": "crema-de-brocoli-con-queso-suave",
   "kcal_100g": 45,
@@ -13,7 +14,11 @@
     "Incorporar el queso crema y mezclar bien.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 100,

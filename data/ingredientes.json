@@ -1,51 +1,51 @@
 [
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Grasas y aceites",
     "id": "aceite-coco",
     "nombre": "Aceite Coco"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Grasas y aceites",
     "id": "aceite-oliva",
     "nombre": "Aceite Oliva"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Grasas y aceites",
     "id": "aceite-oliva-extra",
     "nombre": "Aceite Oliva Extra"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Grasas y aceites",
     "id": "aceite-sesamo",
     "nombre": "Aceite Sesamo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Grasas y aceites",
     "id": "aceite-vegetal",
     "nombre": "Aceite Vegetal"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "acelgas",
     "nombre": "Acelgas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "agua",
     "nombre": "Agua"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "agua-coccion",
     "nombre": "Agua Coccion"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "agua-o-caldo",
     "nombre": "Agua O Caldo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "agua-o-leche",
     "nombre": "Agua O Leche"
   },
@@ -55,7 +55,7 @@
     "nombre": "Aguacate"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "ajo",
     "nombre": "Ajo"
   },
@@ -65,7 +65,7 @@
     "nombre": "Albaricoques Sin Hueso"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Legumbres",
     "id": "alubias-blancas-sin",
     "nombre": "Alubias Blancas Sin"
   },
@@ -80,37 +80,37 @@
     "nombre": "Arandanos O Descongelados"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Cereales y farináceos",
     "id": "arroz-blanco",
     "nombre": "Arroz Blanco"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "arroz-integral",
     "nombre": "Arroz Integral"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Cereales y farináceos",
     "id": "avena-integral-copos",
     "nombre": "Avena Integral Copos"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "avena-molida",
     "nombre": "Avena Molida"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "avena-para-bebe",
     "nombre": "Avena Para Bebe"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "avena-remojada-o",
     "nombre": "Avena Remojada O"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Pescados",
     "id": "bacalao-desalado-sin",
     "nombre": "Bacalao Desalado Sin"
   },
@@ -120,52 +120,52 @@
     "nombre": "Banana"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "batata",
     "nombre": "Batata"
   },
   {
-    "categoria": "Vegetales y Granos",
+    "categoria": "Verduras",
     "id": "brocoli",
     "nombre": "Brocoli"
   },
   {
-    "categoria": "Vegetales y Granos",
+    "categoria": "Verduras",
     "id": "calabacin",
     "nombre": "Calabacin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "calabaza",
     "nombre": "Calabaza"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "caldo-pollo-sin",
     "nombre": "Caldo Pollo Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "caldo-sin-sal",
     "nombre": "Caldo Sin Sal"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "caldo-verduras-sin",
     "nombre": "Caldo Verduras Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "canela-polvo",
     "nombre": "Canela Polvo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "chirivia",
     "nombre": "Chirivia"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "chirivia-o-nabo",
     "nombre": "Chirivia O Nabo"
   },
@@ -185,12 +185,12 @@
     "nombre": "Ciruelas Sin Hueso"
   },
   {
-    "categoria": "Vegetales y Granos",
+    "categoria": "Verduras",
     "id": "coliflor",
     "nombre": "Coliflor"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "comino",
     "nombre": "Comino"
   },
@@ -200,62 +200,62 @@
     "nombre": "Compota Fruta"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "copos-avena-finos",
     "nombre": "Copos Avena Finos"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "corazones-alcachofa",
     "nombre": "Corazones Alcachofa"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Carnes",
     "id": "cordero-magro-sin",
     "nombre": "Cordero Magro Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "curcuma-polvo",
     "nombre": "Curcuma Polvo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "curry-suave-polvo",
     "nombre": "Curry Suave Polvo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "eneldo",
     "nombre": "Eneldo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "esparragos-verdes",
     "nombre": "Esparragos Verdes"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "espinaca",
     "nombre": "Espinaca"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "espinaca-blanqueada",
     "nombre": "Espinaca Blanqueada"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "espinaca-o-congelada",
     "nombre": "Espinaca O Congelada"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Cereales y farináceos",
     "id": "fideos-finos",
     "nombre": "Fideos Finos"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "fideos-finos-o",
     "nombre": "Fideos Finos O"
   },
@@ -275,37 +275,37 @@
     "nombre": "Fruta"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "galleta-avena-sin",
     "nombre": "Galleta Avena Sin"
   },
   {
-    "categoria": "Vegetales y Granos",
+    "categoria": "Legumbres",
     "id": "garbanzos",
     "nombre": "Garbanzos"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Legumbres",
     "id": "garbanzos-sin-sal",
     "nombre": "Garbanzos Sin Sal"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Legumbres",
     "id": "guisantes",
     "nombre": "Guisantes"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "hoja-menta",
     "nombre": "Hoja Menta"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Huevo",
     "id": "huevo",
     "nombre": "Huevo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "jengibre",
     "nombre": "Jengibre"
   },
@@ -315,42 +315,42 @@
     "nombre": "Kiwi"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "leche-coco",
     "nombre": "Leche Coco"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "leche-materna-formula",
     "nombre": "Leche Materna, Formula"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "leche-materna-o",
     "nombre": "Leche Materna O"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Líquidos y caldos",
     "id": "leche-o-agua",
     "nombre": "Leche O Agua"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Legumbres",
     "id": "lentejas",
     "nombre": "Lentejas"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Legumbres",
     "id": "lentejas-rojas",
     "nombre": "Lentejas Rojas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Semillas",
     "id": "linaza-molida",
     "nombre": "Linaza Molida"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "maiz-dulce-sin",
     "nombre": "Maiz Dulce Sin"
   },
@@ -380,32 +380,32 @@
     "nombre": "Melon Sin Semillas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Pescados",
     "id": "merluza-o-lenguado",
     "nombre": "Merluza O Lenguado"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Pescados",
     "id": "merluza-sin-espinas",
     "nombre": "Merluza Sin Espinas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "mijo",
     "nombre": "Mijo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "nabo",
     "nombre": "Nabo"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "nuez-moscada",
     "nombre": "Nuez Moscada"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "papa",
     "nombre": "Papa"
   },
@@ -415,17 +415,17 @@
     "nombre": "Papaya"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "patata",
     "nombre": "Patata"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Carnes",
     "id": "pechuga-pavo-sin",
     "nombre": "Pechuga Pavo Sin"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Carnes",
     "id": "pechuga-pollo-sin",
     "nombre": "Pechuga Pollo Sin"
   },
@@ -435,12 +435,12 @@
     "nombre": "Pera"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "perejil",
     "nombre": "Perejil"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "pimiento-rojo-asado",
     "nombre": "Pimiento Rojo Asado"
   },
@@ -455,52 +455,52 @@
     "nombre": "Platano O Manzana"
   },
   {
-    "categoria": "Carbohidratos",
+    "categoria": "Cereales y farináceos",
     "id": "polenta-fina",
     "nombre": "Polenta Fina"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Carnes",
     "id": "pollo-desmenuzado",
     "nombre": "Pollo Desmenuzado"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "puerro",
     "nombre": "Puerro"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "queso-crema-o",
     "nombre": "Queso Crema O"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "queso-crema-sin",
     "nombre": "Queso Crema Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "queso-parmesano-sin",
     "nombre": "Queso Parmesano Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "quinua",
     "nombre": "Quinua"
   },
   {
-    "categoria": "Vegetales y Granos",
+    "categoria": "Verduras",
     "id": "remolacha-sin-vinagre",
     "nombre": "Remolacha Sin Vinagre"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Lácteos",
     "id": "ricotta-sin-sal",
     "nombre": "Ricotta Sin Sal"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Pescados",
     "id": "salmon-sin-espinas",
     "nombre": "Salmon Sin Espinas"
   },
@@ -510,62 +510,62 @@
     "nombre": "Sandia Sin Semillas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Semillas",
     "id": "semillas-chia-hidratadas",
     "nombre": "Semillas Chia Hidratadas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Cereales y farináceos",
     "id": "semola-fina-para",
     "nombre": "Semola Fina Para"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Carnes",
     "id": "ternera-magra",
     "nombre": "Ternera Magra"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Carnes",
     "id": "ternera-magra-sin",
     "nombre": "Ternera Magra Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Legumbres",
     "id": "tofu-blando",
     "nombre": "Tofu Blando"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Legumbres",
     "id": "tofu-firme",
     "nombre": "Tofu Firme"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "unas-gotas-lima",
     "nombre": "Unas Gotas Lima"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Especias y hierbas",
     "id": "unas-gotas-limon",
     "nombre": "Unas Gotas Limon"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "verduras-temporada-mixtas",
     "nombre": "Verduras Temporada Mixtas"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Lácteos",
     "id": "yogur-natural-entero",
     "nombre": "Yogur Natural Entero"
   },
   {
-    "categoria": "Proteínas",
+    "categoria": "Lácteos",
     "id": "yogur-natural-sin",
     "nombre": "Yogur Natural Sin"
   },
   {
-    "categoria": "Frutas",
+    "categoria": "Verduras",
     "id": "zanahoria",
     "nombre": "Zanahoria"
   }

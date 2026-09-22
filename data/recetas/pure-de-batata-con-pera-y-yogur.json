@@ -1,6 +1,7 @@
 {
   "congelable": true,
   "conservacion": "48 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-batata-con-pera-y-yogur/main.webp",
   "id": "pure-de-batata-con-pera-y-yogur",
   "kcal_100g": 90,
@@ -13,7 +14,11 @@
     "Mezclar los purés con el yogur hasta textura cremosa.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

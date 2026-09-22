@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/yogur-con-compota-de-frambuesa/main.webp",
   "id": "yogur-con-compota-de-frambuesa",
   "kcal_100g": 65,
@@ -13,7 +14,11 @@
     "Mezclar el puré colado con el yogur.",
     "Enfriar y servir. Introducir frambuesas después de los 8 meses."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 3,

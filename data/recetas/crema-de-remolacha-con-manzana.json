@@ -14,7 +14,11 @@
     "Añadir yogur, mezclar y enfriar.",
     "El color puede teñir las heces (completamente normal)."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 80,

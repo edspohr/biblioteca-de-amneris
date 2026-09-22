@@ -1,6 +1,7 @@
 {
   "congelable": false,
   "conservacion": "24 horas en refrigerador",
+  "destacadaPreview": false,
   "foto": "https://storage.googleapis.com/biblioteca-amneris.firebasestorage.app/recetas/pure-de-bacalao-con-patata-y-aceite-de-oliva/main.webp",
   "id": "pure-de-bacalao-con-patata-y-aceite-de-oliva",
   "kcal_100g": null,
@@ -13,7 +14,11 @@
     "Triturar todo con el aceite de oliva.",
     "Enfriar y servir tibio."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "pescado"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 70,

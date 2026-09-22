@@ -16,7 +16,14 @@
     "Retirar del fuego y enfriar a temperatura tibia antes de servir.",
     "Agregar yogur y pizca de canela si se desea. No añadir sal ni azúcar."
   ],
-  "receta_alergenos": [],
+  "receta_alergenos": [
+    {
+      "alergeno_id": "gluten"
+    },
+    {
+      "alergeno_id": "lacteos"
+    }
+  ],
   "receta_ingredientes": [
     {
       "cantidad": 60,
