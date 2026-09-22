@@ -58,9 +58,15 @@ env:
       - BUILD
       - RUNTIME
   # Force the JSON adapter at build time so prerendering never depends on
-  # Firestore state. At runtime the admin SDK creds are present via ADC, so
-  # the repo auto-detects Firestore and uses it for all live requests.
+  # Firestore state. Force Firestore at runtime — the auto-detect misses
+  # Cloud Run (no FIREBASE_ADMIN_SA / GOOGLE_APPLICATION_CREDENTIALS /
+  # GCLOUD_PROJECT set), so without this override runtime falls back to the
+  # JSON adapter and writes go to the container's ephemeral disk.
   - variable: REPO_ADAPTER
     value: json
     availability:
       - BUILD
+  - variable: REPO_ADAPTER
+    value: firestore
+    availability:
+      - RUNTIME

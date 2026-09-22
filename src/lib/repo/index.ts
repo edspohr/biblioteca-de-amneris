@@ -27,6 +27,7 @@ function pickAdapter(): Repo {
 }
 
 const adapter = pickAdapter();
+console.log(`[repo] adapter=${adapter === firestoreAdapter ? "firestore" : "json"}`);
 
 export interface Repo {
   getEtapas(): Promise<Etapa[]>;

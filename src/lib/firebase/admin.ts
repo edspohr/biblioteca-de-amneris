@@ -48,6 +48,8 @@ export function isAdminConfigured(): boolean {
   return Boolean(
     process.env.FIREBASE_ADMIN_SA ||
       process.env.GOOGLE_APPLICATION_CREDENTIALS ||
-      process.env.GCLOUD_PROJECT
+      process.env.GCLOUD_PROJECT ||
+      process.env.GOOGLE_CLOUD_PROJECT ||
+      process.env.K_SERVICE
   );
 }
