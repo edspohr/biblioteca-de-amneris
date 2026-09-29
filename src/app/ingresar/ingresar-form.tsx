@@ -5,6 +5,7 @@ import {
   getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase/client";
@@ -99,7 +100,16 @@ export function IngresarForm({ next }: { next?: string }) {
     setLoading(true);
     try {
       const auth = getFirebaseAuth();
-      await signInWithRedirect(auth, new GoogleAuthProvider());
+      // On localhost the authDomain (firebaseapp.com) is a different origin,
+      // so Chrome's storage partitioning drops the redirect result and the
+      // page loops back here. A popup doesn't depend on that storage;
+      // onAuthStateChanged above picks the user up either way. Production
+      // keeps the redirect flow (same-origin authDomain on web.app).
+      if (isLocalhost()) {
+        await signInWithPopup(auth, new GoogleAuthProvider());
+      } else {
+        await signInWithRedirect(auth, new GoogleAuthProvider());
+      }
     } catch (err) {
       // eslint-disable-next-line no-console
       console.error("[login] signInWithRedirect error:", err);
@@ -143,4 +153,9 @@ function writeAttempts(n: number): void {
 function clearAttempts(): void {
   if (typeof sessionStorage === "undefined") return;
   sessionStorage.removeItem(LOOP_GUARD_KEY);
+}
+
+function isLocalhost(): boolean {
+  const h = window.location.hostname;
+  return h === "localhost" || h === "127.0.0.1" || h === "[::1]";
 }
