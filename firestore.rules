@@ -43,24 +43,9 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
-    // Assistant conversation logs — server-only. The chat widget never
-    // touches Firestore from the client; all writes come from
-    // POST /api/asistente via the admin SDK (which bypasses these rules).
-    // The admin "preguntas frecuentes" view also reads via server code.
-    match /conversaciones/{sessionId} {
-      allow read, write: if false;
-      match /mensajes/{msgId} {
-        allow read, write: if false;
-      }
-    }
-
-    // Rate-limit counters — same story. Written by the server on every
-    // /api/asistente call, never touched by the client.
-    match /asistente_ratelimit/{sessionId} {
-      allow read, write: if false;
-    }
-
-    // Default deny for anything else.
+    // Default deny for anything else. Colecciones legacy del asistente
+    // (conversaciones, asistente_ratelimit) caen acá — no son accesibles
+    // desde el cliente si algún doc residual queda en Firestore.
     match /{document=**} {
       allow read, write: if false;
     }

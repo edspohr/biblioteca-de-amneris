@@ -3,8 +3,7 @@
  * `npm run test:rules` (which uses `firebase emulators:exec`).
  *
  * Coverage matrix: {anonymous, user, other-user, superadmin} × {each
- * public collection, usuarios/{self}, usuarios/{other},
- * conversaciones/**, asistente_ratelimit/**} × {read, write}.
+ * public collection, usuarios/{self}, usuarios/{other}} × {read, write}.
  *
  * The rules DENY every client write on public collections regardless of
  * role — mutations only pass through the Next.js API using the Admin SDK,
@@ -19,7 +18,6 @@ import {
   type RulesTestEnvironment,
 } from "@firebase/rules-unit-testing";
 import {
-  addDoc,
   collection,
   doc,
   getDoc,
@@ -193,45 +191,6 @@ test("superadmin CANNOT read metrics from client", async () => {
   });
   const su = env.authenticatedContext("su-uid", { superadmin: true }).firestore();
   await assertFails(getDoc(doc(su, "metrics", "registrations")));
-});
-
-// -- conversaciones + asistente_ratelimit: fully server-only -----------------
-
-test("anon CANNOT read conversaciones", async () => {
-  await seedAsAdmin(async (db) => {
-    await setDoc(doc(db, "conversaciones", "sid"), { lastAtMs: 0 });
-  });
-  await assertFails(getDoc(doc(anon(), "conversaciones", "sid")));
-});
-
-test("anon CANNOT write conversaciones", async () => {
-  await assertFails(setDoc(doc(anon(), "conversaciones", "sid"), { at: 0 }));
-});
-
-test("user (even superadmin claim) CANNOT read conversaciones", async () => {
-  await seedAsAdmin(async (db) => {
-    await setDoc(doc(db, "conversaciones", "sid"), { lastAtMs: 0 });
-  });
-  // Custom claims don't unlock these paths; server API is the only reader.
-  const su = env.authenticatedContext("su-uid", { superadmin: true }).firestore();
-  await assertFails(getDoc(doc(su, "conversaciones", "sid")));
-});
-
-test("anon CANNOT write mensajes subcollection", async () => {
-  await assertFails(
-    addDoc(collection(anon(), "conversaciones/sid/mensajes"), { q: "hi" })
-  );
-});
-
-test("anon CANNOT read asistente_ratelimit", async () => {
-  await seedAsAdmin(async (db) => {
-    await setDoc(doc(db, "asistente_ratelimit", "sid"), { timestamps: [] });
-  });
-  await assertFails(getDoc(doc(anon(), "asistente_ratelimit", "sid")));
-});
-
-test("anon CANNOT write asistente_ratelimit", async () => {
-  await assertFails(setDoc(doc(anon(), "asistente_ratelimit", "sid"), { t: [] }));
 });
 
 // -- Default deny for unknown paths ------------------------------------------

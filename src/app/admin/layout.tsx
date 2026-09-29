@@ -102,9 +102,6 @@ export default async function AdminLayout({ children }: { children: ReactNode })
             <Link href="/admin/usuarios">Usuarios</Link>
           </li>
           <li>
-            <Link href="/admin/asistente">Asistente</Link>
-          </li>
-          <li>
             <Link href="/admin/ayuda">Ayuda</Link>
           </li>
         </ul>

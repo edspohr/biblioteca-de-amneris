@@ -45,15 +45,6 @@
   --color-mint: #c8eadb;
   --color-blush: #fbd4d4;
 
-  /* ---------- Layout · Floating assistant slot ----------
-   * Reserved for the Phase 5 chat widget. It anchors bottom-right; on
-   * reader routes it must clear the fixed etapa bar (mobile) so it
-   * doesn't overlap. Update both offsets when the widget lands.
-   */
-  --asistente-offset-mobile: calc(96px + env(safe-area-inset-bottom, 0px) + 16px);
-  --asistente-offset-desktop: 24px;
-  --asistente-z: 45;
-
   /* ---------- Color · Etapa (runtime overrides) ----------
    * Defaults match etapa-1 in data/etapas.json. The React context in
    * src/lib/etapa-activa/context.tsx rewrites these four values whenever

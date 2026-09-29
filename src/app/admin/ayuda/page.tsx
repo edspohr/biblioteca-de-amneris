@@ -20,9 +20,6 @@ export default function AyudaPage() {
           Cómo gestionar usuarios y otorgar/quitar permisos
         </li>
         <li>
-          Qué muestra la vista del asistente
-        </li>
-        <li>
           Qué hacer si algo falla
         </li>
       </ul>

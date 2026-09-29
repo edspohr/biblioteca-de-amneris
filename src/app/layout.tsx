@@ -5,7 +5,6 @@ import { repo } from "@/lib/repo";
 import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
 import { NavBarServer } from "./nav-bar-server";
-import { AsistenteWidget } from "./asistente/widget";
 import { TrialBanner } from "@/components/trial-banner";
 import { getSessionWithProfile } from "@/lib/auth/session";
 import "./globals.css";
@@ -76,7 +75,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <NavBarServer />
           <EtapaSelectorGlobal />
           <main>{children}</main>
-          <AsistenteWidget enabled={Boolean(ctx)} />
         </EtapaActivaProvider>
       </body>
     </html>
