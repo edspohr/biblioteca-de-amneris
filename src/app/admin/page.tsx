@@ -3,13 +3,16 @@ import { repo } from "@/lib/repo";
 import { getUserMetrics, listAllUsers } from "@/lib/users/service";
 
 export default async function AdminHome() {
-  const [recetas, menus, ingredientes, alergenos, tecnicas, users] =
+  const [recetas, menus, ingredientes, alergenos, tecnicas, colecciones, utensilios, guias, users] =
     await Promise.all([
       repo.getRecetas(),
       repo.getMenus(),
       repo.getIngredientes(),
       repo.getAlergenos(),
       repo.getTecnicas(),
+      repo.getColecciones().catch(() => []),
+      repo.getUtensilios().catch(() => []),
+      repo.getGuias().catch(() => []),
       listAllUsers(),
     ]);
   const userMetrics = await getUserMetrics(users);
@@ -53,6 +56,24 @@ export default async function AdminHome() {
           <Link href="/admin/tecnicas" className="tile__link">
             <span className="tile__title">Técnicas</span>
             <span className="tile__count">{tecnicas.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/colecciones" className="tile__link">
+            <span className="tile__title">Colecciones</span>
+            <span className="tile__count">{colecciones.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/utensilios" className="tile__link">
+            <span className="tile__title">Utensilios</span>
+            <span className="tile__count">{utensilios.length}</span>
+          </Link>
+        </li>
+        <li className="tile">
+          <Link href="/admin/guias" className="tile__link">
+            <span className="tile__title">Guías</span>
+            <span className="tile__count">{guias.length}</span>
           </Link>
         </li>
         <li className="tile">

@@ -87,6 +87,18 @@ export default async function AdminLayout({ children }: { children: ReactNode })
             <Link href="/admin/tecnicas">Técnicas</Link>
           </li>
           <li>
+            <Link href="/admin/colecciones">Colecciones</Link>
+          </li>
+          <li>
+            <Link href="/admin/utensilios">Utensilios</Link>
+          </li>
+          <li>
+            <Link href="/admin/guias">Guías</Link>
+          </li>
+          <li>
+            <Link href="/admin/metodos-conservacion">Métodos</Link>
+          </li>
+          <li>
             <Link href="/admin/usuarios">Usuarios</Link>
           </li>
           <li>
