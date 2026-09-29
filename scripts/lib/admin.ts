@@ -31,7 +31,13 @@ let initialized = false;
 export function db(): Firestore {
   if (!initialized) {
     initializeApp({ credential: cert(loadServiceAccount()) });
+    const firestore = getFirestore();
+    // Firebase Admin rechaza `undefined` en writes por defecto y hace fallar
+    // .set() silenciosamente. Con este flag los omite, que es lo que quieren
+    // los toRecetaDoc/toMenuDoc de scripts/import/load.ts.
+    firestore.settings({ ignoreUndefinedProperties: true });
     initialized = true;
+    return firestore;
   }
   return getFirestore();
 }

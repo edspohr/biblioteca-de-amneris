@@ -54,7 +54,13 @@ export const COLLECTIONS = {
 
 let cachedDb: Firestore | null = null;
 function db(): Firestore {
-  if (!cachedDb) cachedDb = getFirestore(getAdminApp());
+  if (!cachedDb) {
+    cachedDb = getFirestore(getAdminApp());
+    // Mismo motivo que scripts/lib/admin.ts: sin este flag, cualquier campo
+    // opcional con valor undefined (rendimiento?, texturaObjetivo?, etc.)
+    // hace fallar el .set() del admin panel.
+    cachedDb.settings({ ignoreUndefinedProperties: true });
+  }
   return cachedDb;
 }
 
