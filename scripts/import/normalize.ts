@@ -615,7 +615,7 @@ interface ParsedGuia {
   bloques: (
     | { kind: "parrafo"; texto: string }
     | { kind: "lista"; ordenada: boolean; items: string[] }
-    | { kind: "tabla"; columnas: string[]; filas: string[][] }
+    | { kind: "tabla"; columnas: string[]; filas: { celdas: string[] }[] }
     | { kind: "aviso"; tipo: "tip" | "advertencia"; texto: string }
   )[];
 }
@@ -649,7 +649,9 @@ function parseGuia(sec: Section): ParsedGuia {
     } else if (b.kind === "table") {
       if (b.rows.length === 0) continue;
       const columnas = b.rows[0].map((c) => trim(c));
-      const filas = b.rows.slice(1).map((r) => r.map((c) => trim(c)));
+      // Firestore no acepta arrays anidados directamente en arrays; envolvemos
+      // cada fila en { celdas } (matches guiaSchema.bloqueTabla.filas).
+      const filas = b.rows.slice(1).map((r) => ({ celdas: r.map((c) => trim(c)) }));
       bloques.push({ kind: "tabla", columnas, filas });
     }
   }

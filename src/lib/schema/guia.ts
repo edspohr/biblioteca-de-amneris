@@ -17,10 +17,17 @@ const bloqueLista = z.object({
   ordenada: z.boolean().default(false),
   items: z.array(z.string()).min(1),
 });
+// Cada fila envuelta en {celdas} porque Firestore rechaza arrays directamente
+// anidados en arrays. Con esto la fila queda como objeto en `filas[]`.
+export const filaTablaSchema = z.object({
+  celdas: z.array(z.string()),
+});
+export type FilaTabla = z.infer<typeof filaTablaSchema>;
+
 const bloqueTabla = z.object({
   kind: z.literal("tabla"),
   columnas: z.array(z.string()).min(1),
-  filas: z.array(z.array(z.string())),
+  filas: z.array(filaTablaSchema),
 });
 const bloqueAviso = z.object({
   kind: z.literal("aviso"),

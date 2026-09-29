@@ -30,6 +30,7 @@
     "import:normalize": "tsx scripts/import/normalize.ts",
     "import:report": "tsx scripts/import/report.ts",
     "import:load": "tsx scripts/import/load.ts",
+    "publish:coleccion": "tsx scripts/publish-coleccion.ts",
     "test:schemas": "tsx --test tests/schemas.test.ts",
     "test:persistence": "tsx --test tests/admin-persistence.test.ts",
     "test:unit": "tsx --test tests/schemas.test.ts tests/admin-persistence.test.ts",

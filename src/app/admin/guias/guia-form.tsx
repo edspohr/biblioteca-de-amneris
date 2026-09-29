@@ -19,7 +19,7 @@ function emptyBloque(kind: Bloque["kind"]): Bloque {
     case "lista":
       return { kind: "lista", ordenada: false, items: [""] };
     case "tabla":
-      return { kind: "tabla", columnas: ["Columna 1"], filas: [[""]] };
+      return { kind: "tabla", columnas: ["Columna 1"], filas: [{ celdas: [""] }] };
     case "aviso":
       return { kind: "aviso", tipo: "tip", texto: "" };
   }
@@ -297,7 +297,7 @@ function TablaEditor({
                 type="button"
                 onClick={() => {
                   const columnas = [...bloque.columnas, `Col ${bloque.columnas.length + 1}`];
-                  const filas = bloque.filas.map((r) => [...r, ""]);
+                  const filas = bloque.filas.map((r) => ({ celdas: [...r.celdas, ""] }));
                   onChange({ ...bloque, columnas, filas });
                 }}
               >
@@ -309,14 +309,16 @@ function TablaEditor({
         <tbody>
           {bloque.filas.map((fila, r) => (
             <tr key={r}>
-              {fila.map((cell, c) => (
+              {fila.celdas.map((cell, c) => (
                 <td key={c}>
                   <input
                     type="text"
                     value={cell}
                     onChange={(e) => {
                       const filas = bloque.filas.map((row, ri) =>
-                        ri === r ? row.map((v, ci) => (ci === c ? e.target.value : v)) : row
+                        ri === r
+                          ? { celdas: row.celdas.map((v, ci) => (ci === c ? e.target.value : v)) }
+                          : row
                       );
                       onChange({ ...bloque, filas });
                     }}
@@ -342,7 +344,7 @@ function TablaEditor({
         onClick={() =>
           onChange({
             ...bloque,
-            filas: [...bloque.filas, bloque.columnas.map(() => "")],
+            filas: [...bloque.filas, { celdas: bloque.columnas.map(() => "") }],
           })
         }
         style={{ marginTop: "0.4rem" }}

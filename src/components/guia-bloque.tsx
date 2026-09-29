@@ -34,7 +34,7 @@ export function GuiaBloque({ bloque }: { bloque: Bloque }) {
             <tbody>
               {bloque.filas.map((fila, r) => (
                 <tr key={r}>
-                  {fila.map((cell, c) => (
+                  {fila.celdas.map((cell, c) => (
                     <td key={c}>{cell}</td>
                   ))}
                 </tr>

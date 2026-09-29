@@ -116,7 +116,7 @@ test("guiaSchema accepts a mixed-block guide", () => {
       {
         kind: "tabla",
         columnas: ["Item", "Para qué sirve"],
-        filas: [["Tarritos de vidrio 150ml", "Guardar porciones E1"]],
+        filas: [{ celdas: ["Tarritos de vidrio 150ml", "Guardar porciones E1"] }],
       },
       { kind: "aviso", tipo: "tip", texto: "Etiquétalos con fecha." },
     ],

@@ -24,54 +24,78 @@
           "PARA QUÉ SIRVE"
         ],
         "filas": [
-          [
-            "Procesador de alimentos o mixer de mano",
-            "Texturizar purés, licuar cremas y moler pollo crudo hasta textura de pasta"
-          ],
-          [
-            "Moldes de silicona para mini muffins",
-            "Hornear y congelar porciones individuales de desayunos y cenas"
-          ],
-          [
-            "Moldes de silicona para muffins grandes",
-            "Hornear pastelitos y muffins de Etapa 3"
-          ],
-          [
-            "Bandejas para cubos de hielo de silicona",
-            "Congelar purés en porciones exactas de 2 cubos por comida"
-          ],
-          [
-            "Bolsas herméticas para congelador (Ziploc)",
-            "Almacenar piezas congeladas — ahorran espacio y evitan quemaduras"
-          ],
-          [
-            "Papel vegetal para hornear",
-            "Evitar que bastones, bollitos y hamburguesas se peguen en la bandeja"
-          ],
-          [
-            "Tarritos de vidrio o plástico aptos para congelador",
-            "Porcionar purés y guisos — dejar siempre 1 cm libre antes de la tapa"
-          ],
-          [
-            "Báscula digital de cocina",
-            "Garantizar gramajes exactos por porción en cada contenedor"
-          ],
-          [
-            "Cuchara para helados pequeña",
-            "Porcionar masas de muffins y bollitos de forma uniforme"
-          ],
-          [
-            "Etiquetas e imán marcador permanente",
-            "Identificar cada bolsa con nombre del plato y fecha de preparación"
-          ],
-          [
-            "Sartén antiadherente con tapa",
-            "Cocinar panqueques, deditos y albóndigas — la tapa es clave para el vapor"
-          ],
-          [
-            "Vaporera o olla con rejilla",
-            "Cocción al vapor de bollitos, verduras y pollo sin perder nutrientes"
-          ]
+          {
+            "celdas": [
+              "Procesador de alimentos o mixer de mano",
+              "Texturizar purés, licuar cremas y moler pollo crudo hasta textura de pasta"
+            ]
+          },
+          {
+            "celdas": [
+              "Moldes de silicona para mini muffins",
+              "Hornear y congelar porciones individuales de desayunos y cenas"
+            ]
+          },
+          {
+            "celdas": [
+              "Moldes de silicona para muffins grandes",
+              "Hornear pastelitos y muffins de Etapa 3"
+            ]
+          },
+          {
+            "celdas": [
+              "Bandejas para cubos de hielo de silicona",
+              "Congelar purés en porciones exactas de 2 cubos por comida"
+            ]
+          },
+          {
+            "celdas": [
+              "Bolsas herméticas para congelador (Ziploc)",
+              "Almacenar piezas congeladas — ahorran espacio y evitan quemaduras"
+            ]
+          },
+          {
+            "celdas": [
+              "Papel vegetal para hornear",
+              "Evitar que bastones, bollitos y hamburguesas se peguen en la bandeja"
+            ]
+          },
+          {
+            "celdas": [
+              "Tarritos de vidrio o plástico aptos para congelador",
+              "Porcionar purés y guisos — dejar siempre 1 cm libre antes de la tapa"
+            ]
+          },
+          {
+            "celdas": [
+              "Báscula digital de cocina",
+              "Garantizar gramajes exactos por porción en cada contenedor"
+            ]
+          },
+          {
+            "celdas": [
+              "Cuchara para helados pequeña",
+              "Porcionar masas de muffins y bollitos de forma uniforme"
+            ]
+          },
+          {
+            "celdas": [
+              "Etiquetas e imán marcador permanente",
+              "Identificar cada bolsa con nombre del plato y fecha de preparación"
+            ]
+          },
+          {
+            "celdas": [
+              "Sartén antiadherente con tapa",
+              "Cocinar panqueques, deditos y albóndigas — la tapa es clave para el vapor"
+            ]
+          },
+          {
+            "celdas": [
+              "Vaporera o olla con rejilla",
+              "Cocción al vapor de bollitos, verduras y pollo sin perder nutrientes"
+            ]
+          }
         ]
       },
       {
@@ -210,22 +234,30 @@
           "EJEMPLOS EN ESTE LIBRO"
         ],
         "filas": [
-          [
-            "Purés y cremas a base de zapallo, camote o zanahoria",
-            "Crema dorada, puré proteico"
-          ],
-          [
-            "Carnes molidas aglutinadas con vegetales",
-            "Bastones, bollitos, albóndigas, muffins, pastelitos"
-          ],
-          [
-            "Guisos y estofados con salsa",
-            "Albóndigas en salsa, estofado de lentejas"
-          ],
-          [
-            "Preparaciones horneadas",
-            "Muffins, deditos, nuggets, panqueques"
-          ]
+          {
+            "celdas": [
+              "Purés y cremas a base de zapallo, camote o zanahoria",
+              "Crema dorada, puré proteico"
+            ]
+          },
+          {
+            "celdas": [
+              "Carnes molidas aglutinadas con vegetales",
+              "Bastones, bollitos, albóndigas, muffins, pastelitos"
+            ]
+          },
+          {
+            "celdas": [
+              "Guisos y estofados con salsa",
+              "Albóndigas en salsa, estofado de lentejas"
+            ]
+          },
+          {
+            "celdas": [
+              "Preparaciones horneadas",
+              "Muffins, deditos, nuggets, panqueques"
+            ]
+          }
         ]
       },
       {
@@ -279,22 +311,30 @@
           "RAZÓN"
         ],
         "filas": [
-          [
-            "Papa blanca",
-            "Se vuelve arenosa y suelta agua al descongelarse"
-          ],
-          [
-            "Hojas verdes crudas",
-            "Pierden textura y se oxidan"
-          ],
-          [
-            "Funche de huevo con leche",
-            "El huevo integrado pierde seguridad alimentaria"
-          ],
-          [
-            "Avena con huevo",
-            "Mismo caso — preparar siempre fresco"
-          ]
+          {
+            "celdas": [
+              "Papa blanca",
+              "Se vuelve arenosa y suelta agua al descongelarse"
+            ]
+          },
+          {
+            "celdas": [
+              "Hojas verdes crudas",
+              "Pierden textura y se oxidan"
+            ]
+          },
+          {
+            "celdas": [
+              "Funche de huevo con leche",
+              "El huevo integrado pierde seguridad alimentaria"
+            ]
+          },
+          {
+            "celdas": [
+              "Avena con huevo",
+              "Mismo caso — preparar siempre fresco"
+            ]
+          }
         ]
       },
       {
@@ -349,26 +389,34 @@
           "DETALLE"
         ],
         "filas": [
-          [
-            "1",
-            "Enfriamiento rápido",
-            "Nunca meter comida caliente al congelador — máximo 1 hora a temperatura ambiente"
-          ],
-          [
-            "2",
-            "Precongelación en bandeja",
-            "Colocar piezas separadas sobre bandeja con papel vegetal — congelar 2 horas"
-          ],
-          [
-            "3",
-            "Empacado hermético",
-            "Pasar piezas duras a bolsa Ziploc — sacar todo el aire con un sorbete antes de cerrar"
-          ],
-          [
-            "4",
-            "Etiquetado",
-            "Escribir nombre del plato y fecha de preparación con marcador permanente"
-          ]
+          {
+            "celdas": [
+              "1",
+              "Enfriamiento rápido",
+              "Nunca meter comida caliente al congelador — máximo 1 hora a temperatura ambiente"
+            ]
+          },
+          {
+            "celdas": [
+              "2",
+              "Precongelación en bandeja",
+              "Colocar piezas separadas sobre bandeja con papel vegetal — congelar 2 horas"
+            ]
+          },
+          {
+            "celdas": [
+              "3",
+              "Empacado hermético",
+              "Pasar piezas duras a bolsa Ziploc — sacar todo el aire con un sorbete antes de cerrar"
+            ]
+          },
+          {
+            "celdas": [
+              "4",
+              "Etiquetado",
+              "Escribir nombre del plato y fecha de preparación con marcador permanente"
+            ]
+          }
         ]
       },
       {
@@ -460,31 +508,41 @@
           "DETALLE"
         ],
         "filas": [
-          [
-            "Min. 0–45",
-            "Preparación general",
-            "Poner a hervir zapallo, zanahoria, camote, manzanas y lentejas. Procesar el pollo crudo en el procesador"
-          ],
-          [
-            "Min. 45–90",
-            "Masas y horno",
-            "Preparar masas de bastones, muffins o pastelitos según la etapa. Llenar el horno al máximo de su capacidad"
-          ],
-          [
-            "Min. 90–150",
-            "Estufa y sartenes",
-            "Mientras el horno trabaja solo: hacer panqueques en una sartén, albóndigas o estofado en otra olla. Licuar cremas"
-          ],
-          [
-            "Min. 150–200",
-            "Línea de enfriamiento",
-            "Retirar todo del fuego. Colocar sobre rejillas para enfriar rápidamente. No meter comida caliente al congelador"
-          ],
-          [
-            "Min. 200–240",
-            "Empaque y organización",
-            "Etiquetar bolsas y tarritos. Porcionar con báscula. Aplicar Método IQF. Organizar el congelador por etapa y tipo de comida"
-          ]
+          {
+            "celdas": [
+              "Min. 0–45",
+              "Preparación general",
+              "Poner a hervir zapallo, zanahoria, camote, manzanas y lentejas. Procesar el pollo crudo en el procesador"
+            ]
+          },
+          {
+            "celdas": [
+              "Min. 45–90",
+              "Masas y horno",
+              "Preparar masas de bastones, muffins o pastelitos según la etapa. Llenar el horno al máximo de su capacidad"
+            ]
+          },
+          {
+            "celdas": [
+              "Min. 90–150",
+              "Estufa y sartenes",
+              "Mientras el horno trabaja solo: hacer panqueques en una sartén, albóndigas o estofado en otra olla. Licuar cremas"
+            ]
+          },
+          {
+            "celdas": [
+              "Min. 150–200",
+              "Línea de enfriamiento",
+              "Retirar todo del fuego. Colocar sobre rejillas para enfriar rápidamente. No meter comida caliente al congelador"
+            ]
+          },
+          {
+            "celdas": [
+              "Min. 200–240",
+              "Empaque y organización",
+              "Etiquetar bolsas y tarritos. Porcionar con báscula. Aplicar Método IQF. Organizar el congelador por etapa y tipo de comida"
+            ]
+          }
         ]
       },
       {
@@ -589,24 +647,30 @@
           "CONSUMO"
         ],
         "filas": [
-          [
-            "1. Heladera — IDEAL",
-            "Bajar la porción del congelador la noche anterior al estante más frío",
-            "10 a 12 horas",
-            "Consumir dentro de 24 horas — si no se usa, desechar"
-          ],
-          [
-            "2. Baño de agua fría — EMERGENCIA",
-            "Colocar en bolsa hermética sellada sumergida en agua fría — cambiar el agua cada 30 minutos",
-            "30 a 60 minutos",
-            "Calentar y servir inmediatamente"
-          ],
-          [
-            "3. Microondas — INSTANTÁNEO",
-            "Usar exclusivamente función Defrost al 30% de potencia — tandas de 1 minuto rotando la comida",
-            "2 a 4 minutos",
-            "Calentar y servir inmediatamente"
-          ]
+          {
+            "celdas": [
+              "1. Heladera — IDEAL",
+              "Bajar la porción del congelador la noche anterior al estante más frío",
+              "10 a 12 horas",
+              "Consumir dentro de 24 horas — si no se usa, desechar"
+            ]
+          },
+          {
+            "celdas": [
+              "2. Baño de agua fría — EMERGENCIA",
+              "Colocar en bolsa hermética sellada sumergida en agua fría — cambiar el agua cada 30 minutos",
+              "30 a 60 minutos",
+              "Calentar y servir inmediatamente"
+            ]
+          },
+          {
+            "celdas": [
+              "3. Microondas — INSTANTÁNEO",
+              "Usar exclusivamente función Defrost al 30% de potencia — tandas de 1 minuto rotando la comida",
+              "2 a 4 minutos",
+              "Calentar y servir inmediatamente"
+            ]
+          }
         ]
       },
       {
@@ -702,36 +766,48 @@
           "TRUCO CLAVE"
         ],
         "filas": [
-          [
-            "Purés, cremas y guisos",
-            "Ollita a fuego mínimo",
-            "Añadir 1 cucharadita de agua, caldo o leche — batir con cuchara de madera hasta recuperar la cremosidad"
-          ],
-          [
-            "Muffins y pastelitos",
-            "Microondas protegido u horno",
-            "Envolver en servilleta húmeda — 15 a 20 segundos. O horno a 160°C por 8 minutos"
-          ],
-          [
-            "Panqueques y deditos",
-            "Sartén tapada",
-            "Sartén a fuego mínimo con gotita de aceite y tapa — el vapor mantiene la masa húmeda"
-          ],
-          [
-            "Bastones y bollitos",
-            "Vapor o sartén tapada",
-            "Sartén con 1 cucharada de agua en el fondo, tapar inmediatamente — 3 minutos"
-          ],
-          [
-            "Albóndigas en salsa",
-            "Ollita con salsa",
-            "Calentar sumergidas en su salsa — añadir chorrito de agua si la salsa se redujo"
-          ],
-          [
-            "Arroz salteado y estofados",
-            "Sartén o ollita con agua",
-            "2 cucharadas de agua — revolver constantemente para recuperar la soltura"
-          ]
+          {
+            "celdas": [
+              "Purés, cremas y guisos",
+              "Ollita a fuego mínimo",
+              "Añadir 1 cucharadita de agua, caldo o leche — batir con cuchara de madera hasta recuperar la cremosidad"
+            ]
+          },
+          {
+            "celdas": [
+              "Muffins y pastelitos",
+              "Microondas protegido u horno",
+              "Envolver en servilleta húmeda — 15 a 20 segundos. O horno a 160°C por 8 minutos"
+            ]
+          },
+          {
+            "celdas": [
+              "Panqueques y deditos",
+              "Sartén tapada",
+              "Sartén a fuego mínimo con gotita de aceite y tapa — el vapor mantiene la masa húmeda"
+            ]
+          },
+          {
+            "celdas": [
+              "Bastones y bollitos",
+              "Vapor o sartén tapada",
+              "Sartén con 1 cucharada de agua en el fondo, tapar inmediatamente — 3 minutos"
+            ]
+          },
+          {
+            "celdas": [
+              "Albóndigas en salsa",
+              "Ollita con salsa",
+              "Calentar sumergidas en su salsa — añadir chorrito de agua si la salsa se redujo"
+            ]
+          },
+          {
+            "celdas": [
+              "Arroz salteado y estofados",
+              "Sartén o ollita con agua",
+              "2 cucharadas de agua — revolver constantemente para recuperar la soltura"
+            ]
+          }
         ]
       },
       {
@@ -848,84 +924,110 @@
           "ETAPA 3 (12–24 m)"
         ],
         "filas": [
-          [
-            "Canela en polvo",
-            "✅",
-            "✅",
-            "✅"
-          ],
-          [
-            "Ajo en polvo puro sin sal",
-            "✅",
-            "✅",
-            "✅"
-          ],
-          [
-            "Orégano / Tomillo / Romero",
-            "✅",
-            "✅",
-            "✅"
-          ],
-          [
-            "Nuez moscada",
-            "✅ pizca mínima",
-            "✅",
-            "✅"
-          ],
-          [
-            "Cúrcuma en polvo",
-            "❌",
-            "✅",
-            "✅"
-          ],
-          [
-            "Comino en polvo",
-            "❌",
-            "✅ pizca mínima",
-            "✅"
-          ],
-          [
-            "Cilantro / Perejil fresco",
-            "❌",
-            "✅",
-            "✅"
-          ],
-          [
-            "Pimentón dulce / Paprika",
-            "❌",
-            "❌",
-            "✅"
-          ],
-          [
-            "Curry suave sin picante",
-            "❌",
-            "❌",
-            "✅"
-          ],
-          [
-            "Sal",
-            "❌",
-            "❌",
-            "Mínima — menos de 2g/día"
-          ],
-          [
-            "Miel",
-            "❌",
-            "❌",
-            "❌ riesgo botulismo"
-          ],
-          [
-            "Picante (merkén, cayena, chile)",
-            "❌",
-            "❌",
-            "❌ irrita mucosas"
-          ],
-          [
-            "Cubitos de caldo concentrado",
-            "❌",
-            "❌",
-            "❌ exceso de sodio"
-          ]
+          {
+            "celdas": [
+              "Canela en polvo",
+              "✅",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Ajo en polvo puro sin sal",
+              "✅",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Orégano / Tomillo / Romero",
+              "✅",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Nuez moscada",
+              "✅ pizca mínima",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Cúrcuma en polvo",
+              "❌",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Comino en polvo",
+              "❌",
+              "✅ pizca mínima",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Cilantro / Perejil fresco",
+              "❌",
+              "✅",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Pimentón dulce / Paprika",
+              "❌",
+              "❌",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Curry suave sin picante",
+              "❌",
+              "❌",
+              "✅"
+            ]
+          },
+          {
+            "celdas": [
+              "Sal",
+              "❌",
+              "❌",
+              "Mínima — menos de 2g/día"
+            ]
+          },
+          {
+            "celdas": [
+              "Miel",
+              "❌",
+              "❌",
+              "❌ riesgo botulismo"
+            ]
+          },
+          {
+            "celdas": [
+              "Picante (merkén, cayena, chile)",
+              "❌",
+              "❌",
+              "❌ irrita mucosas"
+            ]
+          },
+          {
+            "celdas": [
+              "Cubitos de caldo concentrado",
+              "❌",
+              "❌",
+              "❌ exceso de sodio"
+            ]
+          }
         ]
       },
       {
@@ -1182,30 +1284,38 @@
           "ETAPA 3 (12–24 m)"
         ],
         "filas": [
-          [
-            "Desayuno",
-            "90g",
-            "130g",
-            "180g"
-          ],
-          [
-            "Almuerzo",
-            "100g",
-            "150g",
-            "230g"
-          ],
-          [
-            "Cena",
-            "120g",
-            "140g",
-            "200g"
-          ],
-          [
-            "TOTAL DIARIO",
-            "310g",
-            "420g",
-            "610g"
-          ]
+          {
+            "celdas": [
+              "Desayuno",
+              "90g",
+              "130g",
+              "180g"
+            ]
+          },
+          {
+            "celdas": [
+              "Almuerzo",
+              "100g",
+              "150g",
+              "230g"
+            ]
+          },
+          {
+            "celdas": [
+              "Cena",
+              "120g",
+              "140g",
+              "200g"
+            ]
+          },
+          {
+            "celdas": [
+              "TOTAL DIARIO",
+              "310g",
+              "420g",
+              "610g"
+            ]
+          }
         ]
       },
       {
@@ -1318,30 +1428,38 @@
           "ETAPA 3 (12–24 m)"
         ],
         "filas": [
-          [
-            "Total desayunos (30 días)",
-            "2.7 kg",
-            "3.9 kg",
-            "5.4 kg"
-          ],
-          [
-            "Total almuerzos (30 días)",
-            "3.0 kg",
-            "4.5 kg",
-            "6.9 kg"
-          ],
-          [
-            "Total cenas (30 días)",
-            "3.6 kg",
-            "4.2 kg",
-            "6.0 kg"
-          ],
-          [
-            "TOTAL MENSUAL",
-            "9.3 kg",
-            "12.6 kg",
-            "18.3 kg"
-          ]
+          {
+            "celdas": [
+              "Total desayunos (30 días)",
+              "2.7 kg",
+              "3.9 kg",
+              "5.4 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Total almuerzos (30 días)",
+              "3.0 kg",
+              "4.5 kg",
+              "6.9 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Total cenas (30 días)",
+              "3.6 kg",
+              "4.2 kg",
+              "6.0 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "TOTAL MENSUAL",
+              "9.3 kg",
+              "12.6 kg",
+              "18.3 kg"
+            ]
+          }
         ]
       },
       {
@@ -1435,62 +1553,90 @@
           "CANTIDAD"
         ],
         "filas": [
-          [
-            "Pollo (pechuga + muslo deshuesado 60/40)",
-            "4 kg"
-          ],
-          [
-            "Zapallo limpio sin semillas",
-            "2 unidades medianas"
-          ],
-          [
-            "Zanahorias",
-            "1.5 kg"
-          ],
-          [
-            "Camote sin piel",
-            "1 kg"
-          ],
-          [
-            "Lentejas rojas o sin piel",
-            "500g"
-          ],
-          [
-            "Harina de avena o copos finos",
-            "1 kg"
-          ],
-          [
-            "Arroz blanco o integral",
-            "500g"
-          ],
-          [
-            "Manzanas",
-            "1 kg"
-          ],
-          [
-            "Plátanos maduros",
-            "1 mano"
-          ],
-          [
-            "Huevos",
-            "2 docenas"
-          ],
-          [
-            "Harina de maíz precocida",
-            "500g"
-          ],
-          [
-            "Brócoli",
-            "1 unidad grande"
-          ],
-          [
-            "Espinaca tierna",
-            "300g"
-          ],
-          [
-            "Queso tierno bajo en sal",
-            "200g"
-          ]
+          {
+            "celdas": [
+              "Pollo (pechuga + muslo deshuesado 60/40)",
+              "4 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Zapallo limpio sin semillas",
+              "2 unidades medianas"
+            ]
+          },
+          {
+            "celdas": [
+              "Zanahorias",
+              "1.5 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Camote sin piel",
+              "1 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Lentejas rojas o sin piel",
+              "500g"
+            ]
+          },
+          {
+            "celdas": [
+              "Harina de avena o copos finos",
+              "1 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Arroz blanco o integral",
+              "500g"
+            ]
+          },
+          {
+            "celdas": [
+              "Manzanas",
+              "1 kg"
+            ]
+          },
+          {
+            "celdas": [
+              "Plátanos maduros",
+              "1 mano"
+            ]
+          },
+          {
+            "celdas": [
+              "Huevos",
+              "2 docenas"
+            ]
+          },
+          {
+            "celdas": [
+              "Harina de maíz precocida",
+              "500g"
+            ]
+          },
+          {
+            "celdas": [
+              "Brócoli",
+              "1 unidad grande"
+            ]
+          },
+          {
+            "celdas": [
+              "Espinaca tierna",
+              "300g"
+            ]
+          },
+          {
+            "celdas": [
+              "Queso tierno bajo en sal",
+              "200g"
+            ]
+          }
         ]
       },
       {
