@@ -16,10 +16,8 @@
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { readFileSync } from "node:fs";
-import { cert, initializeApp, type ServiceAccount } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
 import { stableStringify } from "../src/lib/repo/stable-stringify";
+import { db } from "./lib/admin";
 
 // Collections to snapshot. New Fase-1 collections (colecciones, planes,
 // utensilios, guias, metodos_conservacion) will be added here as they land;
@@ -40,18 +38,6 @@ const COLLECTIONS = [
   "usuarios",
 ];
 
-function loadServiceAccount(): ServiceAccount {
-  const inline = process.env.FIREBASE_ADMIN_SA;
-  if (inline) return JSON.parse(inline) as ServiceAccount;
-  const p = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-  if (!p) {
-    throw new Error(
-      "Configura GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json antes de correr el backup."
-    );
-  }
-  return JSON.parse(readFileSync(p, "utf8")) as ServiceAccount;
-}
-
 function timestamp(): string {
   const d = new Date();
   const pad = (n: number) => n.toString().padStart(2, "0");
@@ -62,8 +48,7 @@ function timestamp(): string {
 }
 
 async function main() {
-  initializeApp({ credential: cert(loadServiceAccount()) });
-  const db = getFirestore();
+  const database = db();
 
   const ts = timestamp();
   const outDir = path.join(process.cwd(), "data", "backups", ts);
@@ -75,7 +60,7 @@ async function main() {
 
   for (const name of COLLECTIONS) {
     try {
-      const snap = await db.collection(name).get();
+      const snap = await database.collection(name).get();
       const docs = snap.docs.map((d) => ({ id: d.id, data: d.data() }));
       const file = path.join(outDir, `${name}.json`);
       await fs.writeFile(file, stableStringify(docs) + "\n", "utf8");
