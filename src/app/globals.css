@@ -7,6 +7,7 @@
 @import "../styles/tokens.css";
 @import "../styles/components.css";
 @import "../styles/asistente.css";
+@import "../styles/reserva.css";
 
 * {
   box-sizing: border-box;

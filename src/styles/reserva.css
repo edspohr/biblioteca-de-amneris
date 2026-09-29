@@ -1,0 +1,327 @@
+/* Estilos para los componentes de Bocaditos de reserva.
+ * Se cargan globalmente vía app/layout o vía las rutas que los usan.
+ */
+
+/* --- StageGate ------------------------------------------------------------- */
+.stage-gate {
+  border: 1px solid var(--border, #e0d5c8);
+  background: var(--soft, #faf6f1);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+}
+.stage-gate__title {
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+}
+.stage-gate__body {
+  margin: 0 0 0.6rem 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+}
+.stage-gate__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.6rem 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.stage-gate__hint {
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+  margin: 0;
+}
+
+/* --- Nutrientes grid ------------------------------------------------------- */
+.nutrientes-grid {
+  margin: 1rem 0;
+}
+.nutrientes-grid__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+@media (max-width: 640px) {
+  .nutrientes-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.nutrientes-grid__item {
+  background: var(--soft, #faf6f1);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.nutrientes-grid__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--muted, #666);
+}
+.nutrientes-grid__value {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.nutrientes-grid__disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted, #666);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* --- Vitaminas list -------------------------------------------------------- */
+.vitaminas-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+.vitaminas-list__item {
+  background: var(--soft, #faf6f1);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.vitaminas-list__nombre {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.vitaminas-list__nivel {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  color: white;
+}
+.vitaminas-list__nivel--alta {
+  background: #2f5d46;
+}
+.vitaminas-list__nivel--media {
+  background: #a98800;
+}
+.vitaminas-list__nivel--baja {
+  background: #7a5033;
+}
+.vitaminas-list__beneficio {
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+}
+
+/* --- Conservación block ---------------------------------------------------- */
+.conservacion-block {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.conservacion-block__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  background: var(--soft, #faf6f1);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  align-items: start;
+}
+.conservacion-block__icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.conservacion-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.conservacion-block__metodo {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.conservacion-block__duracion {
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+}
+.conservacion-block__nota {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+/* --- Guía bloques ---------------------------------------------------------- */
+.guia-bloque {
+  margin: 0.9rem 0;
+}
+.guia-bloque--tabla table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.guia-bloque--tabla th,
+.guia-bloque--tabla td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--border, #e0d5c8);
+  text-align: left;
+  font-size: 0.9rem;
+}
+.guia-bloque--tabla th {
+  background: var(--soft, #faf6f1);
+  font-weight: 600;
+}
+.guia-bloque--aviso {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  align-items: start;
+}
+.guia-bloque--aviso-tip {
+  background: #eaf7ef;
+  border-left: 3px solid #7fbfa0;
+}
+.guia-bloque--aviso-advertencia {
+  background: #fff4e5;
+  border-left: 3px solid #d18a4a;
+}
+.guia-bloque__aviso-icon {
+  font-size: 1.1rem;
+}
+
+/* --- Colección card -------------------------------------------------------- */
+.coleccion-card {
+  border: 1px solid var(--border, #e0d5c8);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  background: var(--panel, white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.coleccion-card--link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+.coleccion-card__badge {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+.coleccion-card__badge--pub {
+  background: #eaf7ef;
+  color: #2f5d46;
+}
+.coleccion-card__badge--soon {
+  background: #fff4e5;
+  color: #7a4321;
+}
+.coleccion-card__badge--admin {
+  background: #f1ebfa;
+  color: #4a3771;
+}
+.coleccion-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.coleccion-card__bajada {
+  margin: 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+}
+.coleccion-card__desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+}
+
+/* --- Menu grid (7×3) ------------------------------------------------------- */
+.menu-grid {
+  overflow-x: auto;
+}
+.menu-grid table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+.menu-grid th,
+.menu-grid td {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border, #e0d5c8);
+  vertical-align: top;
+  font-size: 0.85rem;
+}
+.menu-grid th {
+  background: var(--soft, #faf6f1);
+  font-weight: 600;
+  text-align: left;
+}
+.menu-grid td a {
+  color: inherit;
+  text-decoration: none;
+}
+.menu-grid td a:hover {
+  text-decoration: underline;
+}
+
+/* --- Plan page ------------------------------------------------------------- */
+.plan-hero {
+  background: linear-gradient(180deg, var(--soft, #faf6f1), var(--panel, white));
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+.plan-hero__eyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--muted, #666);
+  margin: 0 0 0.5rem 0;
+}
+.plan-hero__title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+.plan-hero__bajada {
+  font-size: 1.1rem;
+  color: var(--muted, #666);
+  margin: 0;
+}
+.plan-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+  list-style: none;
+  padding: 0;
+}
+.plan-facts li {
+  background: white;
+  border: 1px solid var(--border, #e0d5c8);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  text-align: center;
+}
+.plan-facts li strong {
+  display: block;
+  font-size: 1.4rem;
+}
+.plan-facts li small {
+  color: var(--muted, #666);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}

@@ -1,30 +1,53 @@
 import Link from "next/link";
 import { repo } from "@/lib/repo";
-import { SECCION_ACTIVA } from "@/lib/marca";
+import { verifySession } from "@/lib/auth/session";
+import { ColeccionCard } from "@/components/coleccion-card";
 
 export default async function HomePage() {
-  const [etapas, recetas, menus, tecnicas] = await Promise.all([
+  const [etapas, recetas, menus, tecnicas, colecciones, session] = await Promise.all([
     repo.getEtapas(),
     repo.getRecetas(),
     repo.getMenus(),
     repo.getTecnicas(),
+    // Colecciones puede estar vacía todavía si el seed no corrió; tolera errores.
+    repo.getColecciones().catch(() => []),
+    verifySession(),
   ]);
   const etapasOrdenadas = [...etapas].sort((a, b) => a.orden - b.orden);
+  const isSuperadmin = session?.superadmin === true;
+
+  const coleccionesVisibles = colecciones
+    .filter((c) => c.estado !== "oculta" || isSuperadmin)
+    .sort((a, b) => a.orden - b.orden);
 
   return (
     <>
       <section className="home-hero">
-        <p className="home-hero__eyebrow">Sección · {SECCION_ACTIVA.nombre}</p>
-        <h1 className="home-hero__title">{SECCION_ACTIVA.nombre}</h1>
+        <p className="home-hero__eyebrow">La Biblioteca de Amneris</p>
+        <h1 className="home-hero__title">Alimentar a tu bebé, resuelto.</h1>
         <p className="home-hero__lede">
-          {SECCION_ACTIVA.bajada}. Cada receta se adapta a las tres etapas —
-          solo cambia la textura y la porción. Parte de La Biblioteca de
-          Amneris.
+          Recetas, menús y planes pensados para papás y mamás de bebés de 0 a 2 años.
+          Una sola suscripción, todo incluido.
         </p>
       </section>
 
+      {coleccionesVisibles.length > 0 && (
+        <section aria-labelledby="home-colecciones">
+          <h2 id="home-colecciones" className="section-title">
+            Colecciones
+          </h2>
+          <ul className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem", listStyle: "none", padding: 0 }}>
+            {coleccionesVisibles.map((c) => (
+              <li key={c.id}>
+                <ColeccionCard coleccion={c} isSuperadmin={isSuperadmin} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <section aria-labelledby="home-explore">
-        <h2 id="home-explore" className="section-title">Explora el libro</h2>
+        <h2 id="home-explore" className="section-title">Explora</h2>
         <ul className="grid tile-grid">
           <li className="tile">
             <Link href="/recetas" className="tile__link">
@@ -35,7 +58,7 @@ export default async function HomePage() {
           </li>
           <li className="tile">
             <Link href="/menus" className="tile__link">
-              <span className="tile__title">Menús semanales</span>
+              <span className="tile__title">Menús</span>
               <span className="tile__count">{menus.length}</span>
               <span className="tile__meta">Cada menú incluye su lista de compras.</span>
             </Link>

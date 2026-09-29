@@ -5,6 +5,9 @@ import { repo } from "@/lib/repo";
 import { getSessionWithProfile } from "@/lib/auth/session";
 import { Paywall } from "@/components/paywall";
 import { RecetaVarianteTabs } from "./variante-tabs";
+import { NutrientesGrid } from "@/components/nutrientes-grid";
+import { VitaminasList } from "@/components/vitaminas-list";
+import { ConservacionBlock } from "@/components/conservacion-block";
 
 const TIPOS_LABEL: Record<string, string> = {
   desayuno: "Desayuno",
@@ -20,12 +23,14 @@ export default async function RecetaPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [receta, ingredientes, alergenos, tecnicas, etapas, ctx] = await Promise.all([
+  const [receta, ingredientes, alergenos, tecnicas, etapas, metodos, ctx] = await Promise.all([
     repo.getReceta(slug),
     repo.getIngredientes(),
     repo.getAlergenos(),
     repo.getTecnicas(),
     repo.getEtapas(),
+    // Métodos puede estar vacío si el seed no corrió; tolera errores.
+    repo.getMetodosConservacion().catch(() => []),
     getSessionWithProfile(),
   ]);
   if (!receta) notFound();
@@ -94,6 +99,47 @@ export default async function RecetaPage({
 
       <RecetaVarianteTabs receta={receta} etapas={etapas} />
 
+      {receta.rendimiento && (
+        <p className="muted" style={{ marginTop: "0.5rem" }}>
+          Rendimiento: {receta.rendimiento.porciones} porciones ({receta.rendimiento.gramosPorPorcion} g c/u)
+          {receta.preparacionFresca && " · Se prepara fresco"}
+        </p>
+      )}
+
+      {receta.mensaje && (
+        <p style={{ marginTop: "1rem", fontStyle: "italic" }}>{receta.mensaje}</p>
+      )}
+
+      {receta.advertencia && (
+        <div
+          role="note"
+          style={{
+            marginTop: "0.8rem",
+            padding: "0.6rem 0.8rem",
+            background: "#fff4e5",
+            borderLeft: "3px solid #d18a4a",
+            borderRadius: 4,
+          }}
+        >
+          ⚠️ {receta.advertencia}
+        </div>
+      )}
+
+      {receta.tip && (
+        <div
+          role="note"
+          style={{
+            marginTop: "0.6rem",
+            padding: "0.6rem 0.8rem",
+            background: "#eaf7ef",
+            borderLeft: "3px solid #7fbfa0",
+            borderRadius: 4,
+          }}
+        >
+          💡 {receta.tip}
+        </div>
+      )}
+
       <section className="receta__section" aria-labelledby="sec-ing">
         <h2 id="sec-ing" className="receta__section-title">Ingredientes</h2>
         {receta.receta_ingredientes.length === 0 ? (
@@ -123,7 +169,25 @@ export default async function RecetaPage({
 
       <section className="receta__section" aria-labelledby="sec-prep">
         <h2 id="sec-prep" className="receta__section-title">Preparación</h2>
-        {receta.pasos.length === 0 ? (
+        {(receta.pasosDetalle && receta.pasosDetalle.length > 0) ? (
+          <ol className="steps">
+            {receta.pasosDetalle
+              .sort((a, b) => a.orden - b.orden)
+              .map((p, i) => (
+                <li key={i} className="steps__item">
+                  <span className="steps__num" aria-hidden="true">{i + 1}</span>
+                  <span className="steps__text">
+                    <strong>{p.accion}</strong>
+                    {p.observacion && (
+                      <span className="muted" style={{ display: "block", fontSize: "0.9em" }}>
+                        {p.observacion}
+                      </span>
+                    )}
+                  </span>
+                </li>
+              ))}
+          </ol>
+        ) : receta.pasos.length === 0 ? (
           <p className="muted">Sin pasos registrados.</p>
         ) : (
           <ol className="steps">
@@ -136,6 +200,27 @@ export default async function RecetaPage({
           </ol>
         )}
       </section>
+
+      {receta.nutrientes && (
+        <section className="receta__section" aria-labelledby="sec-nut">
+          <h2 id="sec-nut" className="receta__section-title">Nutrientes por porción</h2>
+          <NutrientesGrid nutrientes={receta.nutrientes} />
+        </section>
+      )}
+
+      {receta.vitaminasDetalle && receta.vitaminasDetalle.length > 0 && (
+        <section className="receta__section" aria-labelledby="sec-vit">
+          <h2 id="sec-vit" className="receta__section-title">Aportes de vitaminas y minerales</h2>
+          <VitaminasList vitaminas={receta.vitaminasDetalle} />
+        </section>
+      )}
+
+      {receta.conservaciones && receta.conservaciones.length > 0 && (
+        <section className="receta__section" aria-labelledby="sec-cons">
+          <h2 id="sec-cons" className="receta__section-title">Conservación</h2>
+          <ConservacionBlock conservaciones={receta.conservaciones} metodos={metodos} />
+        </section>
+      )}
 
       <section className="receta__section receta__section--info" aria-labelledby="sec-info">
         <h2 id="sec-info" className="receta__section-title">Información</h2>
