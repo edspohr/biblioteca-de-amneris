@@ -21,6 +21,9 @@ export async function PUT(
     const saved = await verifyWrite(() => repo.getColeccion(id), parsed, [
       "nombre",
       "estado",
+      "orden",
+      "tono",
+      "fechaLanzamiento",
     ]);
     return NextResponse.json(saved);
   } catch (err) {

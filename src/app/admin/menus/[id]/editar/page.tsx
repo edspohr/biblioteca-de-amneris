@@ -8,11 +8,12 @@ export default async function EditarMenuPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const [menu, etapas, recetas, ingredientes] = await Promise.all([
+  const [menu, etapas, recetas, ingredientes, colecciones] = await Promise.all([
     repo.getMenu(id),
     repo.getEtapas(),
     repo.getRecetas(),
     repo.getIngredientes(),
+    repo.getColecciones().catch(() => []),
   ]);
   if (!menu) notFound();
   return (
@@ -24,6 +25,7 @@ export default async function EditarMenuPage({
         etapas={etapas}
         recetas={recetas}
         ingredientes={ingredientes}
+        colecciones={colecciones}
       />
     </>
   );

@@ -143,7 +143,7 @@ export function NavBar({ user }: { user: SessionUser | null }) {
                   </Link>
                   {user.superadmin && (
                     <Link
-                      href="/admin/recetas"
+                      href="/admin"
                       role="menuitem"
                       className="nav__menu-item"
                     >

@@ -1,14 +1,21 @@
+import Link from "next/link";
 import { repo } from "@/lib/repo";
 import { ETAPA_IDS, type Receta, type VarianteEtapa } from "@/lib/schema";
 import { RecetaForm } from "../receta-form";
 
-export default async function NuevaRecetaPage() {
-  const [etapas, ingredientes, alergenos, tecnicas, porciones] = await Promise.all([
+export default async function NuevaRecetaPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ coleccion?: string }>;
+}) {
+  const [{ coleccion }, etapas, ingredientes, alergenos, tecnicas, porciones, colecciones] = await Promise.all([
+    searchParams,
     repo.getEtapas(),
     repo.getIngredientes(),
     repo.getAlergenos(),
     repo.getTecnicas(),
     repo.getPorcionesTexturas(),
+    repo.getColecciones().catch(() => []),
   ]);
 
   const porcionByEtapa = new Map(porciones.map((p) => [p.etapa_id, p]));
@@ -36,11 +43,21 @@ export default async function NuevaRecetaPage() {
     receta_ingredientes: [],
     receta_alergenos: [],
     receta_tecnicas: [],
+    // Preselect the collection when coming from its page.
+    coleccionIds: colecciones.some((c) => c.id === coleccion) ? [coleccion!] : [],
   };
 
   return (
     <>
-      <h1>Nueva receta</h1>
+      <p className="admin-back">
+        <Link href="/admin/recetas">← Recetas</Link>
+      </p>
+      <header className="admin-head">
+        <div>
+          <p className="admin-head__eyebrow">Nueva receta</p>
+          <h1 className="admin-head__title">Una receta nueva</h1>
+        </div>
+      </header>
       <RecetaForm
         mode="create"
         initial={initial}
@@ -48,6 +65,7 @@ export default async function NuevaRecetaPage() {
         ingredientes={ingredientes}
         alergenos={alergenos}
         tecnicas={tecnicas}
+        colecciones={colecciones}
       />
     </>
   );

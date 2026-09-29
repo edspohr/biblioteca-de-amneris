@@ -15,16 +15,10 @@ import { saveWithVerify } from "@/lib/admin/save-with-verify";
 import { useSaveState } from "@/lib/admin/use-save-state";
 import { useUnsavedChanges } from "@/lib/admin/use-unsaved-changes";
 import { SaveStatusBanner } from "@/components/admin/save-status";
+import { DIAS_LARGOS, diaCorto, normalizarDia } from "@/lib/dias";
+import type { Coleccion, MenuCelda } from "@/lib/schema";
 
-const DIAS = [
-  "Lunes",
-  "Martes",
-  "Miércoles",
-  "Jueves",
-  "Viernes",
-  "Sábado",
-  "Domingo",
-] as const;
+const DIAS = DIAS_LARGOS;
 
 const MOMENTOS: { id: TipoComida; label: string }[] = [
   { id: "desayuno", label: "Desayuno" },
@@ -40,6 +34,7 @@ interface Props {
   etapas: Etapa[];
   recetas: Receta[];
   ingredientes: Ingrediente[];
+  colecciones: Coleccion[];
 }
 
 type SlotKey = `${(typeof DIAS)[number]}::${TipoComida}`;
@@ -47,15 +42,21 @@ function slotKey(dia: string, momento: TipoComida): SlotKey {
   return `${dia}::${momento}` as SlotKey;
 }
 
-export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props) {
+export function MenuForm({ mode, initial, etapas, recetas, ingredientes, colecciones }: Props) {
   const router = useRouter();
 
   const [nombre, setNombre] = useState(initial?.nombre ?? "");
   const [etapaId, setEtapaId] = useState(initial?.etapa_id ?? etapas[0]?.id ?? "");
+  // Menus without planId belong to the original recetario (see
+  // coleccionDeMenu); only plan collections are stored explicitly.
+  const planes = colecciones.filter((c) => c.tipo === "plan").sort((a, b) => a.orden - b.orden);
+  const [planId, setPlanId] = useState(initial?.planId ?? "");
+  const [semana, setSemana] = useState<string>(initial?.semana != null ? String(initial.semana) : "");
   const [slots, setSlots] = useState<Record<SlotKey, string>>(() => {
     const out: Record<string, string> = {};
     for (const mr of initial?.menu_recetas ?? []) {
-      if (mr.dia) out[slotKey(mr.dia, mr.momento)] = mr.receta_id;
+      const dia = normalizarDia(mr.dia);
+      if (dia) out[slotKey(dia, mr.momento)] = mr.receta_id;
     }
     return out;
   });
@@ -119,11 +120,29 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
       setError("Debes elegir una etapa.");
       return;
     }
+    const semanaNum = semana ? parseInt(semana, 10) : undefined;
+    // Plan menus keep their 7×3 grid (`celdas`) in sync with the slots.
+    const celdas: MenuCelda[] | undefined =
+      planId || initial?.celdas
+        ? menuRecetas
+            .filter((mr) => mr.dia)
+            .map((mr) => ({ dia: diaCorto(mr.dia as (typeof DIAS)[number]), tipoComida: mr.momento, recetaId: mr.receta_id }))
+        : undefined;
+    // Start from the stored doc so fields this form doesn't edit (codigo,
+    // listaCompras, tip, advertencia…) survive the save.
+    const { planId: _p, semana: _s, celdas: _c, ...resto } = initial ?? ({} as Partial<Menu>);
+    void _p;
+    void _s;
+    void _c;
     const body = {
+      ...resto,
       nombre: nombre.trim(),
       etapa_id: etapaId,
       dia: null,
       menu_recetas: menuRecetas,
+      ...(planId ? { planId } : {}),
+      ...(semanaNum ? { semana: semanaNum } : {}),
+      ...(celdas ? { celdas } : {}),
     };
     const url = mode === "create" ? "/api/menus" : `/api/menus/${initial!.id}`;
     const method = mode === "create" ? "POST" : "PUT";
@@ -174,6 +193,40 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
           ))}
         </select>
       </label>
+
+      <div className="form-grid form-grid--2">
+        <label className="field">
+          <span>Colección</span>
+          <select
+            value={planId}
+            onChange={(e) => {
+              setDirty(true);
+              setPlanId(e.target.value);
+            }}
+          >
+            <option value="">Recetario (menús semanales)</option>
+            {planes.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.nombre}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="field">
+          <span>Semana (1 a 4)</span>
+          <input
+            type="number"
+            min={1}
+            max={4}
+            value={semana}
+            onChange={(e) => {
+              setDirty(true);
+              setSemana(e.target.value);
+            }}
+            placeholder="opcional"
+          />
+        </label>
+      </div>
 
       <h2 style={{ marginTop: "2rem" }}>Recetas por día y momento</h2>
       <p className="muted">
