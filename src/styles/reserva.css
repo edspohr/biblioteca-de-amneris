@@ -195,59 +195,6 @@
   font-size: 1.1rem;
 }
 
-/* --- Colección card -------------------------------------------------------- */
-.coleccion-card {
-  border: 1px solid var(--border, #e0d5c8);
-  border-radius: 8px;
-  padding: 1rem 1.1rem;
-  background: var(--panel, white);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.1s, box-shadow 0.1s;
-}
-.coleccion-card--link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-}
-.coleccion-card__badge {
-  align-self: flex-start;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-weight: 600;
-}
-.coleccion-card__badge--pub {
-  background: #eaf7ef;
-  color: #2f5d46;
-}
-.coleccion-card__badge--soon {
-  background: #fff4e5;
-  color: #7a4321;
-}
-.coleccion-card__badge--admin {
-  background: #f1ebfa;
-  color: #4a3771;
-}
-.coleccion-card__title {
-  margin: 0;
-  font-size: 1.2rem;
-}
-.coleccion-card__bajada {
-  margin: 0;
-  color: var(--muted, #666);
-  font-size: 0.95rem;
-}
-.coleccion-card__desc {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--muted, #666);
-}
-
 /* --- Menu grid (7×3) ------------------------------------------------------- */
 .menu-grid {
   overflow-x: auto;

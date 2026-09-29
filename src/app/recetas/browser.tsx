@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useEffect, useMemo, useState } from "react";
-import type { Alergeno, Ingrediente, Receta, TipoComida } from "@/lib/schema";
+import { Fragment, useEffect, useMemo, useState, type CSSProperties } from "react";
+import type { Alergeno, Coleccion, Ingrediente, Receta, TipoComida } from "@/lib/schema";
+import { iconoDe, tonoStyle } from "@/lib/colecciones";
+import { partirNombre } from "@/components/coleccion-portada";
 import { RegisterInvite } from "@/components/register-invite";
 import { InlineInvite } from "@/components/inline-invite";
 
@@ -12,6 +14,12 @@ interface Props {
   ingredientes: Ingrediente[];
   alergenos: Alergeno[];
   hasFullAccess: boolean;
+  // Collections shown as filter chips and as a seal on each card.
+  colecciones?: Coleccion[];
+  // Embedded in a collection page: no chips, no seal.
+  coleccionFija?: string;
+  // Initial chip (from ?coleccion= on /recetas).
+  coleccionInicial?: string;
 }
 
 const TIPOS: { value: TipoComida; label: string }[] = [
@@ -22,7 +30,16 @@ const TIPOS: { value: TipoComida; label: string }[] = [
   { value: "colacion", label: "Colación" },
 ];
 
-export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess }: Props) {
+export function RecetasBrowser({
+  recetas,
+  ingredientes,
+  alergenos,
+  hasFullAccess,
+  colecciones = [],
+  coleccionFija,
+  coleccionInicial,
+}: Props) {
+  const [coleccionId, setColeccionId] = useState(coleccionInicial ?? "");
   const [tipoComida, setTipoComida] = useState<TipoComida | "">("");
   const [maxMinutos, setMaxMinutos] = useState("");
   const [congelableOnly, setCongelableOnly] = useState(false);
@@ -39,10 +56,37 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
     return m;
   }, [ingredientes]);
 
+  const colById = useMemo(() => new Map(colecciones.map((c) => [c.id, c])), [colecciones]);
+  // Chips only for collections that actually have recipes here.
+  const chips = useMemo(
+    () =>
+      coleccionFija
+        ? []
+        : colecciones
+            .filter((c) => recetas.some((r) => (r.coleccionIds ?? []).includes(c.id)))
+            .sort((a, b) => a.orden - b.orden),
+    [colecciones, recetas, coleccionFija]
+  );
+  const showSeal = !coleccionFija && chips.length > 1;
+
+  function pickColeccion(id: string) {
+    setColeccionId(id);
+    // Keep the choice in the URL so back/share returns to the same shelf.
+    try {
+      const url = new URL(window.location.href);
+      if (id) url.searchParams.set("coleccion", id);
+      else url.searchParams.delete("coleccion");
+      window.history.replaceState(null, "", url);
+    } catch {
+      // Non-browser context; ignore.
+    }
+  }
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     const max = maxMinutos ? parseInt(maxMinutos, 10) : null;
     return recetas.filter((r) => {
+      if (coleccionId && !(r.coleccionIds ?? []).includes(coleccionId)) return false;
       if (tipoComida && r.tipo_comida !== tipoComida) return false;
       if (max != null && (r.minutos_prep == null || r.minutos_prep > max)) return false;
       if (congelableOnly && r.congelable !== true) return false;
@@ -61,7 +105,7 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
       }
       return true;
     });
-  }, [recetas, tipoComida, maxMinutos, congelableOnly, excludedAlergenos, query, ingByNorm]);
+  }, [recetas, coleccionId, tipoComida, maxMinutos, congelableOnly, excludedAlergenos, query, ingByNorm]);
 
   function toggleAlergeno(id: string) {
     const next = new Set(excludedAlergenos);
@@ -122,6 +166,31 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
         </button>
       </div>
 
+      {chips.length > 1 && (
+        <div className="col-chips" role="group" aria-label="Colección">
+          <button
+            type="button"
+            className="col-chip"
+            aria-pressed={coleccionId === ""}
+            onClick={() => pickColeccion("")}
+          >
+            Todas
+          </button>
+          {chips.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              className="col-chip"
+              aria-pressed={coleccionId === c.id}
+              onClick={() => pickColeccion(c.id)}
+              style={tonoStyle(c) as CSSProperties}
+            >
+              <span aria-hidden="true">{iconoDe(c)}</span> {c.nombre}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="results-count">
         {filtered.length} de {recetas.length} recetas · aplican a todas las etapas
       </div>
@@ -139,6 +208,13 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
                 {r.congelable === true ? " · congelable" : ""}
               </>
             );
+            const col = colById.get(r.coleccionIds?.[0] ?? "");
+            const seal =
+              showSeal && col ? (
+                <span className="recipe-card__col" style={tonoStyle(col) as CSSProperties}>
+                  <span aria-hidden="true">{iconoDe(col)}</span> {partirNombre(col.nombre).titulo}
+                </span>
+              ) : null;
             const photo = r.foto ? (
               <div className="recipe-card__photo" style={locked ? { filter: "blur(10px)" } : undefined}>
                 <Image
@@ -151,10 +227,18 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
               </div>
             ) : (
               <div
-                className="recipe-card__photo recipe-card__photo--placeholder"
-                style={locked ? { filter: "blur(10px)" } : undefined}
+                className="recipe-card__photo recipe-card__photo--tipo"
+                style={{
+                  ...(col ? (tonoStyle(col) as CSSProperties) : {}),
+                  ...(locked ? { filter: "blur(10px)" } : {}),
+                }}
                 aria-hidden="true"
-              />
+              >
+                <span className="recipe-card__tipo-icon">{col ? iconoDe(col) : "🍽"}</span>
+                <span className="recipe-card__tipo-label">
+                  {TIPOS.find((t) => t.value === r.tipo_comida)?.label ?? r.tipo_comida}
+                </span>
+              </div>
             );
 
             const cardNode = locked ? (
@@ -181,6 +265,7 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
                   aria-label={`Receta bloqueada: ${r.titulo}. Ábrela para probar la biblioteca gratis.`}
                 >
                   {photo}
+                  {seal}
                   <span className="lock-badge" aria-hidden="true">
                     🔒
                   </span>
@@ -192,6 +277,7 @@ export function RecetasBrowser({ recetas, ingredientes, alergenos, hasFullAccess
               <li key={r.id} className="card recipe-card">
                 <Link href={`/recetas/${r.id}`} className="recipe-card__link">
                   {photo}
+                  {seal}
                   <span className="recipe-card__title">{r.titulo}</span>
                   <span className="meta">{meta}</span>
                 </Link>

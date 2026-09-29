@@ -32,7 +32,7 @@
     "publish:coleccion": "tsx scripts/publish-coleccion.ts",
     "test:schemas": "tsx --test tests/schemas.test.ts",
     "test:persistence": "tsx --test tests/admin-persistence.test.ts",
-    "test:unit": "tsx --test tests/schemas.test.ts tests/admin-persistence.test.ts",
+    "test:unit": "tsx --test tests/schemas.test.ts tests/admin-persistence.test.ts tests/colecciones.test.ts",
     "test:rules": "firebase emulators:exec --only firestore 'tsx tests/firestore.rules.test.ts'"
   },
   "dependencies": {

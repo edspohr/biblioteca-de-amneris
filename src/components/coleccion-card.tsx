@@ -1,44 +1,70 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Coleccion } from "@/lib/schema";
+import {
+  esNueva,
+  estadoEfectivo,
+  lineaLanzamiento,
+  tonoStyle,
+  type ColeccionDato,
+} from "@/lib/colecciones";
+import { ColeccionPortada } from "./coleccion-portada";
 
-// Card de colección para el hub /libro. Muestra badge por estado y esconde
-// el link cuando la colección está `proximamente` u `oculta` sin admin.
+// Shelf card for /libro: a typographic cover plus name, bajada and state.
+// Upcoming collections stay visible (they sell the subscription) but don't
+// link anywhere unless the viewer is a superadmin.
 interface Props {
   coleccion: Coleccion;
+  datos: ColeccionDato[];
   isSuperadmin: boolean;
+  hoy: string;
 }
 
-const ESTADO_LABEL: Record<string, { label: string; clase: string }> = {
-  publicada: { label: "Disponible", clase: "coleccion-card__badge--pub" },
-  proximamente: { label: "Próximamente", clase: "coleccion-card__badge--soon" },
-  oculta: { label: "Preview admin", clase: "coleccion-card__badge--admin" },
-};
+export function ColeccionCard({ coleccion, datos, isSuperadmin, hoy }: Props) {
+  const estado = estadoEfectivo(coleccion, hoy);
+  const nueva = esNueva(coleccion, hoy);
+  const isLinkable = estado === "publicada" || isSuperadmin;
+  const lanzamiento = estado === "proximamente" ? lineaLanzamiento(coleccion, hoy) : null;
 
-export function ColeccionCard({ coleccion, isSuperadmin }: Props) {
-  const estado = ESTADO_LABEL[coleccion.estado];
-  const isLinkable =
-    coleccion.estado === "publicada" ||
-    (coleccion.estado === "oculta" && isSuperadmin);
-  const href = `/colecciones/${coleccion.id}`;
+  const badge =
+    estado === "oculta"
+      ? { label: "Solo tú la ves", clase: "coleccion-card__badge--admin" }
+      : estado === "proximamente"
+        ? { label: "Próximamente", clase: "coleccion-card__badge--soon" }
+        : nueva
+          ? { label: "Nuevo", clase: "coleccion-card__badge--new" }
+          : null;
 
   const body = (
     <>
-      <span className={`coleccion-card__badge ${estado?.clase ?? ""}`}>
-        {estado?.label ?? coleccion.estado}
+      <ColeccionPortada
+        coleccion={coleccion}
+        dato={datos[0] ?? null}
+        apagada={estado === "proximamente"}
+      />
+      <span className="coleccion-card__body">
+        {badge && <span className={`coleccion-card__badge ${badge.clase}`}>{badge.label}</span>}
+        <span className="coleccion-card__title">{coleccion.nombre}</span>
+        <span className="coleccion-card__bajada">{coleccion.bajada}</span>
+        {lanzamiento ? (
+          <span className="coleccion-card__launch">{lanzamiento}</span>
+        ) : estado === "proximamente" ? (
+          <span className="coleccion-card__launch">Incluida en tu suscripción</span>
+        ) : (
+          <span className="coleccion-card__cta">Abrir colección →</span>
+        )}
       </span>
-      <h3 className="coleccion-card__title">{coleccion.nombre}</h3>
-      <p className="coleccion-card__bajada">{coleccion.bajada}</p>
-      {coleccion.descripcionCorta && (
-        <p className="coleccion-card__desc">{coleccion.descripcionCorta}</p>
-      )}
     </>
   );
 
+  const style = tonoStyle(coleccion) as CSSProperties;
   return isLinkable ? (
-    <Link href={href} className="coleccion-card coleccion-card--link">
+    <Link href={`/colecciones/${coleccion.id}`} className="coleccion-card coleccion-card--link" style={style}>
       {body}
     </Link>
   ) : (
-    <div className="coleccion-card">{body}</div>
+    <div className="coleccion-card" style={style}>
+      {body}
+    </div>
   );
 }

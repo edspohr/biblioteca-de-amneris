@@ -5,6 +5,7 @@ import { repo } from "@/lib/repo";
 import { getSessionWithProfile } from "@/lib/auth/session";
 import { Paywall } from "@/components/paywall";
 import { computeListaCompras } from "@/lib/derived/lista-compras";
+import { normalizarDia } from "@/lib/dias";
 
 const TIPOS_LABEL: Record<string, string> = {
   desayuno: "Desayuno",
@@ -54,7 +55,7 @@ export default async function MenuPage({
   // Group menu_recetas by day, then by momento within day
   const porDia = new Map<string, { momento: string; receta_id: string }[]>();
   for (const mr of menu.menu_recetas) {
-    const key = mr.dia ?? "Sin día";
+    const key = normalizarDia(mr.dia) ?? mr.dia ?? "Sin día";
     const arr = porDia.get(key) ?? [];
     arr.push({ momento: mr.momento, receta_id: mr.receta_id });
     porDia.set(key, arr);
