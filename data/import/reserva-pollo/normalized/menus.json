@@ -1,0 +1,2084 @@
+[
+  {
+    "id": "e1-p1-s1",
+    "codigo": "E1-P1-S1",
+    "etapaId": "etapa-1",
+    "semana": 1,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "bastones-de-pollo-y-camote"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas rojas: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Camote sin piel: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche materna/fórmula: c/n"
+      }
+    ],
+    "tip": "La crema de pollo, camote y zanahoria aparece en desayuno y almuerzo — prepara una tanda grande y divide entre ambos momentos.",
+    "advertencia": "La avena con huevo solo si el pediatra ya autorizó el huevo. Si no, reemplazar por Papilla de pollo, manzana y avena.",
+    "warnings": []
+  },
+  {
+    "id": "e1-p1-s2",
+    "codigo": "E1-P1-S2",
+    "etapaId": "etapa-1",
+    "semana": 2,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas rojas: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Camote sin piel: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche materna/fórmula: c/n"
+      }
+    ],
+    "tip": "Prepara una olla grande de crema y divídela en zapallo y camote por separado antes de procesar. Dos cenas distintas, una sola cocción.",
+    "advertencia": "La avena con huevo solo si el pediatra autorizó el huevo. Si no, reemplazar por Papilla de pollo, manzana y avena.",
+    "warnings": []
+  },
+  {
+    "id": "e1-p1-s3",
+    "codigo": "E1-P1-S3",
+    "etapaId": "etapa-1",
+    "semana": 3,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas rojas: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Camote sin piel: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche materna/fórmula: c/n"
+      }
+    ],
+    "tip": "El puré proteico aparece en almuerzo y cena del lunes — prepara una tanda grande y divide. El plato más completo nutricionalmente de la etapa.",
+    "advertencia": "La avena con huevo solo si el pediatra autorizó el huevo. Reemplazar por Funche de pollo con leche en cenas si no.",
+    "warnings": []
+  },
+  {
+    "id": "e1-p1-s4",
+    "codigo": "E1-P1-S4",
+    "etapaId": "etapa-1",
+    "semana": 4,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-pollo-con-leche"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-zanahoria-y-avena"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "pure-proteico-de-pollo-lentejas-y-zapallo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-camote-y-zanahoria"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "crema-de-pollo-zapallo-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "bastones-de-pollo-y-camote"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "avena-con-huevo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-leche"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas rojas: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Camote sin piel: 1.5 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche materna/fórmula: c/n"
+      }
+    ],
+    "tip": "La Semana 4 cierra el mes — ningún día repite el menú completo. El bebé habrá explorado todas las texturas de Etapa 1.",
+    "advertencia": "La avena con huevo aparece en cena lunes y sábado, y desayuno viernes — solo si el pediatra autorizó el huevo.",
+    "warnings": []
+  },
+  {
+    "id": "e2-p1-s1",
+    "codigo": "E2-P1-S1",
+    "etapaId": "etapa-2",
+    "semana": 1,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 2 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Espinaca fresca: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 3 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 600g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 8 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Tomates maduros: 1.5 kg"
+      }
+    ],
+    "tip": "Los deditos de pollo aparecen en almuerzo miércoles y sábado, y cena viernes — prepara una tanda grande en el día de batch cooking.",
+    "advertencia": "Los panquequitos de pollo y manzana se preparan frescos — rápidos (25 min) pero no van al congelador.",
+    "warnings": [
+      "Celda mar/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda vie/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda dom/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda lun/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda jue/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda dom/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)"
+    ]
+  },
+  {
+    "id": "e2-p1-s2",
+    "codigo": "E2-P1-S2",
+    "etapaId": "etapa-2",
+    "semana": 2,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "papilla-de-pollo-manzana-y-avena"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 2 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Espinaca fresca: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 3 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 600g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 8 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Tomates maduros: 1.5 kg"
+      }
+    ],
+    "tip": "El funche de pollo con verduras chafadas aparece 3 veces en cena — prepara una olla grande y porciona en tarritos.",
+    "advertencia": "Los deditos aparecen en desayuno viernes y cena sábado — preparar tanda fresca o descongelar del batch cooking.",
+    "warnings": [
+      "Celda lun/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda mie/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda sab/desayuno: fuzzy match \"Pan quequitos pollo y manzana\" → papilla-de-pollo-manzana-y-avena (score 0.50)",
+      "Celda mar/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda vie/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)"
+    ]
+  },
+  {
+    "id": "e2-p1-s3",
+    "codigo": "E2-P1-S3",
+    "etapaId": "etapa-2",
+    "semana": 3,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "panquequitos-de-pollo-y-manzana"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "panquequitos-de-pollo-y-manzana"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 2 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Espinaca fresca: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 3 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 600g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 8 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Tomates maduros: 1.5 kg"
+      }
+    ],
+    "tip": "Los deditos aparecen en desayuno, almuerzo y cena en distintos días — prepara tanda grande el día de batch cooking.",
+    "advertencia": "Albóndigas almuerzo miércoles — descongelar desde la noche anterior en heladera. Recordar bajarlas el martes en la noche.",
+    "warnings": [
+      "Celda mie/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda sab/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)"
+    ]
+  },
+  {
+    "id": "e2-p1-s4",
+    "codigo": "E2-P1-S4",
+    "etapaId": "etapa-2",
+    "semana": 4,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "panquequitos-de-pollo-y-manzana"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "panquequitos-de-pollo-y-manzana"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-y-espinaca"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "panquequitos-de-pollo-y-manzana"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "mini-albondigas-humedas-en-salsa-de-tomate-natural"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-en-harina-de-maiz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "funche-de-pollo-con-verduras-chafadas"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "nuggets-blandos-de-pollo-y-arroz"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 2 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Espinaca fresca: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Manzanas: 3 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zapallo: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 600g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 8 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 400g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 100g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Tomates maduros: 1.5 kg"
+      }
+    ],
+    "tip": "La Semana 4 cierra el mes de Etapa 2 — ningún día repite el menú completo.",
+    "advertencia": "Al llegar a Semana 4 el bebé está próximo a 12 meses — consultar con el pediatra antes de hacer la transición a Etapa 3.",
+    "warnings": [
+      "Celda lun/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda jue/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)",
+      "Celda sab/almuerzo: fuzzy match \"Albóndigas en salsa de tomate\" → mini-albondigas-humedas-en-salsa-de-tomate-natural (score 0.50)"
+    ]
+  },
+  {
+    "id": "e3-p1-s1",
+    "codigo": "E3-P1-S1",
+    "etapaId": "etapa-3",
+    "semana": 1,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Brócoli: 2 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Plátanos maduros: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 10 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 200g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche entera/fórmula: c/n"
+      }
+    ],
+    "tip": "El funche de huevo se prepara fresco en 15 minutos — el desayuno más rápido de Etapa 3 para los días de semana.",
+    "advertencia": "Los deditos crujientes aparecen en desayuno viernes, almuerzo miércoles y sábado, cena domingo — prepara tanda grande.",
+    "warnings": [
+      "Celda vie/desayuno: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda lun/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda mie/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda jue/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda sab/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda dom/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda lun/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda mar/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda mie/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda jue/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda vie/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda sab/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda dom/cena: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)"
+    ]
+  },
+  {
+    "id": "e3-p1-s2",
+    "codigo": "E3-P1-S2",
+    "etapaId": "etapa-3",
+    "semana": 2,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Brócoli: 2 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Plátanos maduros: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 10 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 200g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche entera/fórmula: c/n"
+      }
+    ],
+    "tip": "El arroz salteado aparece 3 veces en cena — prepara olla grande y porciona en tápers. El plato que más rinde de Etapa 3.",
+    "advertencia": "El estofado de almuerzo debe descongelarse la noche anterior en heladera — recordar bajarlo del congelador la noche previa.",
+    "warnings": [
+      "Celda sab/desayuno: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda mar/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda jue/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda vie/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda dom/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda lun/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda mar/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda mie/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda jue/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda vie/cena: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda sab/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda dom/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)"
+    ]
+  },
+  {
+    "id": "e3-p1-s3",
+    "codigo": "E3-P1-S3",
+    "etapaId": "etapa-3",
+    "semana": 3,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Brócoli: 2 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Plátanos maduros: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 10 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 200g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche entera/fórmula: c/n"
+      }
+    ],
+    "tip": "El estofado aparece 3 veces en almuerzo — prepara olla grande y porciona en tápers con la cantidad exacta de cada almuerzo.",
+    "advertencia": "Los pastelitos aparecen 3 veces en cena — recordar envolverlos individualmente en papel film para sacar uno por uno del congelador.",
+    "warnings": [
+      "Celda jue/desayuno: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda lun/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda mar/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda jue/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda sab/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda dom/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda lun/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda mar/cena: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda mie/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda jue/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda vie/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda sab/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda dom/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)"
+    ]
+  },
+  {
+    "id": "e3-p1-s4",
+    "codigo": "E3-P1-S4",
+    "etapaId": "etapa-3",
+    "semana": 4,
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "planId": "bocaditos-de-reserva-pollo",
+    "celdas": [
+      {
+        "dia": "lun",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "desayuno",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "desayuno",
+        "recetaId": "panqueques-de-pollo-y-platano"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "desayuno",
+        "recetaId": "mini-muffins-de-pollo-brocoli-y-queso"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "desayuno",
+        "recetaId": "funche-de-huevo-con-harina-de-maiz-y-leche"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "almuerzo",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "almuerzo",
+        "recetaId": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "almuerzo",
+        "recetaId": "bollitos-de-maiz-con-pollo"
+      },
+      {
+        "dia": "lun",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "mar",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "mie",
+        "tipoComida": "cena",
+        "recetaId": "deditos-de-pollo-crujientes-en-harina-de-maiz"
+      },
+      {
+        "dia": "jue",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "vie",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      },
+      {
+        "dia": "sab",
+        "tipoComida": "cena",
+        "recetaId": "arroz-salteado-con-pollo-en-cubos-y-verduras"
+      },
+      {
+        "dia": "dom",
+        "tipoComida": "cena",
+        "recetaId": "pastelitos-de-pollo-brocoli-y-queso-al-horno"
+      }
+    ],
+    "listaCompras": [
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo pechuga: 3 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Brócoli: 2 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Avena fina: 300g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Plátanos maduros: 4 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Pollo molido: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Zanahoria: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Arroz: 1 kg"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Huevos: 10 unidades"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Lentejas: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Harina de maíz: 500g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Queso tierno: 200g"
+      },
+      {
+        "categoria": "FRUTAS",
+        "textoOriginal": "Leche entera/fórmula: c/n"
+      }
+    ],
+    "tip": "La Semana 4 cierra el mes de Etapa 3 — el niño está listo para integrarse completamente a la mesa familiar.",
+    "advertencia": "Al llegar a Semana 4 el niño tiene 20–24 meses — puede comer prácticamente todo lo de la familia, omitiendo la sal en su porción.",
+    "warnings": [
+      "Celda mar/desayuno: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda lun/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda mie/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda vie/almuerzo: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda sab/almuerzo: fuzzy match \"Estofado pollo, lentejas y zanahoria\" → estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria (score 0.80)",
+      "Celda lun/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda mar/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda mie/cena: fuzzy match \"Deditos pollo crujientes\" → deditos-de-pollo-crujientes-en-harina-de-maiz (score 0.60)",
+      "Celda jue/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda vie/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)",
+      "Celda sab/cena: fuzzy match \"Arroz salteado pollo en cubos\" → arroz-salteado-con-pollo-en-cubos-y-verduras (score 0.80)",
+      "Celda dom/cena: fuzzy match \"Pastelitos pollo, brócoli y queso\" → pastelitos-de-pollo-brocoli-y-queso-al-horno (score 0.80)"
+    ]
+  }
+]

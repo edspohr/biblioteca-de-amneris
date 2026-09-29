@@ -1,0 +1,1628 @@
+[
+  {
+    "id": "b3-p1",
+    "codigo": "B3-P1",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Equipos y Utensilios Necesarios",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Todo lo que necesitas tener listo antes de encender el fuego"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "INTRODUCCIÓN"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Antes de iniciar tu jornada de batch cooking, necesitas montar tu línea de producción. Tener todos los equipos listos desde el principio es la diferencia entre una jornada fluida de 4 horas y una tarde caótica."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "ÍTEM",
+          "PARA QUÉ SIRVE"
+        ],
+        "filas": [
+          [
+            "Procesador de alimentos o mixer de mano",
+            "Texturizar purés, licuar cremas y moler pollo crudo hasta textura de pasta"
+          ],
+          [
+            "Moldes de silicona para mini muffins",
+            "Hornear y congelar porciones individuales de desayunos y cenas"
+          ],
+          [
+            "Moldes de silicona para muffins grandes",
+            "Hornear pastelitos y muffins de Etapa 3"
+          ],
+          [
+            "Bandejas para cubos de hielo de silicona",
+            "Congelar purés en porciones exactas de 2 cubos por comida"
+          ],
+          [
+            "Bolsas herméticas para congelador (Ziploc)",
+            "Almacenar piezas congeladas — ahorran espacio y evitan quemaduras"
+          ],
+          [
+            "Papel vegetal para hornear",
+            "Evitar que bastones, bollitos y hamburguesas se peguen en la bandeja"
+          ],
+          [
+            "Tarritos de vidrio o plástico aptos para congelador",
+            "Porcionar purés y guisos — dejar siempre 1 cm libre antes de la tapa"
+          ],
+          [
+            "Báscula digital de cocina",
+            "Garantizar gramajes exactos por porción en cada contenedor"
+          ],
+          [
+            "Cuchara para helados pequeña",
+            "Porcionar masas de muffins y bollitos de forma uniforme"
+          ],
+          [
+            "Etiquetas e imán marcador permanente",
+            "Identificar cada bolsa con nombre del plato y fecha de preparación"
+          ],
+          [
+            "Sartén antiadherente con tapa",
+            "Cocinar panqueques, deditos y albóndigas — la tapa es clave para el vapor"
+          ],
+          [
+            "Vaporera o olla con rejilla",
+            "Cocción al vapor de bollitos, verduras y pollo sin perder nutrientes"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ÍTEM"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "PARA QUÉ SIRVE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Procesador de alimentos o mixer de mano"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Texturizar purés, licuar cremas y moler pollo crudo hasta textura de pasta"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Moldes de silicona para mini muffins"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Hornear y congelar porciones individuales de desayunos y cenas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Moldes de silicona para muffins grandes"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Hornear pastelitos y muffins de Etapa 3"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Bandejas para cubos de hielo de silicona"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Congelar purés en porciones exactas de 2 cubos por comida"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Bolsas herméticas para congelador (Ziploc)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Almacenar piezas congeladas — ahorran espacio y evitan quemaduras"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Papel vegetal para hornear"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Evitar que bastones, bollitos y hamburguesas se peguen en la bandeja"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Tarritos de vidrio o plástico aptos para congelador"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Porcionar purés y guisos — dejar siempre 1 cm libre antes de la tapa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Báscula digital de cocina"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Garantizar gramajes exactos por porción en cada contenedor"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cuchara para helados pequeña"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Porcionar masas de muffins y bollitos de forma uniforme"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Etiquetas e imán marcador permanente"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Identificar cada bolsa con nombre del plato y fecha de preparación"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sartén antiadherente con tapa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cocinar panqueques, deditos y albóndigas — la tapa es clave para el vapor"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Vaporera o olla con rejilla"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cocción al vapor de bollitos, verduras y pollo sin perder nutrientes"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "advertencia",
+        "texto": "Lo que no se etiqueta con nombre y fecha no existe en el congelador. Cada bolsa o tarrito debe tener escrito el nombre del plato y la fecha antes de entrar al congelador. El pollo dura hasta 3 meses — sin etiqueta no sabrás cuándo vence."
+      }
+    ]
+  },
+  {
+    "id": "b3-p2",
+    "codigo": "B3-P2",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Estrategia de Congelación y Almacenamiento Seguro",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Las reglas que garantizan un mes de comida segura y nutritiva"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "La congelación es el corazón de este sistema. Aplicada correctamente, te garantiza un mes de comida segura, nutritiva y lista en minutos."
+      },
+      {
+        "kind": "parrafo",
+        "texto": "¿QUÉ CONGELA BIEN?"
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "FORMATO",
+          "EJEMPLOS EN ESTE LIBRO"
+        ],
+        "filas": [
+          [
+            "Purés y cremas a base de zapallo, camote o zanahoria",
+            "Crema dorada, puré proteico"
+          ],
+          [
+            "Carnes molidas aglutinadas con vegetales",
+            "Bastones, bollitos, albóndigas, muffins, pastelitos"
+          ],
+          [
+            "Guisos y estofados con salsa",
+            "Albóndigas en salsa, estofado de lentejas"
+          ],
+          [
+            "Preparaciones horneadas",
+            "Muffins, deditos, nuggets, panqueques"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "FORMATO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "EJEMPLOS EN ESTE LIBRO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Purés y cremas a base de zapallo, camote o zanahoria"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Crema dorada, puré proteico"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Carnes molidas aglutinadas con vegetales"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Bastones, bollitos, albóndigas, muffins, pastelitos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Guisos y estofados con salsa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Albóndigas en salsa, estofado de lentejas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Preparaciones horneadas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Muffins, deditos, nuggets, panqueques"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "¿QUÉ NO CONGELA?"
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "INGREDIENTE",
+          "RAZÓN"
+        ],
+        "filas": [
+          [
+            "Papa blanca",
+            "Se vuelve arenosa y suelta agua al descongelarse"
+          ],
+          [
+            "Hojas verdes crudas",
+            "Pierden textura y se oxidan"
+          ],
+          [
+            "Funche de huevo con leche",
+            "El huevo integrado pierde seguridad alimentaria"
+          ],
+          [
+            "Avena con huevo",
+            "Mismo caso — preparar siempre fresco"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "INGREDIENTE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "RAZÓN"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Papa blanca"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Se vuelve arenosa y suelta agua al descongelarse"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Hojas verdes crudas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Pierden textura y se oxidan"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Funche de huevo con leche"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "El huevo integrado pierde seguridad alimentaria"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Avena con huevo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Mismo caso — preparar siempre fresco"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "PROCEDIMIENTO IQF CASERO"
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "PASO",
+          "ACCIÓN",
+          "DETALLE"
+        ],
+        "filas": [
+          [
+            "1",
+            "Enfriamiento rápido",
+            "Nunca meter comida caliente al congelador — máximo 1 hora a temperatura ambiente"
+          ],
+          [
+            "2",
+            "Precongelación en bandeja",
+            "Colocar piezas separadas sobre bandeja con papel vegetal — congelar 2 horas"
+          ],
+          [
+            "3",
+            "Empacado hermético",
+            "Pasar piezas duras a bolsa Ziploc — sacar todo el aire con un sorbete antes de cerrar"
+          ],
+          [
+            "4",
+            "Etiquetado",
+            "Escribir nombre del plato y fecha de preparación con marcador permanente"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "PASO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ACCIÓN"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "DETALLE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Enfriamiento rápido"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Nunca meter comida caliente al congelador — máximo 1 hora a temperatura ambiente"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Precongelación en bandeja"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Colocar piezas separadas sobre bandeja con papel vegetal — congelar 2 horas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "3"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Empacado hermético"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Pasar piezas duras a bolsa Ziploc — sacar todo el aire con un sorbete antes de cerrar"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "4"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Etiquetado"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Escribir nombre del plato y fecha de preparación con marcador permanente"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "tip",
+        "texto": "El Método IQF garantiza que cada pieza quede suelta en la bolsa — puedes sacar exactamente los bastones o muffins que necesitas sin descongelar toda la tanda."
+      }
+    ]
+  },
+  {
+    "id": "b3-p3",
+    "codigo": "B3-P3",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Cronograma del Día de Batch Cooking",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Tu hoja de ruta para producir un mes de comida en 4 horas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "La clave del batch cooking no es cocinar rápido — es cocinar en paralelo. Mientras el horno trabaja solo, tú trabajas en la estufa."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "TIEMPO",
+          "ACCIÓN",
+          "DETALLE"
+        ],
+        "filas": [
+          [
+            "Min. 0–45",
+            "Preparación general",
+            "Poner a hervir zapallo, zanahoria, camote, manzanas y lentejas. Procesar el pollo crudo en el procesador"
+          ],
+          [
+            "Min. 45–90",
+            "Masas y horno",
+            "Preparar masas de bastones, muffins o pastelitos según la etapa. Llenar el horno al máximo de su capacidad"
+          ],
+          [
+            "Min. 90–150",
+            "Estufa y sartenes",
+            "Mientras el horno trabaja solo: hacer panqueques en una sartén, albóndigas o estofado en otra olla. Licuar cremas"
+          ],
+          [
+            "Min. 150–200",
+            "Línea de enfriamiento",
+            "Retirar todo del fuego. Colocar sobre rejillas para enfriar rápidamente. No meter comida caliente al congelador"
+          ],
+          [
+            "Min. 200–240",
+            "Empaque y organización",
+            "Etiquetar bolsas y tarritos. Porcionar con báscula. Aplicar Método IQF. Organizar el congelador por etapa y tipo de comida"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "TIEMPO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ACCIÓN"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "DETALLE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Min. 0–45"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Preparación general"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Poner a hervir zapallo, zanahoria, camote, manzanas y lentejas. Procesar el pollo crudo en el procesador"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Min. 45–90"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Masas y horno"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Preparar masas de bastones, muffins o pastelitos según la etapa. Llenar el horno al máximo de su capacidad"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Min. 90–150"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Estufa y sartenes"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Mientras el horno trabaja solo: hacer panqueques en una sartén, albóndigas o estofado en otra olla. Licuar cremas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Min. 150–200"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Línea de enfriamiento"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Retirar todo del fuego. Colocar sobre rejillas para enfriar rápidamente. No meter comida caliente al congelador"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Min. 200–240"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Empaque y organización"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Etiquetar bolsas y tarritos. Porcionar con báscula. Aplicar Método IQF. Organizar el congelador por etapa y tipo de comida"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "tip",
+        "texto": "Organiza tu congelador por zonas antes de empezar — una zona para desayunos, una para almuerzos y una para cenas. Al terminar, cada preparación va directamente a su zona sin perder tiempo buscando espacio."
+      }
+    ]
+  },
+  {
+    "id": "b3-p4",
+    "codigo": "B3-P4",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Guía de Descongelación Segura",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Los únicos 3 métodos seguros para descongelar la comida de tu bebé"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "La descongelación es el paso más crítico para garantizar la seguridad alimentaria de tu bebé. Los microorganismos se multiplican rápidamente entre los 4°C y los 60°C. Nunca descongeles a temperatura ambiente sobre la mesada."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "MÉTODO",
+          "CÓMO HACERLO",
+          "TIEMPO",
+          "CONSUMO"
+        ],
+        "filas": [
+          [
+            "1. Heladera — IDEAL",
+            "Bajar la porción del congelador la noche anterior al estante más frío",
+            "10 a 12 horas",
+            "Consumir dentro de 24 horas — si no se usa, desechar"
+          ],
+          [
+            "2. Baño de agua fría — EMERGENCIA",
+            "Colocar en bolsa hermética sellada sumergida en agua fría — cambiar el agua cada 30 minutos",
+            "30 a 60 minutos",
+            "Calentar y servir inmediatamente"
+          ],
+          [
+            "3. Microondas — INSTANTÁNEO",
+            "Usar exclusivamente función Defrost al 30% de potencia — tandas de 1 minuto rotando la comida",
+            "2 a 4 minutos",
+            "Calentar y servir inmediatamente"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "MÉTODO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "CÓMO HACERLO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "TIEMPO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "CONSUMO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1. Heladera — IDEAL"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Bajar la porción del congelador la noche anterior al estante más frío"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "10 a 12 horas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Consumir dentro de 24 horas — si no se usa, desechar"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2. Baño de agua fría — EMERGENCIA"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Colocar en bolsa hermética sellada sumergida en agua fría — cambiar el agua cada 30 minutos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "30 a 60 minutos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Calentar y servir inmediatamente"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "3. Microondas — INSTANTÁNEO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Usar exclusivamente función Defrost al 30% de potencia — tandas de 1 minuto rotando la comida"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2 a 4 minutos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Calentar y servir inmediatamente"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "advertencia",
+        "texto": "NUNCA vuelvas a congelar comida que ya fue descongelada. Descongelada es consumida o desechada, sin excepciones. Desecha siempre las sobras del plato del bebé: su saliva contiene bacterias que se multiplican en la heladera."
+      }
+    ]
+  },
+  {
+    "id": "b3-p5",
+    "codigo": "B3-P5",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Cómo Revivir la Textura Original al Recalentar",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "El truco profesional para que cada comida sepa como recién hecha"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "El congelador deshidrata los alimentos. El secreto para revivir la textura original es devolverle la humedad perdida y aplicar el método de calor correcto según el formato del plato."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "FORMATO",
+          "MÉTODO IDEAL",
+          "TRUCO CLAVE"
+        ],
+        "filas": [
+          [
+            "Purés, cremas y guisos",
+            "Ollita a fuego mínimo",
+            "Añadir 1 cucharadita de agua, caldo o leche — batir con cuchara de madera hasta recuperar la cremosidad"
+          ],
+          [
+            "Muffins y pastelitos",
+            "Microondas protegido u horno",
+            "Envolver en servilleta húmeda — 15 a 20 segundos. O horno a 160°C por 8 minutos"
+          ],
+          [
+            "Panqueques y deditos",
+            "Sartén tapada",
+            "Sartén a fuego mínimo con gotita de aceite y tapa — el vapor mantiene la masa húmeda"
+          ],
+          [
+            "Bastones y bollitos",
+            "Vapor o sartén tapada",
+            "Sartén con 1 cucharada de agua en el fondo, tapar inmediatamente — 3 minutos"
+          ],
+          [
+            "Albóndigas en salsa",
+            "Ollita con salsa",
+            "Calentar sumergidas en su salsa — añadir chorrito de agua si la salsa se redujo"
+          ],
+          [
+            "Arroz salteado y estofados",
+            "Sartén o ollita con agua",
+            "2 cucharadas de agua — revolver constantemente para recuperar la soltura"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "FORMATO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "MÉTODO IDEAL"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "TRUCO CLAVE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Purés, cremas y guisos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Ollita a fuego mínimo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Añadir 1 cucharadita de agua, caldo o leche — batir con cuchara de madera hasta recuperar la cremosidad"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Muffins y pastelitos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Microondas protegido u horno"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Envolver en servilleta húmeda — 15 a 20 segundos. O horno a 160°C por 8 minutos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Panqueques y deditos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sartén tapada"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sartén a fuego mínimo con gotita de aceite y tapa — el vapor mantiene la masa húmeda"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Bastones y bollitos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Vapor o sartén tapada"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sartén con 1 cucharada de agua en el fondo, tapar inmediatamente — 3 minutos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Albóndigas en salsa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Ollita con salsa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Calentar sumergidas en su salsa — añadir chorrito de agua si la salsa se redujo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Arroz salteado y estofados"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sartén o ollita con agua"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2 cucharadas de agua — revolver constantemente para recuperar la soltura"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "advertencia",
+        "texto": "Revuelve siempre muy bien antes de servir para eliminar los puntos calientes. Prueba la temperatura en la parte interna de tu muñeca antes de ofrecer la comida al bebé. Debe sentirse tibia, nunca caliente."
+      }
+    ]
+  },
+  {
+    "id": "b3-p6",
+    "codigo": "B3-P6",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Guía de Condimentos Permitidos por Etapa",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Cómo darle sabor a la comida de tu bebé sin sal ni azúcar"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Introducir especias y hierbas desde el inicio es la mejor estrategia para desarrollar el paladar del bebé y prevenir que sea selectivo. Sal y azúcar están prohibidas antes de los 12 meses."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "CONDIMENTO",
+          "ETAPA 1 (6–9 m)",
+          "ETAPA 2 (10–12 m)",
+          "ETAPA 3 (12–24 m)"
+        ],
+        "filas": [
+          [
+            "Canela en polvo",
+            "✅",
+            "✅",
+            "✅"
+          ],
+          [
+            "Ajo en polvo puro sin sal",
+            "✅",
+            "✅",
+            "✅"
+          ],
+          [
+            "Orégano / Tomillo / Romero",
+            "✅",
+            "✅",
+            "✅"
+          ],
+          [
+            "Nuez moscada",
+            "✅ pizca mínima",
+            "✅",
+            "✅"
+          ],
+          [
+            "Cúrcuma en polvo",
+            "❌",
+            "✅",
+            "✅"
+          ],
+          [
+            "Comino en polvo",
+            "❌",
+            "✅ pizca mínima",
+            "✅"
+          ],
+          [
+            "Cilantro / Perejil fresco",
+            "❌",
+            "✅",
+            "✅"
+          ],
+          [
+            "Pimentón dulce / Paprika",
+            "❌",
+            "❌",
+            "✅"
+          ],
+          [
+            "Curry suave sin picante",
+            "❌",
+            "❌",
+            "✅"
+          ],
+          [
+            "Sal",
+            "❌",
+            "❌",
+            "Mínima — menos de 2g/día"
+          ],
+          [
+            "Miel",
+            "❌",
+            "❌",
+            "❌ riesgo botulismo"
+          ],
+          [
+            "Picante (merkén, cayena, chile)",
+            "❌",
+            "❌",
+            "❌ irrita mucosas"
+          ],
+          [
+            "Cubitos de caldo concentrado",
+            "❌",
+            "❌",
+            "❌ exceso de sodio"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "CONDIMENTO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 1 (6–9 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 2 (10–12 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 3 (12–24 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Canela en polvo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Ajo en polvo puro sin sal"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Orégano / Tomillo / Romero"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Nuez moscada"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅ pizca mínima"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cúrcuma en polvo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Comino en polvo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅ pizca mínima"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cilantro / Perejil fresco"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Pimentón dulce / Paprika"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Curry suave sin picante"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "✅"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Sal"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Mínima — menos de 2g/día"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Miel"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌ riesgo botulismo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Picante (merkén, cayena, chile)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌ irrita mucosas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cubitos de caldo concentrado"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "❌ exceso de sodio"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "tip",
+        "texto": "El día del batch cooking separa la mezcla base de pollo en 2 o 3 tazones antes de cocinar — a uno añade orégano, a otro canela. Con la misma proteína base obtienes sabores completamente distintos en el congelador."
+      }
+    ]
+  },
+  {
+    "id": "b3-p7",
+    "codigo": "B3-P7",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Tabla de Gramajes por Porción",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Cuánto debe comer tu bebé en cada comida según su etapa"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Estas cantidades están calculadas con base en las recomendaciones nutricionales de la OMS. El apetito de los bebés varía — estas cifras son una guía de referencia, no una regla rígida."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "COMIDA",
+          "ETAPA 1 (6–9 m)",
+          "ETAPA 2 (10–12 m)",
+          "ETAPA 3 (12–24 m)"
+        ],
+        "filas": [
+          [
+            "Desayuno",
+            "90g",
+            "130g",
+            "180g"
+          ],
+          [
+            "Almuerzo",
+            "100g",
+            "150g",
+            "230g"
+          ],
+          [
+            "Cena",
+            "120g",
+            "140g",
+            "200g"
+          ],
+          [
+            "TOTAL DIARIO",
+            "310g",
+            "420g",
+            "610g"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "COMIDA"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 1 (6–9 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 2 (10–12 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 3 (12–24 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Desayuno"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "90g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "130g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "180g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Almuerzo"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "100g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "150g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "230g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Cena"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "120g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "140g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "200g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "TOTAL DIARIO"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "310g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "420g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "610g"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "tip",
+        "texto": "El día del batch cooking usa tu báscula digital y una cuchara para helados para porcionar directamente en los contenedores. Taras el recipiente a cero y sirves hasta el gramaje exacto antes de congelar."
+      }
+    ]
+  },
+  {
+    "id": "b3-p8",
+    "codigo": "B3-P8",
+    "coleccionId": "bocaditos-de-reserva-pollo",
+    "titulo": "Tabla de Rendimiento para el Batch Cooking Mensual",
+    "bloques": [
+      {
+        "kind": "parrafo",
+        "texto": "Cuánto debes producir en tu día de cocina para cubrir 30 días completos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Esta tabla es tu hoja de control de producción. Te dice exactamente cuánto peso neto cocido debes obtener al final de tu jornada de batch cooking."
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "COMIDA",
+          "ETAPA 1 (6–9 m)",
+          "ETAPA 2 (10–12 m)",
+          "ETAPA 3 (12–24 m)"
+        ],
+        "filas": [
+          [
+            "Total desayunos (30 días)",
+            "2.7 kg",
+            "3.9 kg",
+            "5.4 kg"
+          ],
+          [
+            "Total almuerzos (30 días)",
+            "3.0 kg",
+            "4.5 kg",
+            "6.9 kg"
+          ],
+          [
+            "Total cenas (30 días)",
+            "3.6 kg",
+            "4.2 kg",
+            "6.0 kg"
+          ],
+          [
+            "TOTAL MENSUAL",
+            "9.3 kg",
+            "12.6 kg",
+            "18.3 kg"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "COMIDA"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 1 (6–9 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 2 (10–12 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "ETAPA 3 (12–24 m)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Total desayunos (30 días)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2.7 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "3.9 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "5.4 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Total almuerzos (30 días)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "3.0 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "4.5 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "6.9 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Total cenas (30 días)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "3.6 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "4.2 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "6.0 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "TOTAL MENSUAL"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "9.3 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "12.6 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "18.3 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "LISTA DE COMPRAS BASE — 1 MES DE PRODUCCIÓN"
+      },
+      {
+        "kind": "tabla",
+        "columnas": [
+          "INGREDIENTE",
+          "CANTIDAD"
+        ],
+        "filas": [
+          [
+            "Pollo (pechuga + muslo deshuesado 60/40)",
+            "4 kg"
+          ],
+          [
+            "Zapallo limpio sin semillas",
+            "2 unidades medianas"
+          ],
+          [
+            "Zanahorias",
+            "1.5 kg"
+          ],
+          [
+            "Camote sin piel",
+            "1 kg"
+          ],
+          [
+            "Lentejas rojas o sin piel",
+            "500g"
+          ],
+          [
+            "Harina de avena o copos finos",
+            "1 kg"
+          ],
+          [
+            "Arroz blanco o integral",
+            "500g"
+          ],
+          [
+            "Manzanas",
+            "1 kg"
+          ],
+          [
+            "Plátanos maduros",
+            "1 mano"
+          ],
+          [
+            "Huevos",
+            "2 docenas"
+          ],
+          [
+            "Harina de maíz precocida",
+            "500g"
+          ],
+          [
+            "Brócoli",
+            "1 unidad grande"
+          ],
+          [
+            "Espinaca tierna",
+            "300g"
+          ],
+          [
+            "Queso tierno bajo en sal",
+            "200g"
+          ]
+        ]
+      },
+      {
+        "kind": "parrafo",
+        "texto": "INGREDIENTE"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "CANTIDAD"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Pollo (pechuga + muslo deshuesado 60/40)"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "4 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Zapallo limpio sin semillas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2 unidades medianas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Zanahorias"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1.5 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Camote sin piel"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Lentejas rojas o sin piel"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "500g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Harina de avena o copos finos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Arroz blanco o integral"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "500g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Manzanas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1 kg"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Plátanos maduros"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1 mano"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Huevos"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "2 docenas"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Harina de maíz precocida"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "500g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Brócoli"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "1 unidad grande"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Espinaca tierna"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "300g"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "Queso tierno bajo en sal"
+      },
+      {
+        "kind": "parrafo",
+        "texto": "200g"
+      },
+      {
+        "kind": "aviso",
+        "tipo": "advertencia",
+        "texto": "Estos pesos son netos cocidos — no crudos. El pollo crudo pierde entre 25% y 30% de peso al cocinarse. Si tu receta requiere 1 kg de pollo cocido, compra 1.3 kg de pollo crudo."
+      },
+      {
+        "kind": "aviso",
+        "tipo": "tip",
+        "texto": "Imprime esta tabla y pégala en la puerta del congelador el día del batch cooking — es tu control de calidad final antes de cerrar la puerta."
+      }
+    ]
+  }
+]

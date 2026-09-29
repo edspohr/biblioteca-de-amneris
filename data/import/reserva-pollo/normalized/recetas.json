@@ -1,0 +1,3274 @@
+[
+  {
+    "id": "avena-con-huevo",
+    "titulo": "Avena con Huevo",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-H1-R1"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-H1-R1",
+        "textura": "Papilla densa y cremosa. Sin grumos ni hilos. Cae lenta de la cuchara formando un hilo denso y uniforme.",
+        "porcion": "",
+        "rendimiento": null,
+        "texturaObjetivo": "Papilla densa y cremosa. Sin grumos ni hilos. Cae lenta de la cuchara formando un hilo denso y uniforme.",
+        "tiempoMin": 10,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐avena-en-hojuelas-o-harina",
+            "cantidad": 3,
+            "unidad": "cucharadas",
+            "nota": "3 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐agua-o-leche-materna-formula-o-preferencia",
+            "cantidad": null,
+            "unidad": null,
+            "nota": "½ taza"
+          },
+          {
+            "ingrediente_id": "⭐yema-de-huevo-o-huevo-bien-cocido",
+            "cantidad": 1,
+            "unidad": "unidad",
+            "nota": "1 unidad"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche-opcional",
+            "cantidad": 1,
+            "unidad": "cucharadita",
+            "nota": "1 cucharadita"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Calentar el agua o leche a fuego medio",
+            "observacion": "Fuego medio constante — no hervir fuerte"
+          },
+          {
+            "orden": 1,
+            "accion": "Agregar avena y funche",
+            "observacion": "Incorporar al mismo tiempo"
+          },
+          {
+            "orden": 2,
+            "accion": "Revolver sin parar por 3 minutos",
+            "observacion": "Hasta que espese y hierva suavemente"
+          },
+          {
+            "orden": 3,
+            "accion": "Añadir huevo batido o cocido triturado",
+            "observacion": "Mezclar muy bien hasta integrar completamente"
+          },
+          {
+            "orden": 4,
+            "accion": "Verificar cocción del huevo",
+            "observacion": "Sin rastro de huevo crudo visible"
+          },
+          {
+            "orden": 5,
+            "accion": "Retirar del fuego y enfriar",
+            "observacion": "Servir tibio — verificar temperatura en muñeca"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 142,
+          "proteinasG": 7.8,
+          "carbohidratosG": 18.2,
+          "grasasG": 4.1,
+          "hierroMg": 1.4,
+          "calcioMg": 52,
+          "fibraG": 2.1,
+          "sodioMg": 48
+        },
+        "conservaciones": [
+          {
+            "metodoId": "refrigerado",
+            "duracionDias": 3,
+            "nota": "No es apta para congelar — el huevo cocido pierde textura y seguridad alimentaria al descongelarse. Se prepara fresca en 10 minutos."
+          }
+        ],
+        "advertencia": "Introducir el huevo solo si el pediatra ya lo autorizó. Comenzar siempre con yema cocida antes de introducir el huevo completo.\n\n💡 El funche opcional espesa la avena sin alterar el sabor y aporta energía extra — ideal para los días de mayor actividad del bebé.",
+        "tip": "El funche opcional espesa la avena sin alterar el sabor y aporta energía extra — ideal para los días de mayor actividad del bebé."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "10 minutos es todo lo que necesitas para este desayuno. Tú puedes, mamá — y tu bebé lo agradece con cada cucharada. ☀️",
+    "alergenosInferidos": [
+      "gluten",
+      "huevo",
+      "lacteos"
+    ],
+    "warnings": [
+      "[E1-H1-R1] Sin rendimiento (🍽)"
+    ],
+    "preparacionFresca": true
+  },
+  {
+    "id": "papilla-de-pollo-manzana-y-avena",
+    "titulo": "Papilla de Pollo, Manzana y Avena",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R1"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R1",
+        "textura": "Seda fina y homogénea. Cae lenta de la cuchara. Sin grumos ni hilos de carne.",
+        "porcion": "90 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 90
+        },
+        "texturaObjetivo": "Seda fina y homogénea. Cae lenta de la cuchara. Sin grumos ni hilos de carne.",
+        "tiempoMin": 30,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐manzanas-grandes",
+            "cantidad": 4,
+            "unidad": "unidades",
+            "nota": "4 unidades"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-avena",
+            "cantidad": 200,
+            "unidad": "g",
+            "nota": "200g"
+          },
+          {
+            "ingrediente_id": "⭐agua-de-coccion-de-avena",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Hornear las manzanas sin semillas",
+            "observacion": "Retirar la piel una vez horneadas"
+          },
+          {
+            "orden": 1,
+            "accion": "Cocinar el pollo al vapor con la avena",
+            "observacion": "Usar el agua de cocción de la avena"
+          },
+          {
+            "orden": 2,
+            "accion": "Licuar todo a alta potencia",
+            "observacion": "Añadir agua hasta obtener textura sedosa"
+          },
+          {
+            "orden": 3,
+            "accion": "Verificar textura",
+            "observacion": "Sin grumos ni hilo de carne"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 118,
+          "proteinasG": 9.2,
+          "carbohidratosG": 14.5,
+          "grasasG": 2.1,
+          "hierroMg": 0.9,
+          "calcioMg": 18,
+          "fibraG": 1.4,
+          "sodioMg": 35
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Verter en cubiteras de silicona. Congelar 2 horas. Desmoldar y guardar en bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "No debe quedar ningún grumo ni hilo de carne. Pasar por colador fino si es necesario antes de porcionar.\n\n💡 Hornea las manzanas sin azúcar — la caramelización natural endulza la papilla y estimula el paladar del bebé sin aditivos.",
+        "tip": "Hornea las manzanas sin azúcar — la caramelización natural endulza la papilla y estimula el paladar del bebé sin aditivos."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Cada cucharada de esta papilla es el primer \"te quiero\" que le das a tu bebé a través de la comida. Cocinar con amor se nota — y tu bebé lo siente. 🌿",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "bastones-de-pollo-y-camote",
+    "titulo": "Bastones de Pollo y Camote",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R2"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R2",
+        "textura": "Bastón firme por fuera para sostener con la mano entera, muy blando por dentro. Se deshace con presión suave de las encías.",
+        "porcion": "100 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 100
+        },
+        "texturaObjetivo": "Bastón firme por fuera para sostener con la mano entera, muy blando por dentro. Se deshace con presión suave de las encías.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido-crudo",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐camote-cocido-sin-piel",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐papel-vegetal",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el camote y hacer puré",
+            "observacion": "Sin piel, completamente frío antes de mezclar"
+          },
+          {
+            "orden": 1,
+            "accion": "Mezclar pollo molido con puré de camote",
+            "observacion": "Integrar hasta forma masa uniforme"
+          },
+          {
+            "orden": 2,
+            "accion": "Moldear bastones",
+            "observacion": "Tamaño: dos dedos adultos de largo y grosor"
+          },
+          {
+            "orden": 3,
+            "accion": "Colocar en bandeja con papel vegetal",
+            "observacion": "Separados entre sí"
+          },
+          {
+            "orden": 4,
+            "accion": "Hornear a 180°C por 18 minutos",
+            "observacion": "Suaves por dentro — no deben dorarse"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar textura",
+            "observacion": "Se deshacen con presión suave del dedo"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 112,
+          "proteinasG": 10.8,
+          "carbohidratosG": 11.2,
+          "grasasG": 2.4,
+          "hierroMg": 1.1,
+          "calcioMg": 22,
+          "fibraG": 1.8,
+          "sodioMg": 38
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: bastones separados en bandeja con papel vegetal. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El camote debe estar completamente frío antes de mezclarlo con el pollo crudo. Mezclar caliente puede iniciar cocción parcial desigual.\n\n💡 El camote actúa como aglutinante natural — no necesitas huevo ni harina. Cuanto más seco el puré, más firme y fácil de agarrar.",
+        "tip": "El camote actúa como aglutinante natural — no necesitas huevo ni harina. Cuanto más seco el puré, más firme y fácil de agarrar."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Imagina su carita cuando agarra este bastón por primera vez. Tú lo hiciste con tus manos — eso es lo más nutritivo de todo. 🍠",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "crema-de-pollo-zapallo-y-zanahoria",
+    "titulo": "Crema de Pollo, Zapallo y Zanahoria",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R3"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R3",
+        "textura": "Crema completamente sedosa color dorado intenso. Sin hilo de carne ni fragmento de vegetal visible. Cae lenta de la cuchara.",
+        "porcion": "120 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 120
+        },
+        "texturaObjetivo": "Crema completamente sedosa color dorado intenso. Sin hilo de carne ni fragmento de vegetal visible. Cae lenta de la cuchara.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-pechuga-o-muslo-deshuesado",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐zapallo-limpio-sin-semillas",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐zanahorias",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐agua-de-coccion",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Trocear el pollo y las verduras",
+            "observacion": "Trozos medianos para cocción uniforme"
+          },
+          {
+            "orden": 1,
+            "accion": "Cocinar juntos con poca agua o al vapor",
+            "observacion": "Hasta que la zanahoria esté completamente tierna"
+          },
+          {
+            "orden": 2,
+            "accion": "Procesar con mixer a máxima potencia",
+            "observacion": "Incluir agua de cocción para regular consistencia"
+          },
+          {
+            "orden": 3,
+            "accion": "Verificar que no quede hilo de carne ni grumo",
+            "observacion": "Pasar por colador fino si es necesario"
+          },
+          {
+            "orden": 4,
+            "accion": "Ajustar consistencia",
+            "observacion": "Añadir agua hasta que caiga lenta de la cuchara"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 105,
+          "proteinasG": 9.6,
+          "carbohidratosG": 10.2,
+          "grasasG": 2.3,
+          "hierroMg": 0.8,
+          "calcioMg": 28,
+          "fibraG": 1.9,
+          "sodioMg": 42
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Porcionar en tarritos dejando 1 cm libre antes de la tapa. Etiquetar con nombre y fecha. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "No uses papa blanca — se vuelve arenosa y suelta agua al descongelarse. El zapallo y la zanahoria congelan perfecto.\n\n💡 El zapallo es el espesante natural. Si quieres textura más densa, aumenta la proporción de zapallo y reduce el agua al procesar.",
+        "tip": "El zapallo es el espesante natural. Si quieres textura más densa, aumenta la proporción de zapallo y reduce el agua al procesar."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Este dorado que ves en la olla es betacaroteno puro — salud real que tú preparaste para tu bebé esta noche. Qué regalo más hermoso. 🌟",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "papilla-de-pollo-zanahoria-y-avena",
+    "titulo": "Papilla de Pollo, Zanahoria y Avena",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R4"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R4",
+        "textura": "Papilla densa color naranja suave. Completamente lisa y homogénea. Cae lenta de la cuchara formando un hilo denso y uniforme.",
+        "porcion": "90 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 90
+        },
+        "texturaObjetivo": "Papilla densa color naranja suave. Completamente lisa y homogénea. Cae lenta de la cuchara formando un hilo denso y uniforme.",
+        "tiempoMin": 30,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐zanahorias",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-avena",
+            "cantidad": 200,
+            "unidad": "g",
+            "nota": "200g"
+          },
+          {
+            "ingrediente_id": "⭐agua-de-coccion",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el pollo y la zanahoria juntos al vapor",
+            "observacion": "Hasta que la zanahoria esté completamente tierna"
+          },
+          {
+            "orden": 1,
+            "accion": "Hidratar la avena con agua de cocción",
+            "observacion": "Dejar reposar 5 minutos hasta ablandar"
+          },
+          {
+            "orden": 2,
+            "accion": "Licuar pollo, zanahoria y avena hidratada",
+            "observacion": "Añadir agua de cocción para regular consistencia"
+          },
+          {
+            "orden": 3,
+            "accion": "Verificar textura",
+            "observacion": "Sin grumos ni hilos — completamente sedosa"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 115,
+          "proteinasG": 9.4,
+          "carbohidratosG": 13.8,
+          "grasasG": 2,
+          "hierroMg": 1.2,
+          "calcioMg": 24,
+          "fibraG": 1.6,
+          "sodioMg": 36
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Verter en cubiteras de silicona. Congelar 2 horas. Desmoldar y guardar en bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "La zanahoria debe estar completamente tierna antes de licuar. Verificar pinchando con tenedor antes de procesar.\n\n💡 La zanahoria aporta dulzor natural que hace esta papilla muy aceptada por bebés que rechazan sabores neutros.",
+        "tip": "La zanahoria aporta dulzor natural que hace esta papilla muy aceptada por bebés que rechazan sabores neutros."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "La zanahoria naranja brillante en esta papilla es puro amor convertido en betacaroteno. Cada porción congela el cuidado que sientes hoy. 🥕",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "pure-proteico-de-pollo-lentejas-y-zapallo",
+    "titulo": "Puré Proteico de Pollo, Lentejas y Zapallo",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R5"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R5",
+        "textura": "Puré denso color amarillo dorado. Sin fragmentos de piel ni hilos de carne. Más espeso que una papilla — se sostiene en la cuchara.",
+        "porcion": "100 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 100
+        },
+        "texturaObjetivo": "Puré denso color amarillo dorado. Sin fragmentos de piel ni hilos de carne. Más espeso que una papilla — se sostiene en la cuchara.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐lentejas-rojas-o-sin-piel",
+            "cantidad": 400,
+            "unidad": "g",
+            "nota": "400g"
+          },
+          {
+            "ingrediente_id": "⭐zapallo-limpio-sin-semillas",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐caldo-casero-de-verduras-sin-sal",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Remojar las lentejas 30 minutos antes de cocinar",
+            "observacion": "Mejora la digestibilidad"
+          },
+          {
+            "orden": 1,
+            "accion": "Cocer lentejas en agua abundante",
+            "observacion": "Las rojas se deshacen solas — ideal para esta etapa"
+          },
+          {
+            "orden": 2,
+            "accion": "Cocer pollo y zapallo juntos al vapor",
+            "observacion": "Hasta que el zapallo esté completamente tierno"
+          },
+          {
+            "orden": 3,
+            "accion": "Licuar todo a alta potencia",
+            "observacion": "Añadir caldo de verduras para regular consistencia"
+          },
+          {
+            "orden": 4,
+            "accion": "Colar la mezcla procesada",
+            "observacion": "Eliminar cualquier fragmento de piel de lenteja"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar textura final",
+            "observacion": "Puré denso, cremoso y completamente homogéneo"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 128,
+          "proteinasG": 12.4,
+          "carbohidratosG": 14.1,
+          "grasasG": 2.2,
+          "hierroMg": 2.1,
+          "calcioMg": 31,
+          "fibraG": 2.8,
+          "sodioMg": 29
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Porcionar en tarritos dejando 1 cm libre. Etiquetar con nombre y fecha. Descongelar en heladera la noche anterior. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Usar siempre lentejas rojas o sin piel — las verdes o pardas pueden dejar fragmentos duros incluso después de procesar.\n\n💡 Este puré es el más completo nutricionalmente de Etapa 1: proteína animal, proteína vegetal y betacaroteno en una sola porción.",
+        "tip": "Este puré es el más completo nutricionalmente de Etapa 1: proteína animal, proteína vegetal y betacaroteno en una sola porción."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Proteína de pollo, hierro de lentejas, vitaminas del zapallo — todo en una cucharada. Esta es la ciencia del amor bien aplicado. 💛",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "crema-de-pollo-camote-y-zanahoria",
+    "titulo": "Crema de Pollo, Camote y Zanahoria",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R6"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R6",
+        "textura": "Crema sedosa color naranja intenso. Más dulce que la Crema de Zapallo — el camote aporta dulzor natural pronunciado.",
+        "porcion": "120 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 120
+        },
+        "texturaObjetivo": "Crema sedosa color naranja intenso. Más dulce que la Crema de Zapallo — el camote aporta dulzor natural pronunciado.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-pechuga-o-muslo-deshuesado",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐camote-sin-piel",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐zanahorias",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐agua-de-coccion",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Trocear el pollo, camote y zanahoria en trozos medianos",
+            "observacion": "Tamaño parejo para cocción uniforme"
+          },
+          {
+            "orden": 1,
+            "accion": "Cocinar juntos en olla con poca agua o al vapor",
+            "observacion": "Hasta que el camote y la zanahoria estén tiernos"
+          },
+          {
+            "orden": 2,
+            "accion": "Procesar con mixer a máxima potencia",
+            "observacion": "Incluir agua de cocción para regular consistencia"
+          },
+          {
+            "orden": 3,
+            "accion": "Verificar que no quede hilo de carne ni grumo",
+            "observacion": "Pasar por colador fino si es necesario"
+          },
+          {
+            "orden": 4,
+            "accion": "Ajustar consistencia",
+            "observacion": "Añadir agua hasta que caiga lenta de la cuchara"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 109,
+          "proteinasG": 9.8,
+          "carbohidratosG": 11.8,
+          "grasasG": 2.2,
+          "hierroMg": 0.9,
+          "calcioMg": 25,
+          "fibraG": 2,
+          "sodioMg": 40
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Porcionar en tarritos dejando 1 cm libre. Etiquetar con nombre y fecha. Descongelar en heladera la noche anterior. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El camote espesa más que el zapallo al congelarse. Si al recalentar queda muy densa, añadir agua de cocción poco a poco — nunca de golpe.\n\n💡 Esta es la versión más dulce de las cenas de Etapa 1 — ideal para bebés que aún prefieren sabores suaves similares a la leche materna.",
+        "tip": "Esta es la versión más dulce de las cenas de Etapa 1 — ideal para bebés que aún prefieren sabores suaves similares a la leche materna."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "El naranja intenso de esta crema ilumina el plato igual que tú iluminas el día de tu bebé. Que duerma bien esta noche. 🌙",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "funche-de-pollo-con-leche",
+    "titulo": "Funche de Pollo con Leche",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R7"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R7",
+        "textura": "Masa densa y sedosa sin grumos. El pollo procesado se integra completamente — no debe percibirse como trozo separado.",
+        "porcion": "",
+        "rendimiento": null,
+        "texturaObjetivo": "Masa densa y sedosa sin grumos. El pollo procesado se integra completamente — no debe percibirse como trozo separado.",
+        "tiempoMin": 15,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-procesada-muy-fina",
+            "cantidad": 50,
+            "unidad": "g",
+            "nota": "50g"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "cantidad": 3,
+            "unidad": "cucharadas",
+            "nota": "3 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐leche-materna-formula-o-agua",
+            "cantidad": null,
+            "unidad": null,
+            "nota": "½ taza"
+          },
+          {
+            "ingrediente_id": "⭐agua-de-coccion-del-pollo",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocinar la pechuga hervida y reservar caldo",
+            "observacion": "Reservar el agua de cocción sin sal"
+          },
+          {
+            "orden": 1,
+            "accion": "Procesar el pollo cocido a máxima potencia",
+            "observacion": "Textura casi de pasta — sin hilos visibles"
+          },
+          {
+            "orden": 2,
+            "accion": "Calentar la leche o agua en olla pequeña",
+            "observacion": "Fuego medio constante"
+          },
+          {
+            "orden": 3,
+            "accion": "Agregar harina de maíz en forma de lluvia",
+            "observacion": "Revolver sin parar mientras se agrega"
+          },
+          {
+            "orden": 4,
+            "accion": "Cocinar 3 minutos revolviendo constantemente",
+            "observacion": "Hasta que espese y hierva suavemente"
+          },
+          {
+            "orden": 5,
+            "accion": "Añadir pollo procesado y mezclar bien",
+            "observacion": "Retirar del fuego y enfriar a temperatura tibia"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 138,
+          "proteinasG": 8.4,
+          "carbohidratosG": 19.6,
+          "grasasG": 2.8,
+          "hierroMg": 0.7,
+          "calcioMg": 68,
+          "fibraG": 0.8,
+          "sodioMg": 44
+        },
+        "conservaciones": [
+          {
+            "metodoId": "refrigerado",
+            "duracionDias": 3,
+            "nota": "No es apta para congelar — la harina de maíz cocida pierde textura al descongelarse. Se prepara fresca en 15 minutos."
+          }
+        ],
+        "advertencia": "Agregar la harina de maíz siempre en forma de lluvia revolviendo sin parar — si se agrega toda de golpe forma grumos que no se deshacen.\n\n💡 Usa el agua de cocción del pollo en lugar de agua corriente — aporta sabor natural sin necesidad de sal ni condimentos adicionales.",
+        "tip": "Usa el agua de cocción del pollo en lugar de agua corriente — aporta sabor natural sin necesidad de sal ni condimentos adicionales."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "15 minutos. Eso es todo. Y en ese tiempo acabas de preparar uno de los desayunos más nutritivos que tu bebé va a comer hoy. Eres increíble. 🌽",
+    "alergenosInferidos": [
+      "gluten",
+      "lacteos"
+    ],
+    "warnings": [
+      "[E1-P1-R7] Sin rendimiento (🍽)"
+    ],
+    "preparacionFresca": true
+  },
+  {
+    "id": "bollitos-de-maiz-con-pollo",
+    "titulo": "Bollitos de Maíz con Pollo",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E1-P1-R8",
+      "E2-P1-R7",
+      "E3-P1-R6"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-1": {
+        "codigo": "E1-P1-R8",
+        "textura": "Bollito firme por fuera para sostener con la mano entera, completamente blando y húmedo por dentro. El pollo se integra totalmente a la masa.",
+        "porcion": "100 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 100
+        },
+        "texturaObjetivo": "Bollito firme por fuera para sostener con la mano entera, completamente blando y húmedo por dentro. El pollo se integra totalmente a la masa.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-procesada-muy-fina",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "cantidad": 800,
+            "unidad": "g",
+            "nota": "800g"
+          },
+          {
+            "ingrediente_id": "⭐agua-tibia-o-caldo-de-pollo-sin-sal",
+            "cantidad": 800,
+            "unidad": "ml",
+            "nota": "800ml"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 3,
+            "unidad": "cucharaditas",
+            "nota": "3 cucharaditas"
+          },
+          {
+            "ingrediente_id": "⭐cebolla-ajo-o-cilantro-licuado-opcional",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocinar la pechuga hervida y reservar caldo",
+            "observacion": "Sin sal"
+          },
+          {
+            "orden": 1,
+            "accion": "Procesar el pollo cocido a máxima potencia",
+            "observacion": "Sin hilos — textura casi de pasta"
+          },
+          {
+            "orden": 2,
+            "accion": "Verter caldo en bol con aceite y condimentos opcionales",
+            "observacion": "Mezclar antes de agregar la harina"
+          },
+          {
+            "orden": 3,
+            "accion": "Agregar harina de maíz poco a poco",
+            "observacion": "Integrar con los dedos hasta masa homogénea"
+          },
+          {
+            "orden": 4,
+            "accion": "Añadir pollo procesado a la masa",
+            "observacion": "Amasar 2 minutos hasta textura suave y compacta"
+          },
+          {
+            "orden": 5,
+            "accion": "Formar bollitos del tamaño de un dedo adulto",
+            "observacion": "Formato cilíndrico — agarre palmar fácil"
+          },
+          {
+            "orden": 6,
+            "accion": "Cocinar al vapor tapado 15 a 20 minutos",
+            "observacion": "Opción hervidos: envolver en papel vegetal 15 min"
+          },
+          {
+            "orden": 7,
+            "accion": "Dejar reposar 5 minutos antes de servir",
+            "observacion": "Toman consistencia al enfriarse"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 132,
+          "proteinasG": 10.2,
+          "carbohidratosG": 16.4,
+          "grasasG": 2.6,
+          "hierroMg": 1,
+          "calcioMg": 19,
+          "fibraG": 1.2,
+          "sodioMg": 32
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: bollitos cocidos y fríos separados en bandeja. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El pollo debe procesarse hasta casi textura de pasta — sin ningún hilo largo. Los hilos en bebés de 6 a 9 meses pueden causar arcadas.\n\n💡 Usa el caldo de cocción del pollo en lugar de agua — aporta sabor profundo sin necesidad de sal ni condimentos adicionales.",
+        "tip": "Usa el caldo de cocción del pollo en lugar de agua — aporta sabor profundo sin necesidad de sal ni condimentos adicionales."
+      },
+      "etapa-2": {
+        "codigo": "E2-P1-R7",
+        "textura": "Bollito pequeño tamaño cereza con exterior firme y centro blando y húmedo. El pollo desmechado aporta textura levemente fibrosa.",
+        "porcion": "130 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 130
+        },
+        "texturaObjetivo": "Bollito pequeño tamaño cereza con exterior firme y centro blando y húmedo. El pollo desmechado aporta textura levemente fibrosa.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-desmechada-muy-fina",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "cantidad": 800,
+            "unidad": "g",
+            "nota": "800g"
+          },
+          {
+            "ingrediente_id": "⭐agua-tibia-o-caldo-de-pollo-sin-sal",
+            "cantidad": 800,
+            "unidad": "ml",
+            "nota": "800ml"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 3,
+            "unidad": "cucharaditas",
+            "nota": "3 cucharaditas"
+          },
+          {
+            "ingrediente_id": "⭐cebolla-ajo-o-cilantro-licuado-opcional",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocinar la pechuga hervida y reservar caldo",
+            "observacion": "Sin sal"
+          },
+          {
+            "orden": 1,
+            "accion": "Desmechar el pollo cocido muy finamente a cuchillo",
+            "observacion": "Hilos cortos y finos — no procesar completamente"
+          },
+          {
+            "orden": 2,
+            "accion": "Verter caldo en bol con aceite y condimentos opcionales",
+            "observacion": "Mezclar antes de agregar la harina"
+          },
+          {
+            "orden": 3,
+            "accion": "Agregar harina de maíz poco a poco mezclando con dedos",
+            "observacion": "Hasta masa homogénea"
+          },
+          {
+            "orden": 4,
+            "accion": "Añadir pollo desmechado y amasar 2 minutos",
+            "observacion": "Hasta textura suave y compacta"
+          },
+          {
+            "orden": 5,
+            "accion": "Formar bollitos tamaño cereza grande",
+            "observacion": "Redondos u ovalados — tamaño perfecto para pinza"
+          },
+          {
+            "orden": 6,
+            "accion": "Cocinar al vapor tapado 15 a 20 minutos",
+            "observacion": "Opción hervidos: envolver en papel vegetal 15 min"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 136,
+          "proteinasG": 10.8,
+          "carbohidratosG": 16.8,
+          "grasasG": 2.8,
+          "hierroMg": 1.1,
+          "calcioMg": 20,
+          "fibraG": 1.3,
+          "sodioMg": 34
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: bollitos cocidos y fríos separados en bandeja. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El tamaño cereza es crítico — un bollito más grande representa riesgo de atragantamiento. Usar cuchara de postre para porcionar uniformemente.\n\n💡 En Etapa 2 el bebé ya coordina la pinza — ofrece los bollitos en superficie plana y deja que los tome solo. Motricidad fina mientras come.",
+        "tip": "En Etapa 2 el bebé ya coordina la pinza — ofrece los bollitos en superficie plana y deja que los tome solo. Motricidad fina mientras come."
+      },
+      "etapa-3": {
+        "codigo": "E3-P1-R6",
+        "textura": "Bollito firme y compacto. Las tiras de pollo son perceptibles al morder y ejercitan activamente la masticación.",
+        "porcion": "200 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 200
+        },
+        "texturaObjetivo": "Bollito firme y compacto. Las tiras de pollo son perceptibles al morder y ejercitan activamente la masticación.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-desmechada-en-tiras-medianas",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐caldo-casero-de-pollo-sin-sal",
+            "cantidad": 1,
+            "unidad": "litro",
+            "nota": "1 litro"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 3,
+            "unidad": "cucharaditas",
+            "nota": "3 cucharaditas"
+          },
+          {
+            "ingrediente_id": "⭐pimenton-dulce-o-cilantro-fresco-opcional",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocinar la pechuga hervida y reservar caldo",
+            "observacion": "Sin sal"
+          },
+          {
+            "orden": 1,
+            "accion": "Desmechar el pollo en tiras medianas",
+            "observacion": "Las tiras ejercitan la masticación en desarrollo"
+          },
+          {
+            "orden": 2,
+            "accion": "Calentar el caldo con aceite y condimentos opcionales",
+            "observacion": "Mezclar antes de agregar la harina"
+          },
+          {
+            "orden": 3,
+            "accion": "Agregar harina de maíz poco a poco mezclando con dedos",
+            "observacion": "Hasta masa homogénea y compacta"
+          },
+          {
+            "orden": 4,
+            "accion": "Añadir pollo desmechado en tiras a la masa",
+            "observacion": "Amasar 2 minutos integrando bien las tiras"
+          },
+          {
+            "orden": 5,
+            "accion": "Formar bollitos medianos del tamaño de un huevo pequeño",
+            "observacion": "Más grandes que Etapa 2 — el niño ya puede morder"
+          },
+          {
+            "orden": 6,
+            "accion": "Cocinar al vapor tapado 20 minutos",
+            "observacion": "Opción hervidos: envolver en papel vegetal 15 min"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 208,
+          "proteinasG": 16.4,
+          "carbohidratosG": 22.6,
+          "grasasG": 4.4,
+          "hierroMg": 1.8,
+          "calcioMg": 24,
+          "fibraG": 1.6,
+          "sodioMg": 36
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: bollitos fríos separados en bandeja. Congelar 2 horas. Calentar al vapor 8 min o en sartén tapada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "En Etapa 3 el pollo va en tiras medianas — no procesado. Este cambio es intencional: ejercita los músculos de la masticación.\n\n💡 El cilantro fresco integrado en la masa introduce al niño al perfil de sabor LATAM desde temprana edad.",
+        "tip": "El cilantro fresco integrado en la masa introduce al niño al perfil de sabor LATAM desde temprana edad."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Maíz, pollo y amor amasados con tus manos. Hay algo muy antiguo y hermoso en preparar así la comida de tu bebé. Que lo disfrute. 🫶",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "mini-albondigas-humedas-en-salsa-de-tomate-natural",
+    "titulo": "Mini Albóndigas Húmedas en Salsa de Tomate Natural",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R1"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R1",
+        "textura": "Albóndiga húmeda y blanda al morder. La salsa debe tener consistencia media — ni líquida ni espesa.",
+        "porcion": "150 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 150
+        },
+        "texturaObjetivo": "Albóndiga húmeda y blanda al morder. La salsa debe tener consistencia media — ni líquida ni espesa.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐caldo-de-verduras-casero-sin-sal",
+            "cantidad": 4,
+            "unidad": "cucharadas",
+            "nota": "4 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐tomates-maduros-licuados-y-colados",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐zapallo-cocido",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Mezclar pollo molido con caldo de verduras",
+            "observacion": "El caldo suaviza la masa — quedará húmeda al morder"
+          },
+          {
+            "orden": 1,
+            "accion": "Formar bolitas del tamaño de una cereza grande",
+            "observacion": "Aprox. 15g por unidad"
+          },
+          {
+            "orden": 2,
+            "accion": "Sellar albóndigas en sartén antiadherente",
+            "observacion": "2 minutos — solo para fijar la forma"
+          },
+          {
+            "orden": 3,
+            "accion": "Licuar tomates colados con zapallo cocido",
+            "observacion": "El zapallo endulza naturalmente la salsa"
+          },
+          {
+            "orden": 4,
+            "accion": "Cubrir las albóndigas con la salsa",
+            "observacion": "Fuego lento por 12 minutos hasta cocción completa"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar textura",
+            "observacion": "Deben desarmarse con presión suave del tenedor"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 148,
+          "proteinasG": 13.6,
+          "carbohidratosG": 12.4,
+          "grasasG": 4.2,
+          "hierroMg": 1.4,
+          "calcioMg": 29,
+          "fibraG": 2.2,
+          "sodioMg": 52
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "3 a 4 albóndigas por envase con un cucharón de salsa. La salsa protege la carne evitando que se reseque. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Nunca congeles las albóndigas sin salsa — sin protección líquida se resecan y quedan con textura arenosa al descongelarse.\n\n💡 El zapallo cumple dos funciones: endulza sin azúcar y espesa sin almidón. Cuanto más madura la calabaza, más rica la salsa.",
+        "tip": "El zapallo cumple dos funciones: endulza sin azúcar y espesa sin almidón. Cuanto más madura la calabaza, más rica la salsa."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Esas bolitas pequeñas que hiciste con tus manos son exactamente del tamaño perfecto para la pinza de tu bebé. Perfección que solo tú podías crear. 🍅",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "deditos-de-pollo-en-harina-de-maiz",
+    "titulo": "Deditos de Pollo en Harina de Maíz",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R2"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R2",
+        "textura": "Cubito de 5mm con exterior levemente crujiente y centro completamente blando y jugoso. Se deshace con presión suave de encías.",
+        "porcion": "130 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 130
+        },
+        "texturaObjetivo": "Cubito de 5mm con exterior levemente crujiente y centro completamente blando y jugoso. Se deshace con presión suave de encías.",
+        "tiempoMin": 25,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-picada-en-cubitos-de-5mm",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "cantidad": 200,
+            "unidad": "g",
+            "nota": "200g"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 3,
+            "unidad": "cucharadas",
+            "nota": "3 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          },
+          {
+            "ingrediente_id": "⭐oregano-seco-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Picar la pechuga en cubitos de exactamente 5mm",
+            "observacion": "El tamaño es clave para la seguridad en esta etapa"
+          },
+          {
+            "orden": 1,
+            "accion": "Mezclar harina de maíz con especias opcionales",
+            "observacion": "En bol plano para facilitar el rebozado"
+          },
+          {
+            "orden": 2,
+            "accion": "Pasar los cubitos por la harina de maíz",
+            "observacion": "Cubrir completamente cada pieza"
+          },
+          {
+            "orden": 3,
+            "accion": "Calentar aceite en sartén a fuego medio",
+            "observacion": "El aceite debe estar caliente antes de agregar el pollo"
+          },
+          {
+            "orden": 4,
+            "accion": "Cocinar 3 minutos por cada lado",
+            "observacion": "Hasta dorar levemente — verificar cocción por dentro"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar textura interior",
+            "observacion": "Debe desarmarse con presión suave del dedo"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 156,
+          "proteinasG": 14.2,
+          "carbohidratosG": 13.8,
+          "grasasG": 4.8,
+          "hierroMg": 1.2,
+          "calcioMg": 16,
+          "fibraG": 0.9,
+          "sodioMg": 44
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: cubitos cocidos y fríos separados en bandeja. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El tamaño de 5mm es crítico — un cubito más grande representa riesgo de atragantamiento. Usar picador de alimentos para tamaño uniforme.\n\n💡 Hornear en freidora de aire a 180°C por 10 minutos es la opción más eficiente para el día de batch cooking.",
+        "tip": "Hornear en freidora de aire a 180°C por 10 minutos es la opción más eficiente para el día de batch cooking."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Esa manita pequeña agarrando un dedito de pollo es uno de los momentos más tiernos de esta etapa. Tú hiciste esto posible. ✨",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "mini-muffins-de-pollo-y-espinaca",
+    "titulo": "Mini Muffins de Pollo y Espinaca",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R3"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R3",
+        "textura": "Mini muffin esponjoso y húmedo. La espinaca picada aporta puntos verdes que estimulan la exploración visual del bebé.",
+        "porcion": "130 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 130
+        },
+        "texturaObjetivo": "Mini muffin esponjoso y húmedo. La espinaca picada aporta puntos verdes que estimulan la exploración visual del bebé.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido-crudo",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐espinaca-fresca-picada-finamente-a-cuchillo",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 6,
+            "unidad": "unidades",
+            "nota": "6 unidades"
+          },
+          {
+            "ingrediente_id": "⭐avena-fina",
+            "cantidad": 150,
+            "unidad": "g",
+            "nota": "150g"
+          },
+          {
+            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Picar la espinaca finamente a cuchillo",
+            "observacion": "No licuar — debe quedar en trozos pequeños visibles"
+          },
+          {
+            "orden": 1,
+            "accion": "Batir los huevos en bol grande",
+            "observacion": "Base líquida que une todos los ingredientes"
+          },
+          {
+            "orden": 2,
+            "accion": "Añadir pollo molido, espinaca y avena",
+            "observacion": "Integrar todos los ingredientes"
+          },
+          {
+            "orden": 3,
+            "accion": "Rellenar moldes de mini muffins hasta ¾",
+            "observacion": "No llenar completamente — la mezcla sube al hornear"
+          },
+          {
+            "orden": 4,
+            "accion": "Hornear a 180°C por 20 minutos",
+            "observacion": "El centro debe estar firme al tocarlo"
+          },
+          {
+            "orden": 5,
+            "accion": "Dejar enfriar completamente en rejilla",
+            "observacion": "No desmoldar caliente — se desarman"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 144,
+          "proteinasG": 12.8,
+          "carbohidratosG": 11.6,
+          "grasasG": 4.6,
+          "hierroMg": 2.4,
+          "calcioMg": 58,
+          "fibraG": 1.8,
+          "sodioMg": 62
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: muffins fríos separados en bandeja. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "La espinaca debe picarse a cuchillo — nunca licuarse. La textura picada estimula las encías y la masticación en desarrollo.\n\n💡 Prepara doble tanda — del congelador al microondas en 20 segundos. El bebé puede sostenerlos solo mientras tú preparas el resto.",
+        "tip": "Prepara doble tanda — del congelador al microondas en 20 segundos. El bebé puede sostenerlos solo mientras tú preparas el resto."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Verde, esponjoso, nutritivo y listo en 20 segundos del congelador. Este es el desayuno que merece tu mañana. Lo lograste. 💚",
+    "alergenosInferidos": [
+      "gluten",
+      "huevo"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "panquequitos-de-pollo-y-manzana",
+    "titulo": "Panquequitos de Pollo y Manzana",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R4"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R4",
+        "textura": "Disco pequeño blando y húmedo con leve dorado exterior. El tamaño de 4 cm es perfecto para el agarre de pinza de esta etapa.",
+        "porcion": "130 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 130
+        },
+        "texturaObjetivo": "Disco pequeño blando y húmedo con leve dorado exterior. El tamaño de 4 cm es perfecto para el agarre de pinza de esta etapa.",
+        "tiempoMin": 25,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-cocido-procesado-fino",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐pure-de-manzana-natural-sin-azucar",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-garbanzo-o-avena-fina",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 4,
+            "unidad": "unidades",
+            "nota": "4 unidades"
+          },
+          {
+            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Hornear o cocer las manzanas sin piel ni semillas",
+            "observacion": "Hacer puré con tenedor — no licuar"
+          },
+          {
+            "orden": 1,
+            "accion": "Procesar el pollo cocido finamente",
+            "observacion": "Sin hilos visibles — textura de pasta fina"
+          },
+          {
+            "orden": 2,
+            "accion": "Mezclar puré de manzana, pollo, huevos y harina",
+            "observacion": "Hasta masa densa y homogénea"
+          },
+          {
+            "orden": 3,
+            "accion": "Calentar sartén antiadherente a fuego medio",
+            "observacion": "Sin aceite o gotita mínima"
+          },
+          {
+            "orden": 4,
+            "accion": "Verter cucharadas formando discos de 4 cm",
+            "observacion": "Tamaño perfecto para agarre de pinza"
+          },
+          {
+            "orden": 5,
+            "accion": "Cocinar 2 minutos por lado",
+            "observacion": "Voltear cuando aparezcan burbujas en la superficie"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 138,
+          "proteinasG": 11.4,
+          "carbohidratosG": 14.2,
+          "grasasG": 3.8,
+          "hierroMg": 1.6,
+          "calcioMg": 34,
+          "fibraG": 2,
+          "sodioMg": 48
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Apilar en grupos de 3 con papel vegetal entre cada uno. Guardar en bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El puré de manzana debe hacerse sin azúcar — la manzana horneada carameliza naturalmente y endulza sin aditivos.\n\n💡 La harina de garbanzo aporta proteína vegetal adicional y da textura más firme para que el bebé lo sostenga sin que se desarme.",
+        "tip": "La harina de garbanzo aporta proteína vegetal adicional y da textura más firme para que el bebé lo sostenga sin que se desarme."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Pollo y manzana en el mismo disco — lo dulce y lo nutritivo juntos. Así como tú: siempre encontrando el equilibrio perfecto. 🍎",
+    "alergenosInferidos": [
+      "gluten",
+      "huevo"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "nuggets-blandos-de-pollo-y-arroz",
+    "titulo": "Nuggets Blandos de Pollo y Arroz",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R5"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R5",
+        "textura": "Tortita con exterior levemente dorado y centro completamente blando. El arroz sobrecocido crea textura que se desarma con presión de encías.",
+        "porcion": "140 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 140
+        },
+        "texturaObjetivo": "Tortita con exterior levemente dorado y centro completamente blando. El arroz sobrecocido crea textura que se desarma con presión de encías.",
+        "tiempoMin": 30,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐arroz-blanco-o-integral-cocido-pasado-de-agua",
+            "cantidad": 600,
+            "unidad": "g",
+            "nota": "600g"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 2,
+            "unidad": "unidades",
+            "nota": "2 unidades"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 2,
+            "unidad": "cucharadas",
+            "nota": "2 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el arroz pasado de agua hasta que esté pegajoso",
+            "observacion": "El arroz sobrecocido actúa como aglutinante natural"
+          },
+          {
+            "orden": 1,
+            "accion": "Procesar el arroz cocido ligeramente",
+            "observacion": "Romper el grano sin convertir en pasta"
+          },
+          {
+            "orden": 2,
+            "accion": "Mezclar pollo molido, arroz y huevos batidos",
+            "observacion": "Integrar bien hasta obtener masa uniforme"
+          },
+          {
+            "orden": 3,
+            "accion": "Formar tortitas planas del tamaño de una galleta",
+            "observacion": "Grosor de 1 cm — ni muy delgadas ni muy gruesas"
+          },
+          {
+            "orden": 4,
+            "accion": "Cocinar en sartén con aceite 3 minutos por lado",
+            "observacion": "O en horno a 180°C por 12 minutos"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar textura interior",
+            "observacion": "Debe desarmarse con presión suave del dedo"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 152,
+          "proteinasG": 13.8,
+          "carbohidratosG": 13.4,
+          "grasasG": 4.4,
+          "hierroMg": 1.3,
+          "calcioMg": 22,
+          "fibraG": 0.6,
+          "sodioMg": 46
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: nuggets fríos separados en bandeja. Congelar 2 horas. Traspasar a bolsa hermética etiquetada. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El arroz debe estar sobrecocido y pegajoso — si quedó al dente, los nuggets no tendrán cohesión y se desarmarán en la sartén.\n\n💡 Alterna el sabor entre semanas: una pizca de cúrcuma o cilantro seco transforma esta base en un perfil de sabor completamente distinto.",
+        "tip": "Alterna el sabor entre semanas: una pizca de cúrcuma o cilantro seco transforma esta base en un perfil de sabor completamente distinto."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Arroz y pollo juntos en una tortita perfecta para la pinza de tu bebé. Sencillo, nutritivo y hecho con tus manos. Eso lo hace especial. 🌾",
+    "alergenosInferidos": [
+      "huevo"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "funche-de-pollo-con-verduras-chafadas",
+    "titulo": "Funche de Pollo con Verduras Chafadas",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E2-P1-R6"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-2": {
+        "codigo": "E2-P1-R6",
+        "textura": "Masa espesa con pequeños trozos de zapallo y zanahoria visibles. Los trozos estimulan las encías y la masticación en desarrollo.",
+        "porcion": "140 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 140
+        },
+        "texturaObjetivo": "Masa espesa con pequeños trozos de zapallo y zanahoria visibles. Los trozos estimulan las encías y la masticación en desarrollo.",
+        "tiempoMin": 30,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-cocido-desmechado-muy-fino",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "cantidad": 600,
+            "unidad": "g",
+            "nota": "600g"
+          },
+          {
+            "ingrediente_id": "⭐zapallo-cocido-chafado-con-tenedor",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐zanahoria-cocida-chafada-con-tenedor",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐caldo-casero-de-pollo-sin-sal",
+            "cantidad": 800,
+            "unidad": "ml",
+            "nota": "800ml"
+          },
+          {
+            "ingrediente_id": "⭐curcuma-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer zapallo y zanahoria hasta tiernos",
+            "observacion": "Chafar con tenedor — no licuar — trozos visibles"
+          },
+          {
+            "orden": 1,
+            "accion": "Desmechar el pollo cocido muy finamente",
+            "observacion": "Hilos cortos y finos — sin trozos largos"
+          },
+          {
+            "orden": 2,
+            "accion": "Calentar el caldo en olla mediana a fuego medio",
+            "observacion": "Añadir aceite de oliva y cúrcuma opcional"
+          },
+          {
+            "orden": 3,
+            "accion": "Agregar harina de maíz en forma de lluvia",
+            "observacion": "Revolver sin parar — nunca de golpe"
+          },
+          {
+            "orden": 4,
+            "accion": "Incorporar zapallo y zanahoria chafados",
+            "observacion": "Mezclar integrando los trozos en la masa"
+          },
+          {
+            "orden": 5,
+            "accion": "Añadir pollo desmechado y cocinar 3 minutos más",
+            "observacion": "Hasta que espese y se despegue de los bordes"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 146,
+          "proteinasG": 12.6,
+          "carbohidratosG": 17.2,
+          "grasasG": 3.4,
+          "hierroMg": 1.6,
+          "calcioMg": 34,
+          "fibraG": 2.4,
+          "sodioMg": 38
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Porcionar en tarritos tibios — se porciona más fácil antes de enfriarse. Dejar 1 cm libre. Etiquetar. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Las verduras deben chafarse con tenedor — nunca licuarse. Los trozos visibles estimulan encías y preparan para texturas de Etapa 3.\n\n💡 La cúrcuma da color amarillo intenso muy atractivo visualmente y aporta propiedades antiinflamatorias naturales para la dentición activa.",
+        "tip": "La cúrcuma da color amarillo intenso muy atractivo visualmente y aporta propiedades antiinflamatorias naturales para la dentición activa."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Maíz, pollo y verduras que tu bebé puede sentir con las encías. Estás entrenando su paladar para una vida de buenos sabores. 🌿",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "funche-de-huevo-con-harina-de-maiz-y-leche",
+    "titulo": "Funche de Huevo con Harina de Maíz y Leche",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-H1-R1"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-H1-R1",
+        "textura": "Masa espesa, cremosa y homogénea. Más densa que el funche de Etapa 1. El huevo integrado aporta proteína y textura más firme.",
+        "porcion": "",
+        "rendimiento": null,
+        "texturaObjetivo": "Masa espesa, cremosa y homogénea. Más densa que el funche de Etapa 1. El huevo integrado aporta proteína y textura más firme.",
+        "tiempoMin": 15,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "cantidad": 4,
+            "unidad": "cucharadas",
+            "nota": "4 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐leche-materna-formula-entera-o-vegetal",
+            "cantidad": 1,
+            "unidad": "taza",
+            "nota": "1 taza"
+          },
+          {
+            "ingrediente_id": "⭐huevo-completo-batido",
+            "cantidad": 1,
+            "unidad": "unidad",
+            "nota": "1 unidad"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 1,
+            "unidad": "cucharadita",
+            "nota": "1 cucharadita"
+          },
+          {
+            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Calentar la leche en ollita a fuego medio",
+            "observacion": "No hervir fuerte — fuego medio constante"
+          },
+          {
+            "orden": 1,
+            "accion": "Agregar aceite de oliva y canela opcional",
+            "observacion": "Integrar antes de añadir la harina"
+          },
+          {
+            "orden": 2,
+            "accion": "Incorporar harina de maíz en forma de lluvia",
+            "observacion": "Revolver sin parar — nunca de golpe"
+          },
+          {
+            "orden": 3,
+            "accion": "Cocinar 3 minutos revolviendo constantemente",
+            "observacion": "Hasta que espese y hierva suavemente"
+          },
+          {
+            "orden": 4,
+            "accion": "Bajar el fuego al mínimo y añadir huevo batido",
+            "observacion": "Mezclar muy vigorosamente para integrar completamente"
+          },
+          {
+            "orden": 5,
+            "accion": "Cocinar 2 minutos más revolviendo",
+            "observacion": "El huevo debe cocinarse completamente — sin rastro crudo"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 198,
+          "proteinasG": 9.8,
+          "carbohidratosG": 24.6,
+          "grasasG": 6.4,
+          "hierroMg": 2,
+          "calcioMg": 148,
+          "fibraG": 1.2,
+          "sodioMg": 82
+        },
+        "conservaciones": [
+          {
+            "metodoId": "refrigerado",
+            "duracionDias": 3,
+            "nota": "No es apta para congelar — el huevo cocido integrado en la masa de maíz pierde textura y seguridad alimentaria al descongelarse."
+          }
+        ],
+        "advertencia": "El huevo debe añadirse con el fuego al mínimo revolviendo muy vigorosamente — si el fuego está alto, se cocinará en grumos separados.\n\n💡 En Etapa 3 puedes usar leche entera de vaca si el pediatra ya la autorizó — aporta más grasa y calorías para el alto gasto energético.",
+        "tip": "En Etapa 3 puedes usar leche entera de vaca si el pediatra ya la autorizó — aporta más grasa y calorías para el alto gasto energético."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Maíz, huevo y leche en 15 minutos. Esta mañana tu niño desayuna como campeón — gracias a ti que te levantaste a hacerlo. ☀️",
+    "alergenosInferidos": [
+      "gluten",
+      "huevo",
+      "lacteos"
+    ],
+    "warnings": [
+      "[E3-H1-R1] Sin rendimiento (🍽)"
+    ],
+    "preparacionFresca": true
+  },
+  {
+    "id": "estofado-de-pollo-en-cubos-con-lentejas-y-zanahoria",
+    "titulo": "Estofado de Pollo en Cubos con Lentejas y Zanahoria",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R1"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R1",
+        "textura": "Guiso estructurado con trozos definidos de 1 cm. El pollo tierno se desarma con el tenedor. Las lentejas enteras aportan textura firme.",
+        "porcion": "230 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 230
+        },
+        "texturaObjetivo": "Guiso estructurado con trozos definidos de 1 cm. El pollo tierno se desarma con el tenedor. Las lentejas enteras aportan textura firme.",
+        "tiempoMin": 45,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-en-cubitos-de-1-cm",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐lentejas-cocidas-enteras",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐zanahoria-en-cubitos-pequenos",
+            "cantidad": 500,
+            "unidad": "g",
+            "nota": "500g"
+          },
+          {
+            "ingrediente_id": "⭐caldo-casero-de-verduras-sin-sal",
+            "cantidad": 1,
+            "unidad": "litro",
+            "nota": "1 litro"
+          },
+          {
+            "ingrediente_id": "⭐zapallo-rallado-espesante-natural",
+            "cantidad": null,
+            "unidad": "cn",
+            "nota": "c/n"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer las lentejas por separado",
+            "observacion": "Deben quedar enteras — no sobrecocinar"
+          },
+          {
+            "orden": 1,
+            "accion": "Sellar los cubitos de pollo en olla grande",
+            "observacion": "Fuego medio — dorar levemente por fuera"
+          },
+          {
+            "orden": 2,
+            "accion": "Agregar zanahoria en cubitos",
+            "observacion": "Saltear 2 minutos junto al pollo"
+          },
+          {
+            "orden": 3,
+            "accion": "Añadir lentejas y caldo",
+            "observacion": "Cubrir completamente todos los ingredientes"
+          },
+          {
+            "orden": 4,
+            "accion": "Agregar zapallo rallado",
+            "observacion": "Actúa como espesante natural de la salsa"
+          },
+          {
+            "orden": 5,
+            "accion": "Cocinar a fuego medio 20 minutos",
+            "observacion": "Hasta que la zanahoria esté tierna y la salsa espese"
+          },
+          {
+            "orden": 6,
+            "accion": "Verificar textura",
+            "observacion": "El pollo debe desarmarse con presión del tenedor"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 198,
+          "proteinasG": 18.4,
+          "carbohidratosG": 18.6,
+          "grasasG": 4.8,
+          "hierroMg": 3.2,
+          "calcioMg": 42,
+          "fibraG": 4.6,
+          "sodioMg": 58
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Dejar enfriar completamente. Porcionar en tápers. Etiquetar. Descongelar en heladera la noche anterior. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El pollo va en cubitos de exactamente 1 cm — más grande representa riesgo de atragantamiento incluso en esta etapa.\n\n💡 Este guiso es la transición a la mesa familiar — prepara sin sal y sirve la porción del bebé primero. Luego sazona para los adultos.",
+        "tip": "Este guiso es la transición a la mesa familiar — prepara sin sal y sirve la porción del bebé primero. Luego sazona para los adultos."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Este estofado podría estar en cualquier mesa familiar. Tu bebé ya come como todos. Llegaste hasta acá — y lo hiciste bien. 🫶",
+    "alergenosInferidos": [],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "deditos-de-pollo-crujientes-en-harina-de-maiz",
+    "titulo": "Deditos de Pollo Crujientes en Harina de Maíz",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R2"
+    ],
+    "tipoComida": "almuerzo",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R2",
+        "textura": "Tira firme con exterior crujiente y dorado. Interior jugoso y completamente cocido. El niño puede sostenerla y morderla con sus molares.",
+        "porcion": "200 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 200
+        },
+        "texturaObjetivo": "Tira firme con exterior crujiente y dorado. Interior jugoso y completamente cocido. El niño puede sostenerla y morderla con sus molares.",
+        "tiempoMin": 25,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-en-tiras-del-tamano-de-un-dedo-adulto",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 4,
+            "unidad": "cucharadas",
+            "nota": "4 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          },
+          {
+            "ingrediente_id": "⭐pimenton-dulce-o-paprika-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cortar la pechuga en tiras gruesas del tamaño de un dedo",
+            "observacion": "Facilita el agarre firme con la mano completa"
+          },
+          {
+            "orden": 1,
+            "accion": "Mezclar harina de maíz con especias opcionales",
+            "observacion": "Distribuir bien las especias en la harina"
+          },
+          {
+            "orden": 2,
+            "accion": "Pasar cada tira por la harina de maíz",
+            "observacion": "Presionar levemente para que la harina adhiera bien"
+          },
+          {
+            "orden": 3,
+            "accion": "Opción sartén: cocinar 3 a 4 minutos por lado",
+            "observacion": "Hasta dorar completamente por fuera"
+          },
+          {
+            "orden": 4,
+            "accion": "Opción horno a 180°C por 12 a 15 minutos",
+            "observacion": "Voltear a mitad de cocción para dorar parejo"
+          },
+          {
+            "orden": 5,
+            "accion": "Verificar cocción",
+            "observacion": "El centro debe estar completamente blanco — sin rosado"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 218,
+          "proteinasG": 19.6,
+          "carbohidratosG": 16.8,
+          "grasasG": 7.2,
+          "hierroMg": 1.4,
+          "calcioMg": 18,
+          "fibraG": 1,
+          "sodioMg": 52
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Método IQF: tiras frías separadas en bandeja. Congelar 2 horas. Calentar en horno o freidora de aire a 180°C 8 min. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Verificar siempre que el centro esté completamente cocido — cortar la tira más gruesa por la mitad para confirmar que no haya rosado interior.\n\n💡 Esta receta es perfecta para compartir en familia — prepara la misma tanda para todos y añade sal al plato de los adultos.",
+        "tip": "Esta receta es perfecta para compartir en familia — prepara la misma tanda para todos y añade sal al plato de los adultos."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Crujiente por fuera, jugoso por dentro — igual que los días de crianza: intensos en la superficie, llenos de ternura en el centro. 🌽",
+    "alergenosInferidos": [
+      "gluten"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "panqueques-de-pollo-y-platano",
+    "titulo": "Panqueques de Pollo y Plátano",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R3"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R3",
+        "textura": "Disco firme con estructura definida y leve dorado exterior. El plátano maduro mantiene la masa húmeda. Requiere masticación activa.",
+        "porcion": "180 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 180
+        },
+        "texturaObjetivo": "Disco firme con estructura definida y leve dorado exterior. El plátano maduro mantiene la masa húmeda. Requiere masticación activa.",
+        "tiempoMin": 25,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-cocido-desmechado-muy-fino",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐platanos-maduros",
+            "cantidad": 6,
+            "unidad": "unidades",
+            "nota": "6 unidades"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 6,
+            "unidad": "unidades",
+            "nota": "6 unidades"
+          },
+          {
+            "ingrediente_id": "⭐harina-de-avena",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Machacar los plátanos maduros con tenedor",
+            "observacion": "No licuar — deben quedar con algo de textura"
+          },
+          {
+            "orden": 1,
+            "accion": "Añadir huevos batidos al plátano machacado",
+            "observacion": "Integrar bien"
+          },
+          {
+            "orden": 2,
+            "accion": "Incorporar harina de avena y canela opcional",
+            "observacion": "Hasta masa densa y homogénea"
+          },
+          {
+            "orden": 3,
+            "accion": "Añadir pollo desmechado fino",
+            "observacion": "Mezclar vigorosamente hasta integrar"
+          },
+          {
+            "orden": 4,
+            "accion": "Calentar sartén antiadherente a fuego medio",
+            "observacion": "Sin aceite o gotita mínima"
+          },
+          {
+            "orden": 5,
+            "accion": "Verter cucharadas formando discos de 8 cm",
+            "observacion": "El niño puede sostenerlo y morderlo"
+          },
+          {
+            "orden": 6,
+            "accion": "Cocinar 2 minutos por lado",
+            "observacion": "Voltear cuando aparezcan burbujas en la superficie"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 188,
+          "proteinasG": 14.6,
+          "carbohidratosG": 22.4,
+          "grasasG": 4.2,
+          "hierroMg": 2.2,
+          "calcioMg": 38,
+          "fibraG": 2.8,
+          "sodioMg": 44
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Apilar en grupos de 3 con papel vegetal entre cada uno. Guardar en bolsa hermética. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Usar plátanos muy maduros — con manchas negras en la piel. Un plátano verde hace la masa más densa y difícil de masticar.\n\n💡 Prepara la misma masa para toda la familia haciendo los panqueques más grandes para los adultos. Una preparación, toda la familia desayuna igual.",
+        "tip": "Prepara la misma masa para toda la familia haciendo los panqueques más grandes para los adultos. Una preparación, toda la familia desayuna igual."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Plátano maduro, pollo, avena y amor mezclados con tus manos. Este desayuno habla de familia — y de ti. Que lo disfruten juntos. 🍌",
+    "alergenosInferidos": [
+      "gluten",
+      "huevo"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "mini-muffins-de-pollo-brocoli-y-queso",
+    "titulo": "Mini Muffins de Pollo, Brócoli y Queso",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R5"
+    ],
+    "tipoComida": "desayuno",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R5",
+        "textura": "Muffin firme con exterior levemente dorado. Los trozos de brócoli son perceptibles al morder y requieren masticación activa.",
+        "porcion": "180 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 180
+        },
+        "texturaObjetivo": "Muffin firme con exterior levemente dorado. Los trozos de brócoli son perceptibles al morder y requieren masticación activa.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido-o-picado-muy-fino",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐brocoli-cocido-al-vapor-arbolitos-picados",
+            "cantidad": 1,
+            "unidad": "brócoli grande",
+            "nota": "1 brócoli grande"
+          },
+          {
+            "ingrediente_id": "⭐queso-tierno-rallado-bajo-en-sal",
+            "cantidad": 200,
+            "unidad": "g",
+            "nota": "200g"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 4,
+            "unidad": "unidades",
+            "nota": "4 unidades"
+          },
+          {
+            "ingrediente_id": "⭐oregano-seco-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el brócoli al vapor 5 minutos",
+            "observacion": "Solo los arbolitos — conserva color verde y nutrientes"
+          },
+          {
+            "orden": 1,
+            "accion": "Picar el brócoli cocido en trozos de 5mm",
+            "observacion": "No licuar — los trozos aportan textura y color visual"
+          },
+          {
+            "orden": 2,
+            "accion": "Mezclar todos los ingredientes en tazón grande",
+            "observacion": "Pollo, brócoli, queso, huevos y especias opcionales"
+          },
+          {
+            "orden": 3,
+            "accion": "Engrasar moldes para muffins con aceite de oliva",
+            "observacion": "Moldes de silicona para facilitar el desmolde"
+          },
+          {
+            "orden": 4,
+            "accion": "Rellenar moldes hasta ¾ de capacidad",
+            "observacion": "No llenar completamente — la mezcla sube al hornear"
+          },
+          {
+            "orden": 5,
+            "accion": "Hornear a 180°C por 25 minutos",
+            "observacion": "Hasta que el queso esté levemente dorado y el centro firme"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 196,
+          "proteinasG": 17.2,
+          "carbohidratosG": 8.4,
+          "grasasG": 8.6,
+          "hierroMg": 2,
+          "calcioMg": 112,
+          "fibraG": 1.8,
+          "sodioMg": 118
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Envolver cada muffin individualmente en papel film. Guardar en bolsa hermética etiquetada. Calentar en horno a 180°C por 8 min. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Usar queso tierno bajo en sal — el sodio no debe superar 400mg por 100g. El queso curado tiene demasiado sodio para esta etapa.\n\n💡 El brócoli al vapor conserva más nutrientes que hervido. 5 minutos exactos — suficiente para ablandar sin destruir el color verde intenso.",
+        "tip": "El brócoli al vapor conserva más nutrientes que hervido. 5 minutos exactos — suficiente para ablandar sin destruir el color verde intenso."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Verde, dorado y lleno de proteína. Este muffin tiene todo lo que su cuerpo necesita para crecer fuerte. Tú lo sabes — y lo hiciste. 💪",
+    "alergenosInferidos": [
+      "huevo",
+      "lacteos"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "pastelitos-de-pollo-brocoli-y-queso-al-horno",
+    "titulo": "Pastelitos de Pollo, Brócoli y Queso al Horno",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R7"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R7",
+        "textura": "Pastelito firme con exterior dorado y centro húmedo. Los trozos de brócoli de 1 cm requieren masticación activa. El queso une todo.",
+        "porcion": "200 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 200
+        },
+        "texturaObjetivo": "Pastelito firme con exterior dorado y centro húmedo. Los trozos de brócoli de 1 cm requieren masticación activa. El queso une todo.",
+        "tiempoMin": 40,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pollo-molido-o-picado-en-cubitos-de-5mm",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐brocoli-cocido-al-vapor-arbolitos-picados",
+            "cantidad": 1,
+            "unidad": "brócoli grande",
+            "nota": "1 brócoli grande"
+          },
+          {
+            "ingrediente_id": "⭐queso-tierno-rallado-bajo-en-sal",
+            "cantidad": 200,
+            "unidad": "g",
+            "nota": "200g"
+          },
+          {
+            "ingrediente_id": "⭐huevos-batidos",
+            "cantidad": 4,
+            "unidad": "unidades",
+            "nota": "4 unidades"
+          },
+          {
+            "ingrediente_id": "⭐pimenton-dulce-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el brócoli al vapor 5 minutos",
+            "observacion": "Solo arbolitos — conserva color y nutrientes"
+          },
+          {
+            "orden": 1,
+            "accion": "Picar brócoli cocido en trozos de 1 cm",
+            "observacion": "Más grandes que los muffins — masticación activa"
+          },
+          {
+            "orden": 2,
+            "accion": "Mezclar todos los ingredientes en tazón grande",
+            "observacion": "Pollo, brócoli, queso, huevos y especias opcionales"
+          },
+          {
+            "orden": 3,
+            "accion": "Engrasar moldes para muffins con aceite de oliva",
+            "observacion": "Dar forma plana — más ancho que alto"
+          },
+          {
+            "orden": 4,
+            "accion": "Hornear a 180°C por 25 minutos",
+            "observacion": "Hasta que el queso dore levemente y el centro esté firme"
+          },
+          {
+            "orden": 5,
+            "accion": "Dejar enfriar completamente antes de desmoldar",
+            "observacion": "El queso necesita enfriarse para fijar la estructura"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 204,
+          "proteinasG": 18.4,
+          "carbohidratosG": 7.8,
+          "grasasG": 9.2,
+          "hierroMg": 2.2,
+          "calcioMg": 124,
+          "fibraG": 2,
+          "sodioMg": 122
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Envolver cada pastelito individualmente en papel film. Guardar en bolsa hermética. Calentar en horno a 180°C por 10 min. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "Usar queso tierno bajo en sal — el sodio no debe superar 400mg por 100g. Verificar siempre el etiquetado nutricional antes de comprar.\n\n💡 Esta cena es perfecta para compartir en familia — prepara la misma mezcla para todos en un molde grande tipo quiche. Cero desperdicio.",
+        "tip": "Esta cena es perfecta para compartir en familia — prepara la misma mezcla para todos en un molde grande tipo quiche. Cero desperdicio."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Pollo, brócoli y queso derretido — en familia. Esta cena no es solo comida: es el ensayo de la mesa que van a compartir por siempre. 🥦",
+    "alergenosInferidos": [
+      "huevo",
+      "lacteos"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  },
+  {
+    "id": "arroz-salteado-con-pollo-en-cubos-y-verduras",
+    "titulo": "Arroz Salteado con Pollo en Cubos y Verduras",
+    "coleccionIds": [
+      "bocaditos-de-reserva-pollo"
+    ],
+    "eje": "pollo",
+    "codigosFuente": [
+      "E3-P1-R8"
+    ],
+    "tipoComida": "cena",
+    "variantes": {
+      "etapa-3": {
+        "codigo": "E3-P1-R8",
+        "textura": "Arroz suelto con trozos definidos. Cubitos de pollo tiernos y jugosos. Cada ingrediente se percibe por separado al morder.",
+        "porcion": "200 g",
+        "rendimiento": {
+          "porciones": 30,
+          "gramosPorPorcion": 200
+        },
+        "texturaObjetivo": "Arroz suelto con trozos definidos. Cubitos de pollo tiernos y jugosos. Cada ingrediente se percibe por separado al morder.",
+        "tiempoMin": 35,
+        "ingredientes": [
+          {
+            "ingrediente_id": "⭐pechuga-de-pollo-en-cubitos-de-1-cm",
+            "cantidad": 1.5,
+            "unidad": "kg",
+            "nota": "1.5 kg"
+          },
+          {
+            "ingrediente_id": "⭐arroz-blanco-o-integral-cocido",
+            "cantidad": 1,
+            "unidad": "kg",
+            "nota": "1 kg"
+          },
+          {
+            "ingrediente_id": "⭐zanahoria-en-cubitos-pequenos-cocida",
+            "cantidad": 400,
+            "unidad": "g",
+            "nota": "400g"
+          },
+          {
+            "ingrediente_id": "⭐brocoli-cocido-al-vapor-en-arbolitos-pequenos",
+            "cantidad": 300,
+            "unidad": "g",
+            "nota": "300g"
+          },
+          {
+            "ingrediente_id": "⭐huevo-batido",
+            "cantidad": 2,
+            "unidad": "unidades",
+            "nota": "2 unidades"
+          },
+          {
+            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "cantidad": 3,
+            "unidad": "cucharadas",
+            "nota": "3 cucharadas"
+          },
+          {
+            "ingrediente_id": "⭐curcuma-en-polvo-opcional",
+            "cantidad": 1,
+            "unidad": "pizca",
+            "nota": "1 pizca"
+          }
+        ],
+        "pasos": [
+          {
+            "orden": 0,
+            "accion": "Cocer el arroz y dejar enfriar completamente",
+            "observacion": "El arroz frío saltea mejor — no se apelmazca"
+          },
+          {
+            "orden": 1,
+            "accion": "Cocer zanahoria y brócoli al vapor por separado",
+            "observacion": "Deben quedar tiernos pero con estructura"
+          },
+          {
+            "orden": 2,
+            "accion": "Calentar aceite en sartén grande a fuego medio-alto",
+            "observacion": "La sartén debe estar bien caliente antes de agregar"
+          },
+          {
+            "orden": 3,
+            "accion": "Sellar los cubitos de pollo hasta dorar por fuera",
+            "observacion": "3 minutos — verificar cocción completa por dentro"
+          },
+          {
+            "orden": 4,
+            "accion": "Añadir zanahoria y brócoli al sartén",
+            "observacion": "Saltear 2 minutos junto al pollo"
+          },
+          {
+            "orden": 5,
+            "accion": "Incorporar el arroz frío",
+            "observacion": "Mezclar bien integrando todos los ingredientes"
+          },
+          {
+            "orden": 6,
+            "accion": "Hacer espacio en el centro y añadir huevo batido",
+            "observacion": "Revolver hasta cocinar completamente antes de integrar"
+          }
+        ],
+        "nutrientes": {
+          "energiaKcal": 218,
+          "proteinasG": 19.2,
+          "carbohidratosG": 22.8,
+          "grasasG": 5.6,
+          "hierroMg": 2.4,
+          "calcioMg": 44,
+          "fibraG": 2.6,
+          "sodioMg": 56
+        },
+        "conservaciones": [
+          {
+            "metodoId": "congelado",
+            "duracionDias": 90,
+            "nota": "Dejar enfriar completamente. Porcionar en tápers. Etiquetar. Descongelar en heladera la noche anterior. Duración: 3 meses."
+          }
+        ],
+        "advertencia": "El pollo debe cortarse en cubitos de exactamente 1 cm — el tamaño correcto es crítico para la seguridad incluso en Etapa 3.\n\n💡 Prepara una olla grande para toda la familia omitiendo la sal. Apartas la porción del niño primero y sazonas el resto para los adultos.",
+        "tip": "Prepara una olla grande para toda la familia omitiendo la sal. Apartas la porción del niño primero y sazonas el resto para los adultos."
+      }
+    },
+    "vitaminas": [
+      "Vitamina A",
+      "Vitamina C",
+      "Hierro",
+      "Zinc"
+    ],
+    "vitaminasDetalle": [
+      {
+        "etiquetaId": "vitamina-a",
+        "nivel": "alta",
+        "beneficio": "Visión y crecimiento"
+      },
+      {
+        "etiquetaId": "vitamina-c",
+        "nivel": "media",
+        "beneficio": "Absorción de hierro"
+      },
+      {
+        "etiquetaId": "hierro",
+        "nivel": "media",
+        "beneficio": "Desarrollo cerebral"
+      },
+      {
+        "etiquetaId": "zinc",
+        "nivel": "media",
+        "beneficio": "Sistema inmune"
+      }
+    ],
+    "mensaje": "Arroz, pollo y verduras en el mismo plato que el resto de la familia. Tu bebé ya está en la mesa — y llegó acá gracias a ti. 🍚",
+    "alergenosInferidos": [
+      "huevo"
+    ],
+    "warnings": [],
+    "preparacionFresca": false
+  }
+]

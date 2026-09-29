@@ -6,6 +6,7 @@ next-env.d.ts
 *.log
 data/.backup-*/
 data/backups/
+data/import/*/raw/
 tsconfig.tsbuildinfo
 docs/
 .firebase/
