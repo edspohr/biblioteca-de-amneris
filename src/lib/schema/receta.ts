@@ -107,6 +107,12 @@ export const recetaSchema = z.object({
   advertencia: z.string().nullable().optional(),
   tip: z.string().nullable().optional(),
   mensaje: z.string().nullable().optional(),
+  // Day the recipe joined the library (YYYY-MM-DD). Drives "Novedades".
+  publicadaEn: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "La fecha debe tener el formato AAAA-MM-DD")
+    .nullable()
+    .optional(),
 });
 
 export type Receta = z.infer<typeof recetaSchema>;

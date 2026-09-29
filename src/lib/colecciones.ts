@@ -200,6 +200,31 @@ export function datosColeccion(c: Coleccion, data: Contenido): ColeccionDato[] {
   return out;
 }
 
+// -- Novedades --------------------------------------------------------------
+
+/**
+ * Recipes added in the last `DIAS_NUEVO` days whose collection is out
+ * (recipes without a collection count too). Newest first.
+ */
+export function recetasNuevas(
+  recetas: Receta[],
+  colecciones: Coleccion[],
+  hoy: string = hoyISO()
+): Receta[] {
+  const publicadas = new Set(
+    colecciones.filter((c) => estadoEfectivo(c, hoy) === "publicada").map((c) => c.id)
+  );
+  return recetas
+    .filter((r) => {
+      if (!r.publicadaEn) return false;
+      const d = diffDias(r.publicadaEn, hoy);
+      if (d < 0 || d >= DIAS_NUEVO) return false;
+      const ids = r.coleccionIds ?? [];
+      return ids.length === 0 || ids.some((id) => publicadas.has(id));
+    })
+    .sort((a, b) => (b.publicadaEn ?? "").localeCompare(a.publicadaEn ?? "") || a.titulo.localeCompare(b.titulo));
+}
+
 // -- Admin wording ----------------------------------------------------------
 
 /** Plain-language names for the stored states, as the author sees them. */

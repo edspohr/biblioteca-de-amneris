@@ -322,7 +322,7 @@ export function RecetaForm({
         </Field>
       </Section>
 
-      <Section titulo="Colección" resumen={colResumen(state.coleccionIds ?? [], colecciones)} abierta>
+      <Section titulo="Colección y publicación" resumen={colResumen(state.coleccionIds ?? [], colecciones)} abierta>
         <p className="form-field__hint">¿En qué libro de tu biblioteca aparece esta receta? Puede estar en más de uno.</p>
         <div className="col-picker">
           {coleccionesOrdenadas.map((c) => {
@@ -336,6 +336,18 @@ export function RecetaForm({
             );
           })}
         </div>
+        <div className="form-grid form-grid--3" style={{ marginTop: "var(--sp-4)" }}>
+          <Field label="Fecha de publicación">
+            <input
+              type="date"
+              value={state.publicadaEn ?? ""}
+              onChange={(e) => set("publicadaEn", e.target.value || null)}
+            />
+          </Field>
+        </div>
+        <p className="form-field__hint">
+          Durante 30 días desde esta fecha la receta aparece en «Novedades» de la biblioteca.
+        </p>
       </Section>
 
       <Section titulo="Por etapa" resumen={`${nEtapas} de ${etapasOrdenadas.length} etapas`} abierta>

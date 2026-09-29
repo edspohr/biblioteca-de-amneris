@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { repo } from "@/lib/repo";
 import { verifySession } from "@/lib/auth/session";
@@ -9,9 +10,13 @@ import {
   datosColeccion,
   esNueva,
   estadoEfectivo,
+  formatFecha,
   hoyISO,
+  iconoDe,
+  recetasNuevas,
   tonoStyle,
 } from "@/lib/colecciones";
+import { partirNombre } from "@/components/coleccion-portada";
 
 export default async function HomePage() {
   const [etapas, recetas, menus, tecnicas, colecciones, guias, planes, session] =
@@ -47,6 +52,9 @@ export default async function HomePage() {
         (b.c.fechaLanzamiento ?? "").localeCompare(a.c.fechaLanzamiento ?? "") ||
         b.c.orden - a.c.orden
     )[0];
+
+  const novedades = recetasNuevas(recetas, colecciones, hoy).slice(0, 10);
+  const colById = new Map(colecciones.map((c) => [c.id, c]));
 
   return (
     <>
@@ -92,6 +100,39 @@ export default async function HomePage() {
               Empezar
             </Link>
           </div>
+        </section>
+      )}
+
+      {novedades.length > 0 && (
+        <section aria-labelledby="home-novedades" className="novedades">
+          <h2 id="home-novedades" className="section-title">
+            Novedades <span className="novedades__count">{novedades.length}</span>
+          </h2>
+          <p className="muted section-lede">Lo que se sumó a tu biblioteca en los últimos 30 días.</p>
+          <ul className="novedades__list">
+            {novedades.map((r) => {
+              const col = colById.get(r.coleccionIds?.[0] ?? "");
+              return (
+                <li key={r.id} style={col ? (tonoStyle(col) as CSSProperties) : undefined}>
+                  <Link href={`/recetas/${r.id}`} className="novedad">
+                    <span className="novedad__photo">
+                      {r.foto ? (
+                        <Image src={r.foto} alt="" fill sizes="180px" />
+                      ) : (
+                        <span aria-hidden="true">{col ? iconoDe(col) : "🍽"}</span>
+                      )}
+                      <span className="novedad__badge">Nuevo</span>
+                    </span>
+                    <span className="novedad__title">{r.titulo}</span>
+                    <span className="novedad__meta">
+                      {col ? `${partirNombre(col.nombre).titulo} · ` : ""}
+                      {r.publicadaEn ? formatFecha(r.publicadaEn, hoy) : ""}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </section>
       )}
 

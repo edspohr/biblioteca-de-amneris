@@ -102,3 +102,31 @@ test("weekday spellings normalize to the long form", async () => {
   assert.equal(normalizarDia("x"), null);
   assert.equal(diaCorto("Sábado"), "sab");
 });
+
+test("novedades: last 30 days, only from published collections", async () => {
+  const { recetasNuevas } = await import("../src/lib/colecciones");
+  const { recetaSchema } = await import("../src/lib/schema");
+  const base = {
+    numero: null, destacadaPreview: false, variantes: {}, tipo_comida: "cena", minutos_prep: null,
+    kcal_100g: null, vitaminas: [], congelable: null, conservacion: null, pasos: [], notas: null,
+    foto: null, receta_ingredientes: [], receta_alergenos: [], receta_tecnicas: [],
+  };
+  const r = (id: string, publicadaEn: string | null, coleccionIds: string[]) =>
+    recetaSchema.parse({ ...base, id, titulo: id, publicadaEn, coleccionIds });
+  const cols = [
+    col({ id: "pub", estado: "publicada" }),
+    col({ id: "borrador", estado: "oculta" }),
+  ];
+  const out = recetasNuevas(
+    [
+      r("reciente", "2026-10-20", ["pub"]),
+      r("vieja", "2026-09-01", ["pub"]),
+      r("oculta", "2026-10-20", ["borrador"]),
+      r("sin-fecha", null, ["pub"]),
+      r("mas-reciente", "2026-10-25", []),
+    ],
+    cols,
+    "2026-10-26"
+  );
+  assert.deepEqual(out.map((x) => x.id), ["mas-reciente", "reciente"]);
+});

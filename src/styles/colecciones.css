@@ -1045,3 +1045,94 @@
   color: var(--etapa-ink);
   margin: var(--sp-4) 0 0 0;
 }
+
+/* ============================================================
+ * /libro — Novedades (recipes added in the last 30 days)
+ * ============================================================ */
+
+.novedades__count {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  vertical-align: middle;
+  color: var(--color-on-brand);
+  background: var(--color-brand);
+  border-radius: var(--radius-pill);
+  padding: 2px 10px;
+}
+.novedades__list {
+  list-style: none;
+  margin: var(--sp-3) calc(-1 * var(--sp-5)) var(--sp-6);
+  padding: var(--sp-1) var(--sp-5) var(--sp-3);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(44vw, 180px);
+  gap: var(--sp-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.novedades__list::-webkit-scrollbar {
+  display: none;
+}
+.novedades__list > li {
+  scroll-snap-align: start;
+}
+@media (min-width: 720px) {
+  .novedades__list {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
+.novedad {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.novedad__photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--col-soft);
+  font-size: 2.2rem;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.novedad__photo img {
+  object-fit: cover;
+}
+.novedad:hover .novedad__photo {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+}
+.novedad__badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--col-accent);
+  color: var(--color-on-brand);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.novedad__title {
+  font-family: var(--font-title);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  line-height: 1.25;
+}
+.novedad__meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-muted);
+}

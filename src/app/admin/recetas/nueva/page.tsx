@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { repo } from "@/lib/repo";
 import { ETAPA_IDS, type Receta, type VarianteEtapa } from "@/lib/schema";
+import { hoyISO } from "@/lib/colecciones";
 import { RecetaForm } from "../receta-form";
 
 export default async function NuevaRecetaPage({
@@ -45,6 +46,7 @@ export default async function NuevaRecetaPage({
     receta_tecnicas: [],
     // Preselect the collection when coming from its page.
     coleccionIds: colecciones.some((c) => c.id === coleccion) ? [coleccion!] : [],
+    publicadaEn: hoyISO(),
   };
 
   return (
