@@ -95,6 +95,142 @@ function norm(s: string): string {
     .trim();
 }
 
+// Mapeos explícitos de nombre-en-docx → ingredienteId-en-catalogo. Estos
+// tienen prioridad sobre el matching por nombre normalizado. Corresponden a:
+//   1. Traducciones Chile → España (zapallo→calabaza, camote→batata, palta→aguacate).
+//   2. Variantes descriptivas del mismo ingrediente ("Pechuga de pollo en
+//      cubitos de 5mm" → pechuga-pollo-sin).
+//   3. Formas de preparación que colapsan al mismo ingrediente base
+//      ("Zapallo cocido chafado con tenedor" → calabaza).
+//
+// Todo lo que NO está acá cae al fuzzy match; si tampoco calza, aparece en
+// catalogos-propuestos.json como candidato a crearse.
+const EXPLICIT_INGREDIENT_MAP: Record<string, string> = {
+  // — Aceites y agua
+  "aceite de oliva virgen extra": "aceite-oliva-extra",
+  "agua de coccion": "agua-coccion",
+  "agua de coccion de avena": "agua-coccion",
+  "agua de coccion del pollo": "agua-coccion",
+  "agua o leche materna formula o preferencia": "agua-o-leche",
+  "agua tibia o caldo de pollo sin sal": "caldo-pollo-sin",
+  // — Carbohidratos y avenas
+  "arroz blanco o integral cocido": "arroz-blanco",
+  "arroz blanco o integral cocido pasado de agua": "arroz-blanco",
+  "avena en hojuelas o harina": "avena-molida",
+  "avena fina": "copos-avena-finos",
+  "harina de avena": "avena-molida",
+  "harina de garbanzo o avena fina": "avena-molida",
+  // — Vegetales
+  "brocoli cocido al vapor en arbolitos pequenos": "brocoli",
+  "brocoli cocido al vapor arbolitos picados": "brocoli",
+  "espinaca fresca picada finamente a cuchillo": "espinaca",
+  "zanahoria cocida chafada con tenedor": "zanahoria",
+  "zanahoria en cubitos pequenos": "zanahoria",
+  "zanahoria en cubitos pequenos cocida": "zanahoria",
+  "zanahorias": "zanahoria",
+  // — Chilean → Spanish equivalences
+  "camote cocido sin piel": "batata",
+  "camote sin piel": "batata",
+  "zapallo cocido": "calabaza",
+  "zapallo cocido chafado con tenedor": "calabaza",
+  "zapallo limpio sin semillas": "calabaza",
+  "zapallo rallado espesante natural": "calabaza",
+  // — Caldos
+  "caldo casero de pollo sin sal": "caldo-pollo-sin",
+  "caldo casero de verduras sin sal": "caldo-verduras-sin",
+  "caldo de verduras casero sin sal": "caldo-verduras-sin",
+  // — Especias
+  "canela en polvo opcional": "canela-polvo",
+  "curcuma en polvo opcional": "curcuma-polvo",
+  // — Huevo (todas las variantes al mismo id)
+  "huevo batido": "huevo",
+  "huevo completo batido": "huevo",
+  "huevos batidos": "huevo",
+  "yema de huevo o huevo bien cocido": "huevo",
+  // — Leche
+  "leche materna formula entera o vegetal": "leche-materna-o",
+  "leche materna formula o agua": "leche-materna-o",
+  // — Legumbres
+  "lentejas cocidas enteras": "lentejas",
+  "lentejas rojas o sin piel": "lentejas-rojas",
+  // — Frutas
+  "manzanas grandes": "manzana",
+  "platanos maduros": "platano",
+  "pure de manzana natural sin azucar": "compota-fruta",
+  // — Pollo (pechuga cruda, variantes por preparación)
+  "pechuga de pollo": "pechuga-pollo-sin",
+  "pechuga de pollo en cubitos de 1 cm": "pechuga-pollo-sin",
+  "pechuga de pollo en tiras del tamano de un dedo adulto": "pechuga-pollo-sin",
+  "pechuga de pollo picada en cubitos de 5mm": "pechuga-pollo-sin",
+  "pollo pechuga o muslo deshuesado": "pechuga-pollo-sin",
+  // — Pollo cocido y desmechado (mismo estado, distinta granulometría)
+  "pechuga de pollo cocida y desmechada en tiras medianas": "pollo-desmenuzado",
+  "pechuga de pollo cocida y desmechada muy fina": "pollo-desmenuzado",
+  "pechuga de pollo cocida y procesada muy fina": "pollo-desmenuzado",
+  "pollo cocido desmechado muy fino": "pollo-desmenuzado",
+  "pollo cocido procesado fino": "pollo-desmenuzado",
+};
+
+// Skipear ingredientes que en realidad son utensilios/instrucciones y no
+// deberían llegar al catálogo.
+const SKIP_INGREDIENT_NORMS = new Set(["papel vegetal"]);
+
+// Mapeos a ingredientes que aún no existen en el catálogo pero que consolidan
+// múltiples variantes descriptivas del docx en un solo ingrediente nuevo.
+// El valor es el id que se creará al pasar --create-ingredientes; el nombre
+// canónico se define en NEW_INGREDIENT_METADATA. Sin esto, cada variante
+// aparecería como un ingrediente propuesto separado.
+const EXPLICIT_NEW_INGREDIENT_MAP: Record<string, string> = {
+  // Pollo molido (4 variantes → 1 ingrediente)
+  "pollo molido": "pollo-molido",
+  "pollo molido crudo": "pollo-molido",
+  "pollo molido o picado muy fino": "pollo-molido",
+  "pollo molido o picado en cubitos de 5mm": "pollo-molido",
+  // Harina de maíz precocida (3 variantes → 1)
+  "harina de maiz precocida": "harina-maiz-precocida",
+  "harina de maiz precocida funche": "harina-maiz-precocida",
+  "harina de maiz precocida funche opcional": "harina-maiz-precocida",
+  // Pimentón dulce (3 variantes → 1)
+  "pimenton dulce opcional": "pimenton-dulce",
+  "pimenton dulce o paprika opcional": "pimenton-dulce",
+  "pimenton dulce o cilantro fresco opcional": "pimenton-dulce",
+  // Únicos
+  "cebolla ajo o cilantro licuado opcional": "cebolla-ajo-cilantro-licuado",
+  "tomates maduros licuados y colados": "tomates-maduros-licuados",
+  "ajo en polvo opcional": "ajo-polvo",
+  "oregano seco opcional": "oregano-seco",
+  "queso tierno rallado bajo en sal": "queso-tierno-rallado",
+};
+
+// Metadata canónica para los ingredientes nuevos. --create-ingredientes usa
+// esto para poblar {nombre, categoria} en Firestore; sin esta info se caería
+// al slug del nombre original de una variante cualquiera.
+const NEW_INGREDIENT_METADATA: Record<
+  string,
+  { nombre: string; categoria: string }
+> = {
+  "pollo-molido": { nombre: "Pollo molido", categoria: "Proteínas" },
+  "harina-maiz-precocida": {
+    nombre: "Harina de maíz precocida",
+    categoria: "Carbohidratos",
+  },
+  "pimenton-dulce": { nombre: "Pimentón dulce", categoria: "Hierbas y Especias" },
+  "cebolla-ajo-cilantro-licuado": {
+    nombre: "Cebolla, ajo o cilantro licuado",
+    categoria: "Hierbas y Especias",
+  },
+  "tomates-maduros-licuados": {
+    nombre: "Tomates maduros licuados y colados",
+    categoria: "Vegetales y Granos",
+  },
+  "ajo-polvo": { nombre: "Ajo en polvo", categoria: "Hierbas y Especias" },
+  "oregano-seco": { nombre: "Orégano seco", categoria: "Hierbas y Especias" },
+  "queso-tierno-rallado": {
+    nombre: "Queso tierno rallado bajo en sal",
+    categoria: "Lácteos",
+  },
+};
+
 // ---------------------------------------------------------------------------
 // Parser de una sección de RECETA
 // ---------------------------------------------------------------------------
@@ -620,6 +756,31 @@ async function main() {
     for (const ing of r.ingredientes) {
       const key = norm(ing.nombre);
       if (ingLookup.has(key)) continue;
+      // Skip: utensilios/notas que no son ingredientes.
+      if (SKIP_INGREDIENT_NORMS.has(key)) {
+        ingLookup.set(key, "__SKIP__");
+        continue;
+      }
+      // Mapeo explícito (Chile→España, variantes descriptivas del mismo ingrediente).
+      const explicit = EXPLICIT_INGREDIENT_MAP[key];
+      if (explicit) {
+        ingLookup.set(key, explicit);
+        continue;
+      }
+      // Mapeo a ingrediente NUEVO consolidado (varias variantes → 1 id).
+      const nuevo = EXPLICIT_NEW_INGREDIENT_MAP[key];
+      if (nuevo) {
+        ingLookup.set(key, nuevo);
+        const meta = NEW_INGREDIENT_METADATA[nuevo];
+        const cur = propuestos.get(nuevo) ?? {
+          nombreOriginal: meta?.nombre ?? ing.nombre,
+          recetas: [],
+          candidatos: [],
+        };
+        if (!cur.recetas.includes(r.codigo)) cur.recetas.push(r.codigo);
+        propuestos.set(nuevo, cur);
+        continue;
+      }
       const hit = reconciliar(ing.nombre, ingredientesCatalog);
       if (hit.match) {
         ingLookup.set(key, hit.match.id);
@@ -696,18 +857,23 @@ async function main() {
     const id = slugify(r.titulo);
     const existing = mergedByTitle.get(id);
     const varianteId = r.etapaId;
-    // Convert ingredientes: mapping to catalog ids
-    const ings = r.ingredientes.map((ing) => {
-      const key = norm(ing.nombre);
-      const catalogId = ingLookup.get(key);
-      const u = parseUnidadCantidad(ing.cantidadRaw);
-      return {
-        ingrediente_id: catalogId ?? `⭐${slugify(ing.nombre)}`,
-        cantidad: u.cantidad,
-        unidad: u.unidad,
-        nota: u.textoOriginal,
-      };
-    });
+    // Convert ingredientes: mapping to catalog ids. Ingredientes marcados
+    // __SKIP__ (p.ej. "Papel vegetal") se dropean silenciosamente porque no
+    // pertenecen al catálogo de ingredientes.
+    const ings = r.ingredientes
+      .map((ing) => {
+        const key = norm(ing.nombre);
+        const catalogId = ingLookup.get(key);
+        if (catalogId === "__SKIP__") return null;
+        const u = parseUnidadCantidad(ing.cantidadRaw);
+        return {
+          ingrediente_id: catalogId ?? `⭐${slugify(ing.nombre)}`,
+          cantidad: u.cantidad,
+          unidad: u.unidad,
+          nota: u.textoOriginal,
+        };
+      })
+      .filter((x): x is NonNullable<typeof x> => x != null);
     const conservaciones = r.congela === true
       ? [{ metodoId: "congelado", duracionDias: 90, nota: r.congelacionNota }]
       : r.congela === false
@@ -873,12 +1039,19 @@ async function main() {
     path.join(OUT_DIR, "catalogos-propuestos.json"),
     JSON.stringify(
       {
-        ingredientes: [...propuestos.values()].map((p) => ({
-          nombreOriginal: p.nombreOriginal,
-          usadoEn: p.recetas,
-          candidatosCercanos: p.candidatos,
-          idPropuesto: `⭐${slugify(p.nombreOriginal)}`,
-        })),
+        ingredientes: [...propuestos.entries()].map(([id, p]) => {
+          // Si el id ya es un slug limpio (viene de EXPLICIT_NEW_INGREDIENT_MAP),
+          // úsalo directo. Si no, es un norm() de nombre y necesita ⭐ + slug.
+          const isCleanSlug = /^[a-z0-9-]+$/.test(id);
+          const meta = isCleanSlug ? NEW_INGREDIENT_METADATA[id] : undefined;
+          return {
+            nombreOriginal: p.nombreOriginal,
+            usadoEn: p.recetas,
+            candidatosCercanos: p.candidatos,
+            idPropuesto: isCleanSlug ? id : `⭐${slugify(p.nombreOriginal)}`,
+            categoriaPropuesta: meta?.categoria ?? "Sin categoría",
+          };
+        }),
         alergenos: [...alergenosPropuestos],
       },
       null,

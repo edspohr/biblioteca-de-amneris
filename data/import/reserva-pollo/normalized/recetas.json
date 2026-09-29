@@ -20,25 +20,25 @@
         "tiempoMin": 10,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐avena-en-hojuelas-o-harina",
+            "ingrediente_id": "avena-molida",
             "cantidad": 3,
             "unidad": "cucharadas",
             "nota": "3 cucharadas"
           },
           {
-            "ingrediente_id": "⭐agua-o-leche-materna-formula-o-preferencia",
+            "ingrediente_id": "agua-o-leche",
             "cantidad": null,
             "unidad": null,
             "nota": "½ taza"
           },
           {
-            "ingrediente_id": "⭐yema-de-huevo-o-huevo-bien-cocido",
+            "ingrediente_id": "huevo",
             "cantidad": 1,
             "unidad": "unidad",
             "nota": "1 unidad"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche-opcional",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 1,
             "unidad": "cucharadita",
             "nota": "1 cucharadita"
@@ -160,25 +160,25 @@
         "tiempoMin": 30,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐manzanas-grandes",
+            "ingrediente_id": "manzana",
             "cantidad": 4,
             "unidad": "unidades",
             "nota": "4 unidades"
           },
           {
-            "ingrediente_id": "⭐harina-de-avena",
+            "ingrediente_id": "avena-molida",
             "cantidad": 200,
             "unidad": "g",
             "nota": "200g"
           },
           {
-            "ingrediente_id": "⭐agua-de-coccion-de-avena",
+            "ingrediente_id": "agua-coccion",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -286,22 +286,16 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido-crudo",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐camote-cocido-sin-piel",
+            "ingrediente_id": "batata",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
-          },
-          {
-            "ingrediente_id": "⭐papel-vegetal",
-            "cantidad": null,
-            "unidad": "cn",
-            "nota": "c/n"
           }
         ],
         "pasos": [
@@ -414,25 +408,25 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-pechuga-o-muslo-deshuesado",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐zapallo-limpio-sin-semillas",
+            "ingrediente_id": "calabaza",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐zanahorias",
+            "ingrediente_id": "zanahoria",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐agua-de-coccion",
+            "ingrediente_id": "agua-coccion",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -543,25 +537,25 @@
         "tiempoMin": 30,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐zanahorias",
+            "ingrediente_id": "zanahoria",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐harina-de-avena",
+            "ingrediente_id": "avena-molida",
             "cantidad": 200,
             "unidad": "g",
             "nota": "200g"
           },
           {
-            "ingrediente_id": "⭐agua-de-coccion",
+            "ingrediente_id": "agua-coccion",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -669,25 +663,25 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐lentejas-rojas-o-sin-piel",
+            "ingrediente_id": "lentejas-rojas",
             "cantidad": 400,
             "unidad": "g",
             "nota": "400g"
           },
           {
-            "ingrediente_id": "⭐zapallo-limpio-sin-semillas",
+            "ingrediente_id": "calabaza",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐caldo-casero-de-verduras-sin-sal",
+            "ingrediente_id": "caldo-verduras-sin",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -803,25 +797,25 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-pechuga-o-muslo-deshuesado",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐camote-sin-piel",
+            "ingrediente_id": "batata",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐zanahorias",
+            "ingrediente_id": "zanahoria",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐agua-de-coccion",
+            "ingrediente_id": "agua-coccion",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -929,25 +923,25 @@
         "tiempoMin": 15,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-procesada-muy-fina",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 50,
             "unidad": "g",
             "nota": "50g"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 3,
             "unidad": "cucharadas",
             "nota": "3 cucharadas"
           },
           {
-            "ingrediente_id": "⭐leche-materna-formula-o-agua",
+            "ingrediente_id": "leche-materna-o",
             "cantidad": null,
             "unidad": null,
             "nota": "½ taza"
           },
           {
-            "ingrediente_id": "⭐agua-de-coccion-del-pollo",
+            "ingrediente_id": "agua-coccion",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -1070,31 +1064,31 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-procesada-muy-fina",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 800,
             "unidad": "g",
             "nota": "800g"
           },
           {
-            "ingrediente_id": "⭐agua-tibia-o-caldo-de-pollo-sin-sal",
+            "ingrediente_id": "caldo-pollo-sin",
             "cantidad": 800,
             "unidad": "ml",
             "nota": "800ml"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 3,
             "unidad": "cucharaditas",
             "nota": "3 cucharaditas"
           },
           {
-            "ingrediente_id": "⭐cebolla-ajo-o-cilantro-licuado-opcional",
+            "ingrediente_id": "cebolla-ajo-cilantro-licuado",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -1174,31 +1168,31 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-desmechada-muy-fina",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 800,
             "unidad": "g",
             "nota": "800g"
           },
           {
-            "ingrediente_id": "⭐agua-tibia-o-caldo-de-pollo-sin-sal",
+            "ingrediente_id": "caldo-pollo-sin",
             "cantidad": 800,
             "unidad": "ml",
             "nota": "800ml"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 3,
             "unidad": "cucharaditas",
             "nota": "3 cucharaditas"
           },
           {
-            "ingrediente_id": "⭐cebolla-ajo-o-cilantro-licuado-opcional",
+            "ingrediente_id": "cebolla-ajo-cilantro-licuado",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -1273,31 +1267,31 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-cocida-y-desmechada-en-tiras-medianas",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐caldo-casero-de-pollo-sin-sal",
+            "ingrediente_id": "caldo-pollo-sin",
             "cantidad": 1,
             "unidad": "litro",
             "nota": "1 litro"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 3,
             "unidad": "cucharaditas",
             "nota": "3 cucharaditas"
           },
           {
-            "ingrediente_id": "⭐pimenton-dulce-o-cilantro-fresco-opcional",
+            "ingrediente_id": "pimenton-dulce",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -1420,25 +1414,25 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐caldo-de-verduras-casero-sin-sal",
+            "ingrediente_id": "caldo-verduras-sin",
             "cantidad": 4,
             "unidad": "cucharadas",
             "nota": "4 cucharadas"
           },
           {
-            "ingrediente_id": "⭐tomates-maduros-licuados-y-colados",
+            "ingrediente_id": "tomates-maduros-licuados",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐zapallo-cocido",
+            "ingrediente_id": "calabaza",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
@@ -1554,31 +1548,31 @@
         "tiempoMin": 25,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-picada-en-cubitos-de-5mm",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 200,
             "unidad": "g",
             "nota": "200g"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 3,
             "unidad": "cucharadas",
             "nota": "3 cucharadas"
           },
           {
-            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "ingrediente_id": "ajo-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
           },
           {
-            "ingrediente_id": "⭐oregano-seco-opcional",
+            "ingrediente_id": "oregano-seco",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -1696,31 +1690,31 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido-crudo",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐espinaca-fresca-picada-finamente-a-cuchillo",
+            "ingrediente_id": "espinaca",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 6,
             "unidad": "unidades",
             "nota": "6 unidades"
           },
           {
-            "ingrediente_id": "⭐avena-fina",
+            "ingrediente_id": "copos-avena-finos",
             "cantidad": 150,
             "unidad": "g",
             "nota": "150g"
           },
           {
-            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "ingrediente_id": "ajo-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -1839,31 +1833,31 @@
         "tiempoMin": 25,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-cocido-procesado-fino",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐pure-de-manzana-natural-sin-azucar",
+            "ingrediente_id": "compota-fruta",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐harina-de-garbanzo-o-avena-fina",
+            "ingrediente_id": "avena-molida",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 4,
             "unidad": "unidades",
             "nota": "4 unidades"
           },
           {
-            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "ingrediente_id": "canela-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -1982,31 +1976,31 @@
         "tiempoMin": 30,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐arroz-blanco-o-integral-cocido-pasado-de-agua",
+            "ingrediente_id": "arroz-blanco",
             "cantidad": 600,
             "unidad": "g",
             "nota": "600g"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 2,
             "unidad": "unidades",
             "nota": "2 unidades"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 2,
             "unidad": "cucharadas",
             "nota": "2 cucharadas"
           },
           {
-            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "ingrediente_id": "ajo-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2124,37 +2118,37 @@
         "tiempoMin": 30,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-cocido-desmechado-muy-fino",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 600,
             "unidad": "g",
             "nota": "600g"
           },
           {
-            "ingrediente_id": "⭐zapallo-cocido-chafado-con-tenedor",
+            "ingrediente_id": "calabaza",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐zanahoria-cocida-chafada-con-tenedor",
+            "ingrediente_id": "zanahoria",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐caldo-casero-de-pollo-sin-sal",
+            "ingrediente_id": "caldo-pollo-sin",
             "cantidad": 800,
             "unidad": "ml",
             "nota": "800ml"
           },
           {
-            "ingrediente_id": "⭐curcuma-en-polvo-opcional",
+            "ingrediente_id": "curcuma-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2269,31 +2263,31 @@
         "tiempoMin": 15,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 4,
             "unidad": "cucharadas",
             "nota": "4 cucharadas"
           },
           {
-            "ingrediente_id": "⭐leche-materna-formula-entera-o-vegetal",
+            "ingrediente_id": "leche-materna-o",
             "cantidad": 1,
             "unidad": "taza",
             "nota": "1 taza"
           },
           {
-            "ingrediente_id": "⭐huevo-completo-batido",
+            "ingrediente_id": "huevo",
             "cantidad": 1,
             "unidad": "unidad",
             "nota": "1 unidad"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 1,
             "unidad": "cucharadita",
             "nota": "1 cucharadita"
           },
           {
-            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "ingrediente_id": "canela-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2415,31 +2409,31 @@
         "tiempoMin": 45,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-en-cubitos-de-1-cm",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐lentejas-cocidas-enteras",
+            "ingrediente_id": "lentejas",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐zanahoria-en-cubitos-pequenos",
+            "ingrediente_id": "zanahoria",
             "cantidad": 500,
             "unidad": "g",
             "nota": "500g"
           },
           {
-            "ingrediente_id": "⭐caldo-casero-de-verduras-sin-sal",
+            "ingrediente_id": "caldo-verduras-sin",
             "cantidad": 1,
             "unidad": "litro",
             "nota": "1 litro"
           },
           {
-            "ingrediente_id": "⭐zapallo-rallado-espesante-natural",
+            "ingrediente_id": "calabaza",
             "cantidad": null,
             "unidad": "cn",
             "nota": "c/n"
@@ -2560,31 +2554,31 @@
         "tiempoMin": 25,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-en-tiras-del-tamano-de-un-dedo-adulto",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐harina-de-maiz-precocida-funche",
+            "ingrediente_id": "harina-maiz-precocida",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 4,
             "unidad": "cucharadas",
             "nota": "4 cucharadas"
           },
           {
-            "ingrediente_id": "⭐ajo-en-polvo-opcional",
+            "ingrediente_id": "ajo-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
           },
           {
-            "ingrediente_id": "⭐pimenton-dulce-o-paprika-opcional",
+            "ingrediente_id": "pimenton-dulce",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2702,31 +2696,31 @@
         "tiempoMin": 25,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-cocido-desmechado-muy-fino",
+            "ingrediente_id": "pollo-desmenuzado",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐platanos-maduros",
+            "ingrediente_id": "platano",
             "cantidad": 6,
             "unidad": "unidades",
             "nota": "6 unidades"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 6,
             "unidad": "unidades",
             "nota": "6 unidades"
           },
           {
-            "ingrediente_id": "⭐harina-de-avena",
+            "ingrediente_id": "avena-molida",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐canela-en-polvo-opcional",
+            "ingrediente_id": "canela-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2850,31 +2844,31 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido-o-picado-muy-fino",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐brocoli-cocido-al-vapor-arbolitos-picados",
+            "ingrediente_id": "brocoli",
             "cantidad": 1,
             "unidad": "brócoli grande",
             "nota": "1 brócoli grande"
           },
           {
-            "ingrediente_id": "⭐queso-tierno-rallado-bajo-en-sal",
+            "ingrediente_id": "queso-tierno-rallado",
             "cantidad": 200,
             "unidad": "g",
             "nota": "200g"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 4,
             "unidad": "unidades",
             "nota": "4 unidades"
           },
           {
-            "ingrediente_id": "⭐oregano-seco-opcional",
+            "ingrediente_id": "oregano-seco",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -2993,31 +2987,31 @@
         "tiempoMin": 40,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pollo-molido-o-picado-en-cubitos-de-5mm",
+            "ingrediente_id": "pollo-molido",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐brocoli-cocido-al-vapor-arbolitos-picados",
+            "ingrediente_id": "brocoli",
             "cantidad": 1,
             "unidad": "brócoli grande",
             "nota": "1 brócoli grande"
           },
           {
-            "ingrediente_id": "⭐queso-tierno-rallado-bajo-en-sal",
+            "ingrediente_id": "queso-tierno-rallado",
             "cantidad": 200,
             "unidad": "g",
             "nota": "200g"
           },
           {
-            "ingrediente_id": "⭐huevos-batidos",
+            "ingrediente_id": "huevo",
             "cantidad": 4,
             "unidad": "unidades",
             "nota": "4 unidades"
           },
           {
-            "ingrediente_id": "⭐pimenton-dulce-opcional",
+            "ingrediente_id": "pimenton-dulce",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"
@@ -3136,43 +3130,43 @@
         "tiempoMin": 35,
         "ingredientes": [
           {
-            "ingrediente_id": "⭐pechuga-de-pollo-en-cubitos-de-1-cm",
+            "ingrediente_id": "pechuga-pollo-sin",
             "cantidad": 1.5,
             "unidad": "kg",
             "nota": "1.5 kg"
           },
           {
-            "ingrediente_id": "⭐arroz-blanco-o-integral-cocido",
+            "ingrediente_id": "arroz-blanco",
             "cantidad": 1,
             "unidad": "kg",
             "nota": "1 kg"
           },
           {
-            "ingrediente_id": "⭐zanahoria-en-cubitos-pequenos-cocida",
+            "ingrediente_id": "zanahoria",
             "cantidad": 400,
             "unidad": "g",
             "nota": "400g"
           },
           {
-            "ingrediente_id": "⭐brocoli-cocido-al-vapor-en-arbolitos-pequenos",
+            "ingrediente_id": "brocoli",
             "cantidad": 300,
             "unidad": "g",
             "nota": "300g"
           },
           {
-            "ingrediente_id": "⭐huevo-batido",
+            "ingrediente_id": "huevo",
             "cantidad": 2,
             "unidad": "unidades",
             "nota": "2 unidades"
           },
           {
-            "ingrediente_id": "⭐aceite-de-oliva-virgen-extra",
+            "ingrediente_id": "aceite-oliva-extra",
             "cantidad": 3,
             "unidad": "cucharadas",
             "nota": "3 cucharadas"
           },
           {
-            "ingrediente_id": "⭐curcuma-en-polvo-opcional",
+            "ingrediente_id": "curcuma-polvo",
             "cantidad": 1,
             "unidad": "pizca",
             "nota": "1 pizca"

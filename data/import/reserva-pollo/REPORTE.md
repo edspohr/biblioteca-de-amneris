@@ -1,6 +1,6 @@
 # Reporte de import — Bocaditos de reserva: Pollo
 
-Generado: 2026-09-29T19:03:38.331Z
+Generado: 2026-09-29T20:50:02.123Z
 
 Este documento resume qué se extrajo del docx `Cocina_en_un_Dia_Bebe_Amneris.docx` y qué necesita revisión antes de cargar a Firestore. Nada se ha cargado todavía — corre `npm run import:load -- --apply` cuando lo apruebes.
 
@@ -10,7 +10,7 @@ Este documento resume qué se extrajo del docx `Cocina_en_un_Dia_Bebe_Amneris.do
 - **Menús semanales**: 12
 - **Guías técnicas**: 8
 - **Recetas de preparación fresca (no congelan)**: 3
-- **Ingredientes propuestos (no matchean con catálogo)**: 67
+- **Ingredientes propuestos (no matchean con catálogo)**: 8
 - **Alérgenos propuestos**: 0
 
 ## Recetas mergeadas
@@ -85,73 +85,14 @@ El pipeline nunca crea ingredientes en silencio. Cada nombre nuevo se propone ac
 
 | Nombre en docx | ID propuesto | Usado en | Candidatos cercanos |
 |----------------|--------------|----------|---------------------|
-| Aceite de oliva virgen extra | `⭐aceite-de-oliva-virgen-extra` | E1-P1-R8, E2-P1-R2, E2-P1-R5, E2-P1-R7, E3-H1-R1 (+3) | Aceite Oliva Extra (0.60) · Aceite Oliva (0.40) · Aceite Coco (0.20) |
-| Agua de cocción | `⭐agua-de-coccion` | E1-P1-R3, E1-P1-R4, E1-P1-R6 | Agua Coccion (0.67) · Agua (0.33) · Agua O Caldo (0.33) |
-| Agua de cocción de avena | `⭐agua-de-coccion-de-avena` | E1-P1-R1 | Agua Coccion (0.50) · Agua (0.25) · Agua O Caldo (0.25) |
-| Agua de cocción del pollo | `⭐agua-de-coccion-del-pollo` | E1-P1-R7 | Agua Coccion (0.40) · Agua (0.20) · Agua O Caldo (0.20) |
-| Agua o leche (materna, fórmula o preferencia) | `⭐agua-o-leche-materna-formula-o-preferencia` | E1-H1-R1 | Agua O Leche (0.50) · Leche Materna, Formula (0.50) · Leche Materna O (0.50) |
-| Agua tibia o caldo de pollo sin sal | `⭐agua-tibia-o-caldo-de-pollo-sin-sal` | E1-P1-R8, E2-P1-R7 | Agua O Caldo (0.38) · Caldo Pollo Sin (0.38) · Caldo Sin Sal (0.38) |
-| Ajo en polvo (opcional) | `⭐ajo-en-polvo-opcional` | E2-P1-R2, E2-P1-R3, E2-P1-R5, E3-P1-R2 | Ajo (0.25) · Canela Polvo (0.25) · Curcuma Polvo (0.25) |
-| Arroz blanco o integral cocido | `⭐arroz-blanco-o-integral-cocido` | E3-P1-R8 | Arroz Blanco (0.40) · Arroz Integral (0.40) · Agua O Caldo (0.20) |
-| Arroz blanco o integral cocido pasado de agua | `⭐arroz-blanco-o-integral-cocido-pasado-de-agua` | E2-P1-R5 | Agua O Caldo (0.25) · Agua O Leche (0.25) · Arroz Blanco (0.25) |
-| Avena en hojuelas o harina | `⭐avena-en-hojuelas-o-harina` | E1-H1-R1 | Avena Remojada O (0.40) · Agua O Caldo (0.20) · Agua O Leche (0.20) |
-| Avena fina | `⭐avena-fina` | E2-P1-R3 | Avena Molida (0.50) · Polenta Fina (0.50) · Avena Integral Copos (0.33) |
-| Brócoli cocido al vapor — arbolitos picados | `⭐brocoli-cocido-al-vapor-arbolitos-picados` | E3-P1-R5, E3-P1-R7 | Brocoli (0.17) |
-| Brócoli cocido al vapor en arbolitos pequeños | `⭐brocoli-cocido-al-vapor-en-arbolitos-pequenos` | E3-P1-R8 | Brocoli (0.14) |
-| Caldo casero de pollo sin sal | `⭐caldo-casero-de-pollo-sin-sal` | E2-P1-R6, E3-P1-R6 | Caldo Pollo Sin (0.50) · Caldo Sin Sal (0.50) · Caldo Verduras Sin (0.33) |
-| Caldo casero de verduras sin sal | `⭐caldo-casero-de-verduras-sin-sal` | E1-P1-R5, E3-P1-R1 | Caldo Sin Sal (0.50) · Caldo Verduras Sin (0.50) · Caldo Pollo Sin (0.33) |
-| Caldo de verduras casero sin sal | `⭐caldo-de-verduras-casero-sin-sal` | E2-P1-R1 | Caldo Sin Sal (0.50) · Caldo Verduras Sin (0.50) · Caldo Pollo Sin (0.33) |
-| Camote cocido sin piel | `⭐camote-cocido-sin-piel` | E1-P1-R2 | Albaricoques Sin Hueso (0.25) · Alubias Blancas Sin (0.25) · Bacalao Desalado Sin (0.25) |
-| Camote sin piel | `⭐camote-sin-piel` | E1-P1-R6 | Albaricoques Sin Hueso (0.33) · Alubias Blancas Sin (0.33) · Bacalao Desalado Sin (0.33) |
-| Canela en polvo (opcional) | `⭐canela-en-polvo-opcional` | E2-P1-R4, E3-H1-R1, E3-P1-R3 | Canela Polvo (0.50) · Curcuma Polvo (0.25) · Curry Suave Polvo (0.25) |
-| Cebolla, ajo o cilantro licuado (opcional) | `⭐cebolla-ajo-o-cilantro-licuado-opcional` | E1-P1-R8, E2-P1-R7 | Agua O Caldo (0.17) · Agua O Leche (0.17) · Ajo (0.17) |
-| Cúrcuma en polvo (opcional) | `⭐curcuma-en-polvo-opcional` | E2-P1-R6, E3-P1-R8 | Curcuma Polvo (0.50) · Canela Polvo (0.25) · Curry Suave Polvo (0.25) |
-| Espinaca fresca picada finamente a cuchillo | `⭐espinaca-fresca-picada-finamente-a-cuchillo` | E2-P1-R3 | Espinaca (0.17) · Espinaca Blanqueada (0.17) · Espinaca O Congelada (0.17) |
-| Harina de avena | `⭐harina-de-avena` | E1-P1-R1, E1-P1-R4, E3-P1-R3 | Avena Integral Copos (0.33) · Avena Molida (0.33) · Avena Para Bebe (0.33) |
-| Harina de garbanzo o avena fina | `⭐harina-de-garbanzo-o-avena-fina` | E2-P1-R4 | Avena Remojada O (0.33) · Agua O Caldo (0.17) · Agua O Leche (0.17) |
-| Harina de maíz precocida | `⭐harina-de-maiz-precocida` | E1-P1-R8, E2-P1-R7, E3-P1-R6 | Maiz Dulce Sin (0.25) |
-| Harina de maíz precocida — funche (opcional) | `⭐harina-de-maiz-precocida-funche-opcional` | E1-H1-R1 | Maiz Dulce Sin (0.17) |
-| Harina de maíz precocida (funche) | `⭐harina-de-maiz-precocida-funche` | E1-P1-R7, E2-P1-R2, E2-P1-R6, E3-H1-R1, E3-P1-R2 | Maiz Dulce Sin (0.20) |
-| Huevo batido | `⭐huevo-batido` | E3-P1-R8 | Huevo (0.50) |
-| Huevo completo batido | `⭐huevo-completo-batido` | E3-H1-R1 | Huevo (0.33) |
-| Huevos batidos | `⭐huevos-batidos` | E2-P1-R3, E2-P1-R4, E2-P1-R5, E3-P1-R3, E3-P1-R5 (+1) | _(ninguno)_ |
-| Leche (materna, fórmula, entera o vegetal) | `⭐leche-materna-formula-entera-o-vegetal` | E3-H1-R1 | Leche Materna, Formula (0.50) · Leche Materna O (0.50) · Agua O Leche (0.33) |
-| Leche materna, fórmula o agua | `⭐leche-materna-formula-o-agua` | E1-P1-R7 | Agua O Leche (0.60) · Leche Materna, Formula (0.60) · Leche Materna O (0.60) |
-| Lentejas cocidas enteras | `⭐lentejas-cocidas-enteras` | E3-P1-R1 | Lentejas (0.33) · Lentejas Rojas (0.33) |
-| Lentejas rojas o sin piel | `⭐lentejas-rojas-o-sin-piel` | E1-P1-R5 | Lentejas Rojas (0.40) · Agua O Caldo (0.20) · Agua O Leche (0.20) |
-| Manzanas grandes | `⭐manzanas-grandes` | E1-P1-R1 | _(ninguno)_ |
-| Orégano seco (opcional) | `⭐oregano-seco-opcional` | E2-P1-R2, E3-P1-R5 | _(ninguno)_ |
-| Papel vegetal | `⭐papel-vegetal` | E1-P1-R2 | Aceite Vegetal (0.50) |
-| Pechuga de pollo | `⭐pechuga-de-pollo` | E1-P1-R1, E1-P1-R4, E1-P1-R5 | Pechuga Pollo Sin (0.67) · Caldo Pollo Sin (0.33) · Pechuga Pavo Sin (0.33) |
-| Pechuga de pollo cocida y desmechada en tiras medianas | `⭐pechuga-de-pollo-cocida-y-desmechada-en-tiras-medianas` | E3-P1-R6 | Pechuga Pollo Sin (0.22) · Caldo Pollo Sin (0.11) · Pechuga Pavo Sin (0.11) |
-| Pechuga de pollo cocida y desmechada muy fina | `⭐pechuga-de-pollo-cocida-y-desmechada-muy-fina` | E2-P1-R7 | Pechuga Pollo Sin (0.25) · Caldo Pollo Sin (0.13) · Pechuga Pavo Sin (0.13) |
-| Pechuga de pollo cocida y procesada muy fina | `⭐pechuga-de-pollo-cocida-y-procesada-muy-fina` | E1-P1-R7, E1-P1-R8 | Pechuga Pollo Sin (0.25) · Caldo Pollo Sin (0.13) · Pechuga Pavo Sin (0.13) |
-| Pechuga de pollo en cubitos de 1 cm | `⭐pechuga-de-pollo-en-cubitos-de-1-cm` | E3-P1-R1, E3-P1-R8 | Pechuga Pollo Sin (0.29) · Caldo Pollo Sin (0.14) · Pechuga Pavo Sin (0.14) |
-| Pechuga de pollo en tiras del tamaño de un dedo adulto | `⭐pechuga-de-pollo-en-tiras-del-tamano-de-un-dedo-adulto` | E3-P1-R2 | Pechuga Pollo Sin (0.20) · Caldo Pollo Sin (0.10) · Pechuga Pavo Sin (0.10) |
-| Pechuga de pollo picada en cubitos de 5mm | `⭐pechuga-de-pollo-picada-en-cubitos-de-5mm` | E2-P1-R2 | Pechuga Pollo Sin (0.29) · Caldo Pollo Sin (0.14) · Pechuga Pavo Sin (0.14) |
-| Pimentón dulce (opcional) | `⭐pimenton-dulce-opcional` | E3-P1-R7 | Maiz Dulce Sin (0.33) |
-| Pimentón dulce o cilantro fresco (opcional) | `⭐pimenton-dulce-o-cilantro-fresco-opcional` | E3-P1-R6 | Agua O Caldo (0.17) · Agua O Leche (0.17) · Arandanos O Congelados (0.17) |
-| Pimentón dulce o paprika (opcional) | `⭐pimenton-dulce-o-paprika-opcional` | E3-P1-R2 | Agua O Caldo (0.20) · Agua O Leche (0.20) · Arandanos O Congelados (0.20) |
-| Plátanos maduros | `⭐platanos-maduros` | E3-P1-R3 | _(ninguno)_ |
-| Pollo (pechuga o muslo deshuesado) | `⭐pollo-pechuga-o-muslo-deshuesado` | E1-P1-R3, E1-P1-R6 | Pechuga Pollo Sin (0.40) · Agua O Caldo (0.20) · Agua O Leche (0.20) |
-| Pollo cocido desmechado muy fino | `⭐pollo-cocido-desmechado-muy-fino` | E2-P1-R6, E3-P1-R3 | Caldo Pollo Sin (0.20) · Pechuga Pollo Sin (0.20) · Pollo Desmenuzado (0.20) |
-| Pollo cocido procesado fino | `⭐pollo-cocido-procesado-fino` | E2-P1-R4 | Caldo Pollo Sin (0.25) · Pechuga Pollo Sin (0.25) · Pollo Desmenuzado (0.25) |
-| Pollo molido | `⭐pollo-molido` | E2-P1-R1, E2-P1-R5 | Pollo Desmenuzado (0.50) · Caldo Pollo Sin (0.33) · Pechuga Pollo Sin (0.33) |
-| Pollo molido crudo | `⭐pollo-molido-crudo` | E1-P1-R2, E2-P1-R3 | Caldo Pollo Sin (0.33) · Pechuga Pollo Sin (0.33) · Pollo Desmenuzado (0.33) |
-| Pollo molido o picado en cubitos de 5mm | `⭐pollo-molido-o-picado-en-cubitos-de-5mm` | E3-P1-R7 | Agua O Caldo (0.13) · Agua O Leche (0.13) · Arandanos O Congelados (0.13) |
-| Pollo molido o picado muy fino | `⭐pollo-molido-o-picado-muy-fino` | E3-P1-R5 | Agua O Caldo (0.17) · Agua O Leche (0.17) · Arandanos O Congelados (0.17) |
-| Puré de manzana natural sin azúcar | `⭐pure-de-manzana-natural-sin-azucar` | E2-P1-R4 | Yogur Natural Sin (0.33) · Albaricoques Sin Hueso (0.17) · Alubias Blancas Sin (0.17) |
-| Queso tierno rallado bajo en sal | `⭐queso-tierno-rallado-bajo-en-sal` | E3-P1-R5, E3-P1-R7 | Caldo Sin Sal (0.17) · Garbanzos Sin Sal (0.17) · Queso Crema O (0.17) |
-| Tomates maduros licuados y colados | `⭐tomates-maduros-licuados-y-colados` | E2-P1-R1 | _(ninguno)_ |
-| Yema de huevo o huevo bien cocido | `⭐yema-de-huevo-o-huevo-bien-cocido` | E1-H1-R1 | Agua O Caldo (0.17) · Agua O Leche (0.17) · Arandanos O Congelados (0.17) |
-| Zanahoria cocida chafada con tenedor | `⭐zanahoria-cocida-chafada-con-tenedor` | E2-P1-R6 | Zanahoria (0.20) |
-| Zanahoria en cubitos pequeños | `⭐zanahoria-en-cubitos-pequenos` | E3-P1-R1 | Zanahoria (0.25) |
-| Zanahoria en cubitos pequeños cocida | `⭐zanahoria-en-cubitos-pequenos-cocida` | E3-P1-R8 | Zanahoria (0.20) |
-| Zanahorias | `⭐zanahorias` | E1-P1-R3, E1-P1-R4, E1-P1-R6 | _(ninguno)_ |
-| Zapallo cocido | `⭐zapallo-cocido` | E2-P1-R1 | _(ninguno)_ |
-| Zapallo cocido chafado con tenedor | `⭐zapallo-cocido-chafado-con-tenedor` | E2-P1-R6 | _(ninguno)_ |
-| Zapallo limpio sin semillas | `⭐zapallo-limpio-sin-semillas` | E1-P1-R3, E1-P1-R5 | Melon Sin Semillas (0.50) · Sandia Sin Semillas (0.50) · Albaricoques Sin Hueso (0.25) |
-| Zapallo rallado (espesante natural) | `⭐zapallo-rallado-espesante-natural` | E3-P1-R1 | Yogur Natural Entero (0.25) · Yogur Natural Sin (0.25) |
+| Ajo en polvo | `ajo-polvo` | E2-P1-R2 | _(ninguno)_ |
+| Cebolla, ajo o cilantro licuado | `cebolla-ajo-cilantro-licuado` | E1-P1-R8 | _(ninguno)_ |
+| Harina de maíz precocida | `harina-maiz-precocida` | E1-H1-R1, E1-P1-R7, E1-P1-R8 | _(ninguno)_ |
+| Orégano seco | `oregano-seco` | E2-P1-R2 | _(ninguno)_ |
+| Pimentón dulce | `pimenton-dulce` | E3-P1-R2, E3-P1-R6, E3-P1-R7 | _(ninguno)_ |
+| Pollo molido | `pollo-molido` | E1-P1-R2, E2-P1-R1, E3-P1-R5, E3-P1-R7 | _(ninguno)_ |
+| Queso tierno rallado bajo en sal | `queso-tierno-rallado` | E3-P1-R5 | _(ninguno)_ |
+| Tomates maduros licuados y colados | `tomates-maduros-licuados` | E2-P1-R1 | _(ninguno)_ |
 
 ## Menús semanales
 

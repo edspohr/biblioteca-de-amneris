@@ -86,6 +86,7 @@ interface Propuestos {
   ingredientes: {
     nombreOriginal: string;
     idPropuesto: string;
+    categoriaPropuesta?: string;
   }[];
   alergenos: string[];
 }
@@ -230,20 +231,16 @@ async function main() {
     path.join(NORMALIZED_DIR, "catalogos-propuestos.json")
   );
 
-  // Safety: los ingredientes NO matcheados llegan con id "⭐<slug>". Ese prefijo
-  // rompe el regex de slug del schema, así que el reader no podría leer las
-  // recetas. --apply sin --create-ingredientes escribiría data corrupta.
-  const hasUnmatched = recetas.some((r) =>
-    Object.values(r.variantes).some((v) =>
-      v.ingredientes.some((i) => i.ingrediente_id.startsWith("⭐"))
-    )
-  );
-  if (apply && hasUnmatched && !CREATE_INGREDIENTES) {
+  // Safety: si hay ingredientes propuestos, las recetas los referencian por
+  // id — cargar sin --create-ingredientes deja las recetas apuntando a docs
+  // que no existen (⭐xxx si el id es sin normalizar, o slug limpio si vino
+  // de EXPLICIT_NEW_INGREDIENT_MAP). Ambos casos rompen el reader.
+  if (apply && propuestos.ingredientes.length > 0 && !CREATE_INGREDIENTES) {
     throw new Error(
-      `Hay ${propuestos.ingredientes.length} ingredientes propuestos que no matchean con el catálogo. ` +
-        `Cargarlos con --apply sin --create-ingredientes dejaría recetas con ids inválidos (⭐xxx) que el reader no puede parsear. ` +
+      `Hay ${propuestos.ingredientes.length} ingredientes propuestos referenciados por recetas. ` +
+        `Cargarlos con --apply sin --create-ingredientes dejaría recetas apuntando a docs de ingrediente que no existen. ` +
         `Opciones: (a) editar normalize.ts para mapear a ids existentes, ` +
-        `(b) pasar --create-ingredientes para crear los faltantes con categoría "Sin categoría".`
+        `(b) pasar --create-ingredientes para crear los ${propuestos.ingredientes.length} propuestos con la categoría sugerida.`
     );
   }
 
@@ -256,12 +253,21 @@ async function main() {
 
   const database = db();
 
-  // 0. Ingredientes propuestos (opcional)
+  // 0. Ingredientes propuestos (opcional). Usa el idPropuesto ya decidido en
+  // normalize.ts (los mapeos explícitos consolidan variantes en un solo id)
+  // y la categoriaPropuesta cuando existe.
   if (CREATE_INGREDIENTES && propuestos.ingredientes.length > 0) {
     for (const p of propuestos.ingredientes) {
-      const id = slugify(p.nombreOriginal);
-      const doc = { id, nombre: p.nombreOriginal, categoria: "Sin categoría" };
-      console.log(`  ✎ ingrediente NUEVO: ${id} — ${p.nombreOriginal}`);
+      // Si aún es ⭐xxx (no hay decisión explícita), cae a slug + Sin categoría.
+      const id = p.idPropuesto.startsWith("⭐")
+        ? p.idPropuesto.slice(1)
+        : p.idPropuesto;
+      const doc = {
+        id,
+        nombre: p.nombreOriginal,
+        categoria: p.categoriaPropuesta ?? "Sin categoría",
+      };
+      console.log(`  ✎ ingrediente NUEVO: ${id} — ${p.nombreOriginal} (${doc.categoria})`);
       if (apply) await database.collection("ingredientes").doc(id).set(doc);
     }
   }
