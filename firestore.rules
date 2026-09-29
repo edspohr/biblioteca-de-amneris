@@ -11,13 +11,21 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    match /etapas/{id}              { allow read: if true;  allow write: if false; }
-    match /porciones_texturas/{id}  { allow read: if true;  allow write: if false; }
-    match /ingredientes/{id}        { allow read: if true;  allow write: if false; }
-    match /alergenos/{id}           { allow read: if true;  allow write: if false; }
-    match /tecnicas/{id}            { allow read: if true;  allow write: if false; }
-    match /menus/{id}               { allow read: if true;  allow write: if false; }
-    match /recetas/{id}             { allow read: if true;  allow write: if false; }
+    match /etapas/{id}                { allow read: if true;  allow write: if false; }
+    match /porciones_texturas/{id}    { allow read: if true;  allow write: if false; }
+    match /ingredientes/{id}          { allow read: if true;  allow write: if false; }
+    match /alergenos/{id}             { allow read: if true;  allow write: if false; }
+    match /tecnicas/{id}              { allow read: if true;  allow write: if false; }
+    match /menus/{id}                 { allow read: if true;  allow write: if false; }
+    match /recetas/{id}               { allow read: if true;  allow write: if false; }
+
+    // Bocaditos de reserva: cinco catálogos nuevos, misma política — lectura
+    // pública, escritura solo desde el server API (Admin SDK bypassea rules).
+    match /colecciones/{id}           { allow read: if true;  allow write: if false; }
+    match /metodos_conservacion/{id}  { allow read: if true;  allow write: if false; }
+    match /utensilios/{id}            { allow read: if true;  allow write: if false; }
+    match /planes/{id}                { allow read: if true;  allow write: if false; }
+    match /guias/{id}                 { allow read: if true;  allow write: if false; }
 
     // Perfil de usuario. Solo el dueño (o superadmins) puede LEER su doc;
     // todas las escrituras pasan por API server-side (Admin SDK), nunca

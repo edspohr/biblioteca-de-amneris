@@ -2,12 +2,17 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import {
   alergenoSchema,
+  coleccionSchema,
   etapaSchema,
+  guiaSchema,
   ingredienteSchema,
   menuSchema,
+  metodoConservacionSchema,
+  planSchema,
   porcionTexturaSchema,
   recetaSchema,
   tecnicaSchema,
+  utensilioSchema,
   type Alergeno,
   type Coleccion,
   type Etapa,
@@ -204,67 +209,100 @@ export async function getMenusUsingReceta(recetaId: string): Promise<Menu[]> {
   return all.filter((m) => m.menu_recetas.some((mr) => mr.receta_id === recetaId));
 }
 
-// -- Stubs (Fase 0): the interface is fixed now, the storage will be wired in
-// Fase 1. Throwing keeps the callers honest and surfaces any accidental early
-// use rather than silently returning empty results.
-function notImplemented(name: string): never {
-  throw new Error(
-    `[json-adapter] ${name} aún no está implementado (Bocaditos de reserva, Fase 1).`
-  );
+// -- New entities (Bocaditos de reserva, Fase 1) -----------------------------
+// Missing JSON files return [] so the reader keeps working before the seed
+// scripts populate them. Writes create the file via writeJson's mkdir.
+
+async function readListSafe<T>(file: string, parse: (raw: unknown) => T): Promise<T[]> {
+  if (!(await fileExists(file))) return [];
+  const raw = await readJson<unknown[]>(file);
+  return raw.map(parse);
 }
 
 export async function getColecciones(): Promise<Coleccion[]> {
-  notImplemented("getColecciones");
+  return readListSafe(path.join(DATA_DIR, "colecciones.json"), (r) =>
+    coleccionSchema.parse(r)
+  );
 }
-export async function getColeccion(_id: string): Promise<Coleccion | null> {
-  void _id;
-  notImplemented("getColeccion");
+export async function getColeccion(id: string): Promise<Coleccion | null> {
+  return (await getColecciones()).find((c) => c.id === id) ?? null;
 }
-export async function saveColeccion(_coleccion: Coleccion): Promise<void> {
-  void _coleccion;
-  notImplemented("saveColeccion");
+export async function saveColeccion(coleccion: Coleccion): Promise<void> {
+  coleccionSchema.parse(coleccion);
+  const all = await getColecciones();
+  const idx = all.findIndex((c) => c.id === coleccion.id);
+  if (idx >= 0) all[idx] = coleccion;
+  else all.push(coleccion);
+  all.sort((a, b) => a.orden - b.orden || a.id.localeCompare(b.id));
+  await writeJson(path.join(DATA_DIR, "colecciones.json"), all);
 }
+
 export async function getMetodosConservacion(): Promise<MetodoConservacion[]> {
-  notImplemented("getMetodosConservacion");
+  return readListSafe(path.join(DATA_DIR, "metodos-conservacion.json"), (r) =>
+    metodoConservacionSchema.parse(r)
+  );
 }
+
 export async function getUtensilios(): Promise<Utensilio[]> {
-  notImplemented("getUtensilios");
+  return readListSafe(path.join(DATA_DIR, "utensilios.json"), (r) =>
+    utensilioSchema.parse(r)
+  );
 }
-export async function getUtensilio(_id: string): Promise<Utensilio | null> {
-  void _id;
-  notImplemented("getUtensilio");
+export async function getUtensilio(id: string): Promise<Utensilio | null> {
+  return (await getUtensilios()).find((u) => u.id === id) ?? null;
 }
-export async function saveUtensilio(_utensilio: Utensilio): Promise<void> {
-  void _utensilio;
-  notImplemented("saveUtensilio");
+export async function saveUtensilio(utensilio: Utensilio): Promise<void> {
+  utensilioSchema.parse(utensilio);
+  const all = await getUtensilios();
+  const idx = all.findIndex((u) => u.id === utensilio.id);
+  if (idx >= 0) all[idx] = utensilio;
+  else all.push(utensilio);
+  all.sort((a, b) => a.id.localeCompare(b.id));
+  await writeJson(path.join(DATA_DIR, "utensilios.json"), all);
 }
-export async function deleteUtensilio(_id: string): Promise<void> {
-  void _id;
-  notImplemented("deleteUtensilio");
+export async function deleteUtensilio(id: string): Promise<void> {
+  const all = (await getUtensilios()).filter((u) => u.id !== id);
+  await writeJson(path.join(DATA_DIR, "utensilios.json"), all);
 }
+
 export async function getPlanes(): Promise<Plan[]> {
-  notImplemented("getPlanes");
+  return readListSafe(path.join(DATA_DIR, "planes.json"), (r) =>
+    planSchema.parse(r)
+  );
 }
-export async function getPlan(_id: string): Promise<Plan | null> {
-  void _id;
-  notImplemented("getPlan");
+export async function getPlan(id: string): Promise<Plan | null> {
+  return (await getPlanes()).find((p) => p.id === id) ?? null;
 }
-export async function savePlan(_plan: Plan): Promise<void> {
-  void _plan;
-  notImplemented("savePlan");
+export async function savePlan(plan: Plan): Promise<void> {
+  planSchema.parse(plan);
+  const all = await getPlanes();
+  const idx = all.findIndex((p) => p.id === plan.id);
+  if (idx >= 0) all[idx] = plan;
+  else all.push(plan);
+  all.sort((a, b) => a.id.localeCompare(b.id));
+  await writeJson(path.join(DATA_DIR, "planes.json"), all);
 }
+
 export async function getGuias(): Promise<Guia[]> {
-  notImplemented("getGuias");
+  return readListSafe(path.join(DATA_DIR, "guias.json"), (r) =>
+    guiaSchema.parse(r)
+  );
 }
-export async function getGuia(_id: string): Promise<Guia | null> {
-  void _id;
-  notImplemented("getGuia");
+export async function getGuia(id: string): Promise<Guia | null> {
+  return (await getGuias()).find((g) => g.id === id) ?? null;
 }
-export async function saveGuia(_guia: Guia): Promise<void> {
-  void _guia;
-  notImplemented("saveGuia");
+export async function saveGuia(guia: Guia): Promise<void> {
+  guiaSchema.parse(guia);
+  const all = await getGuias();
+  const idx = all.findIndex((g) => g.id === guia.id);
+  if (idx >= 0) all[idx] = guia;
+  else all.push(guia);
+  all.sort(
+    (a, b) => a.coleccionId.localeCompare(b.coleccionId) || a.orden - b.orden
+  );
+  await writeJson(path.join(DATA_DIR, "guias.json"), all);
 }
-export async function deleteGuia(_id: string): Promise<void> {
-  void _id;
-  notImplemented("deleteGuia");
+export async function deleteGuia(id: string): Promise<void> {
+  const all = (await getGuias()).filter((g) => g.id !== id);
+  await writeJson(path.join(DATA_DIR, "guias.json"), all);
 }

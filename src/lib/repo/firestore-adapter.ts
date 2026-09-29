@@ -8,12 +8,17 @@ import {
 import { getAdminApp } from "@/lib/firebase/admin";
 import {
   alergenoSchema,
+  coleccionSchema,
   etapaSchema,
+  guiaSchema,
   ingredienteSchema,
   menuSchema,
+  metodoConservacionSchema,
+  planSchema,
   porcionTexturaSchema,
   recetaSchema,
   tecnicaSchema,
+  utensilioSchema,
   type Alergeno,
   type Coleccion,
   type Etapa,
@@ -40,6 +45,11 @@ export const COLLECTIONS = {
   tecnicas: "tecnicas",
   menus: "menus",
   recetas: "recetas",
+  colecciones: "colecciones",
+  metodosConservacion: "metodos_conservacion",
+  utensilios: "utensilios",
+  planes: "planes",
+  guias: "guias",
 } as const;
 
 let cachedDb: Firestore | null = null;
@@ -276,65 +286,91 @@ export async function getMenusUsingReceta(id: string): Promise<Menu[]> {
   return snap.docs.map((d) => fromMenuDoc(d.data()));
 }
 
-// -- Stubs (Fase 0). Real collections + parsing come in Fase 1.
-function notImplemented(name: string): never {
-  throw new Error(
-    `[firestore-adapter] ${name} aún no está implementado (Bocaditos de reserva, Fase 1).`
-  );
-}
+// -- New entities (Bocaditos de reserva, Fase 1) -----------------------------
 
 export async function getColecciones(): Promise<Coleccion[]> {
-  notImplemented("getColecciones");
+  const snap = await col(COLLECTIONS.colecciones).get();
+  return snap.docs
+    .map((d) => coleccionSchema.parse(d.data()))
+    .sort((a, b) => a.orden - b.orden || a.id.localeCompare(b.id));
 }
-export async function getColeccion(_id: string): Promise<Coleccion | null> {
-  void _id;
-  notImplemented("getColeccion");
+export async function getColeccion(id: string): Promise<Coleccion | null> {
+  const doc = await col(COLLECTIONS.colecciones).doc(id).get();
+  return doc.exists ? coleccionSchema.parse(doc.data()) : null;
 }
-export async function saveColeccion(_coleccion: Coleccion): Promise<void> {
-  void _coleccion;
-  notImplemented("saveColeccion");
+export async function saveColeccion(coleccion: Coleccion): Promise<void> {
+  return wrapWrite(async () => {
+    coleccionSchema.parse(coleccion);
+    await col(COLLECTIONS.colecciones).doc(coleccion.id).set(coleccion);
+  });
 }
+
 export async function getMetodosConservacion(): Promise<MetodoConservacion[]> {
-  notImplemented("getMetodosConservacion");
+  const snap = await col(COLLECTIONS.metodosConservacion).get();
+  return snap.docs
+    .map((d) => metodoConservacionSchema.parse(d.data()))
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
+
 export async function getUtensilios(): Promise<Utensilio[]> {
-  notImplemented("getUtensilios");
+  const snap = await col(COLLECTIONS.utensilios).get();
+  return snap.docs
+    .map((d) => utensilioSchema.parse(d.data()))
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
-export async function getUtensilio(_id: string): Promise<Utensilio | null> {
-  void _id;
-  notImplemented("getUtensilio");
+export async function getUtensilio(id: string): Promise<Utensilio | null> {
+  const doc = await col(COLLECTIONS.utensilios).doc(id).get();
+  return doc.exists ? utensilioSchema.parse(doc.data()) : null;
 }
-export async function saveUtensilio(_utensilio: Utensilio): Promise<void> {
-  void _utensilio;
-  notImplemented("saveUtensilio");
+export async function saveUtensilio(utensilio: Utensilio): Promise<void> {
+  return wrapWrite(async () => {
+    utensilioSchema.parse(utensilio);
+    await col(COLLECTIONS.utensilios).doc(utensilio.id).set(utensilio);
+  });
 }
-export async function deleteUtensilio(_id: string): Promise<void> {
-  void _id;
-  notImplemented("deleteUtensilio");
+export async function deleteUtensilio(id: string): Promise<void> {
+  return wrapWrite(async () => {
+    await col(COLLECTIONS.utensilios).doc(id).delete();
+  });
 }
+
 export async function getPlanes(): Promise<Plan[]> {
-  notImplemented("getPlanes");
+  const snap = await col(COLLECTIONS.planes).get();
+  return snap.docs
+    .map((d) => planSchema.parse(d.data()))
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
-export async function getPlan(_id: string): Promise<Plan | null> {
-  void _id;
-  notImplemented("getPlan");
+export async function getPlan(id: string): Promise<Plan | null> {
+  const doc = await col(COLLECTIONS.planes).doc(id).get();
+  return doc.exists ? planSchema.parse(doc.data()) : null;
 }
-export async function savePlan(_plan: Plan): Promise<void> {
-  void _plan;
-  notImplemented("savePlan");
+export async function savePlan(plan: Plan): Promise<void> {
+  return wrapWrite(async () => {
+    planSchema.parse(plan);
+    await col(COLLECTIONS.planes).doc(plan.id).set(plan);
+  });
 }
+
 export async function getGuias(): Promise<Guia[]> {
-  notImplemented("getGuias");
+  const snap = await col(COLLECTIONS.guias).get();
+  return snap.docs
+    .map((d) => guiaSchema.parse(d.data()))
+    .sort(
+      (a, b) => a.coleccionId.localeCompare(b.coleccionId) || a.orden - b.orden
+    );
 }
-export async function getGuia(_id: string): Promise<Guia | null> {
-  void _id;
-  notImplemented("getGuia");
+export async function getGuia(id: string): Promise<Guia | null> {
+  const doc = await col(COLLECTIONS.guias).doc(id).get();
+  return doc.exists ? guiaSchema.parse(doc.data()) : null;
 }
-export async function saveGuia(_guia: Guia): Promise<void> {
-  void _guia;
-  notImplemented("saveGuia");
+export async function saveGuia(guia: Guia): Promise<void> {
+  return wrapWrite(async () => {
+    guiaSchema.parse(guia);
+    await col(COLLECTIONS.guias).doc(guia.id).set(guia);
+  });
 }
-export async function deleteGuia(_id: string): Promise<void> {
-  void _id;
-  notImplemented("deleteGuia");
+export async function deleteGuia(id: string): Promise<void> {
+  return wrapWrite(async () => {
+    await col(COLLECTIONS.guias).doc(id).delete();
+  });
 }

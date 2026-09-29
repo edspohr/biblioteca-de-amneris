@@ -100,6 +100,11 @@ const PUBLIC_COLLECTIONS = [
   "tecnicas",
   "menus",
   "recetas",
+  "colecciones",
+  "metodos_conservacion",
+  "utensilios",
+  "planes",
+  "guias",
 ];
 
 for (const col of PUBLIC_COLLECTIONS) {
