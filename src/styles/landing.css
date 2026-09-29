@@ -551,6 +551,61 @@
 }
 
 /* ============================================================
+ * Collection shelf (covers from src/components/coleccion-portada)
+ * ============================================================ */
+.landing__shelf {
+  list-style: none;
+  padding: 0;
+  margin: 2.25rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (min-width: 720px) {
+  .landing__shelf { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+}
+@media (min-width: 1000px) {
+  .landing__shelf { grid-template-columns: repeat(4, 1fr); }
+}
+.landing__book {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.landing__book .portada {
+  margin-bottom: 0.5rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+@media (hover: hover) {
+  a.landing__book:hover .portada {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: var(--lp-shadow-soft);
+  }
+}
+.landing__book-title {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--color-brand-ink);
+}
+.landing__book-bajada {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+}
+.landing__book-when {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--col-accent);
+}
+
+/* ============================================================
  * "Adentro del libro" — device mockup
  * ============================================================ */
 .landing__adentro {

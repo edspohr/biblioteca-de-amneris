@@ -7,7 +7,7 @@ import { SITE_NAME } from "@/lib/site";
 import { NICHO_LABEL } from "@/lib/marca";
 
 const NAV_LINKS: { href: string; label: string }[] = [
-  { href: "#activa", label: "Bocaditos" },
+  { href: "#biblioteca", label: "La biblioteca" },
   { href: "#proximamente", label: "Próximamente" },
   { href: "#precios", label: "Precios" },
   { href: "#autora", label: "La autora" },

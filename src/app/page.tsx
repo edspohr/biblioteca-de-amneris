@@ -10,13 +10,19 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
+import type { CSSProperties } from "react";
+import { BRAND_TAGLINE, NICHO_LABEL } from "@/lib/marca";
+import { repo } from "@/lib/repo";
+import type { Coleccion } from "@/lib/schema";
+import { ColeccionPortada } from "@/components/coleccion-portada";
 import {
-  BRAND_TAGLINE,
-  NICHO_LABEL,
-  SECCION_ACTIVA,
-  SECCION_FUTURA,
-  SECCION_PROXIMA,
-} from "@/lib/marca";
+  datosColeccion,
+  estadoEfectivo,
+  hoyISO,
+  lineaLanzamiento,
+  tonoStyle,
+  type ColeccionDato,
+} from "@/lib/colecciones";
 import {
   ANNUAL_PRICE_CLP,
   ANNUAL_SAVINGS_MONTHS,
@@ -85,44 +91,74 @@ const HERO_POLAROIDS: { slug: string; caption: string; className: string }[] = [
   },
 ];
 
-const FAQ = [
-  {
-    q: "¿Qué es La Biblioteca de Amneris?",
-    a: `Es un espacio con recursos de alimentación ${NICHO_LABEL}. Con una sola suscripción tienes acceso a todo lo que Amneris publica hoy y a cada nueva sección que se sume.`,
-  },
-  {
-    q: "¿Cómo funciona la prueba gratis?",
-    a: "Creas tu cuenta con Google, entras al recetario y tienes 30 días de acceso completo. No pedimos tarjeta ni datos de pago. Si al mes decides seguir, activas la suscripción; si no, tu cuenta queda como visitante y no se te cobra nada.",
-  },
-  {
-    q: "¿Qué gano suscribiéndome?",
-    a: `Acceso completo a toda la biblioteca: hoy la sección ${SECCION_ACTIVA.nombre}, y muy pronto ${SECCION_PROXIMA.nombre} y ${SECCION_FUTURA.nombre} sin pagar extra. Un mismo plan lo incluye todo.`,
-  },
-  {
-    q: "¿Reemplaza al pediatra?",
-    a: "No. Es una guía práctica hecha con cariño y método. Cualquier duda sobre alergias, síntomas o crecimiento — consulta siempre con un profesional de la salud.",
-  },
-  {
-    q: "¿Cómo lo uso en el teléfono?",
-    a: "Se abre en el navegador de tu celular. Puedes agregarlo a la pantalla de inicio para abrirlo con un toque. Las recetas están pensadas para leerse con una mano mientras cocinas.",
-  },
-];
+function buildFaq(disponibles: Coleccion[], proximas: Coleccion[]) {
+  const lista = (cs: Coleccion[]) =>
+    cs.length <= 1
+      ? (cs[0]?.nombre ?? "")
+      : `${cs.slice(0, -1).map((c) => c.nombre).join(", ")} y ${cs[cs.length - 1].nombre}`;
+  return [
+    {
+      q: "¿Qué es La Biblioteca de Amneris?",
+      a: `Es un espacio con recursos de alimentación ${NICHO_LABEL}. Con una sola suscripción tienes acceso a todo lo que Amneris publica hoy y a cada nueva sección que se sume.`,
+    },
+    {
+      q: "¿Cómo funciona la prueba gratis?",
+      a: "Creas tu cuenta con Google, entras al recetario y tienes 30 días de acceso completo. No pedimos tarjeta ni datos de pago. Si al mes decides seguir, activas la suscripción; si no, tu cuenta queda como visitante y no se te cobra nada.",
+    },
+    {
+      q: "¿Qué gano suscribiéndome?",
+      a:
+        `Acceso completo a toda la biblioteca: hoy ${lista(disponibles)}` +
+        (proximas.length ? `, y muy pronto ${lista(proximas)} sin pagar extra` : "") +
+        ". Un mismo plan lo incluye todo.",
+    },
+    {
+      q: "¿Reemplaza al pediatra?",
+      a: "No. Es una guía práctica hecha con cariño y método. Cualquier duda sobre alergias, síntomas o crecimiento — consulta siempre con un profesional de la salud.",
+    },
+    {
+      q: "¿Cómo lo uso en el teléfono?",
+      a: "Se abre en el navegador de tu celular. Puedes agregarlo a la pantalla de inicio para abrirlo con un toque. Las recetas están pensadas para leerse con una mano mientras cocinas.",
+    },
+  ];
+}
 
 // -- Landing page ------------------------------------------------------------
 
 export default async function LandingPage() {
-  const user = await verifySession();
+  const [user, colecciones, recetas, menus, guias, planes] = await Promise.all([
+    verifySession(),
+    // The landing must render even if Firestore is unreachable.
+    repo.getColecciones().catch(() => []),
+    repo.getRecetas().catch(() => []),
+    repo.getMenus().catch(() => []),
+    repo.getGuias().catch(() => []),
+    repo.getPlanes().catch(() => []),
+  ]);
   const isLogged = Boolean(user);
+  const hoy = hoyISO();
+  const contenido = { colecciones, recetas, menus, guias, planes };
+  const ordenadas = [...colecciones].sort((a, b) => a.orden - b.orden);
+  const disponibles = ordenadas
+    .filter((c) => estadoEfectivo(c, hoy) === "publicada")
+    .map((c) => ({ c, datos: datosColeccion(c, contenido) }));
+  const proximas = ordenadas
+    .filter((c) => estadoEfectivo(c, hoy) === "proximamente")
+    .map((c) => ({ c, datos: datosColeccion(c, contenido), linea: lineaLanzamiento(c, hoy) }));
+  const faq = buildFaq(
+    disponibles.map((x) => x.c),
+    proximas.map((x) => x.c)
+  );
   return (
     <div className="landing">
       <SchemaOrgLD />
       <LandingHeader isLogged={isLogged} />
       <Hero isLogged={isLogged} />
-      <SeccionActiva />
-      <Proximamente />
+      {disponibles.length > 0 && <Disponibles items={disponibles} />}
+      {proximas.length > 0 && <Proximamente items={proximas} />}
       <Precios />
       <SobreAmneris />
-      <FAQSection />
+      <FAQSection faq={faq} />
       <FinalCTA isLogged={isLogged} />
       <Footer />
     </div>
@@ -187,21 +223,43 @@ function Hero({ isLogged }: { isLogged: boolean }) {
   );
 }
 
-function SeccionActiva() {
+function Disponibles({ items }: { items: { c: Coleccion; datos: ColeccionDato[] }[] }) {
   return (
-    <section className="landing__method" id="activa">
+    <section className="landing__method" id="biblioteca">
       <div className="landing__container">
-        <p className="landing__eyebrow">Sección disponible hoy</p>
+        <p className="landing__eyebrow">Disponible hoy</p>
         <h2 className="landing__section-title">
-          <em>{SECCION_ACTIVA.nombre}</em> — {SECCION_ACTIVA.bajada}.
+          {items.length === 1 ? (
+            <>
+              <em>{items[0].c.nombre}</em> — {items[0].c.bajada}
+            </>
+          ) : (
+            <>
+              {items.length} colecciones, <em>una</em> suscripción.
+            </>
+          )}
         </h2>
-        <p className="landing__section-lede">{SECCION_ACTIVA.problema}</p>
+        <p className="landing__section-lede">
+          Cada colección es un libro de la biblioteca: recetas, menús y planes
+          que resuelven el día a día de la alimentación de tu bebé.
+        </p>
+        <ul className="landing__shelf">
+          {items.map(({ c, datos }) => (
+            <li key={c.id} style={tonoStyle(c) as CSSProperties}>
+              <Link href={`/colecciones/${c.id}`} className="landing__book">
+                <ColeccionPortada coleccion={c} dato={datos[0]} />
+                <span className="landing__book-title">{c.nombre}</span>
+                <span className="landing__book-bajada">{c.bajada}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div className="landing__cta-buttons">
-          <Link href="/recetas" className="landing__button landing__button--dark">
-            Explorar recetas
+          <Link href="/libro" className="landing__button landing__button--dark">
+            Recorrer la biblioteca
           </Link>
-          <Link href="/menus" className="landing__button landing__button--ghost">
-            Ver menús semanales
+          <Link href="/recetas" className="landing__button landing__button--ghost">
+            Explorar recetas
           </Link>
         </div>
       </div>
@@ -209,8 +267,11 @@ function SeccionActiva() {
   );
 }
 
-function Proximamente() {
-  const items = [SECCION_PROXIMA, SECCION_FUTURA];
+function Proximamente({
+  items,
+}: {
+  items: { c: Coleccion; datos: ColeccionDato[]; linea: string | null }[];
+}) {
   return (
     <section className="landing__adentro" id="proximamente">
       <div className="landing__container">
@@ -222,12 +283,15 @@ function Proximamente() {
           Suscribirte hoy es suscribirte a todo lo que venga. No hay compras
           por sección ni upgrades: si eres parte de la biblioteca, es tuyo.
         </p>
-        <ul className="landing__filters">
-          {items.map((s) => (
-            <li key={s.id} className="landing__filter">
-              <div className="landing__filter-num">{s.lanzamientoLabel}</div>
-              <h3>{s.nombre}</h3>
-              <p>{s.problema}</p>
+        <ul className="landing__shelf landing__shelf--soon">
+          {items.map(({ c, datos, linea }) => (
+            <li key={c.id} style={tonoStyle(c) as CSSProperties}>
+              <div className="landing__book">
+                <ColeccionPortada coleccion={c} dato={datos[0]} apagada />
+                <span className="landing__book-when">{linea ?? "Próximamente"}</span>
+                <span className="landing__book-title">{c.nombre}</span>
+                <span className="landing__book-bajada">{c.descripcionCorta ?? c.bajada}</span>
+              </div>
             </li>
           ))}
         </ul>
@@ -323,7 +387,7 @@ function SobreAmneris() {
   );
 }
 
-function FAQSection() {
+function FAQSection({ faq }: { faq: { q: string; a: string }[] }) {
   return (
     <section className="landing__faq" id="faq">
       <div className="landing__container">
@@ -336,7 +400,7 @@ function FAQSection() {
           </p>
         ) : null}
         <div className="landing__faq-list">
-          {FAQ.map((f) => (
+          {faq.map((f) => (
             <details key={f.q}>
               <summary>{f.q}</summary>
               <p>{f.a}</p>
