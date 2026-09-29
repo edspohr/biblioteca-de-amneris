@@ -4,6 +4,7 @@ import { menuSchema } from "@/lib/schema";
 import { slugify } from "@/lib/slug";
 import { badRequest, conflict, handleZodError } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function POST(req: Request) {
   try {
@@ -20,7 +21,11 @@ export async function POST(req: Request) {
       return conflict(`Ya existe un menú con el identificador "${parsed.id}"`);
     }
     await repo.saveMenu(parsed);
-    return NextResponse.json(parsed, { status: 201 });
+    const saved = await verifyWrite(() => repo.getMenu(parsed.id), parsed, [
+      "nombre",
+      "etapa_id",
+    ]);
+    return NextResponse.json(saved, { status: 201 });
   } catch (err) {
     return handleZodError(err);
   }

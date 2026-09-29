@@ -9,12 +9,17 @@ import {
   recetaSchema,
   tecnicaSchema,
   type Alergeno,
+  type Coleccion,
   type Etapa,
+  type Guia,
   type Ingrediente,
   type Menu,
+  type MetodoConservacion,
+  type Plan,
   type PorcionTextura,
   type Receta,
   type Tecnica,
+  type Utensilio,
   type VarianteEtapa,
 } from "@/lib/schema";
 import { stableStringify } from "@/lib/repo/stable-stringify";
@@ -54,6 +59,10 @@ export async function getIngredientes(): Promise<Ingrediente[]> {
   const raw = await readJson<unknown[]>(path.join(DATA_DIR, "ingredientes.json"));
   return raw.map((r) => ingredienteSchema.parse(r));
 }
+export async function getIngrediente(id: string): Promise<Ingrediente | null> {
+  const all = await getIngredientes();
+  return all.find((i) => i.id === id) ?? null;
+}
 export async function saveIngrediente(ingrediente: Ingrediente): Promise<void> {
   ingredienteSchema.parse(ingrediente);
   const all = await getIngredientes();
@@ -71,6 +80,10 @@ export async function deleteIngrediente(id: string): Promise<void> {
 export async function getAlergenos(): Promise<Alergeno[]> {
   const raw = await readJson<unknown[]>(path.join(DATA_DIR, "alergenos.json"));
   return raw.map((r) => alergenoSchema.parse(r));
+}
+export async function getAlergeno(id: string): Promise<Alergeno | null> {
+  const all = await getAlergenos();
+  return all.find((a) => a.id === id) ?? null;
 }
 export async function saveAlergeno(alergeno: Alergeno): Promise<void> {
   alergenoSchema.parse(alergeno);
@@ -189,4 +202,69 @@ export async function getRecetasUsingTecnica(tecnicaId: string): Promise<Receta[
 export async function getMenusUsingReceta(recetaId: string): Promise<Menu[]> {
   const all = await getMenus();
   return all.filter((m) => m.menu_recetas.some((mr) => mr.receta_id === recetaId));
+}
+
+// -- Stubs (Fase 0): the interface is fixed now, the storage will be wired in
+// Fase 1. Throwing keeps the callers honest and surfaces any accidental early
+// use rather than silently returning empty results.
+function notImplemented(name: string): never {
+  throw new Error(
+    `[json-adapter] ${name} aún no está implementado (Bocaditos de reserva, Fase 1).`
+  );
+}
+
+export async function getColecciones(): Promise<Coleccion[]> {
+  notImplemented("getColecciones");
+}
+export async function getColeccion(_id: string): Promise<Coleccion | null> {
+  void _id;
+  notImplemented("getColeccion");
+}
+export async function saveColeccion(_coleccion: Coleccion): Promise<void> {
+  void _coleccion;
+  notImplemented("saveColeccion");
+}
+export async function getMetodosConservacion(): Promise<MetodoConservacion[]> {
+  notImplemented("getMetodosConservacion");
+}
+export async function getUtensilios(): Promise<Utensilio[]> {
+  notImplemented("getUtensilios");
+}
+export async function getUtensilio(_id: string): Promise<Utensilio | null> {
+  void _id;
+  notImplemented("getUtensilio");
+}
+export async function saveUtensilio(_utensilio: Utensilio): Promise<void> {
+  void _utensilio;
+  notImplemented("saveUtensilio");
+}
+export async function deleteUtensilio(_id: string): Promise<void> {
+  void _id;
+  notImplemented("deleteUtensilio");
+}
+export async function getPlanes(): Promise<Plan[]> {
+  notImplemented("getPlanes");
+}
+export async function getPlan(_id: string): Promise<Plan | null> {
+  void _id;
+  notImplemented("getPlan");
+}
+export async function savePlan(_plan: Plan): Promise<void> {
+  void _plan;
+  notImplemented("savePlan");
+}
+export async function getGuias(): Promise<Guia[]> {
+  notImplemented("getGuias");
+}
+export async function getGuia(_id: string): Promise<Guia | null> {
+  void _id;
+  notImplemented("getGuia");
+}
+export async function saveGuia(_guia: Guia): Promise<void> {
+  void _guia;
+  notImplemented("saveGuia");
+}
+export async function deleteGuia(_id: string): Promise<void> {
+  void _id;
+  notImplemented("deleteGuia");
 }

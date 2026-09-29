@@ -3,6 +3,7 @@ import { repo } from "@/lib/repo";
 import { tecnicaSchema } from "@/lib/schema";
 import { badRequest, conflict, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function PUT(
   req: Request,
@@ -23,7 +24,11 @@ export async function PUT(
     const existing = await repo.getTecnica(id);
     if (!existing) return notFound("La técnica no existe");
     await repo.saveTecnica(parsed);
-    return NextResponse.json(parsed);
+    const saved = await verifyWrite(() => repo.getTecnica(id), parsed, [
+      "nombre",
+      "descripcion",
+    ]);
+    return NextResponse.json(saved);
   } catch (err) {
     return handleZodError(err);
   }

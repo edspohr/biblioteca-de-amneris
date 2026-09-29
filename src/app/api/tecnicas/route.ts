@@ -4,6 +4,7 @@ import { tecnicaSchema } from "@/lib/schema";
 import { slugify } from "@/lib/slug";
 import { badRequest, conflict, handleZodError } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function POST(req: Request) {
   try {
@@ -22,7 +23,11 @@ export async function POST(req: Request) {
       return conflict(`Ya existe una técnica con el identificador "${parsed.id}"`);
     }
     await repo.saveTecnica(parsed);
-    return NextResponse.json(parsed, { status: 201 });
+    const saved = await verifyWrite(() => repo.getTecnica(parsed.id), parsed, [
+      "nombre",
+      "descripcion",
+    ]);
+    return NextResponse.json(saved, { status: 201 });
   } catch (err) {
     return handleZodError(err);
   }

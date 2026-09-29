@@ -3,6 +3,7 @@ import { repo } from "@/lib/repo";
 import { ingredienteSchema } from "@/lib/schema";
 import { badRequest, conflict, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function PUT(
   req: Request,
@@ -17,7 +18,11 @@ export async function PUT(
     const all = await repo.getIngredientes();
     if (!all.some((i) => i.id === id)) return notFound("El ingrediente no existe");
     await repo.saveIngrediente(parsed);
-    return NextResponse.json(parsed);
+    const saved = await verifyWrite(() => repo.getIngrediente(id), parsed, [
+      "nombre",
+      "categoria",
+    ]);
+    return NextResponse.json(saved);
   } catch (err) {
     return handleZodError(err);
   }

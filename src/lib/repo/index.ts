@@ -1,11 +1,16 @@
 import type {
   Alergeno,
+  Coleccion,
   Etapa,
+  Guia,
   Ingrediente,
   Menu,
+  MetodoConservacion,
+  Plan,
   PorcionTextura,
   Receta,
   Tecnica,
+  Utensilio,
   VarianteEtapa,
 } from "@/lib/schema";
 import * as jsonAdapter from "./json-adapter";
@@ -34,10 +39,12 @@ export interface Repo {
   getEtapa(id: string): Promise<Etapa | null>;
 
   getIngredientes(): Promise<Ingrediente[]>;
+  getIngrediente(id: string): Promise<Ingrediente | null>;
   saveIngrediente(ingrediente: Ingrediente): Promise<void>;
   deleteIngrediente(id: string): Promise<void>;
 
   getAlergenos(): Promise<Alergeno[]>;
+  getAlergeno(id: string): Promise<Alergeno | null>;
   saveAlergeno(alergeno: Alergeno): Promise<void>;
   deleteAlergeno(id: string): Promise<void>;
 
@@ -65,6 +72,29 @@ export interface Repo {
   getRecetasUsingAlergeno(alergenoId: string): Promise<Receta[]>;
   getRecetasUsingTecnica(tecnicaId: string): Promise<Receta[]>;
   getMenusUsingReceta(recetaId: string): Promise<Menu[]>;
+
+  // -- New in Fase 0 (Bocaditos de reserva). Interface only; adapters throw
+  // NotImplemented until Fase 1 wires them into JSON files + Firestore
+  // collections.
+  getColecciones(): Promise<Coleccion[]>;
+  getColeccion(id: string): Promise<Coleccion | null>;
+  saveColeccion(coleccion: Coleccion): Promise<void>;
+
+  getMetodosConservacion(): Promise<MetodoConservacion[]>;
+
+  getUtensilios(): Promise<Utensilio[]>;
+  getUtensilio(id: string): Promise<Utensilio | null>;
+  saveUtensilio(utensilio: Utensilio): Promise<void>;
+  deleteUtensilio(id: string): Promise<void>;
+
+  getPlanes(): Promise<Plan[]>;
+  getPlan(id: string): Promise<Plan | null>;
+  savePlan(plan: Plan): Promise<void>;
+
+  getGuias(): Promise<Guia[]>;
+  getGuia(id: string): Promise<Guia | null>;
+  saveGuia(guia: Guia): Promise<void>;
+  deleteGuia(id: string): Promise<void>;
 }
 
 export const repo: Repo = adapter;

@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import type { Ingrediente } from "@/lib/schema";
+import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { useSaveState } from "@/lib/admin/use-save-state";
+import { SaveStatusBanner } from "@/components/admin/save-status";
 
 interface Props {
   initial: Ingrediente[];
@@ -32,36 +35,26 @@ export function IngredientesEditor({ initial, usage }: Props) {
     nombre: "",
     categoria: CATEGORIAS_SUGERIDAS[0],
   });
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+  const { status, runSave, clearError } = useSaveState();
+  const busy = status.kind === "saving";
 
   function startEdit(i: Ingrediente) {
     setEditing(i.id);
     setDraft({ nombre: i.nombre, categoria: i.categoria });
-    setError(null);
+    clearError();
   }
 
   async function saveEdit(i: Ingrediente) {
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/ingredientes/${i.id}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ id: i.id, ...draft }),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo guardar");
-        return;
-      }
-      const updated = await res.json();
-      setItems((cur) => cur.map((x) => (x.id === i.id ? updated : x)));
-      setEditing(null);
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<Ingrediente>(`/api/ingredientes/${i.id}`, "PUT", {
+        id: i.id,
+        ...draft,
+      })
+    );
+    if (!res.ok) return;
+    setItems((cur) => cur.map((x) => (x.id === i.id ? res.data : x)));
+    setEditing(null);
+    router.refresh();
   }
 
   async function remove(i: Ingrediente) {
@@ -75,67 +68,30 @@ export function IngredientesEditor({ initial, usage }: Props) {
       return;
     }
     if (!confirm(msg)) return;
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/ingredientes/${i.id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo eliminar");
-        return;
-      }
-      setItems((cur) => cur.filter((x) => x.id !== i.id));
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<{ ok: true }>(`/api/ingredientes/${i.id}`, "DELETE")
+    );
+    if (!res.ok) return;
+    setItems((cur) => cur.filter((x) => x.id !== i.id));
+    router.refresh();
   }
 
   async function create() {
-    if (!newDraft.nombre.trim()) {
-      setError("El nombre es obligatorio");
-      return;
-    }
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/ingredientes", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(newDraft),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo crear");
-        return;
-      }
-      const created = await res.json();
-      setItems((cur) => [...cur, created]);
-      setNewDraft({ nombre: "", categoria: CATEGORIAS_SUGERIDAS[0] });
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    if (!newDraft.nombre.trim()) return;
+    const res = await runSave(() =>
+      saveWithVerify<Ingrediente>("/api/ingredientes", "POST", newDraft)
+    );
+    if (!res.ok) return;
+    setItems((cur) => [...cur, res.data]);
+    setNewDraft({ nombre: "", categoria: CATEGORIAS_SUGERIDAS[0] });
+    router.refresh();
   }
 
   const sorted = [...items].sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   return (
     <>
-      {error && (
-        <div
-          style={{
-            background: "#fdecea",
-            border: "1px solid #a83030",
-            padding: "0.5rem 0.75rem",
-            borderRadius: 4,
-            marginBottom: "1rem",
-            color: "#a83030",
-          }}
-        >
-          {error}
-        </div>
-      )}
+      <SaveStatusBanner status={status} onDismissError={clearError} />
 
       <h2>Crear nuevo</h2>
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>

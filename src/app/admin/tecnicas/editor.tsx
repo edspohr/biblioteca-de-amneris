@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Tecnica } from "@/lib/schema";
+import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { useSaveState } from "@/lib/admin/use-save-state";
+import { SaveStatusBanner } from "@/components/admin/save-status";
 
 interface Props {
   initial: Tecnica[];
@@ -18,35 +21,22 @@ export function TecnicasEditor({ initial, usage }: Props) {
     descripcion: "",
   });
   const [newDraft, setNewDraft] = useState({ nombre: "", descripcion: "" });
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+  const { status, runSave, clearError } = useSaveState();
+  const busy = status.kind === "saving";
 
   async function saveEdit(t: Tecnica) {
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/tecnicas/${t.id}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          id: t.id,
-          nombre: draft.nombre,
-          descripcion: draft.descripcion || null,
-          seccion_origen: t.seccion_origen,
-        }),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo guardar");
-        return;
-      }
-      const updated = await res.json();
-      setItems((c) => c.map((x) => (x.id === t.id ? updated : x)));
-      setEditing(null);
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<Tecnica>(`/api/tecnicas/${t.id}`, "PUT", {
+        id: t.id,
+        nombre: draft.nombre,
+        descripcion: draft.descripcion || null,
+        seccion_origen: t.seccion_origen,
+      })
+    );
+    if (!res.ok) return;
+    setItems((c) => c.map((x) => (x.id === t.id ? res.data : x)));
+    setEditing(null);
+    router.refresh();
   }
 
   async function remove(t: Tecnica) {
@@ -60,70 +50,33 @@ export function TecnicasEditor({ initial, usage }: Props) {
       return;
     }
     if (!confirm(`¿Eliminar la técnica "${t.nombre}"?`)) return;
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/tecnicas/${t.id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo eliminar");
-        return;
-      }
-      setItems((c) => c.filter((x) => x.id !== t.id));
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<{ ok: true }>(`/api/tecnicas/${t.id}`, "DELETE")
+    );
+    if (!res.ok) return;
+    setItems((c) => c.filter((x) => x.id !== t.id));
+    router.refresh();
   }
 
   async function create() {
-    if (!newDraft.nombre.trim()) {
-      setError("El nombre es obligatorio");
-      return;
-    }
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/tecnicas", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          nombre: newDraft.nombre.trim(),
-          descripcion: newDraft.descripcion.trim() || null,
-        }),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo crear");
-        return;
-      }
-      const created = await res.json();
-      setItems((c) => [...c, created]);
-      setNewDraft({ nombre: "", descripcion: "" });
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    if (!newDraft.nombre.trim()) return;
+    const res = await runSave(() =>
+      saveWithVerify<Tecnica>("/api/tecnicas", "POST", {
+        nombre: newDraft.nombre.trim(),
+        descripcion: newDraft.descripcion.trim() || null,
+      })
+    );
+    if (!res.ok) return;
+    setItems((c) => [...c, res.data]);
+    setNewDraft({ nombre: "", descripcion: "" });
+    router.refresh();
   }
 
   const sorted = [...items].sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   return (
     <>
-      {error && (
-        <div
-          style={{
-            background: "#fdecea",
-            border: "1px solid #a83030",
-            padding: "0.5rem 0.75rem",
-            borderRadius: 4,
-            marginBottom: "1rem",
-            color: "#a83030",
-          }}
-        >
-          {error}
-        </div>
-      )}
+      <SaveStatusBanner status={status} onDismissError={clearError} />
 
       <h2>Crear nueva</h2>
       <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem", flexWrap: "wrap" }}>

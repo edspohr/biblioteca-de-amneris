@@ -15,12 +15,17 @@ import {
   recetaSchema,
   tecnicaSchema,
   type Alergeno,
+  type Coleccion,
   type Etapa,
+  type Guia,
   type Ingrediente,
   type Menu,
+  type MetodoConservacion,
+  type Plan,
   type PorcionTextura,
   type Receta,
   type Tecnica,
+  type Utensilio,
   type VarianteEtapa,
 } from "@/lib/schema";
 import { wrapWrite } from "./errors";
@@ -116,6 +121,10 @@ export async function getIngredientes(): Promise<Ingrediente[]> {
     .map((d) => ingredienteSchema.parse(d.data()))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
+export async function getIngrediente(id: string): Promise<Ingrediente | null> {
+  const doc = await col(COLLECTIONS.ingredientes).doc(id).get();
+  return doc.exists ? ingredienteSchema.parse(doc.data()) : null;
+}
 export async function saveIngrediente(ingrediente: Ingrediente): Promise<void> {
   return wrapWrite(async () => {
     ingredienteSchema.parse(ingrediente);
@@ -135,6 +144,10 @@ export async function getAlergenos(): Promise<Alergeno[]> {
   return snap.docs
     .map((d) => alergenoSchema.parse(d.data()))
     .sort((a, b) => a.id.localeCompare(b.id));
+}
+export async function getAlergeno(id: string): Promise<Alergeno | null> {
+  const doc = await col(COLLECTIONS.alergenos).doc(id).get();
+  return doc.exists ? alergenoSchema.parse(doc.data()) : null;
 }
 export async function saveAlergeno(alergeno: Alergeno): Promise<void> {
   return wrapWrite(async () => {
@@ -261,4 +274,67 @@ export async function getMenusUsingReceta(id: string): Promise<Menu[]> {
     .where("receta_ids", "array-contains", id)
     .get();
   return snap.docs.map((d) => fromMenuDoc(d.data()));
+}
+
+// -- Stubs (Fase 0). Real collections + parsing come in Fase 1.
+function notImplemented(name: string): never {
+  throw new Error(
+    `[firestore-adapter] ${name} aún no está implementado (Bocaditos de reserva, Fase 1).`
+  );
+}
+
+export async function getColecciones(): Promise<Coleccion[]> {
+  notImplemented("getColecciones");
+}
+export async function getColeccion(_id: string): Promise<Coleccion | null> {
+  void _id;
+  notImplemented("getColeccion");
+}
+export async function saveColeccion(_coleccion: Coleccion): Promise<void> {
+  void _coleccion;
+  notImplemented("saveColeccion");
+}
+export async function getMetodosConservacion(): Promise<MetodoConservacion[]> {
+  notImplemented("getMetodosConservacion");
+}
+export async function getUtensilios(): Promise<Utensilio[]> {
+  notImplemented("getUtensilios");
+}
+export async function getUtensilio(_id: string): Promise<Utensilio | null> {
+  void _id;
+  notImplemented("getUtensilio");
+}
+export async function saveUtensilio(_utensilio: Utensilio): Promise<void> {
+  void _utensilio;
+  notImplemented("saveUtensilio");
+}
+export async function deleteUtensilio(_id: string): Promise<void> {
+  void _id;
+  notImplemented("deleteUtensilio");
+}
+export async function getPlanes(): Promise<Plan[]> {
+  notImplemented("getPlanes");
+}
+export async function getPlan(_id: string): Promise<Plan | null> {
+  void _id;
+  notImplemented("getPlan");
+}
+export async function savePlan(_plan: Plan): Promise<void> {
+  void _plan;
+  notImplemented("savePlan");
+}
+export async function getGuias(): Promise<Guia[]> {
+  notImplemented("getGuias");
+}
+export async function getGuia(_id: string): Promise<Guia | null> {
+  void _id;
+  notImplemented("getGuia");
+}
+export async function saveGuia(_guia: Guia): Promise<void> {
+  void _guia;
+  notImplemented("saveGuia");
+}
+export async function deleteGuia(_id: string): Promise<void> {
+  void _id;
+  notImplemented("deleteGuia");
 }

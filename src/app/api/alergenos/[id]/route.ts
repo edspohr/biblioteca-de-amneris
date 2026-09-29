@@ -3,6 +3,7 @@ import { repo } from "@/lib/repo";
 import { alergenoSchema } from "@/lib/schema";
 import { badRequest, conflict, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function PUT(
   req: Request,
@@ -17,7 +18,10 @@ export async function PUT(
     const all = await repo.getAlergenos();
     if (!all.some((a) => a.id === id)) return notFound("El alérgeno no existe");
     await repo.saveAlergeno(parsed);
-    return NextResponse.json(parsed);
+    const saved = await verifyWrite(() => repo.getAlergeno(id), parsed, [
+      "nombre",
+    ]);
+    return NextResponse.json(saved);
   } catch (err) {
     return handleZodError(err);
   }

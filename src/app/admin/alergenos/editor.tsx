@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Alergeno } from "@/lib/schema";
+import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { useSaveState } from "@/lib/admin/use-save-state";
+import { SaveStatusBanner } from "@/components/admin/save-status";
 
 interface Props {
   initial: Alergeno[];
@@ -15,30 +18,20 @@ export function AlergenosEditor({ initial, usage }: Props) {
   const [editing, setEditing] = useState<string | null>(null);
   const [draftNombre, setDraftNombre] = useState("");
   const [newNombre, setNewNombre] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+  const { status, runSave, clearError } = useSaveState();
+  const busy = status.kind === "saving";
 
   async function saveEdit(a: Alergeno) {
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/alergenos/${a.id}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ id: a.id, nombre: draftNombre }),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo guardar");
-        return;
-      }
-      const updated = await res.json();
-      setItems((c) => c.map((x) => (x.id === a.id ? updated : x)));
-      setEditing(null);
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<Alergeno>(`/api/alergenos/${a.id}`, "PUT", {
+        id: a.id,
+        nombre: draftNombre,
+      })
+    );
+    if (!res.ok) return;
+    setItems((c) => c.map((x) => (x.id === a.id ? res.data : x)));
+    setEditing(null);
+    router.refresh();
   }
 
   async function remove(a: Alergeno) {
@@ -52,67 +45,32 @@ export function AlergenosEditor({ initial, usage }: Props) {
       return;
     }
     if (!confirm(`¿Eliminar el alérgeno "${a.nombre}"?`)) return;
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/alergenos/${a.id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo eliminar");
-        return;
-      }
-      setItems((c) => c.filter((x) => x.id !== a.id));
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    const res = await runSave(() =>
+      saveWithVerify<{ ok: true }>(`/api/alergenos/${a.id}`, "DELETE")
+    );
+    if (!res.ok) return;
+    setItems((c) => c.filter((x) => x.id !== a.id));
+    router.refresh();
   }
 
   async function create() {
-    if (!newNombre.trim()) {
-      setError("El nombre es obligatorio");
-      return;
-    }
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/alergenos", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ nombre: newNombre.trim() }),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        setError(err.error ?? "No se pudo crear");
-        return;
-      }
-      const created = await res.json();
-      setItems((c) => [...c, created]);
-      setNewNombre("");
-      router.refresh();
-    } finally {
-      setBusy(false);
-    }
+    if (!newNombre.trim()) return;
+    const res = await runSave(() =>
+      saveWithVerify<Alergeno>("/api/alergenos", "POST", {
+        nombre: newNombre.trim(),
+      })
+    );
+    if (!res.ok) return;
+    setItems((c) => [...c, res.data]);
+    setNewNombre("");
+    router.refresh();
   }
 
   const sorted = [...items].sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   return (
     <>
-      {error && (
-        <div
-          style={{
-            background: "#fdecea",
-            border: "1px solid #a83030",
-            padding: "0.5rem 0.75rem",
-            borderRadius: 4,
-            marginBottom: "1rem",
-            color: "#a83030",
-          }}
-        >
-          {error}
-        </div>
-      )}
+      <SaveStatusBanner status={status} onDismissError={clearError} />
 
       <h2>Crear nuevo</h2>
       <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem" }}>

@@ -4,6 +4,7 @@ import { recetaSchema } from "@/lib/schema";
 import { slugify } from "@/lib/slug";
 import { badRequest, conflict, handleZodError } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function POST(req: Request) {
   try {
@@ -22,7 +23,11 @@ export async function POST(req: Request) {
       return conflict(`Ya existe una receta con el identificador "${parsed.id}"`);
     }
     await repo.saveReceta(parsed);
-    return NextResponse.json(parsed, { status: 201 });
+    const saved = await verifyWrite(() => repo.getReceta(parsed.id), parsed, [
+      "titulo",
+      "tipo_comida",
+    ]);
+    return NextResponse.json(saved, { status: 201 });
   } catch (err) {
     return handleZodError(err);
   }

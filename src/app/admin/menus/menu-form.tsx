@@ -11,6 +11,10 @@ import type {
   TipoComida,
 } from "@/lib/schema";
 import { computeListaCompras } from "@/lib/derived/lista-compras";
+import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { useSaveState } from "@/lib/admin/use-save-state";
+import { useUnsavedChanges } from "@/lib/admin/use-unsaved-changes";
+import { SaveStatusBanner } from "@/components/admin/save-status";
 
 const DIAS = [
   "Lunes",
@@ -55,8 +59,11 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
     }
     return out;
   });
-  const [saving, setSaving] = useState(false);
+  const [dirty, setDirty] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { status, runSave, clearError } = useSaveState();
+  const saving = status.kind === "saving";
+  useUnsavedChanges(dirty && !saving);
 
   // Recipes visible in each cell picker: filter to the etapa is optional (all
   // recipes serve all etapas per the invariant), so we just show everything
@@ -90,6 +97,7 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
   }, [menuRecetas, etapaId, nombre, initial?.id, recetas, ingredientes]);
 
   function setSlot(dia: string, momento: TipoComida, recetaId: string) {
+    setDirty(true);
     setSlots((prev) => {
       const next = { ...prev };
       const k = slotKey(dia, momento);
@@ -102,6 +110,7 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    clearError();
     if (!nombre.trim()) {
       setError("El nombre es obligatorio.");
       return;
@@ -110,43 +119,39 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
       setError("Debes elegir una etapa.");
       return;
     }
-    setSaving(true);
-    try {
-      const body = {
-        nombre: nombre.trim(),
-        etapa_id: etapaId,
-        dia: null,
-        menu_recetas: menuRecetas,
-      };
-      const url = mode === "create" ? "/api/menus" : `/api/menus/${initial!.id}`;
-      const method = mode === "create" ? "POST" : "PUT";
-      const res = await fetch(url, {
-        method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(mode === "create" ? body : { ...body, id: initial!.id }),
-      });
-      const data = (await res.json().catch(() => ({}))) as { id?: string; error?: string };
-      if (!res.ok) {
-        setError(data.error || "No se pudo guardar el menú.");
-        setSaving(false);
-        return;
-      }
+    const body = {
+      nombre: nombre.trim(),
+      etapa_id: etapaId,
+      dia: null,
+      menu_recetas: menuRecetas,
+    };
+    const url = mode === "create" ? "/api/menus" : `/api/menus/${initial!.id}`;
+    const method = mode === "create" ? "POST" : "PUT";
+    const payload = mode === "create" ? body : { ...body, id: initial!.id };
+    const res = await runSave(() =>
+      saveWithVerify<{ id: string }>(url, method, payload)
+    );
+    if (!res.ok) return;
+    setDirty(false);
+    setTimeout(() => {
       router.push("/admin/menus");
       router.refresh();
-    } catch (err: unknown) {
-      setError((err as Error).message || "No se pudo guardar el menú.");
-      setSaving(false);
-    }
+    }, 800);
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <SaveStatusBanner status={status} onDismissError={clearError} />
+
       <label className="field">
         <span>Nombre del menú</span>
         <input
           type="text"
           value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
+          onChange={(e) => {
+            setDirty(true);
+            setNombre(e.target.value);
+          }}
           placeholder="p.ej. Semana 1 · Etapa 2"
           required
         />
@@ -156,7 +161,10 @@ export function MenuForm({ mode, initial, etapas, recetas, ingredientes }: Props
         <span>Etapa</span>
         <select
           value={etapaId}
-          onChange={(e) => setEtapaId(e.target.value)}
+          onChange={(e) => {
+            setDirty(true);
+            setEtapaId(e.target.value);
+          }}
           required
         >
           {etapas.map((e) => (

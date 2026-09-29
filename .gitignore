@@ -5,6 +5,7 @@ next-env.d.ts
 .DS_Store
 *.log
 data/.backup-*/
+data/backups/
 tsconfig.tsbuildinfo
 docs/
 .firebase/

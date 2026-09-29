@@ -3,6 +3,7 @@ import { repo } from "@/lib/repo";
 import { recetaSchema } from "@/lib/schema";
 import { badRequest, conflict, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function PUT(
   req: Request,
@@ -19,7 +20,11 @@ export async function PUT(
     const existing = await repo.getReceta(id);
     if (!existing) return notFound("La receta no existe");
     await repo.saveReceta(parsed);
-    return NextResponse.json(parsed);
+    const saved = await verifyWrite(() => repo.getReceta(id), parsed, [
+      "titulo",
+      "tipo_comida",
+    ]);
+    return NextResponse.json(saved);
   } catch (err) {
     return handleZodError(err);
   }

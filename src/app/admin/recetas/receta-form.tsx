@@ -4,6 +4,10 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import type { Alergeno, Etapa, Ingrediente, Receta, Tecnica, TipoComida, VarianteEtapa } from "@/lib/schema";
 import { ETAPA_IDS } from "@/lib/schema";
+import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { useSaveState } from "@/lib/admin/use-save-state";
+import { useUnsavedChanges } from "@/lib/admin/use-unsaved-changes";
+import { SaveStatusBanner } from "@/components/admin/save-status";
 
 interface Props {
   mode: "create" | "edit";
@@ -32,10 +36,17 @@ export function RecetaForm({
 }: Props) {
   const router = useRouter();
   const [ingredientesCatalog, setIngredientesCatalog] = useState(initialIngredientes);
-  const [state, setState] = useState<Receta>(initial);
-  const [saving, setSaving] = useState(false);
+  const [state, _setState] = useState<Receta>(initial);
+  const [dirty, setDirty] = useState(false);
+  const setState: typeof _setState = (updater) => {
+    setDirty(true);
+    _setState(updater);
+  };
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [globalError, setGlobalError] = useState<string | null>(null);
+  const { status, runSave, clearError } = useSaveState();
+  const saving = status.kind === "saving";
+
+  useUnsavedChanges(dirty && !saving);
 
   const etapasOrdenadas = useMemo(
     () => [...etapas].sort((a, b) => a.orden - b.orden),
@@ -81,35 +92,26 @@ export function RecetaForm({
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setGlobalError(null);
+    clearError();
     if (!validate()) return;
-    setSaving(true);
-    try {
-      const url = mode === "create" ? "/api/recetas" : `/api/recetas/${state.id}`;
-      const method = mode === "create" ? "POST" : "PUT";
-      const res = await fetch(url, {
-        method,
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(state),
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        if (err.details && Array.isArray(err.details)) {
-          const map: Record<string, string> = {};
-          for (const d of err.details) map[d.field] = d.message;
-          setErrors(map);
-        }
-        setGlobalError(err.error ?? "No se pudo guardar la receta");
-        return;
+    const url = mode === "create" ? "/api/recetas" : `/api/recetas/${state.id}`;
+    const method = mode === "create" ? "POST" : "PUT";
+    const res = await runSave(() => saveWithVerify<Receta>(url, method, state));
+    if (!res.ok) {
+      if (res.details) {
+        const map: Record<string, string> = {};
+        for (const d of res.details) map[d.field] = d.message;
+        setErrors(map);
       }
-      const saved = await res.json();
-      router.push(`/admin/recetas`);
-      router.refresh();
-      // Navigate to the detail view so Amneris can see the result
-      setTimeout(() => router.push(`/recetas/${saved.id}`), 100);
-    } finally {
-      setSaving(false);
+      return;
     }
+    setDirty(false);
+    router.refresh();
+    // Small delay so the "Guardado a las HH:MM" toast is visible before the
+    // navigation replaces the page. This is UX polish, not a correctness gate:
+    // the save is already confirmed persisted at this point (see verifyWrite
+    // in src/lib/repo/verify.ts).
+    setTimeout(() => router.push(`/recetas/${res.data.id}`), 800);
   }
 
   // Ingredient row helpers
@@ -147,19 +149,16 @@ export function RecetaForm({
       "Otros"
     );
     if (!categoria?.trim()) return;
-    const res = await fetch("/api/ingredientes", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ nombre: nombre.trim(), categoria: categoria.trim() }),
+    const res = await saveWithVerify<Ingrediente>("/api/ingredientes", "POST", {
+      nombre: nombre.trim(),
+      categoria: categoria.trim(),
     });
     if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      alert(err.error ?? "No se pudo crear el ingrediente");
+      alert(res.error);
       return;
     }
-    const created: Ingrediente = await res.json();
-    setIngredientesCatalog((cur) => [...cur, created]);
-    updateIngrediente(idx, { ingrediente_id: created.id });
+    setIngredientesCatalog((cur) => [...cur, res.data]);
+    updateIngrediente(idx, { ingrediente_id: res.data.id });
   }
 
   // Steps
@@ -214,20 +213,7 @@ export function RecetaForm({
 
   return (
     <form onSubmit={onSubmit}>
-      {globalError && (
-        <div
-          style={{
-            background: "#fdecea",
-            border: "1px solid #a83030",
-            padding: "0.6rem 0.8rem",
-            borderRadius: 4,
-            marginBottom: "1rem",
-            color: "#a83030",
-          }}
-        >
-          {globalError}
-        </div>
-      )}
+      <SaveStatusBanner status={status} onDismissError={clearError} />
 
       <Field label="Título" error={errors.titulo}>
         <input

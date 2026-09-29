@@ -11,6 +11,25 @@ export const paletaSchema = z.object({
 });
 export type Paleta = z.infer<typeof paletaSchema>;
 
+// Grams-per-portion by meal type. Populated for the reserva plan (E1/E2/E3
+// have specific values); optional to keep the reader working before the
+// backfill migration.
+export const porcionPorComidaSchema = z.object({
+  desayuno: z.number().int().positive(),
+  almuerzo: z.number().int().positive(),
+  cena: z.number().int().positive(),
+});
+export type PorcionPorComida = z.infer<typeof porcionPorComidaSchema>;
+
+// Kilograms produced per month for the batch-cooking plan (from B3-P8).
+export const rendimientoMensualKgSchema = z.object({
+  desayunos: z.number().nonnegative(),
+  almuerzos: z.number().nonnegative(),
+  cenas: z.number().nonnegative(),
+  total: z.number().nonnegative(),
+});
+export type RendimientoMensualKg = z.infer<typeof rendimientoMensualKgSchema>;
+
 export const etapaSchema = z.object({
   id: slug,
   nombre: z.string().min(1, "El nombre de la etapa es obligatorio"),
@@ -21,6 +40,9 @@ export const etapaSchema = z.object({
   orden: z.number().int().min(1, "El orden debe ser un entero positivo"),
   paleta: paletaSchema,
   descripcion: z.string().nullable().optional(),
+  // New (Bocaditos de reserva). Optional until the etapa backfill runs.
+  porcionPorComida: porcionPorComidaSchema.nullable().optional(),
+  rendimientoMensualKg: rendimientoMensualKgSchema.nullable().optional(),
 });
 
 export type Etapa = z.infer<typeof etapaSchema>;

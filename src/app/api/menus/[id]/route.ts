@@ -3,6 +3,7 @@ import { repo } from "@/lib/repo";
 import { menuSchema } from "@/lib/schema";
 import { badRequest, handleZodError, notFound } from "@/lib/api-errors";
 import { requireSuperadmin } from "@/lib/auth/require";
+import { verifyWrite } from "@/lib/repo/verify";
 
 export async function PUT(
   req: Request,
@@ -19,7 +20,11 @@ export async function PUT(
     const existing = await repo.getMenu(id);
     if (!existing) return notFound("El menú no existe");
     await repo.saveMenu(parsed);
-    return NextResponse.json(parsed);
+    const saved = await verifyWrite(() => repo.getMenu(id), parsed, [
+      "nombre",
+      "etapa_id",
+    ]);
+    return NextResponse.json(saved);
   } catch (err) {
     return handleZodError(err);
   }

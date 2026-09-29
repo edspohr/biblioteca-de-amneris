@@ -19,6 +19,10 @@
     "cleanup:asistente": "tsx scripts/cleanup-asistente.ts",
     "backfill:etapa-edad": "tsx scripts/backfill-etapa-edad.ts",
     "seed:featured": "tsx scripts/seed-featured-recipes.ts",
+    "backup": "tsx scripts/backup.ts",
+    "test:schemas": "tsx --test tests/schemas.test.ts",
+    "test:persistence": "tsx --test tests/admin-persistence.test.ts",
+    "test:unit": "tsx --test tests/schemas.test.ts tests/admin-persistence.test.ts",
     "test:rules": "firebase emulators:exec --only firestore 'tsx tests/firestore.rules.test.ts'"
   },
   "dependencies": {
