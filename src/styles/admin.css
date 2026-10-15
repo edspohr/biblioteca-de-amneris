@@ -1415,3 +1415,35 @@
   font-size: var(--fs-sm);
   color: var(--color-brand-ink);
 }
+
+/* -- Recipe anexos editor ------------------------------------------------- */
+.anexos-editor__list {
+  list-style: none;
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-4);
+}
+.anexos-editor__item {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+}
+.anexos-editor__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.anexos-editor__head input {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+.anexos-editor__thumb {
+  max-width: 220px;
+  max-height: 160px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}

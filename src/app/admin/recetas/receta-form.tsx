@@ -16,10 +16,12 @@ import type {
   VitaminaDetalle,
 } from "@/lib/schema";
 import { saveWithVerify } from "@/lib/admin/save-with-verify";
+import { slugify } from "@/lib/slug";
 import { useSaveState } from "@/lib/admin/use-save-state";
 import { useUnsavedChanges } from "@/lib/admin/use-unsaved-changes";
 import { SaveStatusBanner } from "@/components/admin/save-status";
 import { iconoDe, tonoStyle } from "@/lib/colecciones";
+import { AnexosEditor } from "./anexos-editor";
 
 interface Props {
   mode: "create" | "edit";
@@ -109,6 +111,16 @@ export function RecetaForm({
     if (state.kcal_100g != null && state.kcal_100g < 0) {
       errs.kcal_100g = "Las calorías no pueden ser negativas";
     }
+    (state.anexos ?? []).forEach((a, i) => {
+      if (!a.titulo.trim()) errs[`anexos.${i}`] = "Ponle un título a este anexo";
+      else if (a.tipo === "texto" && !a.texto?.trim()) errs[`anexos.${i}`] = "Escribe el texto del anexo";
+      else if (a.tipo === "enlace" && !/^https?:\/\/\S+\.\S+/.test(a.url ?? "")) {
+        errs[`anexos.${i}`] = "El enlace debe empezar con https://";
+      }
+    });
+    sinPasosVacios(state.pasosDetalle ?? []).forEach((p, i) => {
+      if (!p.accion.trim()) errs[`pasosDetalle.${i}.accion`] = "Este paso tiene observación pero le falta la acción";
+    });
     setErrors(errs);
     return Object.keys(errs).length === 0;
   }
@@ -136,10 +148,22 @@ export function RecetaForm({
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     clearError();
+    // Blank step rows (e.g. "+ Agregar paso" left empty) are dropped rather
+    // than rejected; the form state is updated so indices match errors.
+    const pasosDetalle = state.pasosDetalle && sinPasosVacios(state.pasosDetalle);
+    const base: Receta = {
+      ...state,
+      // Rows left on "— selecciona —" would fail validation server-side.
+      receta_ingredientes: state.receta_ingredientes.filter((ri) => ri.ingrediente_id),
+    };
+    const payload: Receta = pasosDetalle
+      ? { ...base, pasosDetalle, pasos: pasosDetalle.map((p) => p.accion) }
+      : { ...base, pasos: state.pasos.filter((p) => p.trim()) };
+    _setState(payload);
     if (!validate()) return;
     const url = mode === "create" ? "/api/recetas" : `/api/recetas/${state.id}`;
     const method = mode === "create" ? "POST" : "PUT";
-    const res = await runSave(() => saveWithVerify<Receta>(url, method, state));
+    const res = await runSave(() => saveWithVerify<Receta>(url, method, payload));
     if (!res.ok) {
       if (res.details) {
         const map: Record<string, string> = {};
@@ -175,15 +199,26 @@ export function RecetaForm({
   }
 
   async function crearIngrediente(idx: number) {
-    const nombre = prompt('Nombre del nuevo ingrediente (en singular, ej. "Manzana verde"):');
-    if (!nombre?.trim()) return;
+    // Strip quotes the example in the prompt invites (incl. ¨ from Spanish keyboards).
+    const nombre = prompt("Nombre del nuevo ingrediente (en singular, ej. Manzana verde):")
+      ?.replace(/["'“”‘’«»¨`]/g, "")
+      .trim();
+    if (!nombre) return;
+    // Already in the catalog (e.g. created earlier from another recipe): just select it.
+    const existente = ingredientesCatalog.find(
+      (i) => i.id === slugify(nombre) || i.nombre.toLowerCase() === nombre.toLowerCase()
+    );
+    if (existente) {
+      updateIngrediente(idx, { ingrediente_id: existente.id });
+      return;
+    }
     const categoria = prompt(
       "Categoría (ej. Frutas, Proteínas, Vegetales y Granos, Carbohidratos, Lácteos, Hierbas y Especias, Otros):",
       "Otros"
     );
     if (!categoria?.trim()) return;
     const res = await saveWithVerify<Ingrediente>("/api/ingredientes", "POST", {
-      nombre: nombre.trim(),
+      nombre,
       categoria: categoria.trim(),
     });
     if (!res.ok) {
@@ -469,6 +504,9 @@ export function RecetaForm({
                 <li key={idx} className="paso-editor__row">
                   <span className="paso-editor__num">{idx + 1}</span>
                   <div className="paso-editor__fields">
+                    {errors[`pasosDetalle.${idx}.accion`] && (
+                      <span className="form-error">{errors[`pasosDetalle.${idx}.accion`]}</span>
+                    )}
                     <textarea
                       value={p.accion}
                       rows={2}
@@ -712,6 +750,19 @@ export function RecetaForm({
         </FieldGroup>
       </Section>
 
+      <Section
+        titulo="Información adicional"
+        resumen={state.anexos?.length ? `${state.anexos.length} anexo${state.anexos.length === 1 ? "" : "s"}` : "opcional"}
+        abierta={Object.keys(errors).some((k) => k.startsWith("anexos."))}
+      >
+        <AnexosEditor
+          recetaId={mode === "edit" ? state.id : null}
+          anexos={state.anexos ?? []}
+          onChange={(next) => set("anexos", next)}
+          errors={errors}
+        />
+      </Section>
+
       <div className="save-bar">
         <SaveStatusBanner status={status} onDismissError={clearError} />
         {Object.keys(errors).length > 0 && <p className="form-error">Hay campos por revisar más arriba.</p>}
@@ -722,6 +773,12 @@ export function RecetaForm({
       </div>
     </form>
   );
+}
+
+function sinPasosVacios(pasos: PasoDetalle[]): PasoDetalle[] {
+  return pasos
+    .filter((p) => p.accion.trim() || p.observacion?.trim())
+    .map((p, i) => ({ ...p, orden: i }));
 }
 
 function colResumen(ids: string[], colecciones: Coleccion[]): string {

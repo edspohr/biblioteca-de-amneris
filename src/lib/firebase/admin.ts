@@ -32,12 +32,15 @@ export function getAdminApp(): App {
   const existing = getApps().find((a) => a.name === APP_NAME);
   if (existing) return existing;
 
+  // Passing explicit options disables the SDK's FIREBASE_CONFIG lookup, so
+  // the bucket must be named here or `getStorage().bucket()` throws.
+  const storageBucket = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET;
   const sa = loadServiceAccount();
   if (!sa) {
     // Application Default Credentials fallback (works on App Hosting / GCP).
-    return initializeApp({}, APP_NAME);
+    return initializeApp({ storageBucket }, APP_NAME);
   }
-  return initializeApp({ credential: cert(sa) }, APP_NAME);
+  return initializeApp({ credential: cert(sa), storageBucket }, APP_NAME);
 }
 
 export function getAdminAuth(): Auth {

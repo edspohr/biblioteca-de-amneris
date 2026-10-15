@@ -17,6 +17,7 @@ import path from "node:path";
 
 import {
   alergenoSchema,
+  anexoSchema,
   coleccionSchema,
   conservacionSchema,
   etapaSchema,
@@ -345,4 +346,27 @@ test("menuSchema accepts the reserva extension (celdas, planId, semana)", () => 
 
 test("alergenoSchema still parses a legacy alergeno", () => {
   alergenoSchema.parse({ id: "gluten", nombre: "Gluten" });
+});
+
+test("anexoSchema accepts text, file and link anexos", () => {
+  assert.ok(anexoSchema.safeParse({ id: "a1", tipo: "texto", titulo: "Nota", texto: "Hola" }).success);
+  assert.ok(
+    anexoSchema.safeParse({
+      id: "a2",
+      tipo: "documento",
+      titulo: "Tabla",
+      url: "https://storage.googleapis.com/b/recetas/x/anexos/1-tabla.pdf",
+      storagePath: "recetas/x/anexos/1-tabla.pdf",
+      nombreArchivo: "tabla.pdf",
+      mimeType: "application/pdf",
+      bytes: 1234,
+    }).success
+  );
+  assert.ok(anexoSchema.safeParse({ id: "a3", tipo: "enlace", titulo: "Video", url: "https://youtu.be/abc" }).success);
+});
+
+test("anexoSchema rejects an anexo without content or title", () => {
+  assert.equal(anexoSchema.safeParse({ id: "a1", tipo: "texto", titulo: "Nota", texto: "  " }).success, false);
+  assert.equal(anexoSchema.safeParse({ id: "a2", tipo: "enlace", titulo: "Video", url: null }).success, false);
+  assert.equal(anexoSchema.safeParse({ id: "a3", tipo: "texto", titulo: " ", texto: "x" }).success, false);
 });

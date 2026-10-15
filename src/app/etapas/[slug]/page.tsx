@@ -18,12 +18,14 @@ export default async function EtapaPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [etapa, recetas, porciones] = await Promise.all([
+  const [etapa, todas, porciones] = await Promise.all([
     repo.getEtapa(slug),
     repo.getRecetas(),
     repo.getPorcionesTexturas(),
   ]);
   if (!etapa) notFound();
+  // Recipes may cover only some stages.
+  const recetas = todas.filter((r) => r.variantes[etapa.id]);
 
   const scoped: CSSProperties = {
     ["--etapa-primary" as string]: etapa.paleta.primary,
@@ -75,8 +77,8 @@ export default async function EtapaPage({
 
       <h2>Recetas ({recetas.length})</h2>
       <p className="muted">
-        Todas las recetas aplican a las 3 etapas. Aquí las verás con la textura y
-        porción correspondientes a <strong>{etapa.nombre.toLowerCase()}</strong>.
+        Aquí verás las recetas de esta etapa con la textura y porción
+        correspondientes a <strong>{etapa.nombre.toLowerCase()}</strong>.
       </p>
       {recetas.length === 0 ? (
         <p className="empty">Sin recetas registradas.</p>

@@ -36,6 +36,30 @@ export const pasoDetalleSchema = z.object({
 });
 export type PasoDetalle = z.infer<typeof pasoDetalleSchema>;
 
+// Supplementary material shown collapsed at the end of the recipe: free
+// text, images, documents (PDF, Word, Excel…) or external links (videos).
+export const tipoAnexo = z.enum(["texto", "imagen", "documento", "enlace"]);
+export type TipoAnexo = z.infer<typeof tipoAnexo>;
+
+export const anexoSchema = z
+  .object({
+    id: z.string().min(1),
+    tipo: tipoAnexo,
+    titulo: z.string().trim().min(1, "Cada anexo necesita un título"),
+    texto: z.string().nullable().optional(),
+    url: z.string().url("El enlace no es válido").nullable().optional(),
+    // Files uploaded to Storage (imagen / documento).
+    storagePath: z.string().nullable().optional(),
+    nombreArchivo: z.string().nullable().optional(),
+    mimeType: z.string().nullable().optional(),
+    bytes: z.number().int().nonnegative().nullable().optional(),
+  })
+  .refine((a) => (a.tipo === "texto" ? Boolean(a.texto?.trim()) : Boolean(a.url)), {
+    message: "Al anexo le falta el contenido (texto, archivo o enlace)",
+    path: ["texto"],
+  });
+export type Anexo = z.infer<typeof anexoSchema>;
+
 // Vitamin/mineral tag with level ('alta'/'media'/'baja') and a short benefit
 // note. The legacy `vitaminas: string[]` field stays for backward compat.
 export const vitaminaDetalleSchema = z.object({
@@ -107,6 +131,7 @@ export const recetaSchema = z.object({
   advertencia: z.string().nullable().optional(),
   tip: z.string().nullable().optional(),
   mensaje: z.string().nullable().optional(),
+  anexos: z.array(anexoSchema).optional(),
   // Day the recipe joined the library (YYYY-MM-DD). Drives "Novedades".
   publicadaEn: z
     .string()

@@ -8,6 +8,7 @@ import { RecetaVarianteTabs } from "./variante-tabs";
 import { NutrientesGrid } from "@/components/nutrientes-grid";
 import { VitaminasList } from "@/components/vitaminas-list";
 import { ConservacionBlock } from "@/components/conservacion-block";
+import { AnexosBlock } from "@/components/anexos-block";
 
 const TIPOS_LABEL: Record<string, string> = {
   desayuno: "Desayuno",
@@ -283,6 +284,8 @@ export default async function RecetaPage({
           )}
         </dl>
       </section>
+
+      <AnexosBlock anexos={receta.anexos ?? []} />
     </article>
   );
 }

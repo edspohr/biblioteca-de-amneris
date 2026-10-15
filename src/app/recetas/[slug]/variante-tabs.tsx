@@ -11,7 +11,8 @@ interface Props {
 
 export function RecetaVarianteTabs({ receta, etapas }: Props) {
   const { etapaId: etapaGlobal } = useEtapaActiva();
-  const ordenadas = [...etapas].sort((a, b) => a.orden - b.orden);
+  // Recipes may cover only some stages; tabs only for those with a variant.
+  const ordenadas = [...etapas].filter((e) => receta.variantes[e.id]).sort((a, b) => a.orden - b.orden);
   const [tab, setTab] = useState<string>(etapaGlobal);
 
   useEffect(() => {
