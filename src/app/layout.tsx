@@ -6,6 +6,7 @@ import { EtapaActivaProvider } from "@/lib/etapa-activa/context";
 import { EtapaSelectorGlobal } from "@/lib/etapa-activa/selector-global";
 import { NavBarServer } from "./nav-bar-server";
 import { TrialBanner } from "@/components/trial-banner";
+import { InstalarApp } from "@/components/instalar-app";
 import { getSessionWithProfile } from "@/lib/auth/session";
 import "./globals.css";
 
@@ -39,6 +40,11 @@ export const metadata = {
   },
   description:
     "Una suscripción, toda la biblioteca. Recetas rápidas, menús y planes de alimentación pensados para papás y mamás de bebés de 0 a 2 años.",
+  appleWebApp: {
+    capable: true,
+    title: "Amneris",
+    statusBarStyle: "default",
+  },
 };
 
 export const viewport: Viewport = {
@@ -75,6 +81,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <NavBarServer />
           <EtapaSelectorGlobal />
           <main>{children}</main>
+          <InstalarApp />
         </EtapaActivaProvider>
       </body>
     </html>

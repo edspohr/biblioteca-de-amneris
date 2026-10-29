@@ -2050,3 +2050,96 @@ ol.steps {
 .anexo__file {
   overflow-wrap: anywhere;
 }
+
+/* ============================================================
+ * Instalar app — floating button + instructions sheet
+ * — src/components/instalar-app.tsx
+ * ============================================================ */
+
+.instalar-fab {
+  position: fixed;
+  right: calc(var(--sp-4) + env(safe-area-inset-right, 0px));
+  bottom: calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch-min);
+  padding: var(--sp-2) var(--sp-4);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  transition: transform 120ms ease-out, background 120ms ease-out;
+}
+.instalar-fab:hover {
+  background: var(--color-brand-ink);
+}
+.instalar-fab:active {
+  transform: scale(0.97);
+}
+
+/* Mobile pages with the bottom etapa bar: float just above it. */
+@media (max-width: 899px) {
+  body:has(.etapa-bar) .instalar-fab {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.instalar-sheet {
+  position: fixed;
+  z-index: 70;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-3);
+  padding: var(--sp-5);
+  padding-bottom: calc(var(--sp-5) + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 720px) {
+  .instalar-sheet {
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(440px, calc(100vw - 2 * var(--sp-4)));
+    border-radius: var(--radius-lg);
+  }
+}
+.instalar-sheet h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-2);
+}
+.instalar-sheet__intro {
+  color: var(--color-ink-muted);
+  margin: 0 0 var(--sp-4);
+}
+.instalar-sheet__pasos {
+  margin: 0 0 var(--sp-5);
+  padding-left: var(--sp-5);
+  display: grid;
+  gap: var(--sp-3);
+}
+.instalar-sheet__cerrar {
+  width: 100%;
+  min-height: var(--touch-min);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
